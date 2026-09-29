@@ -203,13 +203,6 @@
     "text": "Fork It. Build Your Study.\n\n\ngithub.com/iHuman-Lab/rescue-grid\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "iHuman Lab Presentations",
-    "section": "",
-    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA: install it, run a human-swarm mission in the GUI, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "discovery-day/discovery-day.html#who-are-we",
     "href": "discovery-day/discovery-day.html#who-are-we",
     "title": "CEAT Discovery DayiHuman Lab",
@@ -257,6 +250,251 @@
     "title": "CEAT Discovery DayiHuman Lab",
     "section": "",
     "text": "This Could Be You\n\n\nEvery researcher in this lab was once sitting where you are. If any of this sparked something — come talk to us.\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "iHuman Lab Presentations",
+    "section": "",
+    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMOSAIC Modular System for Adaptive Human–AI Collaboration\n\n\n\n\nBennett Kwaku Dogbey · Elahe Oveisi · Hemanth Manjunatha\n\n\nA hands-on introduction to MOSAIC: install it, play a search-and-rescue mission, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA: install it, run a human-swarm mission in the GUI, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Meet the iHuman Lab",
+    "text": "Meet the iHuman Lab\n\nWe study how people and intelligent systems work together.\n\n\n\n\nHemanth Manjunatha Principal Investigator\n\n\n\nElahe Oveisi PhD Student\n\n\n\nBennett Kwaku Dogbey PhD Student\n\n\n\nOur work spans brain–computer interfaces, human–robot interaction, human-AI interaction, and cognitive augmentation.\niHuman Lab · Oklahoma State University"
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#studying-humanai-teaming",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#studying-humanai-teaming",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Studying Human–AI Teaming",
+    "text": "Studying Human–AI Teaming\n\nWhen an AI teammate advises people in dynamic, high-stakes tasks, researchers ask questions like these:\n\n\n\nTrust and reliance\nWhen do people follow AI advice, and when is that reliance appropriate?\n\n\nDecisions under pressure\nHow do uncertainty and time constraints affect reliance?\n\n\nSituation awareness\nWhat happens when the person and AI have access to different information?\n\n\nCognitive state\nHow does AI advice affect attention and workload?\n\n\nAI teammate design\nWhich teammate behaviors and communication strategies improve team performance?\n\n\nAdaptive assistance\nWhen should assistance change with task demands or human performance?\n\n\n\nAnswering these questions requires observing the interaction as it unfolds over time.\n\n\nThese are the field’s core questions. Each one plays out during the interaction, as decisions, advice, and consequences build on each other."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#why-do-we-need-a-configurable-testbed",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#why-do-we-need-a-configurable-testbed",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Why Do We Need a Configurable Testbed?",
+    "text": "Why Do We Need a Configurable Testbed?\n\nThat takes four capabilities in one experiment. Existing tools rarely offer all four together.\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n\n\n\n01\nInteractive decision making\nPeople make a sequence of decisions, and each outcome changes what happens next.\n\n\n\n\n\n  \n    \n  \n  \n    \n  \n\n\n\n03\nConfigurable task conditions\nResearchers need to vary information access, uncertainty, time pressure, and the consequences of mistakes.\n\n\n\n\n\n\n\n  \n  \n  \n  \n\n\n\n02\nA controllable AI teammate\nResearchers need to vary what the AI knows, how reliable it is, and when and how it communicates.\n\n\n\n\n\n  \n    \n    \n    \n  \n  \n\n\n\n04\nSynchronized data\nTask events, human actions, AI advice, physiological signals, and sensor measurements must share a common timeline.\n\n\n\n\n\nTo study the interaction over time, researchers need an interactive task, a controllable teammate, conditions they can vary, and synchronized data. The next slide shows how MOSAIC brings them together."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#what-is-mosaic",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#what-is-mosaic",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "What Is MOSAIC?",
+    "text": "What Is MOSAIC?\n\nMOSAIC is a modular testbed for human–AI teaming research. Configure its components for each study.\n\n\n\n\n\n\n\n\n01\nInteractive task\nSearch and rescue, move by move\n\n\n\n\n \n\n\n03\nConfigurable conditions\nMap, hazards, view, and scoring\n\n\n\n\n  \n  \n\n\nMOSAIC\nmodular · configurable\n\n\n\n\n\n\n\n02\nControllable AI teammate\nScripted and LLM teammates, one interface\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  LSL\n\n\n\n04\nSynchronized data\nTask, advice, and sensors on one timeline\n\n\n\n\n\nMOSAIC lets researchers vary the task and AI teammate, then record the interaction.\n\n\nMOSAIC stands for Modular System for Adaptive Human–AI Collaboration: an open-source Python platform for studying human–AI teaming through configurable tasks, built on MiniGrid. Like a mosaic built from tiles, it assembles separate parts (task, teammate, interface, sensing) into one study. Each box answers the need in the same position on the last slide: the task, a teammate you can control, conditions you set per study, and one synchronized record. Modular: the environment, AI teammate, interface, sensing, and analytics are separate components, so you replace one without touching the others. Configurable: map, hazards, view, scoring, and the teammate are set per study, not hard-coded. Search and rescue is the first testbed; the same pieces can support other collaborative tasks (ihuman-lab.github.io/mosaic)."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#how-mosaic-works",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#how-mosaic-works",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "How MOSAIC Works",
+    "text": "How MOSAIC Works\n\nEach part is a separate module: the participant acts on the task, the AI teammate advises from task context, and LSL aligns every stream into one session record.\n\n\n\n\nHuman participant\nObserves, decides, and acts.\n\n\nactions\nobservations\n\n\nMOSAIC task\nRuns the task and the human-facing interface.\n\n\ntask context\nadvice\n\n\nAI teammate\nInterprets task context and provides advice.\n\n\n\n\nphysiological signals\n\n\ntask and interaction stream\n\n\n\n\nStudy sensors\nPhysiological data: EEG, eye tracking, pupil diameter\n\n\nTime-stamped stream\n\n\nLab Streaming Layer (LSL)\nAligns streams on a shared clock\n\n\nSynchronized record\n\n\nSession data\nReady for analysis and replay\n\n\n\n\nHere is MOSAIC. You’re the participant on the left. You act, the task updates, and when you ask, the teammate reads the task context and answers. Everything the researcher varies sits in configuration, and everything that happens, including gaze and physiology, lands on one clock. Underneath, the reusable parts live in the mosaic package and each study’s choices live in experiment/; the code map at the end shows that split."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-task-search-and-rescue",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#the-task-search-and-rescue",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "The Task: Search and Rescue",
+    "text": "The Task: Search and Rescue\n\n\n\n\n\nMission\nSearch a multiroom building and rescue the real victims.\nReal victims and decoys look alike, so an AI teammate’s advice can help or mislead.\nPart Three plays the mission.\n\n\n\nSearch and rescue provides a controlled but consequential setting for studying human–AI decisions."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-humanai-teaming-loop",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#the-humanai-teaming-loop",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "The Human–AI Teaming Loop",
+    "text": "The Human–AI Teaming Loop\n\nAt every decision, the participant can act alone or ask for advice.\n\n\n\nnext decision\n\n\n\n1 Observe\nRead the room and the mission state.\n\n\n\n\n\n2 Decide\nAct alone, or ask the AI teammate.\n\n\nact alone\n\n\n3 Act\nThe participant always chooses the final action.\n\n\n\n\n\n4 Outcome\nThe environment updates and the score changes.\n\n\n\n\nOptional advice path\n\n\nask\n\n\nuse or ignore\n\n\nRequest advice\nMOSAIC sends task context to the AI teammate.\n\n\nadvice\n\n\nEvaluate advice\nCompare it with what the participant can see.\n\n\n\n\nRecorded throughout Task state · advice request · AI response · participant action · outcome\n\n\nThe central question is when and how AI advice changes human decisions.\n\n\nNext, we will install MOSAIC, launch a mission, and change the task ourselves."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#before-you-start",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#before-you-start",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Before You Start",
+    "text": "Before You Start\n\nCheck four things on your laptop before installing.\n\n\n\n\n\nPython 3.10 or 3.11 check: python --version\n\n\nGit Any recent version check: git --version\n\n\nTerminal PowerShell, macOS Terminal, or a Linux shell\n\n\nDisplay A local desktop: the game opens its own window\n\n\n\n\nInstalled for you by pip install -e .\n\nTask\n\nminigrid gymnasium numpy\n\n\n\nInterface\n\npygame-ce pygame_gui\n\n\n\nStudy tools\n\npandas pyyaml python-dotenv tabulate\n\n\n\n\n\nNothing to install by hand: the next two slides set everything up."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#clone-mosaic-and-create-the-environment",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#clone-mosaic-and-create-the-environment",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Clone MOSAIC and Create the Environment",
+    "text": "Clone MOSAIC and Create the Environment\n\nEverything in the tutorial runs from one repository and one environment.\n\n\n\n\nmacOS / LinuxWindows PowerShellConda · Any Platform\n\n\ngit clone https://github.com/iHuman-Lab/mosaic.git\ncd mosaic\npython3 -m venv mosaic_env\nsource mosaic_env/bin/activate\n\n\ngit clone https://github.com/iHuman-Lab/mosaic.git\ncd mosaic\npython -m venv mosaic_env\n.\\mosaic_env\\Scripts\\Activate.ps1\n\n\ngit clone https://github.com/iHuman-Lab/mosaic.git\ncd mosaic\nconda create -n mosaic_env python=3.11 -y\nconda activate mosaic_env\n\n\n\n\n\n\n1 Download the code\nClones the MOSAIC repository\n\n\n2 Enter the folder\nStay in mosaic for the whole tutorial\n\n\n3 Create the environment\nA private Python named mosaic_env\n\n\n4 Activate it\nEvery later command runs inside it\n\n\n\n\nYour prompt begins with (mosaic_env), and python --version reports 3.10 or 3.11.\n\n\nChoose either venv or Conda, not both. Ubuntu attendees who see “ensurepip is not available” should install python3-venv, delete the incomplete mosaic_env, and repeat the step. PowerShell needs the leading dot-backslash on the activation script. Everyone stays in the mosaic directory for the rest of the tutorial."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#install-mosaic",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#install-mosaic",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Install MOSAIC",
+    "text": "Install MOSAIC\n\nThree commands, run from the mosaic folder with mosaic_env active.\n\n\n\npython -m pip install --upgrade pip\npython -m pip install -e .\npython -c \"import mosaic.sar.env, mosaic.gui.main; print('MOSAIC ready')\"\n\npip ends with Successfully installed ... mosaic-0.1.0, and the check prints a pygame-ce banner, then MOSAIC ready.\n\n\n\n\n1 Update pip\nAvoids install errors from an old installer\n\n\n2 Install MOSAIC\nAdds MOSAIC and every package on the previous slide. -e (editable) means your edits take effect without reinstalling; Part Four relies on this.\n\n\n3 Check it\nImports the task (mosaic.sar) and the participant’s interface (mosaic.gui)"
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#run-the-included-mission",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#run-the-included-mission",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Run the Included Mission",
+    "text": "Run the Included Mission\n\n\n\nmacOS / LinuxWindows PowerShell\n\n\nPYTHONPATH=src python -m experiment.main\n\n\n$env:PYTHONPATH = \"src\"\npython -m experiment.main\n\n\n\n\n\nWindow It opens fullscreen. F11 toggles a window (macOS: fn+F11, or set fullscreen: false in configs/experiment.yaml).\n\n\nMove Arrow keys turn and walk the agent\n\n\nTerminal Font warnings and connect_all failed lines are normal\n\n\n\n\n\nYou should see this: the room on the left, the panels on the right.\n\n\n\nThis is MOSAIC’s own study runner from the cloned repository — no extra file is needed. Hold here until most attendees can move the agent. Ask everyone to keep the game open: Part Three walks through it live. The terminal fills with pygame_gui font warnings and “Timeout during mission generation: connect_all failed” lines on every launch; both are harmless (the level generator retries)."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#first-checkpoint",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#first-checkpoint",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "First Checkpoint",
+    "text": "First Checkpoint\n\n\n\nConfirm\n\nThe window opened\n\n\nArrow keys move the agent\n\n\nThe information panel updates\n\n\nIt stays open for Part Three\n\n\n\n\n\n\n\n\n\n\n\nSymptom\nRecovery\n\n\n\n\nNo module named 'mosaic'\nActivate mosaic_env, rerun pip install -e .\n\n\nNo module named 'experiment'\nRun from the repo root with PYTHONPATH=src\n\n\npython --version shows 3.9 or older, or 3.12 and newer\nRecreate mosaic_env with Python 3.10 or 3.11\n\n\nNo window, or No available video device\nRun locally, not over SSH\n\n\n\n\n\n\nEveryone with a window open is ready for Part Three. Leave it open."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-search-and-rescue-mission",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#the-search-and-rescue-mission",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "The Search-and-Rescue Mission",
+    "text": "The Search-and-Rescue Mission\n\nExplore, tell real victims from decoys, and rescue them before time runs out.\n\n\n\n\n\n\nExplore\nMove room to room. A locked door needs the key of the same color.\nIdentify\nBoth are red T shapes. A real victim’s stem is centered; a decoy’s is off-center.\nDecide\nA real victim earns a point, a decoy costs one, and the clock keeps running.\n\n\n\nEvery choice has a consequence you can see and score.\n\n\nNo code in this part: the goal is to know the mission the way a participant does. The clip is the real interface: a real victim (green flash, +1), a decoy (red flash, -1), then another real victim."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#game-interface",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#game-interface",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Game Interface",
+    "text": "Game Interface\n\nWhat each tile means, and where to read the mission.\n\n\n\n\n\n\nGame viewport — the green flash is rescue feedback\n\n\nInformation panel — rescued, remaining, steps, inventory\n\n\nMission status and score — reward and the clock\n\n\nControls, always on screen\n\n\nChat panel — where AI teammate advice arrives\n\n\n\n\n\n\nYou the red triangle\n\n\n\nVictim rescue with Tab\n\n\n\nDecoy costs a point\n\n\n\nLava ends the mission\n\n\n\nDoor Space opens it\n\n\n\nLocked door needs the key of its color\n\n\n\nKey Tab picks it up"
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#victims-and-decoys",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#victims-and-decoys",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Victims and Decoys",
+    "text": "Victims and Decoys\n\nReal victims and decoys are both red T shapes. Only real victims have health.\n\n\n\n\n\n\nREAL VICTIM DECOY\n\n\n\n\n   \n\n\n100% 60% 25% 0%\n\nIn the study runner, the white bar shows a victim’s health.\n\n\n\n\nSymbols A real victim’s stem sits in the middle of the bar. A decoy’s is off-center.\n\n\nHealth In the lab’s study runner, health drains while a victim is in view, faster near lava, and the victim dies at zero. In today’s mission it stays full.\n\n\nRescue Stand next to a victim, face it, and press Tab. The score updates at once.\n\n\n\n\n+1.0 Real victim rescued\n\n\n−1.0 Decoy rescued\n\n\n−2.0 Victim died · study runner\n\n\n\n\nReal victims earn points and decoys cost them. Telling them apart is where advice matters.\n\n\nHealth lives on every victim (health, deplete_rate in mosaic/sar/objects.py). The study’s LavaRiskVictimPlacer sets starting health by facing and the drain rate by distance to lava; the study env TunedPickupVictimEnv drains victims in view each step and emits victim_died at zero. The bar is drawn only while advice is on screen (the study reveals it on each reply). In the tutorial’s experiment.main run, health does not drain, so the health bar and the −2.0 outcome do not appear; say so if asked. The reusable VictimPlacer places real victims only; decoys come from the study layer."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#controls-and-gameplay",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#controls-and-gameplay",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Controls and Gameplay",
+    "text": "Controls and Gameplay\n\nFour actions. Each clip shows what its keys do.\n\n\n\n\n\nNavigate\n\n↑ Move forward one tile\n\n\n←→ Turn to face a new direction\n\n\n\n\n\n\nOpen\n\nSpace Open the door you are facing\n\nLocked doors open only while you carry the matching key.\n\n\n\n\n\nPick up or rescue\n\nTab Take the key, or rescue the victim, you are facing\n\n\n\n\n\n\nRequest advice\n\nAlt Ask the AI teammate\n\nThe reply appears in the chat panel. Today’s placeholder teammate answers “Currently, no commands are available.” Part Four gives it a real one.\n\n\n\n\nThe advice clip uses the grounded teammate from the Part Four slide “An AI Teammate Without a Key”, so the reply is true for that building. In the attendees’ own run the runner attaches the keyless dummy teammate, so Alt replies “Currently, no commands are available.”"
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#runtime-architecture",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#runtime-architecture",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Runtime Architecture",
+    "text": "Runtime Architecture\n\nFour parts you can change, built on Gymnasium and MiniGrid.\n\n\n\n\n\n↑ ← → Space Tab Alt\n\nHuman participant\nWatches the screen and presses keys.\n\n\nkeys\nframes\n\n\n\n\n\n4.2 GUI mosaic.gui\nGame view, panels, chat, and feedback.\n\n\naction\nobservation\n\n\n\n\n\n4.1 SAR mosaic.sar\nRooms, victims, rules, and rewards.\n\n\n\n\nphysiological signals\n\n\ncontext · advice\n\n\nbuilt on\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  LSL\n\n\n4.4 Sensing experiment/\nGaze and EEG on the game’s clock, through LSL.\n\n\n\n\n\n4.3 LLM mosaic.llm\nReads the task, replies in the chat.\n\n\n\nobs, reward, terminated, truncated, info = env.step(action)\n\nGymnasium + MiniGrid\nThe step API and the grid world.\n\n\n\n\nPoint at the attendee’s own window: the keys they press, the GUI that draws it, the environment that decides what happens. Each numbered block is one section of Part Four. The chat image is a real reply from the keyless teammate on “An AI Teammate Without a Key”. Sensing is study-layer only — the tutorial run has no sensors attached. Sensors never talk to the game directly: each one streams into Lab Streaming Layer, which puts game and sensor samples on one clock. The env.step line is src/mosaic/gui/user.py:53."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#one-file-four-parts",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#one-file-four-parts",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "One File, Four Parts",
+    "text": "One File, Four Parts\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\n\n\nsrc/experiment/main.py · lines 31–51\n\n    env = build_sar_env(\n        screen_size=800,\n        num_rows=3,\n        num_cols=3,\n        room_size=10,\n        victim_placer=LavaRiskVictimPlacer(\n            num_real_victims=game_config.get(\"num_real_victims\", 6),\n            num_fake_victims=game_config.get(\"num_fake_victims\", 12),\n        ),\n        lava_placer=SectorSpreadLavaPlacer(\n            lava_per_room=game_config.get(\"lava_per_room\", 8),\n        ),\n        locked_room_placer=LockedRoomPlacer(locked_room_prob=0.5),\n        camera_strategy=AgentFOVCamera(),\n    )\n    env.reset()\n    llm_client = build_llm_client(\n        provider=config.get(\"provider\", \"dummy\"), model=config.get(\"model\")\n    )\n    gui = SAREnvGUI(env, config=config, llm_client=llm_client)\n    gui.run()\n\n\n\n\n\n4.1 SAR\nThe building, what fills it, the camera\n\n\n4.2 GUI\nThe participant’s window\n\n\n4.3 LLM\nWho answers Alt\n\n\n4.4 Sensing\nWhat every step records\n\n\n\n\nThis is the file attendees launched. Step through the highlights; each one is a section of Part Four, in this order: SAR (the building, what fills it, the camera), GUI (the window), LLM (who answers Alt), and Sensing (what every step records). Rewards are a keyword argument you add to the SAR call. This is main.py as the tutorial needs it: imports enabled and the provider defaulting to “dummy”. Upstream MOSAIC must carry that fix before the session (iHuman-Lab/mosaic main, c571f94, still defaults the provider to “openai”)."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#sar",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#sar",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "4.1 · SAR",
+    "text": "4.1 · SAR\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nLines 31–44 build the search-and-rescue task.\n\n\n\n\nsrc/experiment/main.py lines 31–44\n    env = build_sar_env(\n        screen_size=800,\n        num_rows=3,\n        num_cols=3,\n        room_size=10,\n        victim_placer=LavaRiskVictimPlacer(\n            num_real_victims=game_config.get(\"num_real_victims\", 6),\n            num_fake_victims=game_config.get(\"num_fake_victims\", 12),\n        ),\n        lava_placer=SectorSpreadLavaPlacer(\n            lava_per_room=game_config.get(\"lava_per_room\", 8),\n        ),\n        locked_room_placer=LockedRoomPlacer(locked_room_prob=0.5),\n        camera_strategy=AgentFOVCamera(),\n\n\n\nThree things to change\n\n1 The building Notebook\nYAML counts · num_rows · locked_room_prob\nHow big, crowded, and locked\n\n\n2 Camera Next\ncamera_strategy=\nWhat the participant sees\n\n\n3 Rewards Try it\naction=RescueAction(...)\nWhat a mistake costs\n\n\n\n\nLines 31–44 are the whole SAR task: building size, the placers that fill it, and the camera. Counts are per room (12 real victims across a 3×3 building is 108). The building settings are cells in the notebook; the camera and rewards get the next two slides. Code lives in src/mosaic/sar/, src/mosaic/core/, and src/experiment/placers.py."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#what-the-participant-sees",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#what-the-participant-sees",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "What the Participant Sees",
+    "text": "What the Participant Sees\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nLine 44 sets the camera. One walk through a door, three cameras:\n\n\n\n\nEdge-following\nEdgeFollowCamera · scrolls with the agent\n\n\n\nWhole room\nAgentFOVCamera · the default\n\n\n\nForward cone\nAgentConeCamera · only what is ahead\n\n\n\nAgent same tile in all three   ·   Room the agent’s room\n\n\nSame task. The camera sets what the participant can see.\n\n\nTo swap it: import the class from mosaic.core.camera and change line 44. Cameras are a strategy interface: CameraStrategy in src/mosaic/core/camera.py returns an image from get_crop(), and env.switch_camera() swaps it mid-session. Avoid FullviewCamera and AgentCenteredCamera: both raise AttributeError on env reset because they have no reset() method."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#rescue-rewards",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#rescue-rewards",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Rescue Rewards",
+    "text": "Rescue Rewards\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nTry it Make rescuing a decoy cost 5 points instead of 1.\n\n\n\n\nsrc/experiment/main.py an import, then inside build_sar_env\n+from mosaic.sar.actions import RescueAction, RescueRewards\n@@ inside build_sar_env(...) @@\n         camera_strategy=AgentFOVCamera(),\n+        action=RescueAction(\n+            rewards=RescueRewards(fake_victim=-5.0)),\n\nRun Relaunch and rescue a decoy.\nWhat will the reward read?\n\n\n\n\n\nBefore · the default\n\n\n\nAfter · fake_victim=-5.0\n\n\n\n\n\naction= goes inside the build_sar_env(...) call, after camera_strategy=. The defaults in RescueRewards (src/mosaic/sar/actions.py) are +1 / -1 / -2 (real_victim_alive, fake_victim, real_victim_dead); the lab’s study passes 10 / -10 / -20 (src/experiment/game.py line 86). Every rescue also reports an event in info[\"events\"]. A NameError on RescueAction means the import is missing."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#gui",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#gui",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "4.2 · GUI",
+    "text": "4.2 · GUI\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nLines 50–51 open the participant’s window.\n\n\n\n\nsrc/experiment/main.py lines 50–51\n    gui = SAREnvGUI(env, config=config, llm_client=llm_client)\n    gui.run()\n\n\n\n\n\n\nThree things to change\n\n1 Feedback flash Demo · next\nvignette=EdgeVignette(...)\nHow a mistake feels\n\n\n2 Info panel Appendix\ninfo_panel=\nWhat progress is shown\n\n\n3 Time limit Appendix\nmax_time: (YAML)\nHow much time pressure\n\n\n\n\nThe GUI lives in src/mosaic/gui/. SAREnvGUI takes the env, the whole YAML config, the teammate, and optional replacements for the info panel, chat panel, vignette, and prompt builder."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#feedback-flashes",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#feedback-flashes",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Feedback Flashes",
+    "text": "Feedback Flashes\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nPresenter demo Make the red flash after a decoy stronger and longer.\n\n\n\n\nsrc/experiment/main.py an import, then the gui = line\n+from mosaic.gui.feedback import EdgeVignette, VignetteStyle\n@@ further down @@\n-    gui = SAREnvGUI(env, config=config, llm_client=llm_client)\n+    gui = SAREnvGUI(env, config=config, llm_client=llm_client,\n+        vignette=EdgeVignette(800, styles={\"wrong_victim\":\n+            VignetteStyle((200, 0, 0), 200, 1.5, \"fade\")}))\n\nRun Relaunch and rescue a decoy.\nHow will the mistake feel different?\n\n\n\n\n\nBefore · default, 0.6 s\n\n\n\nAfter · stronger, 1.5 s\n\n\n\n\n\nOne style per event in DEFAULT_VIGNETTE_STYLES (src/mosaic/gui/feedback.py): color, strength, length, and fade or pulse. Your styles override the defaults. SAREnvGUI(info_panel=..., chat_panel=...) replaces the side panels, and gui.set_advice_callbacks(...) runs code when advice arrives."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#llm",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#llm",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "4.3 · LLM",
+    "text": "4.3 · LLM\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nLines 47–49 pick the AI teammate. Today it is the dummy placeholder.\n\n\n\n\nsrc/experiment/main.py lines 47–49\n    llm_client = build_llm_client(\n        provider=config.get(\"provider\", \"dummy\"), model=config.get(\"model\")\n    )\n\n\n\nToday, after Alt\n\n\n\nThree things to change\n\n1 Keyless teammate Try it · next\nllm_client=ReliableTeammate(0.7)\nHow reliable the advice is\n\n\n2 Real LLM Demo\nprovider: in the YAML, key in .env\nWho answers Alt\n\n\n3 Prompt Appendix\nprompt_builder=\nWhat the teammate is told\n\n\n\n\nThe teammate contract lives in src/mosaic/llm/; hosted providers are built in src/experiment/llm.py. Any teammate implements one method of LLMClient, query(prompt) -&gt; str. prompt_type: sparse or detailed (top of the YAML) changes how a real LLM talks; llm_nudge_interval: N makes it speak every N steps without Alt."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#an-ai-teammate-without-a-key",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#an-ai-teammate-without-a-key",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "An AI Teammate Without a Key",
+    "text": "An AI Teammate Without a Key\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nTry it Swap in a teammate that reads the map and is right 7 times in 10.\n\n\n\nGet advisor.py into src/experiment/, from\ngithub.com/iHuman-Lab/presentations · mosaic-tutorial/labs/\n\nsrc/experiment/main.py imports, then the gui = line\n+import json\n+from .advisor import ReliableTeammate\n@@ further down @@\n-    gui = SAREnvGUI(env, config=config, llm_client=llm_client)\n+    gui = SAREnvGUI(env, config=config,\n+                    llm_client=ReliableTeammate(0.7),\n+                    prompt_builder=json.dumps)\n\nRun Relaunch and press Alt.\nIs the advice always right?\n\n\n\n\n\nBefore · the dummy placeholder\n\n\n\nAfter · ReliableTeammate, grounded in the map\n\n\n\n\n\nlabs/advisor.py is in the tutorial repository (github.com/iHuman-Lab/presentations, mosaic-tutorial/labs/). Any teammate implements one method of LLMClient, query(prompt) -&gt; str (src/mosaic/llm/client.py). At 0.7, about three replies in ten point at a decoy: ask the room whether anyone noticed. That is the reliance question from the start of the tutorial. The “after” image was captured at reliability 1.0. It is also the fallback for the LLM demo if the API is down: grounded advice, no key."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#connect-a-real-llm",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#connect-a-real-llm",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Connect a Real LLM",
+    "text": "Connect a Real LLM\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nPresenter demo One package, one key, two lines of YAML.\n\n\n\n\nterminal once, with mosaic_env active\npython -m pip install llama-index-llms-openai\n\n\n.env a new file in the mosaic folder\nOPENAI_API_KEY=&lt;your key&gt;\n\n\nconfigs/experiment.yaml new top-level lines\n+provider: openai\n+model: gpt-4o-mini\n\nRun Relaunch and press Alt.\n\n\nHow it answers\n\n\n1 Prompt The game state, as rules and a table\n\n\n2 Model One reply, a few seconds later\n\n\n3 Chat The participant decides whether to follow it\n\n\n\n\n\nPresenter demo: the key lives only in the presenter’s .env. It is never in the repository or this deck, which is public on GitHub Pages. main.py already reads provider and model from the top of the YAML and loads .env (load_dotenv()); build_llm_client connects on the first Alt, not at launch, so no key or a typo shows as an error in the chat and the game keeps running. Model: confirm on key day by measured latency; the package must recognize the model name. What the model is told is on the appendix slide “What the Teammate Is Told”."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#sensing",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#sensing",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "4.4 · Sensing",
+    "text": "4.4 · Sensing\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nEach step produces an observation. The study runner streams it with sensors on one clock.\n\n\n\n\nsrc/experiment/main.py line 46\n    env.reset()\n\n\nobs → agent_x, agent_y, direction, grid,\n      saved_victims, remaining_victims,\n      victim_health, step_count, …\n    + action, reward, llm_response\n    → study runner: one JSON line per step on LSL\n\n\n\nThree things to change\n\n1 Recorded fields Notebook\nprint(sorted(obs))\nWhat each step holds\n\n\n2 Custom fields\nobservation= in build_sar_env\nAdd or drop fields\n\n\n3 Sensors Demo · next\nregister_sensor(...)\nGaze or EEG on the game’s clock\n\n\n\n\nObservations are built in src/mosaic/sar/observations.py; the study runner is in src/experiment/. read_data() is in src/experiment/game.py (lines 111–124, SARGameTrial). Change what each step records by subclassing ObservationProcessor and passing it as observation=. replay.py plays a recording back. The full study runner needs the lab’s ixp package and LSL, which this tutorial does not install."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#live-demo-eye-tracking",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#live-demo-eye-tracking",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Live Demo: Eye Tracking",
+    "text": "Live Demo: Eye Tracking\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nPresenter demo A Tobii eye tracker on the lab’s study runner, while a volunteer plays.\n\n\n\n\nsrc/experiment/experiment.py the study runner\n     experiment = Experiment(config)\n+    experiment.register_sensor(\n+        name=\"TobiiEyeTracker\", sensor_cls=TobiiEyeTracker,\n+        sensor_config={\"config\": {}})\n+    experiment.calibrate_sensor(\n+        \"TobiiEyeTracker\", screen=config[\"display\"],\n+        fullscreen=config[\"fullscreen\"])\n     experiment.add_task(name=\"main_game\", task_cls=SARGame, ...)\n\nWhat lands next to the game data?\n\n\nWatch for\n\n\n1 Calibration Five dots\n\n\n2 Play A short mission, advice on Alt\n\n\n3 Two streams, one clock TobiiEyeTracker (60 Hz) and the game steps, side by side in LabRecorder\n\n\n\n\n\nPresenter only: the lab’s ixp package (not on PyPI), tobii_research, PsychoPy, pylsl, ray, and LabRecorder, set up at rehearsal (RUNSHEET.md). The two calls are the ones the full study block uses (experiment.py lines 83–88); the tobii_test block in the same file is the sensor-only version. Calibration is five points (center and four at 0.2 from the edges); SPACE accepts, R redoes. Reveal the third item once LabRecorder is on screen: TobiiEyeTracker is gaze at 60 Hz, 9 channels; the game trial is one JSON line per step. Gaze and game land on one clock, so you can see where the volunteer looked before and after advice. If the device fails, show the rehearsal screenshot of LabRecorder’s stream list and move on."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#where-to-go-next",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#where-to-go-next",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Where to Go Next",
+    "text": "Where to Go Next\n\nThe parts you changed today, and where they live.\n\n\n\nsrc/experiment/ One study built on the package. Copy this folder to start yours.\n\nmain.py\nplacers.py\nllm.py\npacing.py\ngame.py\nreplay.py\nsensors/\n\nAPI build_llm_client · LavaRiskVictimPlacer · SARGameTrial\n\n\ncomposes\n\n\n\nsrc/mosaic/core/ 4.1\nLevel generation and cameras\n\nlevel.py\nplacers.py\ncamera.py\n\nAPI Placer · CameraStrategy\n\n\nsrc/mosaic/sar/ 4.1 4.4\nThe search-and-rescue task\n\nenv.py\nplacers.py\nactions.py\nobjects.py\nobservations.py\n\nAPI build_sar_env · RescueAction\n\n\nsrc/mosaic/gui/ 4.2\nWhat the participant sees\n\nmain.py\nuser.py\nchat.py\ninfo.py\nfeedback.py\n\nAPI SAREnvGUI · EdgeVignette\n\n\nsrc/mosaic/llm/ 4.3\nThe teammate contract\n\nclient.py\nprocess_prompts.py\nprompts.yaml\npathfinding.py\nparser.py\n\nAPI LLMClient · ask\n\n\n\n\nHave the repository open in an editor beside this slide. mosaic/ is the reusable package; experiment/ is one study built on it, and it is the folder attendees copy and change for their own work (its sensors/ folder is the rest of 4.4). Every file named here exists in the MOSAIC repository. The badges match the four parts of Part Four."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#section",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#section",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "",
+    "text": "Thanks!\nQuestions?\n\nMOSAIC github.com/iHuman-Lab/mosaic"
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#locked-rooms",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#locked-rooms",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Locked Rooms",
+    "text": "Locked Rooms\n\nSet the chance that a room is locked: 0.5 locks about half, 0.9 most.\n\n\n\n\nsrc/experiment/main.py line 43\n-locked_room_placer=LockedRoomPlacer(locked_room_prob=0.5),\n+locked_room_placer=LockedRoomPlacer(locked_room_prob=0.9),\n\nRun Relaunch and walk to the nearest door.\nHow much of the building can you still reach?\n\n\n\n\n\nBefore · 0.5: 4 locked doors\n\n\n\nAfter · 0.9: 8 locked doors\n\n\n\n\n\nKeep locked_room_prob below 1.0: at 1.0 generation never finishes. Counts come from one generated building each and can differ run to run. LockedRoomPlacer lives in src/mosaic/sar/placers.py; its place_all() picks which rooms lock and hides each key in an unlocked room. Placement is a pluggable interface: Placer in src/mosaic/core/placers.py has one method, place_all."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#time-limit",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#time-limit",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "Time Limit",
+    "text": "Time Limit\n\nGive the mission 2 minutes instead of 5.\n\n\n\n\nconfigs/experiment.yaml a new top-level line, not under game:\n display: &display 0\n fullscreen: &fullscreen true\n+max_time: 2\n\nRun Relaunch and watch the timer.\nHow will you play with only 2 minutes?\n\n\n\n\n\nBefore · the default\n\n\n\nAfter · max_time: 2\n\n\nAt 0:00 the timer stops; the mission keeps going.\n\n\n\nmain.py passes the whole YAML to SAREnvGUI (src/mosaic/gui/main.py), which reads max_time (minutes) from the top level. The max_time under game: configures the lab’s full study runner, not this run. On its own the timer only counts down: at 0:00 the mission keeps going. The lab’s study runner (SARGameTrial.execute) is what ends a trial."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-info-panel",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#the-info-panel",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "The Info Panel",
+    "text": "The Info Panel\n\nHide how many victims remain.\n\n\n\nGet panel.py into src/experiment/, from\ngithub.com/iHuman-Lab/presentations · mosaic-tutorial/labs/\n\nsrc/experiment/main.py an import, then the gui = line\n+from .panel import NoProgressPanel\n@@ further down @@\n-    gui = SAREnvGUI(env, config=config, llm_client=llm_client)\n+    gui = SAREnvGUI(env, config=config, llm_client=llm_client,\n+                    info_panel=NoProgressPanel(800, 400, 400))\n\nRun Relaunch and look at the mission box.\nWhat does the participant no longer know?\n\n\n\n\n\nBefore · rescued and remaining\n\n\n\nAfter · no remaining count\n\n\n\n\n\nNoProgressPanel (labs/panel.py, tutorial repo) subclasses InfoPanel (src/mosaic/gui/info.py) and overrides one method, _mission_html. The three numbers are the panel’s x offset, width, and height in the 800-px window. chat_panel= accepts a ChatPanel subclass the same way."
+  },
+  {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#what-the-teammate-is-told",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#what-the-teammate-is-told",
+    "title": "MOSAICModular System for AdaptiveHuman–AI Collaboration",
+    "section": "What the Teammate Is Told",
+    "text": "What the Teammate Is Told\n\nBefore trusting its advice, look at what it is told.\n\n\n\nEvery Alt sends\n\n\n1 Rules Rescue real survivors, nearest first, never through lava\n\n\n2 Every real victim Even ones out of your view\n\n\n3 No decoys Left out, so it never points at one\n\n\nChange it SAREnvGUI(..., prompt_builder=...)\n\n\nThe start of one prompt\n\nAgent: room (0,1) facing West | …\n\nObject       Direction  Visible  PathLength\nVictim4      East       Yes      9\nVictim2      South      Yes      0\nRedKey1      East       Yes      5\nPurpleKey1   East       Yes      6\nPurpleDoor1  South      Yes      34\nRedDoor1     East       No       10\n\n\n\n\nbuild_prompt and _build_table are in src/mosaic/llm/process_prompts.py; _build_table skips FAKE_VICTIM cells (line 60), so decoys never reach the model. Every real victim, key, and door in the building is listed with direction, reachability, and path length; Visible marks what is near the participant. The rules are the preamble in src/mosaic/llm/prompts.yaml. This asymmetry matters for any study of reliance: the AI knows where the real victims are, and the participant has to tell them from decoys."
   },
   {
     "objectID": "physio-workshop/foundations.html#about-me",

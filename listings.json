@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/mosaic-tutorial/mosaic-tutorial.html",
       "/shasta-tutorial/shasta-tutorial.html",
       "/physio-workshop/case-study.html",
       "/physio-workshop/foundations.html",
