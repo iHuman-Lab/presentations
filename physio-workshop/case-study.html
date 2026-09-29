@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="dcterms.date" content="2026-07-13">
   <title>iHuman Lab Presentations – Rescue-Grid An Open Platform for Human-Machine Teaming</title>
@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -96,7 +102,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-ee105aa05b62bf92a2d1ec594ecd5dc3.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-fcf324c962d43fa475aeff7caea77d4a.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -188,34 +194,6 @@
       margin-right: 0; 
     }
   </style>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var titleSlide = document.getElementById("title-slide");
-    if (!titleSlide) return;
-    var row = document.createElement("div");
-    row.style.cssText = "display:flex; gap:2rem; align-items:center; margin-top:2.5rem;";
-    var people = [
-      { src: "../assets/people/pi/avatar.jpg",                name: "Hemanth Manjunatha", role: "Principal Investigator" },
-      { src: "../assets/people/ElaheOveisi/avatar.jpeg",  name: "Elahe Oveisi",       role: "PhD Student" },
-      { src: "../assets/people/Bennett_Dogbey/avatar.jpg", name: "Bennett Dogbey",    role: "PhD Student" }
-    ];
-    people.forEach(function(p) {
-      var card = document.createElement("div");
-      card.style.cssText = "display:flex; align-items:center; gap:0.9rem;";
-      var img = document.createElement("img");
-      img.src = p.src;
-      img.alt = p.name;
-      img.style.cssText = "width:130px; height:130px; border-radius:50%; object-fit:cover; border:3px solid #EC672C; box-shadow:0 2px 8px rgba(0,0,0,0.4);";
-      var info = document.createElement("div");
-      info.innerHTML = '<div style="font-weight:700; font-size:1.3rem; color:#fff; line-height:1.3;">' + p.name + '</div>' +
-                       '<div style="font-size:1.1rem; color:rgba(255,255,255,0.5); margin-top:0.2rem;">' + p.role + '</div>';
-      card.appendChild(img);
-      card.appendChild(info);
-      row.appendChild(card);
-    });
-    titleSlide.appendChild(row);
-  });
-  </script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -294,22 +272,22 @@
 <p>If you know Gymnasium, you already <span class="accent">know</span> Rescue-Grid.</p>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> game.sar.env <span class="im">import</span> build_sar_env</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>env <span class="op">=</span> build_sar_env(</span>
-<span id="cb1-4"><a></a>    screen_size<span class="op">=</span><span class="dv">800</span>,</span>
-<span id="cb1-5"><a></a>    num_rows<span class="op">=</span><span class="dv">2</span>, num_cols<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb1-6"><a></a>    num_real_victims<span class="op">=</span><span class="dv">3</span>,</span>
-<span id="cb1-7"><a></a>    num_fake_victims<span class="op">=</span><span class="dv">3</span>,</span>
-<span id="cb1-8"><a></a>    lava_per_room<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb1-9"><a></a>)</span>
-<span id="cb1-10"><a></a></span>
-<span id="cb1-11"><a></a>obs, info <span class="op">=</span> env.reset(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-12"><a></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">200</span>):</span>
-<span id="cb1-13"><a></a>    action <span class="op">=</span> env.action_space.sample()</span>
-<span id="cb1-14"><a></a>    obs, reward, terminated, truncated, info <span class="op">=</span> env.step(action)</span>
-<span id="cb1-15"><a></a>    <span class="cf">if</span> terminated <span class="kw">or</span> truncated:</span>
-<span id="cb1-16"><a></a>        obs, info <span class="op">=</span> env.reset()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">from</span> game.sar.env <span class="im">import</span> build_sar_env</span>
+<span id="cb1-2"><a aria-label="2"></a></span>
+<span id="cb1-3"><a aria-label="3"></a>env <span class="op">=</span> build_sar_env(</span>
+<span id="cb1-4"><a aria-label="4"></a>    screen_size<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb1-5"><a aria-label="5"></a>    num_rows<span class="op">=</span><span class="dv">2</span>, num_cols<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb1-6"><a aria-label="6"></a>    num_real_victims<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb1-7"><a aria-label="7"></a>    num_fake_victims<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb1-8"><a aria-label="8"></a>    lava_per_room<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb1-9"><a aria-label="9"></a>)</span>
+<span id="cb1-10"><a aria-label="10"></a></span>
+<span id="cb1-11"><a aria-label="11"></a>obs, info <span class="op">=</span> env.reset(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb1-12"><a aria-label="12"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">200</span>):</span>
+<span id="cb1-13"><a aria-label="13"></a>    action <span class="op">=</span> env.action_space.sample()</span>
+<span id="cb1-14"><a aria-label="14"></a>    obs, reward, terminated, truncated, info <span class="op">=</span> env.step(action)</span>
+<span id="cb1-15"><a aria-label="15"></a>    <span class="cf">if</span> terminated <span class="kw">or</span> truncated:</span>
+<span id="cb1-16"><a aria-label="16"></a>        obs, info <span class="op">=</span> env.reset()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </section>
 <section id="engine-architecture-one-step-start-to-finish" class="slide level2" data-background-color="#252525">
@@ -355,16 +333,16 @@
 <p>Change the <span class="accent">scenario</span>, not the source code.</p>
 </div>
 </div><div class="column" style="width:45%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Strategy: swap the camera at runtime</span></span>
-<span id="cb2-2"><a></a>env.switch_camera(AgentFOVCamera())</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># Factory: reconfigure the mission</span></span>
-<span id="cb2-5"><a></a>env <span class="op">=</span> build_sar_env(</span>
-<span id="cb2-6"><a></a>    num_real_victims<span class="op">=</span><span class="dv">6</span>,</span>
-<span id="cb2-7"><a></a>    num_fake_victims<span class="op">=</span><span class="dv">12</span>,</span>
-<span id="cb2-8"><a></a>    lava_per_room<span class="op">=</span><span class="dv">8</span>,</span>
-<span id="cb2-9"><a></a>    locked_room_prob<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb2-10"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="co"># Strategy: swap the camera at runtime</span></span>
+<span id="cb2-2"><a aria-label="2"></a>env.switch_camera(AgentFOVCamera())</span>
+<span id="cb2-3"><a aria-label="3"></a></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="co"># Factory: reconfigure the mission</span></span>
+<span id="cb2-5"><a aria-label="5"></a>env <span class="op">=</span> build_sar_env(</span>
+<span id="cb2-6"><a aria-label="6"></a>    num_real_victims<span class="op">=</span><span class="dv">6</span>,</span>
+<span id="cb2-7"><a aria-label="7"></a>    num_fake_victims<span class="op">=</span><span class="dv">12</span>,</span>
+<span id="cb2-8"><a aria-label="8"></a>    lava_per_room<span class="op">=</span><span class="dv">8</span>,</span>
+<span id="cb2-9"><a aria-label="9"></a>    locked_room_prob<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb2-10"><a aria-label="10"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </section>
 <section id="how-lsl-and-ixp-talk-to-each-other" class="slide level2" data-background-color="#252525">
@@ -445,21 +423,21 @@
 <p>Your sensor could be the <span class="accent">next</span> one registered.</p>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> SARGame(Task):</span>
-<span id="cb3-2"><a></a>    <span class="kw">def</span> get_data_signature(<span class="va">self</span>):</span>
-<span id="cb3-3"><a></a>        <span class="cf">return</span> {</span>
-<span id="cb3-4"><a></a>            <span class="st">"name"</span>: <span class="st">"SARGame"</span>,</span>
-<span id="cb3-5"><a></a>            <span class="st">"type"</span>: <span class="st">"GameState"</span>,</span>
-<span id="cb3-6"><a></a>            <span class="st">"channel_format"</span>: <span class="st">"string"</span>,</span>
-<span id="cb3-7"><a></a>            <span class="st">"source_id"</span>: <span class="st">"rescue-grid-sar-game"</span>,</span>
-<span id="cb3-8"><a></a>        }</span>
-<span id="cb3-9"><a></a></span>
-<span id="cb3-10"><a></a><span class="kw">class</span> SARGameTrial(LSLTrial):</span>
-<span id="cb3-11"><a></a>    <span class="kw">def</span> read_data(<span class="va">self</span>):</span>
-<span id="cb3-12"><a></a>        state <span class="op">=</span> {<span class="op">**</span><span class="va">self</span>.gui.user.obs,</span>
-<span id="cb3-13"><a></a>                  <span class="st">"action"</span>: <span class="va">self</span>.gui.user.last_action,</span>
-<span id="cb3-14"><a></a>                  <span class="st">"reward"</span>: <span class="va">self</span>.gui.user.last_reward}</span>
-<span id="cb3-15"><a></a>        <span class="cf">return</span> [ujson.dumps(state)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="kw">class</span> SARGame(Task):</span>
+<span id="cb3-2"><a aria-label="2"></a>    <span class="kw">def</span> get_data_signature(<span class="va">self</span>):</span>
+<span id="cb3-3"><a aria-label="3"></a>        <span class="cf">return</span> {</span>
+<span id="cb3-4"><a aria-label="4"></a>            <span class="st">"name"</span>: <span class="st">"SARGame"</span>,</span>
+<span id="cb3-5"><a aria-label="5"></a>            <span class="st">"type"</span>: <span class="st">"GameState"</span>,</span>
+<span id="cb3-6"><a aria-label="6"></a>            <span class="st">"channel_format"</span>: <span class="st">"string"</span>,</span>
+<span id="cb3-7"><a aria-label="7"></a>            <span class="st">"source_id"</span>: <span class="st">"rescue-grid-sar-game"</span>,</span>
+<span id="cb3-8"><a aria-label="8"></a>        }</span>
+<span id="cb3-9"><a aria-label="9"></a></span>
+<span id="cb3-10"><a aria-label="10"></a><span class="kw">class</span> SARGameTrial(LSLTrial):</span>
+<span id="cb3-11"><a aria-label="11"></a>    <span class="kw">def</span> read_data(<span class="va">self</span>):</span>
+<span id="cb3-12"><a aria-label="12"></a>        state <span class="op">=</span> {<span class="op">**</span><span class="va">self</span>.gui.user.obs,</span>
+<span id="cb3-13"><a aria-label="13"></a>                  <span class="st">"action"</span>: <span class="va">self</span>.gui.user.last_action,</span>
+<span id="cb3-14"><a aria-label="14"></a>                  <span class="st">"reward"</span>: <span class="va">self</span>.gui.user.last_reward}</span>
+<span id="cb3-15"><a aria-label="15"></a>        <span class="cf">return</span> [ujson.dumps(state)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </section>
 <section id="use-it-in-your-study" class="slide level2" data-background-color="#252525">
@@ -472,26 +450,26 @@
 <p><strong>Just the environment</strong> — for a scripted study or RL training, no <code>ixp</code> required.</p>
 <p><strong>Full experiment</strong> — wire in your own sensor (EEG, GSR, whatever you’re measuring) exactly the way Tobii is wired in today.</p>
 </div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># (a) minimal — no ixp, just Gymnasium</span></span>
-<span id="cb4-2"><a></a><span class="im">from</span> game.sar.env <span class="im">import</span> build_sar_env</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>env <span class="op">=</span> build_sar_env(num_rows<span class="op">=</span><span class="dv">3</span>, num_cols<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb4-5"><a></a>obs, info <span class="op">=</span> env.reset()</span>
-<span id="cb4-6"><a></a><span class="co"># plug in your own policy or logging here</span></span>
-<span id="cb4-7"><a></a></span>
-<span id="cb4-8"><a></a><span class="co"># (b) full ixp experiment</span></span>
-<span id="cb4-9"><a></a><span class="im">from</span> ixp.experiment <span class="im">import</span> Experiment</span>
-<span id="cb4-10"><a></a><span class="im">from</span> experiment.game <span class="im">import</span> SARGame</span>
-<span id="cb4-11"><a></a></span>
-<span id="cb4-12"><a></a>experiment <span class="op">=</span> Experiment(config)</span>
-<span id="cb4-13"><a></a>experiment.register_sensor(</span>
-<span id="cb4-14"><a></a>    <span class="st">"MyEEG"</span>, sensor_cls<span class="op">=</span>MyEEGSensor, sensor_config<span class="op">=</span>{}</span>
-<span id="cb4-15"><a></a>)</span>
-<span id="cb4-16"><a></a>experiment.add_task(</span>
-<span id="cb4-17"><a></a>    name<span class="op">=</span><span class="st">"main_game"</span>, task_cls<span class="op">=</span>SARGame,</span>
-<span id="cb4-18"><a></a>    task_config<span class="op">=</span>{<span class="st">"config"</span>: config[<span class="st">"game"</span>]}, order<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb4-19"><a></a>)</span>
-<span id="cb4-20"><a></a>experiment.run()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="co"># (a) minimal — no ixp, just Gymnasium</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="im">from</span> game.sar.env <span class="im">import</span> build_sar_env</span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a>env <span class="op">=</span> build_sar_env(num_rows<span class="op">=</span><span class="dv">3</span>, num_cols<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb4-5"><a aria-label="5"></a>obs, info <span class="op">=</span> env.reset()</span>
+<span id="cb4-6"><a aria-label="6"></a><span class="co"># plug in your own policy or logging here</span></span>
+<span id="cb4-7"><a aria-label="7"></a></span>
+<span id="cb4-8"><a aria-label="8"></a><span class="co"># (b) full ixp experiment</span></span>
+<span id="cb4-9"><a aria-label="9"></a><span class="im">from</span> ixp.experiment <span class="im">import</span> Experiment</span>
+<span id="cb4-10"><a aria-label="10"></a><span class="im">from</span> experiment.game <span class="im">import</span> SARGame</span>
+<span id="cb4-11"><a aria-label="11"></a></span>
+<span id="cb4-12"><a aria-label="12"></a>experiment <span class="op">=</span> Experiment(config)</span>
+<span id="cb4-13"><a aria-label="13"></a>experiment.register_sensor(</span>
+<span id="cb4-14"><a aria-label="14"></a>    <span class="st">"MyEEG"</span>, sensor_cls<span class="op">=</span>MyEEGSensor, sensor_config<span class="op">=</span>{}</span>
+<span id="cb4-15"><a aria-label="15"></a>)</span>
+<span id="cb4-16"><a aria-label="16"></a>experiment.add_task(</span>
+<span id="cb4-17"><a aria-label="17"></a>    name<span class="op">=</span><span class="st">"main_game"</span>, task_cls<span class="op">=</span>SARGame,</span>
+<span id="cb4-18"><a aria-label="18"></a>    task_config<span class="op">=</span>{<span class="st">"config"</span>: config[<span class="st">"game"</span>]}, order<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb4-19"><a aria-label="19"></a>)</span>
+<span id="cb4-20"><a aria-label="20"></a>experiment.run()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </section>
 <section id="it-already-produced-a-paper" class="slide level2" data-background-color="#252525">
@@ -830,7 +808,7 @@
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/iHuman-Lab\.github\.io\/presentations\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

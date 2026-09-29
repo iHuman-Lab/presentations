@@ -7,22 +7,28 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Hemanth Manjunatha">
   <meta name="dcterms.date" content="2026-09-29">
-  <title>iHuman Lab Presentations – SHASTA Tutorial Simulating Human-Swarm Teaming on Real City Maps</title>
+  <title>iHuman Lab Presentations – SHaSTASimulator for Human And Swarm Team Applications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -97,7 +103,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2d8559f9f14a96751de298d92bd4c997.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1dccb8c5d9c265a44e666f59dc9d3353.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,36 +201,63 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#252525" data-background-image="assets/world-angled.png" data-background-opacity="0.35" class="quarto-title-block center">
-  <h1 class="title">SHASTA Tutorial<br>Simulating <span class="accent">Human-Swarm Teaming</span> on Real City Maps</h1>
-  <p class="subtitle">A hands-on introduction to the SHASTA simulator</p>
+  <h1 class="title">SHaSTA<span class="title-fullname">Simulator for Human And Swarm<br><span class="accent">Team Applications</span></span></h1>
+  <p class="subtitle"><span class="title-tagline">A hands-on tutorial: simulating human–swarm teaming on real city maps</span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Hemanth Manjunatha 
+Hemanth Manjunatha
 </div>
         <p class="quarto-title-affiliation">
-            Oklahoma State University
+            Oklahoma State University · University at Buffalo
           </p>
     </div>
 </div>
 
   <p class="date">2026-09-29</p>
 </section>
+<section id="meet-the-team" class="slide level2">
+<h2>Meet the <span class="accent">Team</span></h2>
+<div class="hook">
+<p>Oklahoma State University × University at Buffalo</p>
+</div>
+<div class="team cols-4">
+<div class="member">
+<p><img data-src="assets/team/hemanth.jpg"></p>
+<p><span class="member-name">Hemanth Manjunatha</span> <span class="member-role">Assistant Professor, MAE</span> <span class="member-affil">Oklahoma State University</span> <a href="https://ihuman-lab.github.io/lab-website/" class="member-lab">iHuman Lab</a></p>
+</div>
+<div class="member">
+<p><img data-src="assets/team/esfahani.jpg"></p>
+<p><span class="member-name">Ehsan T. Esfahani</span> <span class="member-role">Associate Professor, MAE</span> <span class="member-affil">University at Buffalo</span> <a href="https://www.acsu.buffalo.edu/~ehsanesf/" class="member-lab">Human In the Loop Systems (HILS) Lab</a></p>
+</div>
+<div class="member">
+<p><img data-src="assets/team/chowdhury.jpg"></p>
+<p><span class="member-name">Souma Chowdhury</span> <span class="member-role">Associate Professor, MAE</span> <span class="member-affil">University at Buffalo</span> <a href="https://adams.eng.buffalo.edu/" class="member-lab">ADAMS Lab</a></p>
+</div>
+<div class="member">
+<p><img data-src="assets/team/dantu.jpg"></p>
+<p><span class="member-name">Karthik Dantu</span> <span class="member-role">Associate Professor, CSE</span> <span class="member-affil">University at Buffalo</span> <a href="http://drones.cse.buffalo.edu/" class="member-lab">DRONES Lab</a></p>
+</div>
+</div>
+<div class="member-link">
+<p>SHaSTA was built with UB alumni Prajit KrisshnaKumar, Joseph Distefano, Payam Ghassemi, Amir Behjat and Apurv Jani.</p>
+</div>
+</section>
 <section id="what-this-tutorial-covers" class="slide level2">
 <h2>What This Tutorial <span class="accent">Covers</span></h2>
 <div class="hook">
-<p>By the end, you’ll have run a real swarm mission and written your own SHASTA experiment.</p>
+<p>By the end, you’ll have run a real swarm mission and written your own SHaSTA experiment.</p>
 </div>
-<div class="flow-diagram">
+<div class="flow-diagram compact">
 <div class="flow-step">
-<p><strong>Part 1 — Why SHASTA</strong> what it simulates, and why</p>
+<p><strong>Part 1 — Why SHaSTA</strong> what it simulates, and why</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 2 — Install SHASTA</strong> from a clean checkout to your first mission</p>
+<p><strong>Part 2 — Install SHaSTA</strong> from a clean checkout to your first mission</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
@@ -243,10 +276,10 @@ Hemanth Manjunatha
 <section class="slide level2">
 
 <div class="divider">
-<p><span class="divider-kicker">Part One</span> <span class="divider-title">Why SHASTA</span> <span class="divider-subtitle">what it simulates, and why</span> <span class="divider-path">OSM maps → pybullet world → swarms → a Gymnasium interface</span></p>
+<p><span class="divider-kicker">Part One</span> <span class="divider-title">Why SHaSTA</span> <span class="divider-subtitle">what it simulates, and why</span> <span class="divider-path">OSM maps → pybullet world → swarms → a Gymnasium interface</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop here">Why SHASTA</span> <span class="stop">Install SHASTA</span> <span class="stop">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
+<p><span class="stop here">Why SHaSTA</span> <span class="stop">Install SHaSTA</span> <span class="stop">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
 </div>
 </section>
 <section id="the-question" class="slide level2">
@@ -267,12 +300,12 @@ Hemanth Manjunatha
 </div>
 </div>
 <div class="punchline">
-<p>SHASTA is that testbed — and every one of those three is a config change, not a rewrite.</p>
+<p>SHaSTA is that testbed — and every one of those three is a config change, not a rewrite.</p>
 </div>
 </section>
 <section id="what-is-shasta" class="slide level2">
-<h2>What Is <span class="accent">SHASTA</span></h2>
-<p><strong>S</strong>imulator for <strong>H</strong>uman-<strong>A</strong>utonomy and <strong>S</strong>warm <strong>T</strong>eaming <strong>A</strong>pplications — a <a href="https://pybullet.org">pybullet</a>-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.</p>
+<h2>What Is <span class="accent">SHaSTA</span></h2>
+<p><strong>S</strong>imulator for <strong>H</strong>uman <strong>a</strong>nd <strong>S</strong>warm <strong>T</strong>eam <strong>A</strong>pplications (<a href="https://doi.org/10.21203/rs.3.rs-4338790/v1">Manjunatha et al., 2024</a>) — a <a href="https://pybullet.org">pybullet</a>-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.</p>
 <div class="cards">
 <div class="card">
 <p><span class="card-title">Real Maps</span> Any place on Earth you can draw a bounding box around becomes a simulator map — real streets, real buildings.</p>
@@ -337,7 +370,7 @@ Hemanth Manjunatha
 </section>
 <section id="the-teaming-loop" class="slide level2">
 <h2>The <span class="accent">Teaming Loop</span></h2>
-<div class="loop-grid">
+<div class="loop-grid cols-4">
 <div class="loop-step">
 <p><span class="loop-number">1</span><span class="loop-title">Order</span></p>
 <p>A human, a scripted policy, or an RL agent picks a group and a target node.</p>
@@ -362,44 +395,27 @@ Hemanth Manjunatha
 <section class="slide level2">
 
 <div class="divider">
-<p><span class="divider-kicker">Part Two</span> <span class="divider-title">Install SHASTA</span> <span class="divider-subtitle">from a clean checkout to your first mission</span> <span class="divider-path">a clone, a venv, one <code>pip install -e</code>, two checkpoint commands</span></p>
+<p><span class="divider-kicker">Part Two</span> <span class="divider-title">Install SHaSTA</span> <span class="divider-subtitle">from a clean checkout to your first mission</span> <span class="divider-path">a clone, a venv, one <code>pip install -e</code>, two checkpoint commands</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why SHASTA</span> <span class="stop here">Install SHASTA</span> <span class="stop">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
+<p><span class="stop">Why SHaSTA</span> <span class="stop here">Install SHaSTA</span> <span class="stop">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
 </div>
 </section>
 <section id="install-shasta" class="slide level2">
-<h2>Install <span class="accent">SHASTA</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install <span class="st">"ihuman-shasta[gui]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h2>Install <span class="accent">SHaSTA</span></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-label="1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="bu">cd</span> shasta-ub</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv <span class="kw">&amp;&amp;</span> <span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[gui]"</span>     <span class="co"># [gui] adds `shasta gui`; Python 3.9 or newer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then verify:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-label="1"></a><span class="ex">shasta</span> maps      <span class="co"># list the maps available</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="ex">shasta</span> demo      <span class="co"># headless: prints swarm progress, no window</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="checkpoint">
+<p><strong><code>shasta maps</code> should list</strong> city names such as <code>buffalo-small</code>, <code>buffalo-medium</code>, <code>chicago</code>, <code>new-york</code>. <strong><code>shasta demo</code> should end with</strong> “All groups reached their targets after 1174 steps.” Then the install is good, no 3D window needed yet. Verified from a fresh checkout on Python 3.10.</p>
+</div>
 <div class="card secondary">
-<p><span class="card-title">Not on PyPI yet</span> As of this tutorial, <code>ihuman-shasta</code> isn’t published to PyPI — <code>pip install</code> fails with “No matching distribution found.” Install from a clone instead (next slide). Check <code>pip install ihuman-shasta</code> again before your own session; this may already be fixed.</p>
+<p><span class="card-title">Not on PyPI yet</span> <code>pip install "ihuman-shasta[gui]"</code> fails with “No matching distribution found.” Install from a clone as above. Check PyPI again before your own session; this may already be fixed.</p>
 </div>
-</section>
-<section id="install-from-a-clone" class="slide level2">
-<h2>Install From a <span class="accent">Clone</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="fu">git</span> clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
-<span id="cb2-2"><a></a><span class="bu">cd</span> shasta-ub</span>
-<span id="cb2-3"><a></a><span class="ex">python</span> <span class="at">-m</span> venv .venv <span class="kw">&amp;&amp;</span> <span class="bu">source</span> .venv/bin/activate</span>
-<span id="cb2-4"><a></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[gui]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>[gui]</code> adds the human interface (<code>shasta gui</code>). Python 3.9 or newer.</p>
-<div class="checkpoint">
-<p><strong>Verified in this tutorial</strong> — a clean editable install from a fresh checkout completes with no errors, on Python 3.10, from an empty virtual environment.</p>
-</div>
-</section>
-<section id="checkpoint-verify-the-install" class="slide level2">
-<h2>Checkpoint: <span class="accent">Verify the Install</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">shasta</span> maps      <span class="co"># list the maps available</span></span>
-<span id="cb3-2"><a></a><span class="ex">shasta</span> demo      <span class="co"># headless — prints swarm progress, no window</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="checkpoint">
-<p><strong><code>shasta maps</code> should print</strong> a list of city names: <code>buffalo-small</code>, <code>buffalo-medium</code>, <code>chicago</code>, <code>new-york</code>, <code>san-jose</code>, and more.</p>
-<p><strong><code>shasta demo</code> should print</strong>, and end with “All groups reached their targets”:</p>
-<pre><code>Targets (map nodes): {0: 79, 1: 59}
-step    0 centroids {0: [-350.6, -48.7], 1: [54.7, 82.4]}
-...
-step 1174 centroids {0: [-20.7, 147.6], 1: [123.9, 5.4]}
-All groups reached their targets after 1174 steps.</code></pre>
-</div>
-<p>If you see both of those, the install is good — no 3D window needed yet.</p>
 </section>
 <section class="slide level2">
 
@@ -407,12 +423,12 @@ All groups reached their targets after 1174 steps.</code></pre>
 <p><span class="divider-kicker">Part Three</span> <span class="divider-title">Experience a Mission</span> <span class="divider-subtitle">no code — just the GUI</span> <span class="divider-path">open it, pick a group, pick a target, send it</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why SHASTA</span> <span class="stop">Install SHASTA</span> <span class="stop here">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
+<p><span class="stop">Why SHaSTA</span> <span class="stop">Install SHaSTA</span> <span class="stop here">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
 </div>
 </section>
 <section id="open-the-gui" class="slide level2">
 <h2>Open the <span class="accent">GUI</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">shasta</span> gui</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-label="1"></a><span class="ex">shasta</span> gui</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="checkpoint">
 <p><strong>You should see</strong> a top-down map open, with your swarm groups on it (blue UAVs, red UGVs) and mission targets marked — no code needed for this part.</p>
 </div>
@@ -485,30 +501,30 @@ All groups reached their targets after 1174 steps.</code></pre>
 <p><span class="divider-kicker">Part Four</span> <span class="divider-title">Configure &amp; Extend</span> <span class="divider-subtitle">the Python API, and your own experiment</span> <span class="divider-path">drive it headless, then subclass BaseExperiment</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why SHASTA</span> <span class="stop">Install SHASTA</span> <span class="stop">Experience a Mission</span> <span class="stop here">Configure &amp; Extend</span></p>
+<p><span class="stop">Why SHaSTA</span> <span class="stop">Install SHaSTA</span> <span class="stop">Experience a Mission</span> <span class="stop here">Configure &amp; Extend</span></p>
 </div>
 </section>
 <section id="drive-it-from-python" class="slide level2">
 <h2>Drive It From <span class="accent">Python</span></h2>
 <p>No window needed — the same simulation, scripted:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">from</span> shasta.actors <span class="im">import</span> UAV, UGV</span>
-<span id="cb6-2"><a></a><span class="im">from</span> shasta.config <span class="im">import</span> load_config</span>
-<span id="cb6-3"><a></a><span class="im">from</span> shasta.env <span class="im">import</span> ShastaEnv</span>
-<span id="cb6-4"><a></a><span class="im">from</span> shasta.experiments <span class="im">import</span> GoToNodeExperiment</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>config <span class="op">=</span> load_config(headless<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-7"><a></a>config[<span class="st">'experiment'</span>][<span class="st">'type'</span>] <span class="op">=</span> GoToNodeExperiment</span>
-<span id="cb6-8"><a></a></span>
-<span id="cb6-9"><a></a>groups <span class="op">=</span> {<span class="dv">0</span>: [UAV() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)],   <span class="co"># group 0: four drones</span></span>
-<span id="cb6-10"><a></a>          <span class="dv">1</span>: [UGV() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]}   <span class="co"># group 1: three ground vehicles</span></span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a>env <span class="op">=</span> ShastaEnv(config, groups)</span>
-<span id="cb6-13"><a></a>obs, info <span class="op">=</span> env.reset()</span>
-<span id="cb6-14"><a></a></span>
-<span id="cb6-15"><a></a>obs, reward, terminated, truncated, info <span class="op">=</span> env.step({<span class="dv">0</span>: <span class="dv">5</span>, <span class="dv">1</span>: <span class="dv">5</span>})</span>
-<span id="cb6-16"><a></a><span class="cf">while</span> <span class="kw">not</span> terminated:</span>
-<span id="cb6-17"><a></a>    obs, reward, terminated, truncated, info <span class="op">=</span> env.step(<span class="va">None</span>)</span>
-<span id="cb6-18"><a></a>env.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">from</span> shasta.actors <span class="im">import</span> UAV, UGV</span>
+<span id="cb4-2"><a aria-label="2"></a><span class="im">from</span> shasta.config <span class="im">import</span> load_config</span>
+<span id="cb4-3"><a aria-label="3"></a><span class="im">from</span> shasta.env <span class="im">import</span> ShastaEnv</span>
+<span id="cb4-4"><a aria-label="4"></a><span class="im">from</span> shasta.experiments <span class="im">import</span> GoToNodeExperiment</span>
+<span id="cb4-5"><a aria-label="5"></a></span>
+<span id="cb4-6"><a aria-label="6"></a>config <span class="op">=</span> load_config(headless<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-7"><a aria-label="7"></a>config[<span class="st">'experiment'</span>][<span class="st">'type'</span>] <span class="op">=</span> GoToNodeExperiment</span>
+<span id="cb4-8"><a aria-label="8"></a></span>
+<span id="cb4-9"><a aria-label="9"></a>groups <span class="op">=</span> {<span class="dv">0</span>: [UAV() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)],   <span class="co"># group 0: four drones</span></span>
+<span id="cb4-10"><a aria-label="10"></a>          <span class="dv">1</span>: [UGV() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]}   <span class="co"># group 1: three ground vehicles</span></span>
+<span id="cb4-11"><a aria-label="11"></a></span>
+<span id="cb4-12"><a aria-label="12"></a>env <span class="op">=</span> ShastaEnv(config, groups)</span>
+<span id="cb4-13"><a aria-label="13"></a>obs, info <span class="op">=</span> env.reset()</span>
+<span id="cb4-14"><a aria-label="14"></a></span>
+<span id="cb4-15"><a aria-label="15"></a>obs, reward, terminated, truncated, info <span class="op">=</span> env.step({<span class="dv">0</span>: <span class="dv">5</span>, <span class="dv">1</span>: <span class="dv">5</span>})</span>
+<span id="cb4-16"><a aria-label="16"></a><span class="cf">while</span> <span class="kw">not</span> terminated:</span>
+<span id="cb4-17"><a aria-label="17"></a>    obs, reward, terminated, truncated, info <span class="op">=</span> env.step(<span class="va">None</span>)</span>
+<span id="cb4-18"><a aria-label="18"></a>env.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="checkpoint">
 <p><strong>Verified in this tutorial</strong> — this exact snippet runs end to end. <code>obs[0].shape</code> is <code>(4, 3)</code>: four UAVs, an (x, y, z) position each.</p>
 </div>
@@ -518,7 +534,7 @@ All groups reached their targets after 1174 steps.</code></pre>
 <div class="hook">
 <p>All four below are things this tutorial hit directly while testing every command and snippet in it — not hypothetical.</p>
 </div>
-<div class="cards vertical">
+<div class="cards cols-2">
 <div class="card secondary">
 <p><span class="card-title">The map lives one level deeper than you’d guess</span> <code>config['experiment']['map_to_use'] = "buffalo-medium"</code> — not <code>config['core']['map_name']</code>, which doesn’t exist.</p>
 </div>
@@ -536,13 +552,13 @@ All groups reached their targets after 1174 steps.</code></pre>
 <section id="build-your-own-experiment" class="slide level2">
 <h2>Build Your Own <span class="accent">Experiment</span></h2>
 <p>Subclass <code>shasta.base_experiment.BaseExperiment</code> and implement four methods:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> FlyNorthExperiment(BaseExperiment):</span>
-<span id="cb7-2"><a></a>    <span class="kw">def</span> get_action_space(<span class="va">self</span>): ...       <span class="co"># a gymnasium.spaces object</span></span>
-<span id="cb7-3"><a></a>    <span class="kw">def</span> get_observation_space(<span class="va">self</span>): ...  <span class="co"># likewise</span></span>
-<span id="cb7-4"><a></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core): ...   <span class="co"># move things</span></span>
-<span id="cb7-5"><a></a>    <span class="kw">def</span> get_observation(<span class="va">self</span>, observation, core): ...  <span class="co"># shape the obs</span></span>
-<span id="cb7-6"><a></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core): ...  <span class="co"># when to stop</span></span>
-<span id="cb7-7"><a></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core): ...   <span class="co"># optional</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="kw">class</span> FlyNorthExperiment(BaseExperiment):</span>
+<span id="cb5-2"><a aria-label="2"></a>    <span class="kw">def</span> get_action_space(<span class="va">self</span>): ...       <span class="co"># a gymnasium.spaces object</span></span>
+<span id="cb5-3"><a aria-label="3"></a>    <span class="kw">def</span> get_observation_space(<span class="va">self</span>): ...  <span class="co"># likewise</span></span>
+<span id="cb5-4"><a aria-label="4"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core): ...   <span class="co"># move things</span></span>
+<span id="cb5-5"><a aria-label="5"></a>    <span class="kw">def</span> get_observation(<span class="va">self</span>, observation, core): ...  <span class="co"># shape the obs</span></span>
+<span id="cb5-6"><a aria-label="6"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core): ...  <span class="co"># when to stop</span></span>
+<span id="cb5-7"><a aria-label="7"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core): ...   <span class="co"># optional</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See <code>labs/custom_experiment.py</code> for a complete, tested 70-line version — every actor in every group flies north for 300 steps, nothing more.</p>
 </section>
 <section id="the-path-from-here" class="slide level2">
@@ -572,7 +588,7 @@ All groups reached their targets after 1174 steps.</code></pre>
 <p>Thanks!</p>
 </div>
 <div style="font-size:1.5rem; color:#EC672C; margin-top:1.2rem; font-weight:700;">
-<p>Questions? See the SHASTA repository README.</p>
+<p>Questions? See the SHaSTA repository README.</p>
 </div>
 <div style="font-size:1.5rem; color:rgba(255,255,255,0.35); margin-top:1rem; letter-spacing:2px;">
 <p>your.name@okstate.edu</p>
@@ -585,7 +601,7 @@ All groups reached their targets after 1174 steps.</code></pre>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="assets/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>iHuman Lab · Oklahoma State University</p>
+<p>SHaSTA Tutorial · OSU · UB</p>
 </div>
 </div></div>
 
@@ -867,7 +883,7 @@ All groups reached their targets after 1174 steps.</code></pre>
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/iHuman-Lab\.github\.io\/presentations\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

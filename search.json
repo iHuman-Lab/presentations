@@ -1,122 +1,115 @@
 [
   {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#meet-the-team",
+    "href": "shasta-tutorial/shasta-tutorial.html#meet-the-team",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
+    "section": "Meet the Team",
+    "text": "Meet the Team\n\nOklahoma State University × University at Buffalo\n\n\n\n\nHemanth Manjunatha Assistant Professor, MAE Oklahoma State University iHuman Lab\n\n\n\nEhsan T. Esfahani Associate Professor, MAE University at Buffalo Human In the Loop Systems (HILS) Lab\n\n\n\nSouma Chowdhury Associate Professor, MAE University at Buffalo ADAMS Lab\n\n\n\nKarthik Dantu Associate Professor, CSE University at Buffalo DRONES Lab\n\n\n\nSHaSTA was built with UB alumni Prajit KrisshnaKumar, Joseph Distefano, Payam Ghassemi, Amir Behjat and Apurv Jani."
+  },
+  {
     "objectID": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
     "href": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "What This Tutorial Covers",
-    "text": "What This Tutorial Covers\n\nBy the end, you’ll have run a real swarm mission and written your own SHASTA experiment.\n\n\n\nPart 1 — Why SHASTA what it simulates, and why\n\n\n↓\n\n\nPart 2 — Install SHASTA from a clean checkout to your first mission\n\n\n↓\n\n\nPart 3 — Experience a mission no code — just the GUI\n\n\n↓\n\n\nPart 4 — Configure & extend the Python API, and your own experiment"
+    "text": "What This Tutorial Covers\n\nBy the end, you’ll have run a real swarm mission and written your own SHaSTA experiment.\n\n\n\nPart 1 — Why SHaSTA what it simulates, and why\n\n\n↓\n\n\nPart 2 — Install SHaSTA from a clean checkout to your first mission\n\n\n↓\n\n\nPart 3 — Experience a mission no code — just the GUI\n\n\n↓\n\n\nPart 4 — Configure & extend the Python API, and your own experiment"
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#the-question",
     "href": "shasta-tutorial/shasta-tutorial.html#the-question",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "The Question",
-    "text": "The Question\n\nHow should a human coordinate a team of autonomous vehicles they can’t fully see or predict?\n\nThat’s the human–swarm teaming question, and it shows up everywhere from disaster response to warehouse logistics to military reconnaissance. Answering it experimentally needs a testbed where three things are all changeable by the researcher, not fixed by the platform:\n\n\nThe World A real place, not an abstract grid — because how a human reads a street or a building matters to how they command a swarm in it.\n\n\nThe Swarm How many vehicles, what kind, how they’re organized — a formation of four drones is a different teaming problem than one of forty.\n\n\nThe Interface What the human sees and how they issue orders — a map click, a voice command, and a joystick each change what “teaming” means.\n\n\n\nSHASTA is that testbed — and every one of those three is a config change, not a rewrite."
+    "text": "The Question\n\nHow should a human coordinate a team of autonomous vehicles they can’t fully see or predict?\n\nThat’s the human–swarm teaming question, and it shows up everywhere from disaster response to warehouse logistics to military reconnaissance. Answering it experimentally needs a testbed where three things are all changeable by the researcher, not fixed by the platform:\n\n\nThe World A real place, not an abstract grid — because how a human reads a street or a building matters to how they command a swarm in it.\n\n\nThe Swarm How many vehicles, what kind, how they’re organized — a formation of four drones is a different teaming problem than one of forty.\n\n\nThe Interface What the human sees and how they issue orders — a map click, a voice command, and a joystick each change what “teaming” means.\n\n\n\nSHaSTA is that testbed — and every one of those three is a config change, not a rewrite."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
     "href": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
-    "section": "What Is SHASTA",
-    "text": "What Is SHASTA\nSimulator for Human-Autonomy and Swarm Teaming Applications — a pybullet-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.\n\n\nReal Maps Any place on Earth you can draw a bounding box around becomes a simulator map — real streets, real buildings.\n\n\nTwo Vehicle Types UAVs (aerial, blue) and UGVs (ground, red) move in formation along the street network.\n\n\nThree Ways to Command A human via the GUI, a scripted policy, or a reinforcement-learning agent — same Gymnasium interface underneath.\n\n\nReal Physics Vehicles move through an actual pybullet physics simulation, not a grid-world abstraction — collisions, formation spacing, and 3D altitude are all real."
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
+    "section": "What Is SHaSTA",
+    "text": "What Is SHaSTA\nSimulator for Human and Swarm Team Applications (Manjunatha et al., 2024) — a pybullet-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.\n\n\nReal Maps Any place on Earth you can draw a bounding box around becomes a simulator map — real streets, real buildings.\n\n\nTwo Vehicle Types UAVs (aerial, blue) and UGVs (ground, red) move in formation along the street network.\n\n\nThree Ways to Command A human via the GUI, a scripted policy, or a reinforcement-learning agent — same Gymnasium interface underneath.\n\n\nReal Physics Vehicles move through an actual pybullet physics simulation, not a grid-world abstraction — collisions, formation spacing, and 3D altitude are all real."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#how-it-fits-together",
     "href": "shasta-tutorial/shasta-tutorial.html#how-it-fits-together",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "How It Fits Together",
     "text": "How It Fits Together\n\n\n\nOPENSTREETMAPshasta fetch-osm\nA bounding box (south, west, north, east) around any real place — a campus, a neighborhood, a city block.\n\n\n\nbecomes\n\n\n\nOSM2WORLDshasta build-map\nA custom tool turns the map into a 3D mesh and a street graph, fitting an affine transform so streets, buildings and vehicles all line up.\n\n\n\nloads into\n\n\n\nPYBULLET WORLD\nThe mesh loads directly — no Blender step needed. UAV and UGV groups spawn on it and move via physics constraints.\n\n\n\ndrives\n\n\n\nGYMNASIUM ENV\nenv.step({group_id: target_node}) is the one call that drives everything above it, whether the caller is a human, a script, or an RL agent.\n\n\n\n\nEvery layer here is something a researcher can swap — a different city, a different vehicle mix, a different policy — without touching the layers above it."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#section",
     "href": "shasta-tutorial/shasta-tutorial.html#section",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "",
     "text": "One real place — buildings and streets pulled straight from OpenStreetMap. This is Buffalo, NY; the same pipeline works for any city."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#the-teaming-loop",
     "href": "shasta-tutorial/shasta-tutorial.html#the-teaming-loop",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "The Teaming Loop",
     "text": "The Teaming Loop\n\n\n1Order\nA human, a scripted policy, or an RL agent picks a group and a target node.\n\n\n2Plan\nPathPlanning finds a route for that group along the real street graph.\n\n\n3Execute\nFormation flies or drives the group along the route, one tick at a time.\n\n\n4Observe\nPositions, battery, ammo, and mission progress come back as the observation.\n\n\n\nEvery mission is one pass through this loop, over and over — and “Execute” is where a formation strategy, a communication delay, or a failure model gets injected."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#install-shasta",
     "href": "shasta-tutorial/shasta-tutorial.html#install-shasta",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
-    "section": "Install SHASTA",
-    "text": "Install SHASTA\npip install \"ihuman-shasta[gui]\"\n\nNot on PyPI yet As of this tutorial, ihuman-shasta isn’t published to PyPI — pip install fails with “No matching distribution found.” Install from a clone instead (next slide). Check pip install ihuman-shasta again before your own session; this may already be fixed."
-  },
-  {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#install-from-a-clone",
-    "href": "shasta-tutorial/shasta-tutorial.html#install-from-a-clone",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
-    "section": "Install From a Clone",
-    "text": "Install From a Clone\ngit clone &lt;the shasta-ub repository&gt;\ncd shasta-ub\npython -m venv .venv && source .venv/bin/activate\npip install -e \".[gui]\"\n[gui] adds the human interface (shasta gui). Python 3.9 or newer.\n\nVerified in this tutorial — a clean editable install from a fresh checkout completes with no errors, on Python 3.10, from an empty virtual environment."
-  },
-  {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#checkpoint-verify-the-install",
-    "href": "shasta-tutorial/shasta-tutorial.html#checkpoint-verify-the-install",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
-    "section": "Checkpoint: Verify the Install",
-    "text": "Checkpoint: Verify the Install\nshasta maps      # list the maps available\nshasta demo      # headless — prints swarm progress, no window\n\nshasta maps should print a list of city names: buffalo-small, buffalo-medium, chicago, new-york, san-jose, and more.\nshasta demo should print, and end with “All groups reached their targets”:\nTargets (map nodes): {0: 79, 1: 59}\nstep    0 centroids {0: [-350.6, -48.7], 1: [54.7, 82.4]}\n...\nstep 1174 centroids {0: [-20.7, 147.6], 1: [123.9, 5.4]}\nAll groups reached their targets after 1174 steps.\n\nIf you see both of those, the install is good — no 3D window needed yet."
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
+    "section": "Install SHaSTA",
+    "text": "Install SHaSTA\ngit clone &lt;the shasta-ub repository&gt;\ncd shasta-ub\npython -m venv .venv && source .venv/bin/activate\npip install -e \".[gui]\"     # [gui] adds `shasta gui`; Python 3.9 or newer\nThen verify:\nshasta maps      # list the maps available\nshasta demo      # headless: prints swarm progress, no window\n\nshasta maps should list city names such as buffalo-small, buffalo-medium, chicago, new-york. shasta demo should end with “All groups reached their targets after 1174 steps.” Then the install is good, no 3D window needed yet. Verified from a fresh checkout on Python 3.10.\n\n\nNot on PyPI yet pip install \"ihuman-shasta[gui]\" fails with “No matching distribution found.” Install from a clone as above. Check PyPI again before your own session; this may already be fixed."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#open-the-gui",
     "href": "shasta-tutorial/shasta-tutorial.html#open-the-gui",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "Open the GUI",
     "text": "Open the GUI\nshasta gui\n\nYou should see a top-down map open, with your swarm groups on it (blue UAVs, red UGVs) and mission targets marked — no code needed for this part.\n\n\nA real headless render of the same world the GUI shows — buildings and roads from the map mesh, with a UAV group (blue) and UGV group visible near the center-left."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#the-controls",
     "href": "shasta-tutorial/shasta-tutorial.html#the-controls",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "The Controls",
     "text": "The Controls\n\n\nclick or 1–9 Pick a group — click its marker, click its button, or press its number\n\n\nclick Pick a target — click near a street node; a white cross marks it\n\n\nEnter Send the group — or the Send order button, or double-click the node\n\n\nSpace Pause / resume\n\n\n- + Slow down / speed up\n\n\nR Reset the view mouse wheel zooms, right-drag pans\n\n\nV 3D camera view, follows the selected group\n\n\nSend ALL groups and Cancel order are buttons in the side panel, not keys — for when you want everyone moving at once, or to call off an order mid-flight."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#what-the-side-panel-shows",
     "href": "shasta-tutorial/shasta-tutorial.html#what-the-side-panel-shows",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "What the Side Panel Shows",
     "text": "What the Side Panel Shows\n\n\n\nWhile a mission is running\n\nMission progress — how many groups have reached their targets so far\n\n\nThe selected group’s battery, ammo, distance to target, and ETA\n\n\nAn event log — orders sent, targets reached, groups arrived\n\n\n\n\nOptions worth trying\n\n--map — pick a different city (shasta maps lists them)\n\n\n--uav-groups / --ugv-groups — change the swarm composition\n\n\n--seed — reproduce the exact same mission again\n\n\n\n\nTry it now: pick a group, click a target near a street, press Enter."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#drive-it-from-python",
     "href": "shasta-tutorial/shasta-tutorial.html#drive-it-from-python",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "Drive It From Python",
     "text": "Drive It From Python\nNo window needed — the same simulation, scripted:\nfrom shasta.actors import UAV, UGV\nfrom shasta.config import load_config\nfrom shasta.env import ShastaEnv\nfrom shasta.experiments import GoToNodeExperiment\n\nconfig = load_config(headless=True)\nconfig['experiment']['type'] = GoToNodeExperiment\n\ngroups = {0: [UAV() for _ in range(4)],   # group 0: four drones\n          1: [UGV() for _ in range(3)]}   # group 1: three ground vehicles\n\nenv = ShastaEnv(config, groups)\nobs, info = env.reset()\n\nobs, reward, terminated, truncated, info = env.step({0: 5, 1: 5})\nwhile not terminated:\n    obs, reward, terminated, truncated, info = env.step(None)\nenv.close()\n\nVerified in this tutorial — this exact snippet runs end to end. obs[0].shape is (4, 3): four UAVs, an (x, y, z) position each."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
     "href": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "Four Things That Will Trip You Up",
     "text": "Four Things That Will Trip You Up\n\nAll four below are things this tutorial hit directly while testing every command and snippet in it — not hypothetical.\n\n\n\nThe map lives one level deeper than you’d guess config['experiment']['map_to_use'] = \"buffalo-medium\" — not config['core']['map_name'], which doesn’t exist.\n\n\nActors can’t be reused across environments Build a fresh groups dict for every new ShastaEnv(...) — reusing the same UAV/UGV objects raises ValueError: Cannot load an actor multiple times.\n\n\nA group with no path can crash mid-mission If one group finishes well before another, continuing to call env.step(None) can raise IndexError in GoToNodeExperiment.apply_actions (intermittent — seen once in three runs in this tutorial). Give every group a similar-length route until this is fixed upstream.\n\n\nMission.random’s count should match your group count Mission.random(map, 3, seed=0) against a two-group env leaves a target unassigned to any real group — mission.is_complete() then never returns True, even after every group you actually sent has arrived."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
     "href": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "Build Your Own Experiment",
     "text": "Build Your Own Experiment\nSubclass shasta.base_experiment.BaseExperiment and implement four methods:\nclass FlyNorthExperiment(BaseExperiment):\n    def get_action_space(self): ...       # a gymnasium.spaces object\n    def get_observation_space(self): ...  # likewise\n    def apply_actions(self, actions, core): ...   # move things\n    def get_observation(self, observation, core): ...  # shape the obs\n    def get_done_status(self, observation, core): ...  # when to stop\n    def compute_reward(self, observation, core): ...   # optional\nSee labs/custom_experiment.py for a complete, tested 70-line version — every actor in every group flies north for 300 steps, nothing more."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#the-path-from-here",
     "href": "shasta-tutorial/shasta-tutorial.html#the-path-from-here",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "The Path from Here",
     "text": "The Path from Here\n\n\nlabs/play.py — the mission from Part Two, with an EDIT ME block (map, group sizes, target)\n\n\nlabs/custom_experiment.py — the minimal BaseExperiment subclass\n\n\nshasta/experiments.py — GoToNodeExperiment, the real one, ~40 lines\n\n\nshasta/primitives.py — reusable behaviors: Formation, PathPlanning\n\n\nBuilding a map of your own campus or study site: shasta fetch-osm + shasta build-map (needs Java; not exercised in this tutorial — see the main README.md)."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#section-1",
     "href": "shasta-tutorial/shasta-tutorial.html#section-1",
-    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "",
-    "text": "Thanks!\n\n\nQuestions? See the SHASTA repository README.\n\n\nyour.name@okstate.edu"
+    "text": "Thanks!\n\n\nQuestions? See the SHaSTA repository README.\n\n\nyour.name@okstate.edu"
   },
   {
     "objectID": "physio-workshop/case-study.html#why-we-built-another-sim",
@@ -214,7 +207,7 @@
     "href": "index.html",
     "title": "iHuman Lab Presentations",
     "section": "",
-    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSHASTA Tutorial Simulating Human-Swarm Teaming on Real City Maps\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHASTA: install it, run a human-swarm mission in the GUI, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
+    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA: install it, run a human-swarm mission in the GUI, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
   },
   {
     "objectID": "discovery-day/discovery-day.html#who-are-we",
