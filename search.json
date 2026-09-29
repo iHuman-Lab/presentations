@@ -1,0 +1,373 @@
+[
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
+    "href": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "What This Tutorial Covers",
+    "text": "What This Tutorial Covers\n\nBy the end, you’ll have run a real swarm mission and written your own SHASTA experiment.\n\n\n\nPart 1 — Why SHASTA what it simulates, and why\n\n\n↓\n\n\nPart 2 — Install SHASTA from a clean checkout to your first mission\n\n\n↓\n\n\nPart 3 — Experience a mission no code — just the GUI\n\n\n↓\n\n\nPart 4 — Configure & extend the Python API, and your own experiment"
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#the-question",
+    "href": "shasta-tutorial/shasta-tutorial.html#the-question",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "The Question",
+    "text": "The Question\n\nHow should a human coordinate a team of autonomous vehicles they can’t fully see or predict?\n\nThat’s the human–swarm teaming question, and it shows up everywhere from disaster response to warehouse logistics to military reconnaissance. Answering it experimentally needs a testbed where three things are all changeable by the researcher, not fixed by the platform:\n\n\nThe World A real place, not an abstract grid — because how a human reads a street or a building matters to how they command a swarm in it.\n\n\nThe Swarm How many vehicles, what kind, how they’re organized — a formation of four drones is a different teaming problem than one of forty.\n\n\nThe Interface What the human sees and how they issue orders — a map click, a voice command, and a joystick each change what “teaming” means.\n\n\n\nSHASTA is that testbed — and every one of those three is a config change, not a rewrite."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
+    "href": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "What Is SHASTA",
+    "text": "What Is SHASTA\nSimulator for Human-Autonomy and Swarm Teaming Applications — a pybullet-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.\n\n\nReal Maps Any place on Earth you can draw a bounding box around becomes a simulator map — real streets, real buildings.\n\n\nTwo Vehicle Types UAVs (aerial, blue) and UGVs (ground, red) move in formation along the street network.\n\n\nThree Ways to Command A human via the GUI, a scripted policy, or a reinforcement-learning agent — same Gymnasium interface underneath.\n\n\nReal Physics Vehicles move through an actual pybullet physics simulation, not a grid-world abstraction — collisions, formation spacing, and 3D altitude are all real."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#how-it-fits-together",
+    "href": "shasta-tutorial/shasta-tutorial.html#how-it-fits-together",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "How It Fits Together",
+    "text": "How It Fits Together\n\n\n\nOPENSTREETMAPshasta fetch-osm\nA bounding box (south, west, north, east) around any real place — a campus, a neighborhood, a city block.\n\n\n\nbecomes\n\n\n\nOSM2WORLDshasta build-map\nA custom tool turns the map into a 3D mesh and a street graph, fitting an affine transform so streets, buildings and vehicles all line up.\n\n\n\nloads into\n\n\n\nPYBULLET WORLD\nThe mesh loads directly — no Blender step needed. UAV and UGV groups spawn on it and move via physics constraints.\n\n\n\ndrives\n\n\n\nGYMNASIUM ENV\nenv.step({group_id: target_node}) is the one call that drives everything above it, whether the caller is a human, a script, or an RL agent.\n\n\n\n\nEvery layer here is something a researcher can swap — a different city, a different vehicle mix, a different policy — without touching the layers above it."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#section",
+    "href": "shasta-tutorial/shasta-tutorial.html#section",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "",
+    "text": "One real place — buildings and streets pulled straight from OpenStreetMap. This is Buffalo, NY; the same pipeline works for any city."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#the-teaming-loop",
+    "href": "shasta-tutorial/shasta-tutorial.html#the-teaming-loop",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "The Teaming Loop",
+    "text": "The Teaming Loop\n\n\n1Order\nA human, a scripted policy, or an RL agent picks a group and a target node.\n\n\n2Plan\nPathPlanning finds a route for that group along the real street graph.\n\n\n3Execute\nFormation flies or drives the group along the route, one tick at a time.\n\n\n4Observe\nPositions, battery, ammo, and mission progress come back as the observation.\n\n\n\nEvery mission is one pass through this loop, over and over — and “Execute” is where a formation strategy, a communication delay, or a failure model gets injected."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#install-shasta",
+    "href": "shasta-tutorial/shasta-tutorial.html#install-shasta",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Install SHASTA",
+    "text": "Install SHASTA\npip install \"ihuman-shasta[gui]\"\n\nNot on PyPI yet As of this tutorial, ihuman-shasta isn’t published to PyPI — pip install fails with “No matching distribution found.” Install from a clone instead (next slide). Check pip install ihuman-shasta again before your own session; this may already be fixed."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#install-from-a-clone",
+    "href": "shasta-tutorial/shasta-tutorial.html#install-from-a-clone",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Install From a Clone",
+    "text": "Install From a Clone\ngit clone &lt;the shasta-ub repository&gt;\ncd shasta-ub\npython -m venv .venv && source .venv/bin/activate\npip install -e \".[gui]\"\n[gui] adds the human interface (shasta gui). Python 3.9 or newer.\n\nVerified in this tutorial — a clean editable install from a fresh checkout completes with no errors, on Python 3.10, from an empty virtual environment."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#checkpoint-verify-the-install",
+    "href": "shasta-tutorial/shasta-tutorial.html#checkpoint-verify-the-install",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Checkpoint: Verify the Install",
+    "text": "Checkpoint: Verify the Install\nshasta maps      # list the maps available\nshasta demo      # headless — prints swarm progress, no window\n\nshasta maps should print a list of city names: buffalo-small, buffalo-medium, chicago, new-york, san-jose, and more.\nshasta demo should print, and end with “All groups reached their targets”:\nTargets (map nodes): {0: 79, 1: 59}\nstep    0 centroids {0: [-350.6, -48.7], 1: [54.7, 82.4]}\n...\nstep 1174 centroids {0: [-20.7, 147.6], 1: [123.9, 5.4]}\nAll groups reached their targets after 1174 steps.\n\nIf you see both of those, the install is good — no 3D window needed yet."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#open-the-gui",
+    "href": "shasta-tutorial/shasta-tutorial.html#open-the-gui",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Open the GUI",
+    "text": "Open the GUI\nshasta gui\n\nYou should see a top-down map open, with your swarm groups on it (blue UAVs, red UGVs) and mission targets marked — no code needed for this part.\n\n\nA real headless render of the same world the GUI shows — buildings and roads from the map mesh, with a UAV group (blue) and UGV group visible near the center-left."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#the-controls",
+    "href": "shasta-tutorial/shasta-tutorial.html#the-controls",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "The Controls",
+    "text": "The Controls\n\n\nclick or 1–9 Pick a group — click its marker, click its button, or press its number\n\n\nclick Pick a target — click near a street node; a white cross marks it\n\n\nEnter Send the group — or the Send order button, or double-click the node\n\n\nSpace Pause / resume\n\n\n- + Slow down / speed up\n\n\nR Reset the view mouse wheel zooms, right-drag pans\n\n\nV 3D camera view, follows the selected group\n\n\nSend ALL groups and Cancel order are buttons in the side panel, not keys — for when you want everyone moving at once, or to call off an order mid-flight."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#what-the-side-panel-shows",
+    "href": "shasta-tutorial/shasta-tutorial.html#what-the-side-panel-shows",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "What the Side Panel Shows",
+    "text": "What the Side Panel Shows\n\n\n\nWhile a mission is running\n\nMission progress — how many groups have reached their targets so far\n\n\nThe selected group’s battery, ammo, distance to target, and ETA\n\n\nAn event log — orders sent, targets reached, groups arrived\n\n\n\n\nOptions worth trying\n\n--map — pick a different city (shasta maps lists them)\n\n\n--uav-groups / --ugv-groups — change the swarm composition\n\n\n--seed — reproduce the exact same mission again\n\n\n\n\nTry it now: pick a group, click a target near a street, press Enter."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#drive-it-from-python",
+    "href": "shasta-tutorial/shasta-tutorial.html#drive-it-from-python",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Drive It From Python",
+    "text": "Drive It From Python\nNo window needed — the same simulation, scripted:\nfrom shasta.actors import UAV, UGV\nfrom shasta.config import load_config\nfrom shasta.env import ShastaEnv\nfrom shasta.experiments import GoToNodeExperiment\n\nconfig = load_config(headless=True)\nconfig['experiment']['type'] = GoToNodeExperiment\n\ngroups = {0: [UAV() for _ in range(4)],   # group 0: four drones\n          1: [UGV() for _ in range(3)]}   # group 1: three ground vehicles\n\nenv = ShastaEnv(config, groups)\nobs, info = env.reset()\n\nobs, reward, terminated, truncated, info = env.step({0: 5, 1: 5})\nwhile not terminated:\n    obs, reward, terminated, truncated, info = env.step(None)\nenv.close()\n\nVerified in this tutorial — this exact snippet runs end to end. obs[0].shape is (4, 3): four UAVs, an (x, y, z) position each."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
+    "href": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Four Things That Will Trip You Up",
+    "text": "Four Things That Will Trip You Up\n\nAll four below are things this tutorial hit directly while testing every command and snippet in it — not hypothetical.\n\n\n\nThe map lives one level deeper than you’d guess config['experiment']['map_to_use'] = \"buffalo-medium\" — not config['core']['map_name'], which doesn’t exist.\n\n\nActors can’t be reused across environments Build a fresh groups dict for every new ShastaEnv(...) — reusing the same UAV/UGV objects raises ValueError: Cannot load an actor multiple times.\n\n\nA group with no path can crash mid-mission If one group finishes well before another, continuing to call env.step(None) can raise IndexError in GoToNodeExperiment.apply_actions (intermittent — seen once in three runs in this tutorial). Give every group a similar-length route until this is fixed upstream.\n\n\nMission.random’s count should match your group count Mission.random(map, 3, seed=0) against a two-group env leaves a target unassigned to any real group — mission.is_complete() then never returns True, even after every group you actually sent has arrived."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
+    "href": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "Build Your Own Experiment",
+    "text": "Build Your Own Experiment\nSubclass shasta.base_experiment.BaseExperiment and implement four methods:\nclass FlyNorthExperiment(BaseExperiment):\n    def get_action_space(self): ...       # a gymnasium.spaces object\n    def get_observation_space(self): ...  # likewise\n    def apply_actions(self, actions, core): ...   # move things\n    def get_observation(self, observation, core): ...  # shape the obs\n    def get_done_status(self, observation, core): ...  # when to stop\n    def compute_reward(self, observation, core): ...   # optional\nSee labs/custom_experiment.py for a complete, tested 70-line version — every actor in every group flies north for 300 steps, nothing more."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#the-path-from-here",
+    "href": "shasta-tutorial/shasta-tutorial.html#the-path-from-here",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "The Path from Here",
+    "text": "The Path from Here\n\n\nlabs/play.py — the mission from Part Two, with an EDIT ME block (map, group sizes, target)\n\n\nlabs/custom_experiment.py — the minimal BaseExperiment subclass\n\n\nshasta/experiments.py — GoToNodeExperiment, the real one, ~40 lines\n\n\nshasta/primitives.py — reusable behaviors: Formation, PathPlanning\n\n\nBuilding a map of your own campus or study site: shasta fetch-osm + shasta build-map (needs Java; not exercised in this tutorial — see the main README.md)."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#section-1",
+    "href": "shasta-tutorial/shasta-tutorial.html#section-1",
+    "title": "SHASTA TutorialSimulating Human-Swarm Teaming on Real City Maps",
+    "section": "",
+    "text": "Thanks!\n\n\nQuestions? See the SHASTA repository README.\n\n\nyour.name@okstate.edu"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#why-we-built-another-sim",
+    "href": "physio-workshop/case-study.html#why-we-built-another-sim",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Why We Built Another Sim",
+    "text": "Why We Built Another Sim\n\n\n\nStudying trust and workload needs a task you can control — and repeat.\n\nReal disasters aren’t reproducible. Field studies can’t isolate one variable at a time, and they definitely can’t be replayed frame-by-frame in analysis.\nWe needed a SAR task that was hard enough to matter, controllable enough to manipulate, and instrumented enough to measure.\n\nSo we built Rescue-Grid."
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#from-concept-to-testbed",
+    "href": "physio-workshop/case-study.html#from-concept-to-testbed",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "From Concept to Testbed",
+    "text": "From Concept to Testbed\n\nEverything from Part 1 is a config parameter or a log field here.\n\n\nSituational Awareness — swappable camera views (full grid → FOV cone) control what’s perceivable; victim health depletes while visible, forcing perceive · comprehend · project\nTrust — the optional LLM assistant offers a suggestion each step; accept/reject is logged automatically, a behavioral trust signal, not just a post-task survey\nMental Workload — real vs. decoy victims, lava density, room count are the same demand-vs-capacity dials NASA-TLX asks about, except here they’re build_sar_env() arguments\nPhysiological Measurement — every game state syncs to Tobii (or any sensor you register) over one LSL clock, so fixations and pupil size line up frame-by-frame with gameplay\n\n\nPart 1 asked what to measure. Rescue-Grid is where you measure it."
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#the-game",
+    "href": "physio-workshop/case-study.html#the-game",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "The Game",
+    "text": "The Game\n\n\n\nA building on fire. Real victims. Fake ones too.\n\n\nMulti-room building, locked doors + keys\nReal victims vs. decoy victims — pick up the wrong one, take a penalty\nLava hazards, and victim health that depletes while visible\nOptional LLM assistant you can call on for a suggestion\n\n\nBuilt on MiniGrid + Gymnasium — so it’s RL-ready from day one."
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#ten-lines-to-a-running-environment",
+    "href": "physio-workshop/case-study.html#ten-lines-to-a-running-environment",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Ten Lines to a Running Environment",
+    "text": "Ten Lines to a Running Environment\n\n\n\nIt’s a standard Gymnasium environment underneath.\n\nreset() / step() / render() — nothing exotic. Drop in your own policy, or drive it by hand.\n\nIf you know Gymnasium, you already know Rescue-Grid.\n\n\nfrom game.sar.env import build_sar_env\n\nenv = build_sar_env(\n    screen_size=800,\n    num_rows=2, num_cols=2,\n    num_real_victims=3,\n    num_fake_victims=3,\n    lava_per_room=2,\n)\n\nobs, info = env.reset(seed=42)\nfor _ in range(200):\n    action = env.action_space.sample()\n    obs, reward, terminated, truncated, info = env.step(action)\n    if terminated or truncated:\n        obs, info = env.reset()"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#engine-architecture-one-step-start-to-finish",
+    "href": "physio-workshop/case-study.html#engine-architecture-one-step-start-to-finish",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Engine Architecture: One Step, Start to Finish",
+    "text": "Engine Architecture: One Step, Start to Finish\n\nEvery frame follows the same path — input to pixels.\n\n\n\nKeyboard Input\n\n\n▼\n\n\nPickupVictimEnv.step(action)move / rescue · deplete health · check mission state\n\n\n▼\n\n\nGameObservation.process()encodes grid, position, mission status\n\n\n▼\n\n\nSAREnvGUI.render()camera crop + info panel + chat panel"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#extensible-by-design",
+    "href": "physio-workshop/case-study.html#extensible-by-design",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Extensible By Design",
+    "text": "Extensible By Design\n\n\n\nStrategy — 5 swappable camera views: full grid, agent-centered, first-person, FOV cone\nFactory — build_sar_env() assembles a fully configured mission from a few parameters\nTemplate Method — SARLevelGen defines level-gen hooks; subclass it for a new level type\nPluggable Placers — VictimPlacer / LavaPlacer swap placement logic without touching the engine\n\n\nChange the scenario, not the source code.\n\n\n# Strategy: swap the camera at runtime\nenv.switch_camera(AgentFOVCamera())\n\n# Factory: reconfigure the mission\nenv = build_sar_env(\n    num_real_victims=6,\n    num_fake_victims=12,\n    lava_per_room=8,\n    locked_room_prob=0.5,\n)"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#how-lsl-and-ixp-talk-to-each-other",
+    "href": "physio-workshop/case-study.html#how-lsl-and-ixp-talk-to-each-other",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "How LSL and ixp Talk to Each Other",
+    "text": "How LSL and ixp Talk to Each Other\n\nTwo independent streams. One shared clock.\n\n\n\n\nSARGameTrialread_data() every frame\n\n\nTobii Eye Trackergaze samples\n\n\n\n▼\n\n\nLSL — Lab Streaming Layersynchronized clock across both streams\n\n\n▼\n\n\nRecorded Session → replayed frame-by-frame with replay.py"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#what-is-ixp",
+    "href": "physio-workshop/case-study.html#what-is-ixp",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "What Is ixp?",
+    "text": "What Is ixp?\n\n\n\nBehavioral experiments have a shape: setup, tasks, sensors, teardown.\n\nixp is iHuman Lab’s experiment engine — an Experiment runs a sequence of Tasks, each broken into Blocks of Trials, predefined or randomized order.\nSensors record in parallel with tasks via Ray, and everything streams to a synchronized LSL clock — no manual timestamp alignment.\n\nRescue-Grid didn’t reinvent this — it just registered as a Task.\n\n\n\n\nexperiment.run()\n\n\n▼\n\n\nStart Sensors (parallel, non-blocking)\n\n\n▼\n\n\nTasks → Blocks → Trialsrun sequentially, push LSL markers\n\n\n▼\n\n\nStop Sensors → experiment.close()"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#rescue-grid-is-a-task-inside-ixp",
+    "href": "physio-workshop/case-study.html#rescue-grid-is-a-task-inside-ixp",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Rescue-Grid Is a Task Inside ixp",
+    "text": "Rescue-Grid Is a Task Inside ixp\n\n\n\nixp orchestrates the session — Rescue-Grid just plugs in.\n\nixp.Experiment runs an ordered sequence of Tasks, calibrates sensors, and drives everything to completion. Rescue-Grid supplies one Task (SARGame) whose trials stream to their own LSL outlet.\n\nYour sensor could be the next one registered.\n\n\nclass SARGame(Task):\n    def get_data_signature(self):\n        return {\n            \"name\": \"SARGame\",\n            \"type\": \"GameState\",\n            \"channel_format\": \"string\",\n            \"source_id\": \"rescue-grid-sar-game\",\n        }\n\nclass SARGameTrial(LSLTrial):\n    def read_data(self):\n        state = {**self.gui.user.obs,\n                  \"action\": self.gui.user.last_action,\n                  \"reward\": self.gui.user.last_reward}\n        return [ujson.dumps(state)]"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#use-it-in-your-study",
+    "href": "physio-workshop/case-study.html#use-it-in-your-study",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Use It In Your Study",
+    "text": "Use It In Your Study\n\n\n\nTwo entry points, depending on how deep you want to go.\n\nJust the environment — for a scripted study or RL training, no ixp required.\nFull experiment — wire in your own sensor (EEG, GSR, whatever you’re measuring) exactly the way Tobii is wired in today.\n\n# (a) minimal — no ixp, just Gymnasium\nfrom game.sar.env import build_sar_env\n\nenv = build_sar_env(num_rows=3, num_cols=3)\nobs, info = env.reset()\n# plug in your own policy or logging here\n\n# (b) full ixp experiment\nfrom ixp.experiment import Experiment\nfrom experiment.game import SARGame\n\nexperiment = Experiment(config)\nexperiment.register_sensor(\n    \"MyEEG\", sensor_cls=MyEEGSensor, sensor_config={}\n)\nexperiment.add_task(\n    name=\"main_game\", task_cls=SARGame,\n    task_config={\"config\": config[\"game\"]}, order=1,\n)\nexperiment.run()"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#it-already-produced-a-paper",
+    "href": "physio-workshop/case-study.html#it-already-produced-a-paper",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "It Already Produced a Paper",
+    "text": "It Already Produced a Paper\n\n\n\nLLM guidance changed where people looked — not just how well they did.\n\n\nNo performance gain — victims rescued per step didn’t budge\nAttention shifted to the chat panel — an attention-guidance trade-off\nGaze narrowed too: shorter saccades, more localized, text-driven looking\n\n\nIEEE SMC 2026 — Oveisi & Manjunatha"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#come-find-us-at-neuroergonomics",
+    "href": "physio-workshop/case-study.html#come-find-us-at-neuroergonomics",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "Come Find Us at NeuroErgonomics",
+    "text": "Come Find Us at NeuroErgonomics\n\nSame platform, a different question — see you at the session.\n\n\nWednesday, July 15 — Sessions 4–6\nSession 6: Human–Robot & Human–AI Teaming (Chair: Alexander von Lühmann)\nLLM-Mediated Communication in Human–AI Teaming: A Physiological Monitoring Study for Search and Rescue"
+  },
+  {
+    "objectID": "physio-workshop/case-study.html#section",
+    "href": "physio-workshop/case-study.html#section",
+    "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
+    "section": "",
+    "text": "Fork It. Build Your Study.\n\n\ngithub.com/iHuman-Lab/rescue-grid\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "iHuman Lab Presentations",
+    "section": "",
+    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSHASTA Tutorial Simulating Human-Swarm Teaming on Real City Maps\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHASTA: install it, run a human-swarm mission in the GUI, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#who-are-we",
+    "href": "discovery-day/discovery-day.html#who-are-we",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Who Are We?",
+    "text": "Who Are We?\n\n\n\nWe build technology that understands you.\n\nNot just your commands — your attention, your stress, even your mistakes before they happen.\n\nBrain · AI · Robotics — working together.\n\n\n\n\n10+\n\n\nResearchers\n\n\n\n\n30+\n\n\nPublications\n\n\n\n\n4\n\n\nResearch Areas\n\n\n\n\n6+\n\n\nActive Projects"
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#what-if-a-robot-could-read-your-mind",
+    "href": "discovery-day/discovery-day.html#what-if-a-robot-could-read-your-mind",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "What If a Robot Could Read Your Mind?",
+    "text": "What If a Robot Could Read Your Mind?\n\n\n\nA headset — but instead of music, it reads your brainwaves.\n\n\nStressed? → Robot slows down.\nOverwhelmed? → Robot takes over.\nZoning out? → Robot asks for attention.\n\n\nThe robot adapts to you. Not the other way around."
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#what-do-your-eyes-reveal",
+    "href": "discovery-day/discovery-day.html#what-do-your-eyes-reveal",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "What Do Your Eyes Reveal?",
+    "text": "What Do Your Eyes Reveal?\n\n\n\nIn 200 milliseconds, your eyes reveal exactly what you’re thinking.\n\nExperts see differently — a surgeon’s gaze, a pilot’s scan, a drone operator’s focus.\nWe recorded those eye movements and trained AI to copy them exactly.\n\nNow the AI sees like the best human in the room."
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#could-you-control-50-drones-at-once",
+    "href": "discovery-day/discovery-day.html#could-you-control-50-drones-at-once",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Could You Control 50 Drones at Once?",
+    "text": "Could You Control 50 Drones at Once?\n\n\n\nDisaster strikes. One person. 50 drones. No room for error.\n\nWhat happens to your brain under that pressure?\nWe track brain signals in real time to find out — and build AI that steps in before you hit your limit.\n\nBecause in a rescue mission, hesitation costs lives."
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#could-you-control-a-robot-on-the-moon",
+    "href": "discovery-day/discovery-day.html#could-you-control-a-robot-on-the-moon",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Could You Control a Robot on the Moon?",
+    "text": "Could You Control a Robot on the Moon?\n\n\n\nYour signal takes 1.3 seconds to reach the Moon.\n\nThat’s 1.3 seconds your robot is completely on its own.\nWe build robots smart enough to survive that gap — and study how humans stay in control when the stakes are this high.\n\nYou on Earth. Robot on the Moon. One team."
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#real-impact",
+    "href": "discovery-day/discovery-day.html#real-impact",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Real Impact",
+    "text": "Real Impact\n\n\n\n\n\n\n\n\nSearch & Rescue\n\n\nFind survivors faster when every second counts\n\n\n\n\n\n\n\n\n\n\nManufacturing\n\n\nRobots that work with you, not instead of you\n\n\n\n\n\n\n\n\n\n\nAviation Safety\n\n\nAI that learns from decades of accident reports\n\n\n\n\n\n\n\n\n\n\nHealthcare\n\n\nTech that adapts to patients, not the other way around\n\n\n\n\n\nSmarter Machines·Safer Humans·Better World"
+  },
+  {
+    "objectID": "discovery-day/discovery-day.html#section",
+    "href": "discovery-day/discovery-day.html#section",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "",
+    "text": "This Could Be You\n\n\nEvery researcher in this lab was once sitting where you are. If any of this sparked something — come talk to us.\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#about-me",
+    "href": "physio-workshop/foundations.html#about-me",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "About Me",
+    "text": "About Me\n\n\nElahe Oveisi PhD Student, Aerospace and Mechanical Engineering Oklahoma State University\n\nBackground in human factors and ergonomics\nResearch focus: human–AI interaction, aviation safety, and safety-critical decision support\nCurrent work examines how AI can support, but not replace, human judgment in complex systems"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#agenda",
+    "href": "physio-workshop/foundations.html#agenda",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nFoundation of Human-Machine Interaction\n\n\nDiscussion\n\n\nCase Study\n\n\nDiscussion"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#human-machine-teaming",
+    "href": "physio-workshop/foundations.html#human-machine-teaming",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Human-Machine Teaming",
+    "text": "Human-Machine Teaming\n\nNot every machine collaborator is an AI — and not every AI is a teammate.\n\n\nHuman–machine teaming is a broad term: teamwork between humans and any type of machine, including mechanical systems, automated systems, or intelligent systems\nHuman–AI teaming is a more specific form of human–machine teaming: it focuses on collaboration with AI systems that can perceive information, reason, adapt, and communicate"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#what-is-humanai-teaming",
+    "href": "physio-workshop/foundations.html#what-is-humanai-teaming",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "What is Human–AI Teaming?",
+    "text": "What is Human–AI Teaming?\nOne or more humans and one or more AI agents working toward a shared goal, each with their own roles, coordinating like teammates.\n\n\n\nAI as a Teammate\n\n\nActs with initiative; shares the thinking. Communicates, explains, adapts to context. Coordinates with humans toward a shared goal.\n\n\n\n\nAI as a Tool\n\n\nFixed function (calculator, autopilot mode). Human monitors and supervises it."
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#why-human-ai-teaming-is-important",
+    "href": "physio-workshop/foundations.html#why-human-ai-teaming-is-important",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Why Human-AI Teaming is Important?",
+    "text": "Why Human-AI Teaming is Important?\n\n\n\nAviation\n\n\nMonitor flight systems + AI decision aids\n\n\n\n\nHealthcare\n\n\nDiagnostic AI; alarm management\n\n\n\n\nDriving\n\n\nAutomated driving\n\n\n\n\nSearch & Rescue\n\n\nOperators + autonomous drones and robots\n\n\n\n\nDefense — AI quickly checks sensor data and highlights problems."
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#efficient-human-ai-teaming",
+    "href": "physio-workshop/foundations.html#efficient-human-ai-teaming",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Efficient Human-AI Teaming",
+    "text": "Efficient Human-AI Teaming\n\n\n\nSituational Awareness\n\n\nDoes the human still understand what is happening, and what happens next?\n\n\n\n\nMental Workload\n\n\nIs the human’s cognitive demand in the productive zone — not overloaded, not disengaged?\n\n\n\n\nTrust — does the human rely on the AI the right amount? No blind faith, no needless rejection."
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#situational-awareness",
+    "href": "physio-workshop/foundations.html#situational-awareness",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Situational Awareness",
+    "text": "Situational Awareness\n\n\nPerceiveNotice the relevant elements: where are the drones?\n\n\n▼\n\n\nComprehendUnderstand what those elements mean for the mission right now\n\n\n▼\n\n\nProjectAnticipate what happens next: where will the target be in two minutes?\n\n\n\nWhen AI performs more of the work, humans can become “out of the loop” — reducing situational awareness and making it harder to detect errors or take over when needed."
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#trust",
+    "href": "physio-workshop/foundations.html#trust",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Trust",
+    "text": "Trust\n\n\n\nUnder Trust\n\n\nIgnoring good recommendations — rejecting accurate advice, doing everything manually\n\n\n\n\nOver Trust\n\n\nBlind reliance on AI — accepting AI output without checking\n\n\n\n\nOptimized trust matches the AI’s true reliability — rely on it where it’s strong, verify where it is weak."
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#mental-workload",
+    "href": "physio-workshop/foundations.html#mental-workload",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Mental Workload",
+    "text": "Mental Workload\n\n\nDemand vs. capacity\n\nToo high → errors, tunnel vision, missed alarms\nToo low → boredom, disengagement\nAI teammates should keep humans in the productive middle, reducing the work without pushing them out of the loop\n\n\nNASA-TLX: the classic measure\n\nMental demand\nPhysical demand\nTemporal demand\nPerformance\nEffort\nFrustration"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#measuring-human-ai-teaming-components",
+    "href": "physio-workshop/foundations.html#measuring-human-ai-teaming-components",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Measuring Human-AI Teaming Components",
+    "text": "Measuring Human-AI Teaming Components\n\n\n\n\n\n\n\n\nScale\nMeasures\nDescription\n\n\n\n\nNASA-TLX\nWorkload\nSix-dimension rating after the task (mental, physical, temporal demand; performance, effort, frustration)\n\n\nSART / SAGAT\nSituational Awareness\nSART: self-rated awareness. SAGAT: freeze the simulation and quiz the operator\n\n\nTrust in Automation Scale\nTrust\n12-item Trust in Automation Scale (TIAS)\n\n\nPerformance\nBehavior\nMission success, errors, response time; acceptance of AI suggestions, verification rate"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#physiological-measurements",
+    "href": "physio-workshop/foundations.html#physiological-measurements",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Physiological Measurements",
+    "text": "Physiological Measurements\n\n\nEye Tracking\n\nFixations & dwell time: what is being attended, for how long\nScan patterns: is monitoring systematic or chaotic?\nPupil size also tracks cognitive load\n\n\nEEG\n\nElectrodes on the scalp record electrical brain activity in real time\nMental workload and engagement\nMillisecond resolution, but noisy; needs careful cleaning"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#questions",
+    "href": "physio-workshop/foundations.html#questions",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Questions",
+    "text": "Questions\n\n\n\nCurrent Challenges\n\n\nBiggest challenges in human–AI teaming? Which are overlooked? Which is hardest to solve? Which should researchers study first?\n\n\n\n\nAI Design\n\n\nWhat makes AI a good teammate? What capabilities are missing? How should AI communicate? How much autonomy should AI have?\n\n\n\n\nFuture Research\n\n\nBiggest research gaps? Most promising technologies? What studies are still needed? What should researchers focus on next?\n\n\n\n\nEvaluation\n\n\nHow should human–AI teaming be evaluated? Objective vs. subjective measures? What outcomes are often missed?\n\n\n\n\nHuman Factors — which of workload, trust, and situational awareness matter most, are hardest to measure, or are most often ignored?"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#human-ai-case-study",
+    "href": "physio-workshop/foundations.html#human-ai-case-study",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Human-AI Case Study",
+    "text": "Human-AI Case Study\n\n\nRescue-Grid: An Open Platform for Human-Machine Teaming"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#questions-second-round",
+    "href": "physio-workshop/foundations.html#questions-second-round",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "Questions (Second Round)",
+    "text": "Questions (Second Round)\n\n\n\nFuture AI Teammates\n\n\nWhat should future AI teammates do? What tasks are best for AI vs. humans? What makes an ideal human–AI team?\n\n\n\n\nAdaptive AI\n\n\nWhat should AI adapt to? When should it provide more or less help? Should AI adapt differently for different users?\n\n\n\n\nTrust\n\n\nWhich factors influence trust the most? How is appropriate trust developed, maintained, and measured?\n\n\n\n\nEvaluation\n\n\nHow do we know AI improves teamwork? Are current evaluation methods enough? What is missing from today’s studies?\n\n\n\n\nFuture Research — what questions still need answers, and what challenges must be overcome before AI teammates can be widely used?"
+  },
+  {
+    "objectID": "physio-workshop/foundations.html#section",
+    "href": "physio-workshop/foundations.html#section",
+    "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
+    "section": "",
+    "text": "Thanks!\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
+  }
+]
