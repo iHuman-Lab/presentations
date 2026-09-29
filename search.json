@@ -11,42 +11,21 @@
     "href": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "What This Tutorial Covers",
-    "text": "What This Tutorial Covers\n\nBy the end, you’ll have run a real swarm mission and written your own SHaSTA experiment.\n\n\n\nPart 1 — Why SHaSTA what it simulates, and why\n\n\n↓\n\n\nPart 2 — Install SHaSTA from a clean checkout to your first mission\n\n\n↓\n\n\nPart 3 — Experience a mission no code — just the GUI\n\n\n↓\n\n\nPart 4 — Configure & extend the Python API, and your own experiment"
+    "text": "What This Tutorial Covers\n\nYou will put a person in front of a swarm, record them on one clock, and swap in your own pieces.\n\n\n\nPart 1 — Why human–swarm interaction what to study, and what to measure\n\n\n↓\n\n\nPart 2 — Install SHaSTA from a clean checkout to a first mission\n\n\n↓\n\n\nPart 3 — Put a human in the loop the built-in interface, or your own\n\n\n↓\n\n\nPart 4 — Measure the human, then extend LSL, and your own experiment"
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#the-question",
     "href": "shasta-tutorial/shasta-tutorial.html#the-question",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "The Question",
-    "text": "The Question\n\nHow should a human coordinate a team of autonomous vehicles they can’t fully see or predict?\n\nThat’s the human–swarm teaming question, and it shows up everywhere from disaster response to warehouse logistics to military reconnaissance. Answering it experimentally needs a testbed where three things are all changeable by the researcher, not fixed by the platform:\n\n\nThe World A real place, not an abstract grid — because how a human reads a street or a building matters to how they command a swarm in it.\n\n\nThe Swarm How many vehicles, what kind, how they’re organized — a formation of four drones is a different teaming problem than one of forty.\n\n\nThe Interface What the human sees and how they issue orders — a map click, a voice command, and a joystick each change what “teaming” means.\n\n\n\nSHaSTA is that testbed — and every one of those three is a config change, not a rewrite."
+    "text": "The Question\n\nHow should a person supervise a team of autonomous vehicles they can’t fully see or predict?\n\nHuman–swarm teams are used in disaster response, logistics and defence. What makes them hard to study is the person: too many vehicles overload them, they step in too much or too little, and they trust the swarm too much or too little. A useful testbed has to change four things, and measure the human.\n\n\nInterface How the person sees the swarm and gives orders: maps, communication, even VR.\n\n\nAI Learning agents that can command the swarm or advise the person: reinforcement and imitation learning.\n\n\nHuman factors What the person’s body and behaviour reveal: physiological sensing such as EEG and eye tracking.\n\n\nSwarm The vehicles and their behaviours: formations, path planning, composable primitives.\n\n\n\nSHaSTA is a testbed built around those four, with the human at the centre."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
     "href": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "What Is SHaSTA",
-    "text": "What Is SHaSTA\nSimulator for Human and Swarm Team Applications (Manjunatha et al., 2024) — a pybullet-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.\n\n\nReal Maps Any place on Earth you can draw a bounding box around becomes a simulator map — real streets, real buildings.\n\n\nTwo Vehicle Types UAVs (aerial, blue) and UGVs (ground, red) move in formation along the street network.\n\n\nThree Ways to Command A human via the GUI, a scripted policy, or a reinforcement-learning agent — same Gymnasium interface underneath.\n\n\nReal Physics Vehicles move through an actual pybullet physics simulation, not a grid-world abstraction — collisions, formation spacing, and 3D altitude are all real."
-  },
-  {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#how-it-fits-together",
-    "href": "shasta-tutorial/shasta-tutorial.html#how-it-fits-together",
-    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "How It Fits Together",
-    "text": "How It Fits Together\n\n\n\nOPENSTREETMAPshasta fetch-osm\nA bounding box (south, west, north, east) around any real place — a campus, a neighborhood, a city block.\n\n\n\nbecomes\n\n\n\nOSM2WORLDshasta build-map\nA custom tool turns the map into a 3D mesh and a street graph, fitting an affine transform so streets, buildings and vehicles all line up.\n\n\n\nloads into\n\n\n\nPYBULLET WORLD\nThe mesh loads directly — no Blender step needed. UAV and UGV groups spawn on it and move via physics constraints.\n\n\n\ndrives\n\n\n\nGYMNASIUM ENV\nenv.step({group_id: target_node}) is the one call that drives everything above it, whether the caller is a human, a script, or an RL agent.\n\n\n\n\nEvery layer here is something a researcher can swap — a different city, a different vehicle mix, a different policy — without touching the layers above it."
-  },
-  {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#section",
-    "href": "shasta-tutorial/shasta-tutorial.html#section",
-    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "",
-    "text": "One real place — buildings and streets pulled straight from OpenStreetMap. This is Buffalo, NY; the same pipeline works for any city."
-  },
-  {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#the-teaming-loop",
-    "href": "shasta-tutorial/shasta-tutorial.html#the-teaming-loop",
-    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "The Teaming Loop",
-    "text": "The Teaming Loop\n\n\n1Order\nA human, a scripted policy, or an RL agent picks a group and a target node.\n\n\n2Plan\nPathPlanning finds a route for that group along the real street graph.\n\n\n3Execute\nFormation flies or drives the group along the route, one tick at a time.\n\n\n4Observe\nPositions, battery, ammo, and mission progress come back as the observation.\n\n\n\nEvery mission is one pass through this loop, over and over — and “Execute” is where a formation strategy, a communication delay, or a failure model gets injected."
+    "text": "What Is SHaSTA\nSimulator for Human and Swarm Team Applications (Manjunatha et al., 2024), a pybullet-based simulator for studying how people command and work with swarms. Four components:\n\n\nSHaSTA core The swarm simulation: pybullet physics on real OpenStreetMap city maps, UAV and UGV groups, formation and path planning.\n\n\nHuman interface Shows the swarm state and sends the operator’s commands to the core.\n\n\nData recording and sync Lab Streaming Layer time-stamps the operator’s inputs and mission events.\n\n\nPhysiological recording EEG, eye tracking and other sensors, streamed onto the same clock.\n\n\nEvery mission runs the same loop, and each step can be logged:\n\n\n1Observe\nThe operator sees positions, battery, ammo and mission progress.\n\n\n2Decide\nThey choose which group goes where.\n\n\n3Command\nSwarmCommander turns the order into a route on the street graph.\n\n\n4Execute\nFormation moves the group along the route, and the state changes.\n\n\n\nThe paper describes all four components. Today’s ihuman-shasta ships the core and the human interface; Part 4 adds the LSL layer around it."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#install-shasta",
@@ -56,32 +35,39 @@
     "text": "Install SHaSTA\ngit clone &lt;the shasta-ub repository&gt;\ncd shasta-ub\npython -m venv .venv && source .venv/bin/activate\npip install -e \".[gui]\"     # [gui] adds `shasta gui`; Python 3.9 or newer\nThen verify:\nshasta maps      # list the maps available\nshasta demo      # headless: prints swarm progress, no window\n\nshasta maps should list city names such as buffalo-small, buffalo-medium, chicago, new-york. shasta demo should end with “All groups reached their targets after 1174 steps.” Then the install is good, no 3D window needed yet. Verified from a fresh checkout on Python 3.10.\n\n\nNot on PyPI yet pip install \"ihuman-shasta[gui]\" fails with “No matching distribution found.” Install from a clone as above. Check PyPI again before your own session; this may already be fixed."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#open-the-gui",
-    "href": "shasta-tutorial/shasta-tutorial.html#open-the-gui",
+    "objectID": "shasta-tutorial/shasta-tutorial.html#open-the-interface",
+    "href": "shasta-tutorial/shasta-tutorial.html#open-the-interface",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "Open the GUI",
-    "text": "Open the GUI\nshasta gui\n\nYou should see a top-down map open, with your swarm groups on it (blue UAVs, red UGVs) and mission targets marked — no code needed for this part.\n\n\nA real headless render of the same world the GUI shows — buildings and roads from the map mesh, with a UAV group (blue) and UGV group visible near the center-left."
+    "section": "Open the Interface",
+    "text": "Open the Interface\n\n\n\n\nshasta gui\n\nWhat you are looking at\n\nThe map: blue UAVs, red UGVs, yellow targets\n\n\nThe side panel: mission progress and the selected group’s status\n\n\nThe event log: every order and arrival"
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#the-controls",
     "href": "shasta-tutorial/shasta-tutorial.html#the-controls",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "The Controls",
-    "text": "The Controls\n\n\nclick or 1–9 Pick a group — click its marker, click its button, or press its number\n\n\nclick Pick a target — click near a street node; a white cross marks it\n\n\nEnter Send the group — or the Send order button, or double-click the node\n\n\nSpace Pause / resume\n\n\n- + Slow down / speed up\n\n\nR Reset the view mouse wheel zooms, right-drag pans\n\n\nV 3D camera view, follows the selected group\n\n\nSend ALL groups and Cancel order are buttons in the side panel, not keys — for when you want everyone moving at once, or to call off an order mid-flight."
+    "text": "The Controls\n\n\nclick or 1–9 Pick a group — click its marker, or press its number\n\n\nclick Pick a target — click near a street node; a white cross marks it\n\n\nEnter Send the group — or the Send order button, or double-click the node\n\n\nSpace Pause / resume\n\n\n- + Slow down / speed up\n\n\nV 3D camera view, follows the selected group\n\n\npanel Send ALL groups and Cancel order are buttons in the side panel\n\n\nOptions for your study: --uav-groups / --ugv-groups set how many vehicles the operator supervises, --targets / --time-limit set difficulty and time pressure, and --seed gives the same targets every run so trials are comparable."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#what-the-side-panel-shows",
-    "href": "shasta-tutorial/shasta-tutorial.html#what-the-side-panel-shows",
+    "objectID": "shasta-tutorial/shasta-tutorial.html#one-seam-swarmcommander",
+    "href": "shasta-tutorial/shasta-tutorial.html#one-seam-swarmcommander",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "What the Side Panel Shows",
-    "text": "What the Side Panel Shows\n\n\n\nWhile a mission is running\n\nMission progress — how many groups have reached their targets so far\n\n\nThe selected group’s battery, ammo, distance to target, and ETA\n\n\nAn event log — orders sent, targets reached, groups arrived\n\n\n\n\nOptions worth trying\n\n--map — pick a different city (shasta maps lists them)\n\n\n--uav-groups / --ugv-groups — change the swarm composition\n\n\n--seed — reproduce the exact same mission again\n\n\n\n\nTry it now: pick a group, click a target near a street, press Enter."
+    "section": "One Seam: SwarmCommander",
+    "text": "One Seam: SwarmCommander\nThe interface is a thin window on SwarmCommander, which has no display dependency. Anything that can call it can be the human:\n\n\nBuilt-in interface the window you just saw\n\n\nScripted operator a policy that plays the human\n\n\nAI advisor suggests or issues orders\n\n\nYour interface a web page, joystick, VR\n\n\nfrom shasta.interaction import Mission, SwarmCommander\n\ncommander = SwarmCommander(env, Mission.random(env.core.get_map(), 2, seed=0))\ncommander.send(0, commander.mission.targets[0])   # the human's orders\ncommander.send(1, commander.mission.targets[1])\nwhile not commander.mission.is_over(commander.step_count):\n    commander.update()                            # advance one tick\nprint(commander.events)                           # what happened, and when\n\nVerified in this tutorial — labs/human_loop.py runs this with no interface and no window. Set headless=False in load_config to watch it in the pybullet 3D window."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#drive-it-from-python",
-    "href": "shasta-tutorial/shasta-tutorial.html#drive-it-from-python",
+    "objectID": "shasta-tutorial/shasta-tutorial.html#why-lsl",
+    "href": "shasta-tutorial/shasta-tutorial.html#why-lsl",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "Drive It From Python",
-    "text": "Drive It From Python\nNo window needed — the same simulation, scripted:\nfrom shasta.actors import UAV, UGV\nfrom shasta.config import load_config\nfrom shasta.env import ShastaEnv\nfrom shasta.experiments import GoToNodeExperiment\n\nconfig = load_config(headless=True)\nconfig['experiment']['type'] = GoToNodeExperiment\n\ngroups = {0: [UAV() for _ in range(4)],   # group 0: four drones\n          1: [UGV() for _ in range(3)]}   # group 1: three ground vehicles\n\nenv = ShastaEnv(config, groups)\nobs, info = env.reset()\n\nobs, reward, terminated, truncated, info = env.step({0: 5, 1: 5})\nwhile not terminated:\n    obs, reward, terminated, truncated, info = env.step(None)\nenv.close()\n\nVerified in this tutorial — this exact snippet runs end to end. obs[0].shape is (4, 3): four UAVs, an (x, y, z) position each."
+    "section": "Why LSL",
+    "text": "Why LSL\nLab Streaming Layer is the open-source standard for synchronising data from many devices and programs. SHaSTA’s paper builds its data recording on it.\n\n\nOne stream per source Each device or program publishes a stream: EEG, an eye tracker, event markers.\n\n\nOne clock Every sample is time-stamped on a shared clock, so streams line up without extra cleaning.\n\n\nOne recording A recorder such as LabRecorder saves every stream together for analysis.\n\n\nIn the paper’s study, 20 participants commanded 3 UAV and 3 UGV platoons while EEG, eye tracking and game events were recorded through LSL. A session looks like this:\n\n\n1Start streams\nStart each device’s LSL stream.\n\n\n2Run\nRun the scenario: the interface, or your own operator.\n\n\n3Record\nRecord every stream in one file, then analyse."
+  },
+  {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#log-the-operator-see-it-on-the-clock",
+    "href": "shasta-tutorial/shasta-tutorial.html#log-the-operator-see-it-on-the-clock",
+    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
+    "section": "Log the Operator, See It on the Clock",
+    "text": "Log the Operator, See It on the Clock\nfrom pylsl import StreamInfo, StreamOutlet\ninfo = StreamInfo(\"ShastaEvents\", \"Markers\", 1, 0, \"string\", \"shasta-demo\")\noutlet = StreamOutlet(info)          # any LSL recorder on the network can see it\n\nsent = 0\ndef flush_events():                  # call after every commander.update()\n    global sent\n    for _, text in commander.events[sent:]:\n        outlet.push_sample([text])   # time-stamped on LSL's clock\n    sent = len(commander.events)\n# what a recorder receives\n  LSL time (s)  event\n   1584705.990  Group 0 ordered to node 78\n   1584706.233  Target 78 reached by group 0\n   1584706.544  Mission complete in 1410 steps\n\nNot in ihuman-shasta yet — the paper’s pattern around SwarmCommander. Tested script: labs/lsl_markers.py."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
@@ -95,18 +81,11 @@
     "href": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "Build Your Own Experiment",
-    "text": "Build Your Own Experiment\nSubclass shasta.base_experiment.BaseExperiment and implement four methods:\nclass FlyNorthExperiment(BaseExperiment):\n    def get_action_space(self): ...       # a gymnasium.spaces object\n    def get_observation_space(self): ...  # likewise\n    def apply_actions(self, actions, core): ...   # move things\n    def get_observation(self, observation, core): ...  # shape the obs\n    def get_done_status(self, observation, core): ...  # when to stop\n    def compute_reward(self, observation, core): ...   # optional\nSee labs/custom_experiment.py for a complete, tested 70-line version — every actor in every group flies north for 300 steps, nothing more."
+    "text": "Build Your Own Experiment\nSubclass shasta.base_experiment.BaseExperiment and implement the methods:\nclass FlyNorthExperiment(BaseExperiment):\n    def get_action_space(self): ...       # a gymnasium.spaces object\n    def get_observation_space(self): ...  # likewise\n    def apply_actions(self, actions, core): ...   # move things\n    def get_observation(self, observation, core): ...  # shape the obs\n    def get_done_status(self, observation, core): ...  # when to stop\n    def compute_reward(self, observation, core): ...   # optional\nWhere to start:\n\n\nScripted operator labs/human_loop.py\n\n\nLSL markers labs/lsl_markers.py\n\n\nSmallest experiment labs/custom_experiment.py\n\n\nHuman-facing layer shasta/interaction.py\n\n\nA map of your own study site: shasta fetch-osm + shasta build-map (needs Java; not exercised here — see the main README.md)."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#the-path-from-here",
-    "href": "shasta-tutorial/shasta-tutorial.html#the-path-from-here",
-    "title": "SHaSTASimulator for Human And SwarmTeam Applications",
-    "section": "The Path from Here",
-    "text": "The Path from Here\n\n\nlabs/play.py — the mission from Part Two, with an EDIT ME block (map, group sizes, target)\n\n\nlabs/custom_experiment.py — the minimal BaseExperiment subclass\n\n\nshasta/experiments.py — GoToNodeExperiment, the real one, ~40 lines\n\n\nshasta/primitives.py — reusable behaviors: Formation, PathPlanning\n\n\nBuilding a map of your own campus or study site: shasta fetch-osm + shasta build-map (needs Java; not exercised in this tutorial — see the main README.md)."
-  },
-  {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#section-1",
-    "href": "shasta-tutorial/shasta-tutorial.html#section-1",
+    "objectID": "shasta-tutorial/shasta-tutorial.html#section",
+    "href": "shasta-tutorial/shasta-tutorial.html#section",
     "title": "SHaSTASimulator for Human And SwarmTeam Applications",
     "section": "",
     "text": "Thanks!\n\n\nQuestions? See the SHaSTA repository README.\n\n\nyour.name@okstate.edu"
@@ -256,7 +235,7 @@
     "href": "index.html",
     "title": "iHuman Lab Presentations",
     "section": "",
-    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMOSAIC Modular System for Adaptive Human–AI Collaboration\n\n\n\n\nBennett Kwaku Dogbey · Elahe Oveisi · Hemanth Manjunatha\n\n\nA hands-on introduction to MOSAIC: install it, play a search-and-rescue mission, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA: install it, run a human-swarm mission in the GUI, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
+    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMOSAIC Modular System for Adaptive Human–AI Collaboration\n\n\n\n\nBennett Kwaku Dogbey · Elahe Oveisi · Hemanth Manjunatha\n\n\nA hands-on introduction to MOSAIC: install it, play a search-and-rescue mission, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nHemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA for human–swarm interaction research: put a human in the loop, log what they do with LSL, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
   },
   {
     "objectID": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",

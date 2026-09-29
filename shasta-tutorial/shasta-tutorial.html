@@ -103,7 +103,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1dccb8c5d9c265a44e666f59dc9d3353.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f46adbc642645e00abded2256683bcf1.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -202,7 +202,7 @@
 
 <section id="title-slide" data-background-color="#252525" data-background-image="assets/world-angled.png" data-background-opacity="0.35" class="quarto-title-block center">
   <h1 class="title">SHaSTA<span class="title-fullname">Simulator for Human And Swarm<br><span class="accent">Team Applications</span></span></h1>
-  <p class="subtitle"><span class="title-tagline">A hands-on tutorial: simulating human–swarm teaming on real city maps</span></p>
+  <p class="subtitle"><span class="title-tagline">A hands-on tutorial: putting a human in the loop with a swarm</span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -247,158 +247,112 @@ Hemanth Manjunatha
 <section id="what-this-tutorial-covers" class="slide level2">
 <h2>What This Tutorial <span class="accent">Covers</span></h2>
 <div class="hook">
-<p>By the end, you’ll have run a real swarm mission and written your own SHaSTA experiment.</p>
+<p>You will put a person in front of a swarm, record them on one clock, and swap in your own pieces.</p>
 </div>
 <div class="flow-diagram compact">
 <div class="flow-step">
-<p><strong>Part 1 — Why SHaSTA</strong> what it simulates, and why</p>
+<p><strong>Part 1 — Why human–swarm interaction</strong> what to study, and what to measure</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 2 — Install SHaSTA</strong> from a clean checkout to your first mission</p>
+<p><strong>Part 2 — Install SHaSTA</strong> from a clean checkout to a first mission</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 3 — Experience a mission</strong> no code — just the GUI</p>
+<p><strong>Part 3 — Put a human in the loop</strong> the built-in interface, or your own</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 4 — Configure &amp; extend</strong> the Python API, and your own experiment</p>
+<p><strong>Part 4 — Measure the human, then extend</strong> LSL, and your own experiment</p>
 </div>
 </div>
 </section>
 <section class="slide level2">
 
 <div class="divider">
-<p><span class="divider-kicker">Part One</span> <span class="divider-title">Why SHaSTA</span> <span class="divider-subtitle">what it simulates, and why</span> <span class="divider-path">OSM maps → pybullet world → swarms → a Gymnasium interface</span></p>
+<p><span class="divider-kicker">Part One</span> <span class="divider-title">Why Human–Swarm Interaction</span> <span class="divider-subtitle">the question, and what you need to study it</span> <span class="divider-path">operator → swarm → measurement</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop here">Why SHaSTA</span> <span class="stop">Install SHaSTA</span> <span class="stop">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
+<p><span class="stop here">Why Human–Swarm</span> <span class="stop">Install SHaSTA</span> <span class="stop">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
 </div>
 </section>
 <section id="the-question" class="slide level2">
 <h2>The <span class="accent">Question</span></h2>
 <div class="hook">
-<p>How should a human coordinate a team of autonomous vehicles they can’t fully see or predict?</p>
+<p>How should a person supervise a team of autonomous vehicles they can’t fully see or predict?</p>
 </div>
-<p>That’s the human–swarm teaming question, and it shows up everywhere from disaster response to warehouse logistics to military reconnaissance. Answering it experimentally needs a testbed where three things are all changeable by the researcher, not fixed by the platform:</p>
-<div class="cards">
+<p>Human–swarm teams are used in disaster response, logistics and defence. What makes them hard to study is the person: too many vehicles overload them, they step in too much or too little, and they trust the swarm too much or too little. A useful testbed has to change four things, and measure the human.</p>
+<div class="cards cols-4">
 <div class="card">
-<p><span class="card-title">The World</span> A real place, not an abstract grid — because how a human reads a street or a building matters to how they command a swarm in it.</p>
-</div>
-<div class="card">
-<p><span class="card-title">The Swarm</span> How many vehicles, what kind, how they’re organized — a formation of four drones is a different teaming problem than one of forty.</p>
+<p><span class="card-title">Interface</span> How the person sees the swarm and gives orders: maps, communication, even VR.</p>
 </div>
 <div class="card">
-<p><span class="card-title">The Interface</span> What the human sees and how they issue orders — a map click, a voice command, and a joystick each change what “teaming” means.</p>
+<p><span class="card-title">AI</span> Learning agents that can command the swarm or advise the person: reinforcement and imitation learning.</p>
+</div>
+<div class="card">
+<p><span class="card-title">Human factors</span> What the person’s body and behaviour reveal: physiological sensing such as EEG and eye tracking.</p>
+</div>
+<div class="card secondary">
+<p><span class="card-title">Swarm</span> The vehicles and their behaviours: formations, path planning, composable primitives.</p>
 </div>
 </div>
 <div class="punchline">
-<p>SHaSTA is that testbed — and every one of those three is a config change, not a rewrite.</p>
+<p>SHaSTA is a testbed built around those four, with the human at the centre.</p>
 </div>
 </section>
 <section id="what-is-shasta" class="slide level2">
 <h2>What Is <span class="accent">SHaSTA</span></h2>
-<p><strong>S</strong>imulator for <strong>H</strong>uman <strong>a</strong>nd <strong>S</strong>warm <strong>T</strong>eam <strong>A</strong>pplications (<a href="https://doi.org/10.21203/rs.3.rs-4338790/v1">Manjunatha et al., 2024</a>) — a <a href="https://pybullet.org">pybullet</a>-based simulator for studying human–swarm interaction on real city maps built from OpenStreetMap.</p>
-<div class="cards">
+<p><strong>S</strong>imulator for <strong>H</strong>uman <strong>a</strong>nd <strong>S</strong>warm <strong>T</strong>eam <strong>A</strong>pplications (<a href="https://doi.org/10.21203/rs.3.rs-4338790/v1">Manjunatha et al., 2024</a>), a <a href="https://pybullet.org">pybullet</a>-based simulator for studying how people command and work with swarms. Four components:</p>
+<div class="cards cols-4">
 <div class="card">
-<p><span class="card-title">Real Maps</span> Any place on Earth you can draw a bounding box around becomes a simulator map — real streets, real buildings.</p>
+<p><span class="card-title">SHaSTA core</span> The swarm simulation: pybullet physics on real OpenStreetMap city maps, UAV and UGV groups, formation and path planning.</p>
 </div>
 <div class="card">
-<p><span class="card-title">Two Vehicle Types</span> UAVs (aerial, blue) and UGVs (ground, red) move in formation along the street network.</p>
-</div>
-<div class="card">
-<p><span class="card-title">Three Ways to Command</span> A human via the GUI, a scripted policy, or a reinforcement-learning agent — same Gymnasium interface underneath.</p>
+<p><span class="card-title">Human interface</span> Shows the swarm state and sends the operator’s commands to the core.</p>
 </div>
 <div class="card secondary">
-<p><span class="card-title">Real Physics</span> Vehicles move through an actual <a href="https://pybullet.org">pybullet</a> physics simulation, not a grid-world abstraction — collisions, formation spacing, and 3D altitude are all real.</p>
+<p><span class="card-title">Data recording and sync</span> Lab Streaming Layer time-stamps the operator’s inputs and mission events.</p>
+</div>
+<div class="card secondary">
+<p><span class="card-title">Physiological recording</span> EEG, eye tracking and other sensors, streamed onto the same clock.</p>
 </div>
 </div>
-</section>
-<section id="how-it-fits-together" class="slide level2">
-<h2>How It <span class="accent">Fits Together</span></h2>
-<div class="arch">
-<div class="arch-row">
-<div class="arch-block">
-<p><span class="arch-title">OPENSTREETMAP</span><span class="arch-path"><code>shasta fetch-osm</code></span></p>
-<p>A bounding box (south, west, north, east) around any real place — a campus, a neighborhood, a city block.</p>
-</div>
-</div>
-<div class="arch-link">
-<p>becomes</p>
-</div>
-<div class="arch-row">
-<div class="arch-block">
-<p><span class="arch-title">OSM2WORLD</span><span class="arch-path"><code>shasta build-map</code></span></p>
-<p>A custom tool turns the map into a 3D mesh and a street graph, fitting an affine transform so streets, buildings and vehicles all line up.</p>
-</div>
-</div>
-<div class="arch-link">
-<p>loads into</p>
-</div>
-<div class="arch-row">
-<div class="arch-block">
-<p><span class="arch-title">PYBULLET WORLD</span></p>
-<p>The mesh loads directly — no Blender step needed. UAV and UGV groups spawn on it and move via physics constraints.</p>
-</div>
-</div>
-<div class="arch-link">
-<p>drives</p>
-</div>
-<div class="arch-row">
-<div class="arch-block secondary">
-<p><span class="arch-title">GYMNASIUM ENV</span></p>
-<p><code>env.step({group_id: target_node})</code> is the one call that drives everything above it, whether the caller is a human, a script, or an RL agent.</p>
-</div>
-</div>
-</div>
-<div class="band">
-<p>Every layer here is something a researcher can swap — a different city, a different vehicle mix, a different policy — without touching the layers above it.</p>
-</div>
-</section>
-<section id="section" class="slide level2" data-background-image="assets/world-angled.png" data-background-opacity="0.85">
-<h2></h2>
-<div class="slide-caption">
-<p>One real place — buildings and streets pulled straight from OpenStreetMap. This is Buffalo, NY; the same pipeline works for any city.</p>
-</div>
-</section>
-<section id="the-teaming-loop" class="slide level2">
-<h2>The <span class="accent">Teaming Loop</span></h2>
-<div class="loop-grid cols-4">
+<p>Every mission runs the same loop, and each step can be logged:</p>
+<div class="loop-grid cols-4 short">
 <div class="loop-step">
-<p><span class="loop-number">1</span><span class="loop-title">Order</span></p>
-<p>A human, a scripted policy, or an RL agent picks a group and a target node.</p>
+<p><span class="loop-number">1</span><span class="loop-title">Observe</span></p>
+<p>The operator sees positions, battery, ammo and mission progress.</p>
 </div>
 <div class="loop-step">
-<p><span class="loop-number">2</span><span class="loop-title">Plan</span></p>
-<p><code>PathPlanning</code> finds a route for that group along the real street graph.</p>
+<p><span class="loop-number">2</span><span class="loop-title">Decide</span></p>
+<p>They choose which group goes where.</p>
 </div>
 <div class="loop-step loop-decisive">
-<p><span class="loop-number">3</span><span class="loop-title">Execute</span></p>
-<p><code>Formation</code> flies or drives the group along the route, one tick at a time.</p>
+<p><span class="loop-number">3</span><span class="loop-title">Command</span></p>
+<p><code>SwarmCommander</code> turns the order into a route on the street graph.</p>
 </div>
 <div class="loop-step">
-<p><span class="loop-number">4</span><span class="loop-title">Observe</span></p>
-<p>Positions, battery, ammo, and mission progress come back as the observation.</p>
+<p><span class="loop-number">4</span><span class="loop-title">Execute</span></p>
+<p><code>Formation</code> moves the group along the route, and the state changes.</p>
 </div>
 </div>
 <div class="band">
-<p>Every mission is one pass through this loop, over and over — and “Execute” is where a formation strategy, a communication delay, or a failure model gets injected.</p>
+<p>The paper describes all four components. Today’s <code>ihuman-shasta</code> ships the core and the human interface; Part 4 adds the LSL layer around it.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div class="divider">
-<p><span class="divider-kicker">Part Two</span> <span class="divider-title">Install SHaSTA</span> <span class="divider-subtitle">from a clean checkout to your first mission</span> <span class="divider-path">a clone, a venv, one <code>pip install -e</code>, two checkpoint commands</span></p>
+<p><span class="divider-kicker">Part Two</span> <span class="divider-title">Install SHaSTA</span> <span class="divider-subtitle">from a clean checkout to a first mission</span> <span class="divider-path">clone → pip install -e → shasta demo</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why SHaSTA</span> <span class="stop here">Install SHaSTA</span> <span class="stop">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
+<p><span class="stop">Why Human–Swarm</span> <span class="stop here">Install SHaSTA</span> <span class="stop">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
 </div>
 </section>
 <section id="install-shasta" class="slide level2">
@@ -420,25 +374,38 @@ Hemanth Manjunatha
 <section class="slide level2">
 
 <div class="divider">
-<p><span class="divider-kicker">Part Three</span> <span class="divider-title">Experience a Mission</span> <span class="divider-subtitle">no code — just the GUI</span> <span class="divider-path">open it, pick a group, pick a target, send it</span></p>
+<p><span class="divider-kicker">Part Three</span> <span class="divider-title">Put a Human in the Loop</span> <span class="divider-subtitle">the built-in interface, or your own</span> <span class="divider-path">shasta gui → SwarmCommander → your interface</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why SHaSTA</span> <span class="stop">Install SHaSTA</span> <span class="stop here">Experience a Mission</span> <span class="stop">Configure &amp; Extend</span></p>
+<p><span class="stop">Why Human–Swarm</span> <span class="stop">Install SHaSTA</span> <span class="stop here">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
 </div>
 </section>
-<section id="open-the-gui" class="slide level2">
-<h2>Open the <span class="accent">GUI</span></h2>
+<section id="open-the-interface" class="slide level2">
+<h2>Open the <span class="accent">Interface</span></h2>
+<div class="columns">
+<div class="column" style="width:64%;">
+<p><img data-src="assets/gui.png" alt="The human interface mid-mission: the map with UAV and UGV groups and targets, and the side panel with group status and an event log."></p>
+</div><div class="column" style="width:36%;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-label="1"></a><span class="ex">shasta</span> gui</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="checkpoint">
-<p><strong>You should see</strong> a top-down map open, with your swarm groups on it (blue UAVs, red UGVs) and mission targets marked — no code needed for this part.</p>
+<div class="check-card">
+<p><span class="check-title">What you are looking at</span></p>
+<div class="check-item">
+<p>The map: blue UAVs, red UGVs, yellow targets</p>
 </div>
-
-<img data-src="assets/swarm-topdown.png" style="width:65.0%" class="r-stretch quarto-figure-center"><p class="caption">A real headless render of the same world the GUI shows — buildings and roads from the map mesh, with a UAV group (blue) and UGV group visible near the center-left.</p></section>
+<div class="check-item">
+<p>The side panel: mission progress and the selected group’s status</p>
+</div>
+<div class="check-item">
+<p>The event log: every order and arrival</p>
+</div>
+</div>
+</div></div>
+</section>
 <section id="the-controls" class="slide level2">
 <h2>The <span class="accent">Controls</span></h2>
 <div class="key-grid">
 <div class="key-row">
-<p><span class="keycap wide">click</span> <span class="key-action">or</span> <span class="keycap"><code>1</code>–<code>9</code></span> <span class="key-action">Pick a group — click its marker, click its button, or press its number</span></p>
+<p><span class="keycap wide">click</span> <span class="key-action">or</span> <span class="keycap"><code>1</code>–<code>9</code></span> <span class="key-action">Pick a group — click its marker, or press its number</span></p>
 </div>
 <div class="key-row">
 <p><span class="keycap wide">click</span> <span class="key-action">Pick a target — click near a street node; a white cross marks it</span></p>
@@ -453,80 +420,101 @@ Hemanth Manjunatha
 <p><span class="keycap">-</span> <span class="keycap"><code>+</code></span> <span class="key-action">Slow down / speed up</span></p>
 </div>
 <div class="key-row">
-<p><span class="keycap">R</span> <span class="key-action">Reset the view</span> <span class="key-note">mouse wheel zooms, right-drag pans</span></p>
-</div>
-<div class="key-row">
 <p><span class="keycap">V</span> <span class="key-action">3D camera view, follows the selected group</span></p>
 </div>
+<div class="key-row">
+<p><span class="keycap wide">panel</span> <span class="key-action"><strong>Send ALL groups</strong> and <strong>Cancel order</strong> are buttons in the side panel</span></p>
 </div>
-<p><strong>Send ALL groups</strong> and <strong>Cancel order</strong> are buttons in the side panel, not keys — for when you want everyone moving at once, or to call off an order mid-flight.</p>
+</div>
+<p><strong>Options for your study:</strong> <code>--uav-groups</code> / <code>--ugv-groups</code> set how many vehicles the operator supervises, <code>--targets</code> / <code>--time-limit</code> set difficulty and time pressure, and <code>--seed</code> gives the same targets every run so trials are comparable.</p>
 </section>
-<section id="what-the-side-panel-shows" class="slide level2">
-<h2>What the <span class="accent">Side Panel</span> Shows</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="check-card">
-<p><span class="check-title">While a mission is running</span></p>
-<div class="check-item">
-<p>Mission progress — how many groups have reached their targets so far</p>
+<section id="one-seam-swarmcommander" class="slide level2">
+<h2>One Seam: <span class="accent">SwarmCommander</span></h2>
+<p>The interface is a thin window on <code>SwarmCommander</code>, which has no display dependency. Anything that can call it can be the human:</p>
+<div class="cards cols-4">
+<div class="card">
+<p><span class="card-title">Built-in interface</span> the window you just saw</p>
 </div>
-<div class="check-item">
-<p>The selected group’s battery, ammo, distance to target, and ETA</p>
+<div class="card">
+<p><span class="card-title">Scripted operator</span> a policy that plays the human</p>
 </div>
-<div class="check-item">
-<p>An event log — orders sent, targets reached, groups arrived</p>
+<div class="card">
+<p><span class="card-title">AI advisor</span> suggests or issues orders</p>
 </div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="check-card">
-<p><span class="check-title">Options worth trying</span></p>
-<div class="check-item">
-<p><code>--map</code> — pick a different city (<code>shasta maps</code> lists them)</p>
-</div>
-<div class="check-item">
-<p><code>--uav-groups</code> / <code>--ugv-groups</code> — change the swarm composition</p>
-</div>
-<div class="check-item">
-<p><code>--seed</code> — reproduce the exact same mission again</p>
+<div class="card">
+<p><span class="card-title">Your interface</span> a web page, joystick, VR</p>
 </div>
 </div>
-</div></div>
-<div class="punchline">
-<p>Try it now: pick a group, click a target near a street, press Enter.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">from</span> shasta.interaction <span class="im">import</span> Mission, SwarmCommander</span>
+<span id="cb4-2"><a aria-label="2"></a></span>
+<span id="cb4-3"><a aria-label="3"></a>commander <span class="op">=</span> SwarmCommander(env, Mission.random(env.core.get_map(), <span class="dv">2</span>, seed<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb4-4"><a aria-label="4"></a>commander.send(<span class="dv">0</span>, commander.mission.targets[<span class="dv">0</span>])   <span class="co"># the human's orders</span></span>
+<span id="cb4-5"><a aria-label="5"></a>commander.send(<span class="dv">1</span>, commander.mission.targets[<span class="dv">1</span>])</span>
+<span id="cb4-6"><a aria-label="6"></a><span class="cf">while</span> <span class="kw">not</span> commander.mission.is_over(commander.step_count):</span>
+<span id="cb4-7"><a aria-label="7"></a>    commander.update()                            <span class="co"># advance one tick</span></span>
+<span id="cb4-8"><a aria-label="8"></a><span class="bu">print</span>(commander.events)                           <span class="co"># what happened, and when</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="checkpoint">
+<p><strong>Verified in this tutorial</strong> — <code>labs/human_loop.py</code> runs this with no interface and no window. Set <code>headless=False</code> in <code>load_config</code> to watch it in the pybullet 3D window.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div class="divider">
-<p><span class="divider-kicker">Part Four</span> <span class="divider-title">Configure &amp; Extend</span> <span class="divider-subtitle">the Python API, and your own experiment</span> <span class="divider-path">drive it headless, then subclass BaseExperiment</span></p>
+<p><span class="divider-kicker">Part Four</span> <span class="divider-title">Measure the Human, Then Extend</span> <span class="divider-subtitle">one clock for everything the person and the swarm do</span> <span class="divider-path">events → LSL → recorder → analysis</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why SHaSTA</span> <span class="stop">Install SHaSTA</span> <span class="stop">Experience a Mission</span> <span class="stop here">Configure &amp; Extend</span></p>
+<p><span class="stop">Why Human–Swarm</span> <span class="stop">Install SHaSTA</span> <span class="stop">Human in the Loop</span> <span class="stop here">Measure &amp; Extend</span></p>
 </div>
 </section>
-<section id="drive-it-from-python" class="slide level2">
-<h2>Drive It From <span class="accent">Python</span></h2>
-<p>No window needed — the same simulation, scripted:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">from</span> shasta.actors <span class="im">import</span> UAV, UGV</span>
-<span id="cb4-2"><a aria-label="2"></a><span class="im">from</span> shasta.config <span class="im">import</span> load_config</span>
-<span id="cb4-3"><a aria-label="3"></a><span class="im">from</span> shasta.env <span class="im">import</span> ShastaEnv</span>
-<span id="cb4-4"><a aria-label="4"></a><span class="im">from</span> shasta.experiments <span class="im">import</span> GoToNodeExperiment</span>
-<span id="cb4-5"><a aria-label="5"></a></span>
-<span id="cb4-6"><a aria-label="6"></a>config <span class="op">=</span> load_config(headless<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-7"><a aria-label="7"></a>config[<span class="st">'experiment'</span>][<span class="st">'type'</span>] <span class="op">=</span> GoToNodeExperiment</span>
-<span id="cb4-8"><a aria-label="8"></a></span>
-<span id="cb4-9"><a aria-label="9"></a>groups <span class="op">=</span> {<span class="dv">0</span>: [UAV() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)],   <span class="co"># group 0: four drones</span></span>
-<span id="cb4-10"><a aria-label="10"></a>          <span class="dv">1</span>: [UGV() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]}   <span class="co"># group 1: three ground vehicles</span></span>
-<span id="cb4-11"><a aria-label="11"></a></span>
-<span id="cb4-12"><a aria-label="12"></a>env <span class="op">=</span> ShastaEnv(config, groups)</span>
-<span id="cb4-13"><a aria-label="13"></a>obs, info <span class="op">=</span> env.reset()</span>
-<span id="cb4-14"><a aria-label="14"></a></span>
-<span id="cb4-15"><a aria-label="15"></a>obs, reward, terminated, truncated, info <span class="op">=</span> env.step({<span class="dv">0</span>: <span class="dv">5</span>, <span class="dv">1</span>: <span class="dv">5</span>})</span>
-<span id="cb4-16"><a aria-label="16"></a><span class="cf">while</span> <span class="kw">not</span> terminated:</span>
-<span id="cb4-17"><a aria-label="17"></a>    obs, reward, terminated, truncated, info <span class="op">=</span> env.step(<span class="va">None</span>)</span>
-<span id="cb4-18"><a aria-label="18"></a>env.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-lsl" class="slide level2">
+<h2>Why <span class="accent">LSL</span></h2>
+<p>Lab Streaming Layer is the open-source standard for synchronising data from many devices and programs. SHaSTA’s paper builds its data recording on it.</p>
+<div class="cards cols-3">
+<div class="card">
+<p><span class="card-title">One stream per source</span> Each device or program publishes a stream: EEG, an eye tracker, event markers.</p>
+</div>
+<div class="card">
+<p><span class="card-title">One clock</span> Every sample is time-stamped on a shared clock, so streams line up without extra cleaning.</p>
+</div>
+<div class="card">
+<p><span class="card-title">One recording</span> A recorder such as LabRecorder saves every stream together for analysis.</p>
+</div>
+</div>
+<p>In the paper’s study, 20 participants commanded 3 UAV and 3 UGV platoons while EEG, eye tracking and game events were recorded through LSL. A session looks like this:</p>
+<div class="loop-grid short">
+<div class="loop-step">
+<p><span class="loop-number">1</span><span class="loop-title">Start streams</span></p>
+<p>Start each device’s LSL stream.</p>
+</div>
+<div class="loop-step">
+<p><span class="loop-number">2</span><span class="loop-title">Run</span></p>
+<p>Run the scenario: the interface, or your own operator.</p>
+</div>
+<div class="loop-step">
+<p><span class="loop-number">3</span><span class="loop-title">Record</span></p>
+<p>Record every stream in one file, then analyse.</p>
+</div>
+</div>
+</section>
+<section id="log-the-operator-see-it-on-the-clock" class="slide level2">
+<h2>Log the Operator, See It on the <span class="accent">Clock</span></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">from</span> pylsl <span class="im">import</span> StreamInfo, StreamOutlet</span>
+<span id="cb5-2"><a aria-label="2"></a>info <span class="op">=</span> StreamInfo(<span class="st">"ShastaEvents"</span>, <span class="st">"Markers"</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="st">"string"</span>, <span class="st">"shasta-demo"</span>)</span>
+<span id="cb5-3"><a aria-label="3"></a>outlet <span class="op">=</span> StreamOutlet(info)          <span class="co"># any LSL recorder on the network can see it</span></span>
+<span id="cb5-4"><a aria-label="4"></a></span>
+<span id="cb5-5"><a aria-label="5"></a>sent <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-6"><a aria-label="6"></a><span class="kw">def</span> flush_events():                  <span class="co"># call after every commander.update()</span></span>
+<span id="cb5-7"><a aria-label="7"></a>    <span class="kw">global</span> sent</span>
+<span id="cb5-8"><a aria-label="8"></a>    <span class="cf">for</span> _, text <span class="kw">in</span> commander.events[sent:]:</span>
+<span id="cb5-9"><a aria-label="9"></a>        outlet.push_sample([text])   <span class="co"># time-stamped on LSL's clock</span></span>
+<span id="cb5-10"><a aria-label="10"></a>    sent <span class="op">=</span> <span class="bu">len</span>(commander.events)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code># what a recorder receives
+  LSL time (s)  event
+   1584705.990  Group 0 ordered to node 78
+   1584706.233  Target 78 reached by group 0
+   1584706.544  Mission complete in 1410 steps</code></pre>
 <div class="checkpoint">
-<p><strong>Verified in this tutorial</strong> — this exact snippet runs end to end. <code>obs[0].shape</code> is <code>(4, 3)</code>: four UAVs, an (x, y, z) position each.</p>
+<p><strong>Not in <code>ihuman-shasta</code> yet</strong> — the paper’s pattern around <code>SwarmCommander</code>. Tested script: <code>labs/lsl_markers.py</code>.</p>
 </div>
 </section>
 <section id="four-things-that-will-trip-you-up" class="slide level2">
@@ -551,38 +539,35 @@ Hemanth Manjunatha
 </section>
 <section id="build-your-own-experiment" class="slide level2">
 <h2>Build Your Own <span class="accent">Experiment</span></h2>
-<p>Subclass <code>shasta.base_experiment.BaseExperiment</code> and implement four methods:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="kw">class</span> FlyNorthExperiment(BaseExperiment):</span>
-<span id="cb5-2"><a aria-label="2"></a>    <span class="kw">def</span> get_action_space(<span class="va">self</span>): ...       <span class="co"># a gymnasium.spaces object</span></span>
-<span id="cb5-3"><a aria-label="3"></a>    <span class="kw">def</span> get_observation_space(<span class="va">self</span>): ...  <span class="co"># likewise</span></span>
-<span id="cb5-4"><a aria-label="4"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core): ...   <span class="co"># move things</span></span>
-<span id="cb5-5"><a aria-label="5"></a>    <span class="kw">def</span> get_observation(<span class="va">self</span>, observation, core): ...  <span class="co"># shape the obs</span></span>
-<span id="cb5-6"><a aria-label="6"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core): ...  <span class="co"># when to stop</span></span>
-<span id="cb5-7"><a aria-label="7"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core): ...   <span class="co"># optional</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See <code>labs/custom_experiment.py</code> for a complete, tested 70-line version — every actor in every group flies north for 300 steps, nothing more.</p>
+<p>Subclass <code>shasta.base_experiment.BaseExperiment</code> and implement the methods:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="kw">class</span> FlyNorthExperiment(BaseExperiment):</span>
+<span id="cb7-2"><a aria-label="2"></a>    <span class="kw">def</span> get_action_space(<span class="va">self</span>): ...       <span class="co"># a gymnasium.spaces object</span></span>
+<span id="cb7-3"><a aria-label="3"></a>    <span class="kw">def</span> get_observation_space(<span class="va">self</span>): ...  <span class="co"># likewise</span></span>
+<span id="cb7-4"><a aria-label="4"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core): ...   <span class="co"># move things</span></span>
+<span id="cb7-5"><a aria-label="5"></a>    <span class="kw">def</span> get_observation(<span class="va">self</span>, observation, core): ...  <span class="co"># shape the obs</span></span>
+<span id="cb7-6"><a aria-label="6"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core): ...  <span class="co"># when to stop</span></span>
+<span id="cb7-7"><a aria-label="7"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core): ...   <span class="co"># optional</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Where to start:</p>
+<div class="cards cols-4">
+<div class="card">
+<p><span class="card-title">Scripted operator</span> <code>labs/human_loop.py</code></p>
+</div>
+<div class="card">
+<p><span class="card-title">LSL markers</span> <code>labs/lsl_markers.py</code></p>
+</div>
+<div class="card">
+<p><span class="card-title">Smallest experiment</span> <code>labs/custom_experiment.py</code></p>
+</div>
+<div class="card">
+<p><span class="card-title">Human-facing layer</span> <code>shasta/interaction.py</code></p>
+</div>
+</div>
+<p>A map of your own study site: <code>shasta fetch-osm</code> + <code>shasta build-map</code> (needs Java; not exercised here — see the main <code>README.md</code>).</p>
 </section>
-<section id="the-path-from-here" class="slide level2">
-<h2>The <span class="accent">Path from Here</span></h2>
-<div class="flow-diagram">
-<div class="flow-step">
-<p><strong><code>labs/play.py</code></strong> — the mission from Part Two, with an EDIT ME block (map, group sizes, target)</p>
-</div>
-<div class="flow-step">
-<p><strong><code>labs/custom_experiment.py</code></strong> — the minimal <code>BaseExperiment</code> subclass</p>
-</div>
-<div class="flow-step">
-<p><strong><code>shasta/experiments.py</code></strong> — <code>GoToNodeExperiment</code>, the real one, ~40 lines</p>
-</div>
-<div class="flow-step">
-<p><strong><code>shasta/primitives.py</code></strong> — reusable behaviors: <code>Formation</code>, <code>PathPlanning</code></p>
-</div>
-</div>
-<p>Building a map of your own campus or study site: <code>shasta fetch-osm</code> + <code>shasta build-map</code> (needs Java; not exercised in this tutorial — see the main <code>README.md</code>).</p>
-</section>
-<section id="section-1" class="slide level2" data-background-image="assets/background.jpg" data-background-opacity="0.25">
+<section id="section" class="slide level2" data-background-image="assets/background.jpg" data-background-opacity="0.25">
 <h2></h2>
 <!-- Closing slide: logo, thank-you, contact. Keep this as your last slide. -->
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:80vh; text-align:center;">
+<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:576px; text-align:center;">
 <p><img data-src="assets/logo.png" style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"></p>
 <div style="font-family:'Rubik',sans-serif; font-size:2.8rem; font-weight:900; color:#ffffff; margin-top:0.8rem;">
 <p>Thanks!</p>
