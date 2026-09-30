@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="Hemanth Manjunatha">
+  <meta name="author" content="IEEE SMC 2026 Hemanth Manjunatha">
   <meta name="dcterms.date" content="2026-09-29">
   <title>iHuman Lab Presentations – SHaSTASimulator for Human And Swarm Team Applications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -103,7 +103,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f46adbc642645e00abded2256683bcf1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e8fd3bc87c70b6dfead2a631e7ff3c1e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -207,7 +207,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Hemanth Manjunatha
+<span class="event-tag">IEEE SMC 2026</span><br>Hemanth Manjunatha
 </div>
         <p class="quarto-title-affiliation">
             Oklahoma State University · University at Buffalo
@@ -564,19 +564,18 @@ Hemanth Manjunatha
 </div>
 <p>A map of your own study site: <code>shasta fetch-osm</code> + <code>shasta build-map</code> (needs Java; not exercised here — see the main <code>README.md</code>).</p>
 </section>
-<section id="section" class="slide level2" data-background-image="assets/background.jpg" data-background-opacity="0.25">
+<section id="section" class="slide level2" data-background-opacity="0.25">
 <h2></h2>
 <!-- Closing slide: logo, thank-you, contact. Keep this as your last slide. -->
 <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:576px; text-align:center;">
-<p><img data-src="assets/logo.png" style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"></p>
+<p><img data-src="assets/osu-logo.png" style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"> <img data-src="assets/ub-logo.png" style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"></p>
 <div style="font-family:'Rubik',sans-serif; font-size:2.8rem; font-weight:900; color:#ffffff; margin-top:0.8rem;">
 <p>Thanks!</p>
 </div>
 <div style="font-size:1.5rem; color:#EC672C; margin-top:1.2rem; font-weight:700;">
+<p><img data-src="assets/qr-code.png" style="max-height:150px; border-radius:0 !important; box-shadow:none !important;"></p>
 <p>Questions? See the SHaSTA repository README.</p>
-</div>
-<div style="font-size:1.5rem; color:rgba(255,255,255,0.35); margin-top:1rem; letter-spacing:2px;">
-<p>your.name@okstate.edu</p>
+<p>ehsanesf@buffalo.edu &amp; hemanth.manjunatha@okstate.edu</p>
 </div>
 </div>
 
@@ -966,6 +965,18 @@ Hemanth Manjunatha
         }
       });
       </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var titleSlide = document.getElementById('title-slide');
+      if (!titleSlide) return;
+      var row = document.createElement('div');
+      row.style.cssText = 'position:absolute; top:528px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:14px;';
+      row.innerHTML =
+        '<img src="assets/osu-logo.png" alt="Oklahoma State University" style="max-height:75px; width:auto; border-radius:0; box-shadow:none;">' +
+        '<img src="assets/ub-logo.png" alt="University at Buffalo" style="max-height:75px; width:auto; border-radius:0; box-shadow:none;">';
+      titleSlide.appendChild(row);
+    });
+    </script>
     
 
 </body></html>
