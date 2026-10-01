@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/ieee-smc-eo/ieee-smc-eo.html",
       "/mosaic-tutorial/mosaic-tutorial.html",
       "/shasta-tutorial/shasta-tutorial.html",
       "/physio-workshop/case-study.html",

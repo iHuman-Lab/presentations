@@ -182,6 +182,104 @@
     "text": "Fork It. Build Your Study.\n\n\ngithub.com/iHuman-Lab/rescue-grid\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
   },
   {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#humanai-setting-in-critical-situation",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#humanai-setting-in-critical-situation",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Human–AI Setting in Critical Situation",
+    "text": "Human–AI Setting in Critical Situation\n\n\n\nOperators must locate and recover people while conditions change quickly.\n\n\nMissions occur in challenging environments\nDecisions must be made under time pressure\nNeed reliable partner to help humans 1"
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#research-questions-and-contribution",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#research-questions-and-contribution",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Research Questions and Contribution",
+    "text": "Research Questions and Contribution\n\n\n\nPerformance: Does LLM guidance improve task outcomes?\nAttention: How does guidance change visual attention and eye-tracking metrics?\nExpertise: Does expertise moderate these effects?\nTestbed: A controlled simulation supports repeatable human–AI teaming research.\n\n\n\n\n\nWe study how humans and AI process information together, using eye tracking to inform adaptive AI for the future."
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#study-design-in-brief",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#study-design-in-brief",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Study Design In Brief",
+    "text": "Study Design In Brief\n\n\n\n\n\n\n13 Participants\n\n\n3 Trials each (randomized)\n\n\n2 + 1 LLM + baseline\n\n\n15 min or 1,000 moves\n\n\nTask: rescue victims efficiently in a partially observable grid while victim health deteriorates.\nALT requests advice and reveals victim health for 5 seconds."
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#Game Play",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#Game Play",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Game Play",
+    "text": "Game Play"
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#Expertise Level",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#Expertise Level",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Expertise Level",
+    "text": "Expertise Level\n\n\n\n  \n\n\n\n\n\n\n\nExpertise labeling: K-means clustering (K = 2) grouped participants into expert vs. novice 2"
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#how-the-llm-was-prompted",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#how-the-llm-was-prompted",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "How The LLM Was Prompted",
+    "text": "How The LLM Was Prompted\n\n\nGuidance Style\n\nYou are a search-and-rescue coordinator giving calm, human-like radio guidance to the operator.\nInstructions must be directional and action-focused, always using North, South, East, West, with no coordinates, step counts, or visible reasoning.\nOutput either a sparse one-sentence instruction or a detailed 3–4 sentence radio briefing, always concise, natural, and wrapped strictly as &lt;START&gt; … &lt;END&gt;.\n\n\n\nPriority\n\nPrioritize visible reachable survivors who are still saveable, nearest first.\nFrom the current state {obs}, choose one immediate objective by prioritizing the nearest reachable visible saveable survivor, then the next saveable survivor if relevant.\nOtherwise choose the best remaining alive victim, then the nearest reachable survivor or key, or finally explore visible areas that may open a new path.\n\n\n\nMission Rules\n\nFollow mission and environment rules: rescue all survivors.\nUse matching keys for locked doors, unlocked doors can be opened, carry only one key, avoid lava.\nNever mention unreachable objects. Final instruction must be rule-compliant.\n\n\n\n\nGrid-based world: each cell represents an object such as empty space, wall, victim, lava, door, or key. 3\nReachability check: BFS determines which targets are reachable and their distance from the player. 4\nModels: OpenAI and Gemini.\n\n\n  ←\n  Play\n  →\n  Show all\n  Select Play to explore each part of the prompt."
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#task-and-eye-tracking-features",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#task-and-eye-tracking-features",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Task and Eye-Tracking Features",
+    "text": "Task and Eye-Tracking Features\n\n\n\nFeature\nWhat it shows\n\n\n\n\nVictims per step\nRescue efficiency over time\n\n\nTotal reward\nOverall task performance\n\n\nSaved victims\nMission success\n\n\nFixation count\nHow often the participant focused on an area\n\n\nFixation duration\nHow long the participant looked at one area\n\n\nSaccade duration\nDuration of fast eye movements\n\n\nPupil diameter SD\nVariation in pupil size, related to workload\n\n\nGame-area fixation time\nAttention to the SAR environment\n\n\nChat-panel fixation time\nAttention to the LLM guidance"
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#data-collection-and-analysis",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#data-collection-and-analysis",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Data Collection and Analysis",
+    "text": "Data Collection and Analysis\n\nSynchronized data streams via LSL (Lab Streaming Layer)\nGaze and pupil data recorded with a Tobii eye tracker\n\nMixed-effects model: outcome = LLM condition + LLM × expertise + expertise + participant random intercept."
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#reported-effects",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#reported-effects",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Results",
+    "text": "Results\n\n\nPerformancePupil and area fixationFixation and saccade"
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#expertise-changes-how-guidance-is-used",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#expertise-changes-how-guidance-is-used",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Expertise Changes How Guidance Is Used",
+    "text": "Expertise Changes How Guidance Is Used\n\n\nExperts\nMaintained more engagement with the game under LLM support and showed stronger changes in visual scanning.\n\n\nNovices\nShifted more attention away from the game, consistent with greater reliance on the guidance panel.\n\n\n\n\nLLM guidance received\n\n\n↓\n\n\n\nExpert\nCross-checks guidance against the environment (scans, verifies)\n\n\nNovice\nFollows guidance directly"
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#limitations-and-future-work",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#limitations-and-future-work",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Limitations and Future Work",
+    "text": "Limitations and Future Work\n\n\nLimitations\n\nSample size\nSimulated grid-world task\nIncorrect/conflicting LLM guidance was not tested\nAdditional physiological measures were not included\n\n\nFuture work\n\n\nTrust & reliability Test how LLM errors affect operator responses and trust.\n\n\nAdaptive guidance Tailor help using performance and physiological signals to reduce mental workload.\n\n\nSituation awareness Use this data to infer workload, situational awareness, and human–AI interaction patterns.\n\n\nOther domains Apply this approach to other human–AI teaming domains beyond search and rescue.\n\n\n\n\nThe next step is moving from static guidance toward reliable, adaptive human–AI teaming."
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#references",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#references",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "References",
+    "text": "References\n\n[1] Handler, Abram, Kai R. Larsen, and Richard Hackathorn. “Large language models present new questions for decision support.” International Journal of Information Management 79 (2024): 102811.\n[2] J. P. Distefano, H. Manjunatha, S. Chowdhury, K. Dantu, D. Doermann and E. T. Esfahani, “Using Physiological Information to Classify Task Difficulty in Human-Swarm Interaction,” 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia, 2021, pp. 1198-1203, doi: 10.1109/SMC52423.2021.9658653.\n[3] Chevalier-Boisvert, M., Dai, B., Towers, M., Perez-Vicente, R., Willems, L., Lahlou, S., Pal, S., Castro, P. S., & Terry, J. (2023). Minigrid & Miniworld: Modular & Customizable Reinforcement Learning Environments for Goal-Oriented Tasks. Advances in Neural Information Processing Systems (NeurIPS), 36.\n[4] Siklóssy, Laurent, A. Rich, and Vesko Marinov. “Breadth-first search: some surprising results.” Artificial Intelligence 4.1 (1973): 1-27."
+  },
+  {
+    "objectID": "ieee-smc-eo/ieee-smc-eo.html#section",
+    "href": "ieee-smc-eo/ieee-smc-eo.html#section",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "",
+    "text": "Thank you\n\n\nQuestions?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "iHuman Lab Presentations",
+    "section": "",
+    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation\n\n\n\n\nElahe Oveisi and Dr. Hemanth Manjunatha\n\n\nHow expertise shapes performance and visual attention when people follow LLM guidance in a search-and-rescue task.\n\n\n\nConference Talk\n\n\n\n\n\n\n\n\n\nMOSAIC Modular System for Adaptive Human–AI Collaboration\n\n\n\n\nBennett Kwaku Dogbey · Elahe Oveisi · Hemanth Manjunatha\n\n\nA hands-on introduction to MOSAIC: install it, play a search-and-rescue mission, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nIEEE SMC 2026Hemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA for human–swarm interaction research: put a human in the loop, log what they do with LSL, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "discovery-day/discovery-day.html#who-are-we",
     "href": "discovery-day/discovery-day.html#who-are-we",
     "title": "CEAT Discovery DayiHuman Lab",
@@ -229,13 +327,6 @@
     "title": "CEAT Discovery DayiHuman Lab",
     "section": "",
     "text": "This Could Be You\n\n\nEvery researcher in this lab was once sitting where you are. If any of this sparked something — come talk to us.\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "iHuman Lab Presentations",
-    "section": "",
-    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMOSAIC Modular System for Adaptive Human–AI Collaboration\n\n\n\n\nBennett Kwaku Dogbey · Elahe Oveisi · Hemanth Manjunatha\n\n\nA hands-on introduction to MOSAIC: install it, play a search-and-rescue mission, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nSHaSTA Simulator for Human And Swarm Team Applications\n\n\n\n\nIEEE SMC 2026Hemanth Manjunatha\n\n\nA hands-on introduction to SHaSTA for human–swarm interaction research: put a human in the loop, log what they do with LSL, and write your own experiment.\n\n\n📅September 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
   },
   {
     "objectID": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
