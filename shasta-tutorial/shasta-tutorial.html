@@ -10,9 +10,9 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="IEEE SMC 2026 Hemanth Manjunatha">
-  <meta name="dcterms.date" content="2026-09-29">
-  <title>iHuman Lab Presentations – SHaSTASimulator for Human And Swarm Team Applications</title>
+  <meta name="author" content="Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi Kristian Dalland · Bennett Kwaku Dogbey">
+  <meta name="dcterms.date" content="2026-10-04">
+  <title>iHuman Lab Presentations – Closing the Human–AI LoopModular Architectures for Autonomous Teaming and Physiological Sensing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -103,7 +103,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e8fd3bc87c70b6dfead2a631e7ff3c1e.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cfe19d9fbbad61a02fcba21898663482.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -200,22 +200,73 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#252525" data-background-image="assets/world-angled.png" data-background-opacity="0.35" class="quarto-title-block center">
-  <h1 class="title">SHaSTA<span class="title-fullname">Simulator for Human And Swarm<br><span class="accent">Team Applications</span></span></h1>
-  <p class="subtitle"><span class="title-tagline">A hands-on tutorial: putting a human in the loop with a swarm</span></p>
+<section id="title-slide" data-background-color="#252525" class="quarto-title-block center">
+  <h1 class="title">Closing the <span class="accent">Human–AI</span> Loop<span class="title-fullname">Modular Architectures for Autonomous Teaming<br>and <span class="accent">Physiological Sensing</span></span></h1>
+  <p class="subtitle"><span class="title-tagline">A two-session hands-on tutorial: MOSAIC and SHaSTA</span><span class="title-venue">IEEE SMC 2026 · Bellevue, WA</span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<span class="event-tag">IEEE SMC 2026</span><br>Hemanth Manjunatha
+Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dalland · Bennett Kwaku Dogbey
 </div>
         <p class="quarto-title-affiliation">
-            Oklahoma State University · University at Buffalo
+            iHuman Lab · Oklahoma State University<br>Human in the Loop Systems Lab (HILS Lab) · University at Buffalo
           </p>
     </div>
 </div>
 
-  <p class="date">2026-09-29</p>
+  <p class="date">2026-10-04</p>
+</section>
+<section id="todays-sessions" class="slide level2">
+<h2>Today’s <span class="accent">Sessions</span></h2>
+<div class="hook">
+<p>Two hands-on sessions, back to back, in the same room.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="stat">
+<p><span class="stat-number">8:30–10:30 AM</span> <span class="stat-label">Session 1 · MOSAIC</span></p>
+</div>
+<p>A configurable testbed for human–AI teaming. Play a search-and-rescue mission in your browser, then change the task, the AI teammate and the sensing.</p>
+</div><div class="column" style="width:50%;">
+<div class="stat secondary">
+<p><span class="stat-number">11:00 AM–1:00 PM</span> <span class="stat-label">Session 2 · SHaSTA</span></p>
+</div>
+<p>A simulator for human–swarm teaming. Put a human in the loop with a swarm, and log what they do on one clock.</p>
+</div></div>
+<div class="stats">
+<div class="stat">
+<p><span class="stat-number">Evergreen C</span> <span class="stat-label">Where</span></p>
+</div>
+<div class="stat">
+<p><span class="stat-number"><span class="citation" data-cites="Hyatt_Meeting">@Hyatt_Meeting</span></span> <span class="stat-label">Wi-Fi network</span></p>
+</div>
+<div class="stat">
+<p><span class="stat-number">SMC26</span> <span class="stat-label">Wi-Fi password</span></p>
+</div>
+</div>
+<aside class="notes">
+<p>Welcome. This is the tutorial “Closing the Human-AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing”, in two sessions in Evergreen C. Session 1, 8:30 to 10:30, is MOSAIC; Session 2, 11:00 to 1:00, is SHaSTA. Wi-Fi: network <span class="citation" data-cites="Hyatt_Meeting">@Hyatt_Meeting</span>, password SMC26. Leave this slide up while people settle and connect.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div class="divider">
+<p><span class="divider-kicker">Session 2 · 11:00 AM–1:00 PM</span></p>
+<p><span class="divider-title">SHaSTA</span></p>
+<p><span class="divider-subtitle">Simulator for Human And Swarm Team Applications</span></p>
+<p><span class="divider-path">A hands-on tutorial: putting a human in the loop with a swarm</span></p>
+</div>
 </section>
 <section id="meet-the-team" class="slide level2">
 <h2>Meet the <span class="accent">Team</span></h2>
@@ -257,19 +308,19 @@
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 2 — Install SHaSTA</strong> from a clean checkout to a first mission</p>
+<p><strong>Part 2 — Open the notebook</strong> nothing to install: a map and a config file in your browser</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 3 — Put a human in the loop</strong> the built-in interface, or your own</p>
+<p><strong>Part 3 — Put a human in the loop</strong> play the operator, then change the mission</p>
 </div>
 <div class="flow-arrow">
 <p>↓</p>
 </div>
 <div class="flow-step">
-<p><strong>Part 4 — Measure the human, then extend</strong> LSL, and your own experiment</p>
+<p><strong>Part 4 — Measure the human, then extend</strong> LSL, a recorded session, and your own experiment</p>
 </div>
 </div>
 </section>
@@ -279,7 +330,7 @@
 <p><span class="divider-kicker">Part One</span> <span class="divider-title">Why Human–Swarm Interaction</span> <span class="divider-subtitle">the question, and what you need to study it</span> <span class="divider-path">operator → swarm → measurement</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop here">Why Human–Swarm</span> <span class="stop">Install SHaSTA</span> <span class="stop">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
+<p><span class="stop here">Why Human–Swarm</span> <span class="stop">Open the Notebook</span> <span class="stop">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
 </div>
 </section>
 <section id="the-question" class="slide level2">
@@ -343,33 +394,219 @@
 </div>
 </div>
 <div class="band">
-<p>The paper describes all four components. Today’s <code>ihuman-shasta</code> ships the core and the human interface; Part 4 adds the LSL layer around it.</p>
+<p>The paper describes all four components. <code>ihuman-shasta</code> ships the core and the interface; the notebook adds LSL (<code>lsl_tools.py</code>).</p>
 </div>
 </section>
 <section class="slide level2">
 
+<!-- ============ PART 2 ============ -->
 <div class="divider">
-<p><span class="divider-kicker">Part Two</span> <span class="divider-title">Install SHaSTA</span> <span class="divider-subtitle">from a clean checkout to a first mission</span> <span class="divider-path">clone → pip install -e → shasta demo</span></p>
+<p><span class="divider-kicker">Part Two</span> <span class="divider-title">Open the Notebook</span> <span class="divider-subtitle">nothing to install: everything runs in your browser</span> <span class="divider-path">server → notebook → first map</span></p>
+<div class="qr-card">
+<p><img data-src="assets/qr-notebook.png" alt="QR code that opens the tutorial's Jupyter server"></p>
+<p><span class="qr-title">Tutorial notebook</span> <span class="qr-line">On the tutorial server: the whole tutorial, run in your browser</span> <span class="qr-line">Sign in with your password, then open <code>01_shasta_hsi.ipynb</code></span> <span class="qr-url">jupyter.ihuman-lab.work</span></p>
+</div>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why Human–Swarm</span> <span class="stop here">Install SHaSTA</span> <span class="stop">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
+<p><span class="stop">Why Human–Swarm</span> <span class="stop here">Open the Notebook</span> <span class="stop">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
 </div>
+<aside class="notes">
+<p>Nobody installs anything today: SHaSTA, its interface and the recording tools all run on the tutorial server, and the interface is drawn in the browser. Leave this slide up while people scan and sign in. Anyone whose laptop cannot reach the server pairs with a neighbor; the appendix has the install for a laptop.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="install-shasta" class="slide level2">
-<h2>Install <span class="accent">SHaSTA</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-label="1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
-<span id="cb1-2"><a aria-label="2"></a><span class="bu">cd</span> shasta-ub</span>
-<span id="cb1-3"><a aria-label="3"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv <span class="kw">&amp;&amp;</span> <span class="bu">source</span> .venv/bin/activate</span>
-<span id="cb1-4"><a aria-label="4"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[gui]"</span>     <span class="co"># [gui] adds `shasta gui`; Python 3.9 or newer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then verify:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-label="1"></a><span class="ex">shasta</span> maps      <span class="co"># list the maps available</span></span>
-<span id="cb2-2"><a aria-label="2"></a><span class="ex">shasta</span> demo      <span class="co"># headless: prints swarm progress, no window</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="open-the-notebook" class="slide level2">
+<h2>Open the <span class="accent">Notebook</span></h2>
+<div class="hook">
+<p>Four steps, and nothing to install.</p>
+</div>
+<div class="columns install-split">
+<div class="column" style="width:55%;">
+<div class="line-steps">
+<div class="line-step">
+<p><span class="line-num">1</span> <span class="line-title">Go to the server</span></p>
+<p>Scan the code on the last slide, or open <code>jupyter.ihuman-lab.work</code></p>
+</div>
+<div class="line-step">
+<p><span class="line-num">2</span> <span class="line-title">Sign in</span></p>
+<p>With the password you were given</p>
+</div>
+<div class="line-step">
+<p><span class="line-num">3</span> <span class="line-title">Open the notebook</span></p>
+<p><code>01_shasta_hsi.ipynb</code>, in the file list on the left</p>
+</div>
+<div class="line-step">
+<p><span class="line-num">4</span> <span class="line-title">Pick the kernel</span></p>
+<p><strong>Python (smc)</strong>, at the top right of the notebook</p>
+</div>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="feature-list">
+<div class="feature-row">
+<p><span class="feature-name">Notebook</span> <code>01_shasta_hsi.ipynb</code>: the whole tutorial, in eight steps</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Interface</span> <code>live_play.py</code> and <code>world_view.py</code> show the interface and the 3D world in your browser</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Settings</span> <code>config.yaml</code>: the simulation as a text file</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Recording</span> <code>lsl_tools.py</code>: orders and gaze into one file</p>
+</div>
+</div>
+</div></div>
 <div class="checkpoint">
-<p><strong><code>shasta maps</code> should list</strong> city names such as <code>buffalo-small</code>, <code>buffalo-medium</code>, <code>chicago</code>, <code>new-york</code>. <strong><code>shasta demo</code> should end with</strong> “All groups reached their targets after 1174 steps.” Then the install is good, no 3D window needed yet. Verified from a fresh checkout on Python 3.10.</p>
+<p>The top right says <strong>Python (smc)</strong>. Run each cell with <code>Shift+Enter</code>, from the top.</p>
 </div>
-<div class="card secondary">
-<p><span class="card-title">Not on PyPI yet</span> <code>pip install "ihuman-shasta[gui]"</code> fails with “No matching distribution found.” Install from a clone as above. Check PyPI again before your own session; this may already be fixed.</p>
+<div class="fig-note">
+<p>Prefer your own laptop? The appendix has the install, in one slide.</p>
 </div>
+<aside class="notes">
+<p>Everything attendees need is already in the folder on the server: the notebook, <code>config.yaml</code>, <code>live_play.py</code>, <code>world_view.py</code> and <code>lsl_tools.py</code>. If someone sees “No module named ‘shasta’”, the kernel is wrong: pick Python (smc). The first code cell of the notebook must run first (it silences warnings and sets pygame up to draw off-screen); everything after it can run in order.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-first-map" class="slide level2">
+<h2>Your First <span class="accent">Map</span></h2>
+<div class="hook">
+<p>The city is a graph, and the simulation is a text file.</p>
+</div>
+<div class="task-split">
+<div class="task-col">
+<div class="code-card">
+<p><span class="code-file">Step 1</span> <span class="code-where">the map, as a street graph</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>world_map <span class="op">=</span> Map()</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>world_map.setup({<span class="st">"map_to_use"</span>: <span class="st">"buffalo-small"</span>})</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>graph <span class="op">=</span> world_map.get_node_graph()</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># 93 intersections (nodes), 236 street segments (edges)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-card">
+<p><span class="code-file"><code>config.yaml</code></span> <span class="code-where">the simulation, as numbers</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">swarm</span><span class="kw">:</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uavs</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span><span class="co">          # drones in group 0</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ugvs</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co">          # vehicles in group 1</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uav_speed</span><span class="kw">:</span><span class="at"> </span><span class="fl">2.5</span><span class="co">   # metres per second</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mission</span><span class="kw">:</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">targets</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">time_limit</span><span class="kw">:</span><span class="at"> </span><span class="dv">2500</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="result-col">
+<div class="result-img">
+<p><img data-src="assets/map-graph.png" alt="The buffalo-small map: buildings in grey, streets in blue, and every intersection numbered."></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>SHaSTA builds its world from OpenStreetMap: buildings, a street network, and a table that converts latitude and longitude to metres. Roads are a graph; the numbered circles are its nodes, the intersections. Every order in the tutorial is “go to this node”. The config file is read by SHaSTA (window or not, the physics step, which map) and by the notebook (how many vehicles, how fast, the mission).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="first-checkpoint" class="slide level2">
+<h2>First <span class="accent">Checkpoint</span></h2>
+<div class="columns">
+<div class="column" style="width:38%;">
+<div class="check-card">
+<p><span class="check-title">Confirm</span></p>
+<div class="check-item">
+<p>The kernel says Python (smc)</p>
+</div>
+<div class="check-item">
+<p>Step 1 printed the intersections and street segments</p>
+</div>
+<div class="check-item">
+<p>The map shows numbered intersections</p>
+</div>
+<div class="check-item">
+<p>No red error text under any cell</p>
+</div>
+</div>
+</div><div class="column" style="width:62%;">
+<div class="tight-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symptom</th>
+<th>Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>No module named 'shasta'</code></td>
+<td>Wrong kernel: pick <strong>Python (smc)</strong> at the top right</td>
+</tr>
+<tr class="even">
+<td><code>No module named 'live_play'</code></td>
+<td><code>live_play.py</code> is not in the notebook’s folder</td>
+</tr>
+<tr class="odd">
+<td>The picture does not respond</td>
+<td>Click the picture once, then use the mouse and keys</td>
+</tr>
+<tr class="even">
+<td>A blank picture</td>
+<td>Run the cell again and wait a second</td>
+</tr>
+<tr class="odd">
+<td><code>Cannot load an actor multiple times</code></td>
+<td>Rerun the whole cell, not only its last line</td>
+</tr>
+<tr class="even">
+<td>The server does not open</td>
+<td>Ask a helper; share a neighbor’s screen meanwhile</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div class="punchline">
+<p>Everyone with a map on screen is ready for <span class="accent">Part Three</span>.</p>
+</div>
+<aside class="notes">
+<p>This is the checkpoint before the hands-on part. The most common problem is the kernel; the second is the picture not receiving the mouse until it is clicked.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -377,32 +614,55 @@
 <p><span class="divider-kicker">Part Three</span> <span class="divider-title">Put a Human in the Loop</span> <span class="divider-subtitle">the built-in interface, or your own</span> <span class="divider-path">shasta gui → SwarmCommander → your interface</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why Human–Swarm</span> <span class="stop">Install SHaSTA</span> <span class="stop here">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
+<p><span class="stop">Why Human–Swarm</span> <span class="stop">Open the Notebook</span> <span class="stop here">Human in the Loop</span> <span class="stop">Measure &amp; Extend</span></p>
 </div>
 </section>
-<section id="open-the-interface" class="slide level2">
-<h2>Open the <span class="accent">Interface</span></h2>
-<div class="columns">
-<div class="column" style="width:64%;">
+<section id="play-it-yourself" class="slide level2">
+<h2>Play It <span class="accent">Yourself</span></h2>
+<div class="columns run-split">
+<div class="column" style="width:46%;">
+<div class="feature-list compact">
+<div class="feature-row">
+<p><span class="feature-name">Open</span> Step 3 of the notebook, <em>Human in the loop</em></p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Run</span> <code>Shift+Enter</code>, then click the picture so it receives your mouse</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Command</span> Click a group’s marker, click a street node, press <code>Enter</code></p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Watch</span> The groups follow the streets; the targets are the yellow markers</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Stop</span> Press <strong>Stop</strong> to end and see how many targets you reached</p>
+</div>
+</div>
+</div><div class="column" style="width:54%;">
 <p><img data-src="assets/gui.png" alt="The human interface mid-mission: the map with UAV and UGV groups and targets, and the side panel with group status and an event log."></p>
-</div><div class="column" style="width:36%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-label="1"></a><span class="ex">shasta</span> gui</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="check-card">
-<p><span class="check-title">What you are looking at</span></p>
-<div class="check-item">
-<p>The map: blue UAVs, red UGVs, yellow targets</p>
-</div>
-<div class="check-item">
-<p>The side panel: mission progress and the selected group’s status</p>
-</div>
-<div class="check-item">
-<p>The event log: every order and arrival</p>
-</div>
+<div class="fig-note">
+<p>You should see this: the map and the swarm on the left, the status and event log on the right.</p>
 </div>
 </div></div>
+<aside class="notes">
+<p>Give everyone several minutes of free play. The picture is the real SHaSTA interface, drawn off-screen on the server and sent to the browser; your clicks go back to it. It is the same window <code>shasta gui</code> opens on a laptop. Anyone whose picture does not respond clicks it once.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-controls" class="slide level2">
 <h2>The <span class="accent">Controls</span></h2>
+<div class="hook">
+<p>Click the picture first. The mouse and keys then go to the interface.</p>
+</div>
 <div class="key-grid">
 <div class="key-row">
 <p><span class="keycap wide">click</span> <span class="key-action">or</span> <span class="keycap"><code>1</code>–<code>9</code></span> <span class="key-action">Pick a group — click its marker, or press its number</span></p>
@@ -414,6 +674,12 @@
 <p><span class="keycap wide">Enter</span> <span class="key-action">Send the group — or the <strong>Send order</strong> button, or double-click the node</span></p>
 </div>
 <div class="key-row">
+<p><span class="keycap wide">Shift</span> <span class="key-action">Select several groups — shift-click their markers, or shift-drag a box</span></p>
+</div>
+<div class="key-row">
+<p><span class="keycap wide">wheel</span> <span class="key-action">Zoom the map</span> <span class="keycap">drag</span> <span class="key-action">Pan with the right button</span></p>
+</div>
+<div class="key-row">
 <p><span class="keycap wide">Space</span> <span class="key-action">Pause / resume</span></p>
 </div>
 <div class="key-row">
@@ -422,11 +688,8 @@
 <div class="key-row">
 <p><span class="keycap">V</span> <span class="key-action">3D camera view, follows the selected group</span></p>
 </div>
-<div class="key-row">
-<p><span class="keycap wide">panel</span> <span class="key-action"><strong>Send ALL groups</strong> and <strong>Cancel order</strong> are buttons in the side panel</span></p>
 </div>
-</div>
-<p><strong>Options for your study:</strong> <code>--uav-groups</code> / <code>--ugv-groups</code> set how many vehicles the operator supervises, <code>--targets</code> / <code>--time-limit</code> set difficulty and time pressure, and <code>--seed</code> gives the same targets every run so trials are comparable.</p>
+<p><strong>Options for your study</strong> are numbers in the notebook’s Step 4: vehicles, targets, time, and the seed that repeats the targets.</p>
 </section>
 <section id="one-seam-swarmcommander" class="slide level2">
 <h2>One Seam: <span class="accent">SwarmCommander</span></h2>
@@ -445,17 +708,179 @@
 <p><span class="card-title">Your interface</span> a web page, joystick, VR</p>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">from</span> shasta.interaction <span class="im">import</span> Mission, SwarmCommander</span>
-<span id="cb4-2"><a aria-label="2"></a></span>
-<span id="cb4-3"><a aria-label="3"></a>commander <span class="op">=</span> SwarmCommander(env, Mission.random(env.core.get_map(), <span class="dv">2</span>, seed<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb4-4"><a aria-label="4"></a>commander.send(<span class="dv">0</span>, commander.mission.targets[<span class="dv">0</span>])   <span class="co"># the human's orders</span></span>
-<span id="cb4-5"><a aria-label="5"></a>commander.send(<span class="dv">1</span>, commander.mission.targets[<span class="dv">1</span>])</span>
-<span id="cb4-6"><a aria-label="6"></a><span class="cf">while</span> <span class="kw">not</span> commander.mission.is_over(commander.step_count):</span>
-<span id="cb4-7"><a aria-label="7"></a>    commander.update()                            <span class="co"># advance one tick</span></span>
-<span id="cb4-8"><a aria-label="8"></a><span class="bu">print</span>(commander.events)                           <span class="co"># what happened, and when</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="im">from</span> shasta.interaction <span class="im">import</span> Mission, SwarmCommander</span>
+<span id="cb3-2"><a aria-label="2"></a></span>
+<span id="cb3-3"><a aria-label="3"></a>commander <span class="op">=</span> SwarmCommander(env, Mission.random(env.core.get_map(), <span class="dv">2</span>, seed<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb3-4"><a aria-label="4"></a>commander.send(<span class="dv">0</span>, commander.mission.targets[<span class="dv">0</span>])   <span class="co"># the human's orders</span></span>
+<span id="cb3-5"><a aria-label="5"></a>commander.send(<span class="dv">1</span>, commander.mission.targets[<span class="dv">1</span>])</span>
+<span id="cb3-6"><a aria-label="6"></a><span class="cf">while</span> <span class="kw">not</span> commander.mission.is_over(commander.step_count):</span>
+<span id="cb3-7"><a aria-label="7"></a>    commander.update()                            <span class="co"># advance one tick</span></span>
+<span id="cb3-8"><a aria-label="8"></a><span class="bu">print</span>(commander.events)                           <span class="co"># what happened, and when</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="checkpoint">
-<p><strong>Verified in this tutorial</strong> — <code>labs/human_loop.py</code> runs this with no interface and no window. Set <code>headless=False</code> in <code>load_config</code> to watch it in the pybullet 3D window.</p>
+<p><strong>Run it in the notebook</strong> — Step 3’s <em>No human needed</em> cell plays a whole mission this way, with a scripted operator and no window. Set <code>headless=False</code> in <code>load_config</code> to watch it in the pybullet 3D window.</p>
 </div>
+</section>
+<section id="no-human-required" class="slide level2">
+<h2>No Human <span class="accent">Required</span></h2>
+<div class="hook">
+<p>You just commanded the swarm by hand. The same environment runs with nobody at the keyboard.</p>
+</div>
+<div class="task-split">
+<div class="task-col">
+<div class="code-card">
+<p><span class="code-file">notebook · Step 2</span> <span class="code-where">an order, with no human</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>obs, info <span class="op">=</span> env.reset()</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>obs, reward, terminated, truncated, info <span class="op">=</span> env.step({<span class="dv">0</span>: target})</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> terminated:</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    obs, reward, terminated, truncated, info <span class="op">=</span> env.step(<span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="task-label">Run</span> Step 2, the cell called <em>Order a group, with no human</em>.</p>
+<p><span class="predict">Would a learning agent change this loop?</span></p>
+</div>
+<div class="result-col fragment">
+<p><span class="task-label">What you get</span></p>
+<div class="watch-list">
+<div class="watch-item">
+<p><span class="watch-num">1</span> <span class="watch-title">The Gym API</span> <code>reset()</code> and <code>step(action)</code>, the interface RL libraries expect</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">2</span> <span class="watch-title">An order is the action</span> <code>{group: node}</code>; <code>None</code> means keep going</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">3</span> <span class="watch-title">No window</span> PyBullet runs headless and the mission runs as fast as it can compute</p>
+</div>
+</div>
+</div>
+</div>
+<div class="punchline">
+<p>A person, a script, or an RL agent can command the swarm: <span class="accent">one environment, one interface</span>.</p>
+</div>
+<aside class="notes">
+<p>SHaSTA is a Gymnasium environment: <code>env.reset()</code> starts it and <code>env.step(action)</code> returns <code>(observation, reward, terminated, truncated, info)</code>. Here the action is an order, a dictionary from a group to a map node, and <code>None</code> keeps the groups going. So a script, or an agent trained with reinforcement learning, can command the swarm with no person involved, and the person is one kind of operator, not part of the environment. The notebook’s Step 3 shows the same idea one level up: a scripted operator drives <code>SwarmCommander</code>. This tutorial does not train an agent.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-pybullet-world" class="slide level2">
+<h2>The PyBullet <span class="accent">World</span></h2>
+<div class="hook">
+<p>SHaSTA’s physics is PyBullet: no window needed, yet you can reach in.</p>
+</div>
+<div class="columns run-split">
+<div class="column" style="width:44%;">
+<div class="feature-list compact">
+<div class="feature-row">
+<p><span class="feature-name">Headless</span> PyBullet runs in <code>DIRECT</code> mode: a trip across the map takes a fraction of a second</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Render</span> <code>getCameraImage</code> draws the 3D scene to an image, so a browser can show it</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Interact</span> A click becomes a ray into the world; where it meets the ground, the nearest street node is the order</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Try it</span> Step 3, <em>Interact with the PyBullet world</em>: drag to look around, click the ground to send the selected group</p>
+</div>
+</div>
+</div><div class="column" style="width:56%;">
+<p><img data-src="assets/world-3d.png" alt="The 3D PyBullet world rendered in the browser: buildings and streets, a UAV group flying towards a clicked street node, and a yellow ring around a mission target."></p>
+<div class="fig-note">
+<p>The white cross is the node that was clicked.</p>
+</div>
+</div></div>
+<aside class="notes">
+<p>PyBullet is the physics engine under SHaSTA, and it runs with no window at all: <code>DIRECT</code> mode. The 2D map is one view of it; this is another. PyBullet renders the scene to an image with <code>getCameraImage</code>, so the notebook can show the 3D world in the browser and let you move the camera with the mouse. A click is turned into a ray through the camera, the ray is intersected with the ground, and the nearest node of the street graph becomes <code>commander.send(selected_group, node)</code>. The code is <code>world_view.py</code>, next to the notebook: about a hundred lines. Because the physics needs no window, the same world can also run with nobody watching, which is how a script or a learning agent uses it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-you-can-customize" class="slide level2">
+<h2>What You Can <span class="accent">Customize</span></h2>
+<div class="hook">
+<p>Every setting is a number. Change them and play your own.</p>
+</div>
+<div class="task-split">
+<div class="task-col">
+<div class="code-card">
+<p><span class="code-file">notebook · Step 4</span> <span class="code-where">the build-your-own cell</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>UAVS, UGVS <span class="op">=</span> <span class="dv">4</span>, <span class="dv">3</span>          <span class="co"># vehicles in each group</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>SPEED <span class="op">=</span> <span class="fl">2.5</span>                <span class="co"># metres per second</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>TARGETS, RADIUS <span class="op">=</span> <span class="dv">3</span>, <span class="fl">12.0</span>  <span class="co"># targets, and how close counts</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>TIME_LIMIT <span class="op">=</span> <span class="dv">2500</span>          <span class="co"># simulation steps</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>SEED <span class="op">=</span> <span class="dv">0</span>                   <span class="co"># the same targets every run</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="task-label">Run</span> Change the numbers, run the cell, and play.</p>
+<p><span class="predict">How does the operator’s job change?</span></p>
+</div>
+<div class="result-col fragment">
+<p><span class="task-label">What each one changes</span></p>
+<div class="watch-list">
+<div class="watch-item">
+<p><span class="watch-num">1</span> <span class="watch-title">Vehicles</span> More to supervise: more load on the operator</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">2</span> <span class="watch-title">Targets and radius</span> More, or harder to reach</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">3</span> <span class="watch-title">Time limit</span> Less time, more pressure</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">4</span> <span class="watch-title">Seed</span> The same targets, so trials are comparable</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>These are the <code>swarm</code> and <code>mission</code> sections of <code>config.yaml</code>; Step 4 copies the config, changes them, and starts the interface. The operator’s workload is the research variable here: how many groups they supervise, how many targets, how much time. Counts live in the config, so a study sets them once and every participant gets the same task.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<!-- ============ BREAK ============ -->
+<div class="divider">
+<p><span class="divider-kicker">Break · 10 minutes</span></p>
+<p><span class="divider-title">Take a Break</span></p>
+<p><span class="divider-path">Next · Part Four: Measure the Human, Then Extend</span></p>
+</div>
+<aside class="notes">
+<p>Ten minutes. Leave this slide up. Helpers use the time to help anyone whose kernel is wrong or whose picture does not respond. Part Four records a session while you play it, so the interface in Step 3 has to be working first.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -463,7 +888,7 @@
 <p><span class="divider-kicker">Part Four</span> <span class="divider-title">Measure the Human, Then Extend</span> <span class="divider-subtitle">one clock for everything the person and the swarm do</span> <span class="divider-path">events → LSL → recorder → analysis</span></p>
 </div>
 <div class="you-are-here">
-<p><span class="stop">Why Human–Swarm</span> <span class="stop">Install SHaSTA</span> <span class="stop">Human in the Loop</span> <span class="stop here">Measure &amp; Extend</span></p>
+<p><span class="stop">Why Human–Swarm</span> <span class="stop">Open the Notebook</span> <span class="stop">Human in the Loop</span> <span class="stop here">Measure &amp; Extend</span></p>
 </div>
 </section>
 <section id="why-lsl" class="slide level2">
@@ -498,24 +923,115 @@
 </section>
 <section id="log-the-operator-see-it-on-the-clock" class="slide level2">
 <h2>Log the Operator, See It on the <span class="accent">Clock</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">from</span> pylsl <span class="im">import</span> StreamInfo, StreamOutlet</span>
-<span id="cb5-2"><a aria-label="2"></a>info <span class="op">=</span> StreamInfo(<span class="st">"ShastaEvents"</span>, <span class="st">"Markers"</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="st">"string"</span>, <span class="st">"shasta-demo"</span>)</span>
-<span id="cb5-3"><a aria-label="3"></a>outlet <span class="op">=</span> StreamOutlet(info)          <span class="co"># any LSL recorder on the network can see it</span></span>
-<span id="cb5-4"><a aria-label="4"></a></span>
-<span id="cb5-5"><a aria-label="5"></a>sent <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-6"><a aria-label="6"></a><span class="kw">def</span> flush_events():                  <span class="co"># call after every commander.update()</span></span>
-<span id="cb5-7"><a aria-label="7"></a>    <span class="kw">global</span> sent</span>
-<span id="cb5-8"><a aria-label="8"></a>    <span class="cf">for</span> _, text <span class="kw">in</span> commander.events[sent:]:</span>
-<span id="cb5-9"><a aria-label="9"></a>        outlet.push_sample([text])   <span class="co"># time-stamped on LSL's clock</span></span>
-<span id="cb5-10"><a aria-label="10"></a>    sent <span class="op">=</span> <span class="bu">len</span>(commander.events)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code># what a recorder receives
-  LSL time (s)  event
-   1584705.990  Group 0 ordered to node 78
-   1584706.233  Target 78 reached by group 0
-   1584706.544  Mission complete in 1410 steps</code></pre>
-<div class="checkpoint">
-<p><strong>Not in <code>ihuman-shasta</code> yet</strong> — the paper’s pattern around <code>SwarmCommander</code>. Tested script: <code>labs/lsl_markers.py</code>.</p>
+<div class="hook">
+<p>Every order becomes a time-stamped marker, with its target on the screen.</p>
 </div>
+<div class="task-split">
+<div class="task-col">
+<div class="code-card">
+<p><span class="code-file">notebook · Step 7</span> <span class="code-where">two lines on the commander</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>markers <span class="op">=</span> MarkerOutlet(<span class="st">"SHASTA-Events"</span>)</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>attach_markers(commander, markers)</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>attach_order_markers(commander, markers, view)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="task-label">Run</span> Step 7: give a few orders, then press <strong>Stop</strong>.</p>
+</div>
+<div class="result-col">
+<p><span class="task-label">What a recorder receives</span> <span class="src-cap">(x, y): target, px</span></p>
+<div class="result-terminal">
+<pre class="text"><code> LSL time  marker
+   0.00 s  session_start
+   2.27 s  order  group 0 -&gt; 10   (293, 505)
+   3.60 s  order  group 1 -&gt; 25   (467, 520)
+   4.95 s  order  group 0 -&gt; 40   (445, 391)
+   7.05 s  session_end</code></pre>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><code>attach_markers</code> and <code>attach_order_markers</code> are in <code>lsl_tools.py</code>, next to the notebook: they wrap the commander so that every log line and every order is pushed to an LSL marker stream. An order marker also carries the target’s position on the screen, which is where the operator should look next; gaze can then be compared with it. This is the paper’s pattern around <code>SwarmCommander</code>; the LSL layer is not part of the <code>ihuman-shasta</code> package yet.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="record-your-own-session" class="slide level2">
+<h2>Record Your Own <span class="accent">Session</span></h2>
+<div class="hook">
+<p>Play the operator. Your orders and the gaze go into one file.</p>
+</div>
+<div class="loop-grid short">
+<div class="loop-step">
+<p><span class="loop-number">1</span><span class="loop-title">Markers</span></p>
+<p>Every order you give, with its target on the screen.</p>
+</div>
+<div class="loop-step">
+<p><span class="loop-number">2</span><span class="loop-title">Gaze</span></p>
+<p>Where the operator looks. Synthetic here: it looks at your last target, then follows the group.</p>
+</div>
+<div class="loop-step">
+<p><span class="loop-number">3</span><span class="loop-title">Recorder</span></p>
+<p>Picks up exactly these two streams and writes one XDF file.</p>
+</div>
+</div>
+<div class="code-card">
+<p><span class="code-file">notebook · Step 7</span> <span class="code-where">the last cell</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>play_shasta(gui, on_stop<span class="op">=</span>finish)     <span class="co"># play, press Stop, and the file is saved</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="band">
+<p>A real eye tracker streams the same way: it publishes a <code>Gaze</code> stream from the laptop it is plugged into, and the recorder picks it up. See the appendix.</p>
+</div>
+<aside class="notes">
+<p>Step 7 has two cells: the first starts the streams and the recorder, the second plays the interface while the synthetic gaze looks at the target you just ordered and then follows the selected group. Press Stop and the session ends, the streams close, and <code>session.xdf</code> is saved next to the notebook. Rerun both cells to record again. The synthetic gaze is made up, so no hardware is needed; the stream is marked synthetic in the file.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="analyse-the-recording" class="slide level2">
+<h2>Analyse the <span class="accent">Recording</span></h2>
+<div class="hook">
+<p>Both streams share one clock, so a look lines up with an order.</p>
+</div>
+<p><img data-src="assets/gaze-timeline.png" alt="Gaze x and y over time, with a red dashed line at each order." height="285"></p>
+<div class="cards cols-3">
+<div class="card">
+<p><span class="card-title">Gaze over time</span> Each red line is an order. The gaze jumps to the target right after it.</p>
+</div>
+<div class="card">
+<p><span class="card-title">Where they looked</span> Fixations and a heatmap on the interface.</p>
+</div>
+<div class="card">
+<p><span class="card-title">Reaction to an order</span> How long until the operator looks at the target, and for how long.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Step 8 loads <code>session.xdf</code> with <code>pyxdf</code> and draws figures like this one from the session in Step 7. The gaze here is synthetic, built to look at the target right after each order, so it shows the method; with a real tracker the same cells measure real latency and dwell time. The heatmap and fixations are drawn on a frame of the interface. To analyse a real study, set <code>XDF_PATH</code> to the LabRecorder file.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="four-things-that-will-trip-you-up" class="slide level2">
 <h2>Four Things That Will <span class="accent">Trip You Up</span></h2>
@@ -539,30 +1055,101 @@
 </section>
 <section id="build-your-own-experiment" class="slide level2">
 <h2>Build Your Own <span class="accent">Experiment</span></h2>
-<p>Subclass <code>shasta.base_experiment.BaseExperiment</code> and implement the methods:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="kw">class</span> FlyNorthExperiment(BaseExperiment):</span>
-<span id="cb7-2"><a aria-label="2"></a>    <span class="kw">def</span> get_action_space(<span class="va">self</span>): ...       <span class="co"># a gymnasium.spaces object</span></span>
-<span id="cb7-3"><a aria-label="3"></a>    <span class="kw">def</span> get_observation_space(<span class="va">self</span>): ...  <span class="co"># likewise</span></span>
-<span id="cb7-4"><a aria-label="4"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core): ...   <span class="co"># move things</span></span>
-<span id="cb7-5"><a aria-label="5"></a>    <span class="kw">def</span> get_observation(<span class="va">self</span>, observation, core): ...  <span class="co"># shape the obs</span></span>
-<span id="cb7-6"><a aria-label="6"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core): ...  <span class="co"># when to stop</span></span>
-<span id="cb7-7"><a aria-label="7"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core): ...   <span class="co"># optional</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where to start:</p>
-<div class="cards cols-4">
-<div class="card">
-<p><span class="card-title">Scripted operator</span> <code>labs/human_loop.py</code></p>
+<div class="hook">
+<p>Subclass <code>GoToNodeExperiment</code>, add your own rules, and compare strategies.</p>
 </div>
-<div class="card">
-<p><span class="card-title">LSL markers</span> <code>labs/lsl_markers.py</code></p>
+<div class="task-split">
+<div class="task-col">
+<div class="code-card">
+<p><span class="code-file">notebook · Step 5</span> <span class="code-where">abridged</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TargetCollector(GoToNodeExperiment):</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core):</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>        ...    <span class="co"># pick the next node with the strategy, fly to it</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core):</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>        ...    <span class="co"># done when every node has been visited</span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core):</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="fl">1.0</span> <span class="cf">if</span> <span class="va">self</span>.arrived_now <span class="cf">else</span> <span class="fl">0.0</span>) <span class="op">-</span> <span class="fl">0.001</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="card">
-<p><span class="card-title">Smallest experiment</span> <code>labs/custom_experiment.py</code></p>
+<p><span class="task-label">Run</span> Step 5, then add a strategy of your own.</p>
 </div>
-<div class="card">
-<p><span class="card-title">Human-facing layer</span> <code>shasta/interaction.py</code></p>
+<div class="result-col fragment">
+<p><span class="task-label">Two strategies, the same five nodes</span></p>
+<div class="tight-table">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Strategy</th>
+<th>Steps</th>
+<th>Distance</th>
+<th>Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>nearest</td>
+<td>6023</td>
+<td>2828 m</td>
+<td>-1.02</td>
+</tr>
+<tr class="even">
+<td>random</td>
+<td>6832</td>
+<td>3196 m</td>
+<td>-1.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="watch-list">
+<div class="watch-item">
+<p><span class="watch-num">1</span> <span class="watch-title">Your rules</span> What the vehicles do, what is observed, when it ends</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">2</span> <span class="watch-title">A reward</span> +1 for each node, a small cost for each step</p>
 </div>
 </div>
-<p>A map of your own study site: <code>shasta fetch-osm</code> + <code>shasta build-map</code> (needs Java; not exercised here — see the main <code>README.md</code>).</p>
+</div>
+</div>
+<aside class="notes">
+<p>An experiment is a class that fills in <code>apply_actions</code>, <code>get_observation</code>, <code>get_done_status</code> and <code>compute_reward</code> of <code>BaseExperiment</code>. <code>GoToNodeExperiment</code> already routes and flies in formation, so <code>TargetCollector</code> extends it: one UAV group visits a list of nodes, picking the next with a strategy you pass in. The table is the output of the notebook’s cell. A map of your own study site: <code>shasta fetch-osm</code> and <code>shasta build-map</code> (need Java; not exercised in this tutorial).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="open-discussion" class="slide level2">
+<h2>Open <span class="accent">Discussion</span></h2>
+<div class="watch-list discuss">
+<div class="watch-item">
+<p><span class="watch-num">1</span> <span class="watch-title">Your question</span> What would you ask about a person commanding a swarm, and what would you change in the map, the mission or the number of vehicles to ask it?</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">2</span> <span class="watch-title">Human and autonomy</span> Which decisions should the person keep and which should the swarm make? Would an LLM or a learned policy take some of them?</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">3</span> <span class="watch-title">Sense the human</span> Gaze, heart rate, EEG: which streams, and which orders would you mark? The same loop fits a rescuer in rooms in the other session.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Open on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. Questions 2 and 3 reach across to the MOSAIC session, so people who attend only one can still join. Write down what people say is missing; it becomes the issue list.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="section" class="slide level2" data-background-opacity="0.25">
 <h2></h2>
@@ -578,6 +1165,112 @@
 <p>ehsanesf@buffalo.edu &amp; hemanth.manjunatha@okstate.edu</p>
 </div>
 </div>
+</section>
+<section class="slide level2">
+
+<div class="divider">
+<p><span class="divider-title">Appendix</span></p>
+<p><span class="divider-subtitle">More ways to run it</span></p>
+<p><span class="divider-path">On your laptop, and with a real eye tracker</span></p>
+</div>
+</section>
+<section id="run-shasta-on-your-own-laptop" class="slide level2">
+<h2>Run SHaSTA on Your Own <span class="accent">Laptop</span></h2>
+<div class="hook">
+<p>Everything here runs on a laptop too, with Python 3.9 or newer and Git.</p>
+</div>
+<div class="columns install-split">
+<div class="column" style="width:58%;">
+<div class="panel-tabset install-code">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">macOS / Linux</a></li><li><a href="#tabset-1-2">Windows PowerShell</a></li></ul>
+<div class="tab-content install-code">
+<div id="tabset-1-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a aria-label="1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
+<span id="cb10-2"><a aria-label="2"></a><span class="bu">cd</span> shasta-ub</span>
+<span id="cb10-3"><a aria-label="3"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb10-4"><a aria-label="4"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a aria-label="1"></a>git clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="fu">cd</span> shasta-ub</span>
+<span id="cb11-3"><a aria-label="3"></a>python <span class="op">-</span>m venv <span class="op">.</span><span class="fu">venv</span></span>
+<span id="cb11-4"><a aria-label="4"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a aria-label="1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-e</span> <span class="st">".[gui]"</span></span>
+<span id="cb12-2"><a aria-label="2"></a><span class="ex">python</span> <span class="at">-m</span> pip install pylsl pyxdf ipywidgets ipyevents notebook</span>
+<span id="cb12-3"><a aria-label="3"></a><span class="bu">cd</span> notebooks</span>
+<span id="cb12-4"><a aria-label="4"></a><span class="ex">python</span> <span class="at">-m</span> jupyter notebook 01_shasta_hsi.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:42%;">
+<div class="line-steps">
+<div class="line-step">
+<p><span class="line-num">1</span> <span class="line-title">Clone and isolate</span></p>
+<p>The code, and a private Python environment</p>
+</div>
+<div class="line-step">
+<p><span class="line-num">2</span> <span class="line-title">Install SHaSTA</span></p>
+<p><code>[gui]</code> adds the human interface; <code>-e</code> means edits apply without reinstalling</p>
+</div>
+<div class="line-step">
+<p><span class="line-num">3</span> <span class="line-title">Notebook packages</span></p>
+<p>For LSL, the recording, and the browser interface</p>
+</div>
+<div class="line-step">
+<p><span class="line-num">4</span> <span class="line-title">Open the notebook</span></p>
+<p>Start Jupyter from the <code>notebooks</code> folder</p>
+</div>
+</div>
+</div></div>
+<div class="card secondary">
+<p><span class="card-title">Not on PyPI yet</span> <code>pip install "ihuman-shasta[gui]"</code> fails with “No matching distribution found.” Install from a clone as above. The notebook asks for the kernel: choose <strong>Python 3 (ipykernel)</strong>. <code>shasta gui</code> opens the interface in its own window.</p>
+</div>
+<aside class="notes">
+<p>The notebook draws the interface off-screen and shows it in the browser, so a laptop needs no display setup beyond a browser. <code>shasta maps</code> lists the maps and <code>shasta demo</code> runs a headless mission, which is a good check that the install works. <code>shasta gui</code> is the same interface in its own window.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="record-a-real-study-on-a-laptop" class="slide level2">
+<h2>Record a Real Study on a <span class="accent">Laptop</span></h2>
+<div class="hook">
+<p>A USB eye tracker cannot plug into the server, so a real recording runs on the tracker’s laptop.</p>
+</div>
+<div class="code-card">
+<p><span class="code-file">on the tracker’s laptop</span> <span class="code-where">in <code>notebooks/</code></span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> tobii_to_lsl.py <span class="at">--width</span> 1920 <span class="at">--height</span> 1080     <span class="co"># the Tobii tracker -&gt; an LSL "Gaze" stream</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> shasta_gui_lsl.py <span class="at">--map</span> buffalo-small          <span class="co"># the real interface + an LSL "Markers" stream</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># LabRecorder: Update, select both streams, Start, run the task, Stop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="feature-list">
+<div class="feature-row">
+<p><span class="feature-name">Then</span> LabRecorder writes one <code>.xdf</code> file. Upload it next to the notebook, set <code>XDF_PATH</code> in Step 8, and run the analysis unchanged.</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Caveat</span> <code>tobii_to_lsl.py</code> and <code>shasta_gui_lsl.py</code> have not been run against real hardware in this repository: check them on your own setup first.</p>
+</div>
+</div>
+<aside class="notes">
+<p><code>tobii_to_lsl.py</code> publishes the tracker as an LSL stream with the same name and channels as the notebook’s synthetic gaze, so the analysis cells do not change. <code>shasta_gui_lsl.py</code> is the normal interface plus an LSL marker stream of the operator’s orders. Start the tracker stream and LabRecorder first. Calibrate the tracker in the vendor’s software; the script does not calibrate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 </section>
@@ -966,15 +1659,16 @@
       });
       </script>
     <script>
+    // The two universities on the title slide
     document.addEventListener('DOMContentLoaded', function () {
       var titleSlide = document.getElementById('title-slide');
       if (!titleSlide) return;
-      var row = document.createElement('div');
-      row.style.cssText = 'position:absolute; top:528px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:14px;';
-      row.innerHTML =
-        '<img src="assets/osu-logo.png" alt="Oklahoma State University" style="max-height:75px; width:auto; border-radius:0; box-shadow:none;">' +
-        '<img src="assets/ub-logo.png" alt="University at Buffalo" style="max-height:75px; width:auto; border-radius:0; box-shadow:none;">';
-      titleSlide.appendChild(row);
+      var col = document.createElement('div');
+      col.style.cssText = 'position:absolute; top:50%; right:70px; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:26px;';
+      col.innerHTML =
+        '<img src="assets/osu-logo.png" alt="Oklahoma State University" style="max-height:100px; width:auto; border-radius:0; box-shadow:none;">' +
+        '<img src="assets/ub-logo.png" alt="University at Buffalo" style="max-height:100px; width:auto; border-radius:0; box-shadow:none;">';
+      titleSlide.appendChild(col);
     });
     </script>
     

@@ -103,7 +103,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1cf964a1591def2c3e170ac96b130a2f.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-31eceb2e00ab0cd1fc0b0db0a751446b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1634,6 +1634,56 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
           display:block!important;
       }</style></aside>
 </section>
+<section id="the-challenge-beat-the-room" class="slide level2">
+<h2>The Challenge: Beat the <span class="accent">Room</span></h2>
+<div class="hook">
+<p>Same level, two minutes, one leaderboard.</p>
+</div>
+<div class="task-split">
+<div class="task-col">
+<div class="code-card">
+<p><span class="code-file">notebook · Step 9</span> <span class="code-where">before you play, and when you stop</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>PREDICTION <span class="op">=</span> <span class="dv">3</span>       <span class="co"># your guess: set it BEFORE you play</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># when the game ends, your score is saved:</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>submit_score(<span class="st">"mosaic"</span>, NICKNAME, score, steps<span class="op">=</span>steps,</span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>             prediction<span class="op">=</span>PREDICTION)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="task-label">Run</span> Step 9: set <code>PREDICTION</code>, run the cell, and play.</p>
+<p><span class="predict">What score will you get?</span></p>
+</div>
+<div class="result-col fragment">
+<p><span class="task-label">What you will see</span></p>
+<div class="watch-list">
+<div class="watch-item">
+<p><span class="watch-num">1</span> <span class="watch-title">Your result</span> Your score, and how close your guess was</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">2</span> <span class="watch-title">The agent</span> A random agent plays the same level 50 times: where do you rank?</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">3</span> <span class="watch-title">The board</span> Everyone’s scores, and who predicted their own best</p>
+</div>
+</div>
+</div>
+</div>
+<div class="punchline">
+<p>A real victim is +1 and a decoy is −5: <span class="accent">telling them apart is the whole game</span>.</p>
+</div>
+<aside class="notes">
+<p>Everyone plays the same level (a fixed seed, so the buildings, victims, decoys and lava are identical), for two minutes. The score is the reward: +1 for each real victim, −5 for each decoy. The game ends at Stop, when the two minutes are up, or when the episode ends by itself. Before they play, everyone sets <code>PREDICTION</code> to the score they expect: commit first, then see. Afterwards the notebook shows how far off they were and how a random agent does on the same level. Put <code>03_leaderboard.ipynb</code> on the projector: it refreshes the board every few seconds, ranks by score with fewer steps breaking a tie, and lists the best forecasters. Only each person’s best score is kept, so they can play again.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="gui" class="slide level2">
 <h2>4.2 · <span class="accent">GUI</span></h2>
 <div class="custom-strip">
@@ -1646,8 +1696,8 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="section-left">
 <div class="code-card section-code">
 <p><span class="code-file">notebook · Step 4</span> <span class="code-where">the window, then the game</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a>gui <span class="op">=</span> SAREnvGUI(env, config<span class="op">=</span>GAME)</span>
-<span id="cb8-2"><a aria-label="2"></a>play_mosaic(gui)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>gui <span class="op">=</span> SAREnvGUI(env, config<span class="op">=</span>GAME)</span>
+<span id="cb9-2"><a aria-label="2"></a>play_mosaic(gui)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="result-img section-shot">
 <p><img data-src="assets/gui-first-frame.png" alt="The MOSAIC window: the game view, the mission panel, and the chat panel."></p>
@@ -1698,9 +1748,9 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="section-left">
 <div class="code-card section-code">
 <p><span class="code-file">notebook · Step 6</span> <span class="code-where">the contract</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a><span class="kw">class</span> StandInTeammate(LLMClient):</span>
-<span id="cb9-2"><a aria-label="2"></a>    <span class="kw">def</span> query(<span class="va">self</span>, prompt):</span>
-<span id="cb9-3"><a aria-label="3"></a>        <span class="cf">return</span> <span class="st">"&lt;START&gt; Head East. &lt;END&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a><span class="kw">class</span> StandInTeammate(LLMClient):</span>
+<span id="cb10-2"><a aria-label="2"></a>    <span class="kw">def</span> query(<span class="va">self</span>, prompt):</span>
+<span id="cb10-3"><a aria-label="3"></a>        <span class="cf">return</span> <span class="st">"&lt;START&gt; Head East. &lt;END&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="result-img ui-crop section-wide">
 <p><img data-src="assets/results/teammate-placeholder.png" alt="Chat panel: Currently, no commands are available."></p>
@@ -1752,9 +1802,9 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card">
 <p><span class="code-file">notebook · Step 6</span> <span class="code-where">the last cell</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="st">-play_mosaic(SAREnvGUI(env, config=GAME))</span></span>
-<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">+play_mosaic(SAREnvGUI(env, config=GAME,</span></span>
-<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">+                      llm_client=StandInTeammate()))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="st">-play_mosaic(SAREnvGUI(env, config=GAME))</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">+play_mosaic(SAREnvGUI(env, config=GAME,</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">+                      llm_client=StandInTeammate()))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="task-label">Run</span> Press <code>Q</code> in the game.</p>
 <p><span class="predict">Does it know where you are?</span></p>
@@ -1798,9 +1848,9 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card">
 <p><span class="code-file">notebook · Step 6</span> <span class="code-where">the last cell</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>PROMPT_TYPE <span class="op">=</span> <span class="st">"sparse"</span>            <span class="co"># or "detailed"</span></span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>config<span class="op">=</span>{<span class="op">**</span>GAME, <span class="st">"prompt_type"</span>: PROMPT_TYPE}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>PROMPT_TYPE <span class="op">=</span> <span class="st">"sparse"</span>            <span class="co"># or "detailed"</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>config<span class="op">=</span>{<span class="op">**</span>GAME, <span class="st">"prompt_type"</span>: PROMPT_TYPE}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="feature-list compact">
 <div class="feature-row">
@@ -1851,8 +1901,8 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="section-left">
 <div class="code-card section-code">
 <p><span class="code-file">notebook · Step 3</span> <span class="code-where">play with a live readout</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>player <span class="op">=</span> User(make_env())</span>
-<span id="cb12-2"><a aria-label="2"></a>play_view(player)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>player <span class="op">=</span> User(make_env())</span>
+<span id="cb13-2"><a aria-label="2"></a>play_view(player)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="result-terminal section-terminal">
 <pre class="text"><code>obs → agent_x, agent_y, agent_dir, grid,
@@ -1907,13 +1957,13 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card mini">
 <p><span class="code-file"><code>tobii_to_lsl.py</code></span> <span class="code-where">on the laptop the tracker is plugged into</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> tobii_to_lsl.py <span class="at">--width</span> 1920 <span class="at">--height</span> 1080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> tobii_to_lsl.py <span class="at">--width</span> 1920 <span class="at">--height</span> 1080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="code-card mini">
 <p><span class="code-file"><code>config.yaml</code></span> <span class="code-where">the <code>eye_tracker:</code> section</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a> eye_tracker:</span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">-  source: synthetic</span></span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">+  source: live</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a> eye_tracker:</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">-  source: synthetic</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">+  source: live</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="predict">What lands next to the game data?</span></p>
 </div>
@@ -2120,6 +2170,33 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
           display:block!important;
       }</style></aside>
 </section>
+<section id="open-discussion" class="slide level2">
+<h2>Open <span class="accent">Discussion</span></h2>
+<div class="watch-list discuss">
+<div class="watch-item">
+<p><span class="watch-num">1</span> <span class="watch-title">Human–AI Teaming</span> What human–AI teaming question would you ask first, and what would you change in the rooms, victims or rewards to ask it?</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">2</span> <span class="watch-title">An LLM as teammate</span> What should it see, what should it be allowed to do, and how would you tell a good teammate from a fluent one?</p>
+</div>
+<div class="watch-item">
+<p><span class="watch-num">3</span> <span class="watch-title">Sense the human</span> Which physiological signals, and which game events, would you use to close the loop?</p>
+</div>
+</div>
+<aside class="notes">
+<p>Open on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. The third question reaches across to the SHaSTA session, so people who attend only one can still join. If it goes quiet, ask who guessed their score best and what changed how they played. Write down what people say is missing; it becomes the issue list.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="section" class="slide level2" data-background-color="#252525">
 <h2></h2>
 <div class="closing">
@@ -2152,33 +2229,33 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">macOS / Linux</a></li><li><a href="#tabset-1-2">Windows PowerShell</a></li><li><a href="#tabset-1-3">Conda · Any Platform</a></li></ul>
 <div class="tab-content install-code">
 <div id="tabset-1-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a aria-label="1"></a><span class="fu">git</span> clone https://github.com/iHuman-Lab/mosaic.git</span>
-<span id="cb16-2"><a aria-label="2"></a><span class="bu">cd</span> mosaic</span>
-<span id="cb16-3"><a aria-label="3"></a><span class="ex">python3</span> <span class="at">-m</span> venv mosaic_env</span>
-<span id="cb16-4"><a aria-label="4"></a><span class="bu">source</span> mosaic_env/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a aria-label="1"></a><span class="fu">git</span> clone https://github.com/iHuman-Lab/mosaic.git</span>
+<span id="cb17-2"><a aria-label="2"></a><span class="bu">cd</span> mosaic</span>
+<span id="cb17-3"><a aria-label="3"></a><span class="ex">python3</span> <span class="at">-m</span> venv mosaic_env</span>
+<span id="cb17-4"><a aria-label="4"></a><span class="bu">source</span> mosaic_env/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a aria-label="1"></a>git clone https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>iHuman-Lab<span class="op">/</span>mosaic<span class="op">.</span><span class="fu">git</span></span>
-<span id="cb17-2"><a aria-label="2"></a><span class="fu">cd</span> mosaic</span>
-<span id="cb17-3"><a aria-label="3"></a>python <span class="op">-</span>m venv mosaic_env</span>
-<span id="cb17-4"><a aria-label="4"></a><span class="op">.</span>\mosaic_env\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb18-1"><a aria-label="1"></a>git clone https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>iHuman-Lab<span class="op">/</span>mosaic<span class="op">.</span><span class="fu">git</span></span>
+<span id="cb18-2"><a aria-label="2"></a><span class="fu">cd</span> mosaic</span>
+<span id="cb18-3"><a aria-label="3"></a>python <span class="op">-</span>m venv mosaic_env</span>
+<span id="cb18-4"><a aria-label="4"></a><span class="op">.</span>\mosaic_env\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a aria-label="1"></a><span class="fu">git</span> clone https://github.com/iHuman-Lab/mosaic.git</span>
-<span id="cb18-2"><a aria-label="2"></a><span class="bu">cd</span> mosaic</span>
-<span id="cb18-3"><a aria-label="3"></a><span class="ex">conda</span> create <span class="at">-n</span> mosaic_env python=3.11 <span class="at">-y</span></span>
-<span id="cb18-4"><a aria-label="4"></a><span class="ex">conda</span> activate mosaic_env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a aria-label="1"></a><span class="fu">git</span> clone https://github.com/iHuman-Lab/mosaic.git</span>
+<span id="cb19-2"><a aria-label="2"></a><span class="bu">cd</span> mosaic</span>
+<span id="cb19-3"><a aria-label="3"></a><span class="ex">conda</span> create <span class="at">-n</span> mosaic_env python=3.11 <span class="at">-y</span></span>
+<span id="cb19-4"><a aria-label="4"></a><span class="ex">conda</span> activate mosaic_env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a aria-label="1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
-<span id="cb19-2"><a aria-label="2"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-e</span> .</span>
-<span id="cb19-3"><a aria-label="3"></a><span class="ex">python</span> <span class="at">-m</span> pip uninstall <span class="at">-y</span> pygame</span>
-<span id="cb19-4"><a aria-label="4"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--force-reinstall</span> <span class="st">"pygame-ce&gt;=2.5.2"</span></span>
-<span id="cb19-5"><a aria-label="5"></a><span class="ex">python</span> <span class="at">-m</span> pip install matplotlib scipy pandas pylsl pyxdf</span>
-<span id="cb19-6"><a aria-label="6"></a><span class="ex">python</span> <span class="at">-m</span> pip install ipywidgets ipyevents notebook</span>
-<span id="cb19-7"><a aria-label="7"></a><span class="bu">cd</span> notebooks</span>
-<span id="cb19-8"><a aria-label="8"></a><span class="ex">python</span> <span class="at">-m</span> jupyter notebook 02_mosaic_human_ai.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a aria-label="1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
+<span id="cb20-2"><a aria-label="2"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-e</span> .</span>
+<span id="cb20-3"><a aria-label="3"></a><span class="ex">python</span> <span class="at">-m</span> pip uninstall <span class="at">-y</span> pygame</span>
+<span id="cb20-4"><a aria-label="4"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--force-reinstall</span> <span class="st">"pygame-ce&gt;=2.5.2"</span></span>
+<span id="cb20-5"><a aria-label="5"></a><span class="ex">python</span> <span class="at">-m</span> pip install matplotlib scipy pandas pylsl pyxdf</span>
+<span id="cb20-6"><a aria-label="6"></a><span class="ex">python</span> <span class="at">-m</span> pip install ipywidgets ipyevents notebook</span>
+<span id="cb20-7"><a aria-label="7"></a><span class="bu">cd</span> notebooks</span>
+<span id="cb20-8"><a aria-label="8"></a><span class="ex">python</span> <span class="at">-m</span> jupyter notebook 02_mosaic_human_ai.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:42%;">
 <div class="line-steps">
 <div class="line-step">
@@ -2229,8 +2306,8 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card">
 <p><span class="code-file">notebook · Step 5</span> <span class="code-where"><code>make_level</code> or <code>config.yaml</code></span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="st">-make_level(rows=3, cols=3, locked=0.5)</span></span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">+make_level(rows=3, cols=3, locked=0.9)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="st">-make_level(rows=3, cols=3, locked=0.5)</span></span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">+make_level(rows=3, cols=3, locked=0.9)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="task-label">Run</span> Play the level and walk to the nearest door.</p>
 <p><span class="predict">How much of the building can you still reach?</span></p>
@@ -2271,9 +2348,9 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card">
 <p><span class="code-file"><code>config.yaml</code></span> <span class="code-where">the <code>game:</code> section</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a> game:</span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">-  max_time: 5</span></span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">+  max_time: 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a> game:</span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">-  max_time: 5</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">+  max_time: 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="task-label">Run</span> Run Step 1 again, then play and watch the timer.</p>
 <p><span class="predict">How will you play with only 2 minutes?</span></p>
