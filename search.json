@@ -7,6 +7,13 @@
     "text": "Today’s Sessions\n\nTwo hands-on sessions, back to back, in the same room.\n\n\n\n\n8:30–10:30 AM Session 1 · MOSAIC\n\nA configurable testbed for human–AI teaming. Play a search-and-rescue mission in your browser, then change the task, the AI teammate and the sensing.\n\n\n11:00 AM–1:00 PM Session 2 · SHaSTA\n\nA simulator for human–swarm teaming. Put a human in the loop with a swarm, and log what they do on one clock.\n\n\n\nEvergreen C Where\n\n\n@Hyatt_Meeting Wi-Fi network\n\n\nSMC26 Wi-Fi password\n\n\n\nWelcome. This is the tutorial “Closing the Human-AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing”, in two sessions in Evergreen C. Session 1, 8:30 to 10:30, is MOSAIC; Session 2, 11:00 to 1:00, is SHaSTA. Wi-Fi: network @Hyatt_Meeting, password SMC26. Leave this slide up while people settle and connect."
   },
   {
+    "objectID": "shasta-tutorial/shasta-tutorial.html#section",
+    "href": "shasta-tutorial/shasta-tutorial.html#section",
+    "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
+    "section": "",
+    "text": "Session 2 · 11:00 AM–1:00 PM\nSHaSTAAn Open-Source Simulator for Human and Swarm Team Applications\nA hands-on tutorial: putting a human in the loop with a swarm"
+  },
+  {
     "objectID": "shasta-tutorial/shasta-tutorial.html#meet-the-team",
     "href": "shasta-tutorial/shasta-tutorial.html#meet-the-team",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
@@ -32,7 +39,7 @@
     "href": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What Is SHaSTA",
-    "text": "What Is SHaSTA\nSimulator for Human and Swarm Team Applications (Manjunatha et al., 2024), a pybullet-based simulator for studying how people command and work with swarms. Four components:\n\n\nSHaSTA core The swarm simulation: pybullet physics on real OpenStreetMap city maps, UAV and UGV groups, formation and path planning.\n\n\nHuman interface Shows the swarm state and sends the operator’s commands to the core.\n\n\nData recording and sync Lab Streaming Layer time-stamps the operator’s inputs and mission events.\n\n\nPhysiological recording EEG, eye tracking and other sensors, streamed onto the same clock.\n\n\nEvery mission runs the same loop, and each step can be logged:\n\n\n1Observe\nThe operator sees positions, battery, ammo and mission progress.\n\n\n2Decide\nThey choose which group goes where.\n\n\n3Command\nSwarmCommander turns the order into a route on the street graph.\n\n\n4Execute\nFormation moves the group along the route, and the state changes.\n\n\n\nThe paper describes all four components. ihuman-shasta ships the core and the interface; the notebook adds LSL (lsl_tools.py)."
+    "text": "What Is SHaSTA\nAn open-source Simulator for Human and Swarm Team Applications (Manjunatha et al., 2024), a pybullet-based simulator for studying how people command and work with swarms. Four components:\n\n\nSHaSTA core The swarm simulation: pybullet physics on real OpenStreetMap city maps, UAV and UGV groups, formation and path planning.\n\n\nHuman interface Shows the swarm state and sends the operator’s commands to the core.\n\n\nData recording and sync Lab Streaming Layer time-stamps the operator’s inputs and mission events.\n\n\nPhysiological recording EEG, eye tracking and other sensors, streamed onto the same clock.\n\n\nEvery mission runs the same loop, and each step can be logged:\n\n\n1Observe\nThe operator sees positions, battery, ammo and mission progress.\n\n\n2Decide\nThey choose which group goes where.\n\n\n3Command\nSwarmCommander turns the order into a route on the street graph.\n\n\n4Execute\nFormation moves the group along the route, and the state changes.\n\n\n\nThe paper describes all four components. ihuman-shasta ships the core and the interface; the notebook adds LSL (lsl_tools.py)."
   },
   {
     "objectID": "shasta-tutorial/shasta-tutorial.html#open-the-notebook",
@@ -151,11 +158,11 @@
     "href": "shasta-tutorial/shasta-tutorial.html#open-discussion",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Open Discussion",
-    "text": "Open Discussion\n\n\n1 Your question What would you ask about a person commanding a swarm, and what would you change in the map, the mission or the number of vehicles to ask it?\n\n\n2 Human and autonomy Which decisions should the person keep and which should the swarm make? Would an LLM or a learned policy take some of them?\n\n\n3 Sense the human Gaze, heart rate, EEG: which streams, and which orders would you mark? The same loop fits a rescuer in rooms in the other session.\n\n\n\nOpen on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. Questions 2 and 3 reach across to the MOSAIC session, so people who attend only one can still join. Write down what people say is missing; it becomes the issue list."
+    "text": "Open Discussion\n\n\n1 Human–Swarm Teaming What human–swarm teaming question would you ask first, and what would you change in the map, the mission or the number of vehicles to ask it?\n\n\n2 Human and autonomy Which decisions should the person keep and which should the swarm make on its own, and how would you tell good teaming from an operator who just follows?\n\n\n3 Sense the human Which physiological signals, and which swarm events, would you use to close the loop?\n\n\n\nOpen on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. Questions 2 and 3 reach across to the MOSAIC session, so people who attend only one can still join. Write down what people say is missing; it becomes the issue list."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#section",
-    "href": "shasta-tutorial/shasta-tutorial.html#section",
+    "objectID": "shasta-tutorial/shasta-tutorial.html#section-1",
+    "href": "shasta-tutorial/shasta-tutorial.html#section-1",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "",
     "text": "Thanks!\n\n\n\nQuestions? See the SHaSTA repository README.\nehsanesf@buffalo.edu & hemanth.manjunatha@okstate.edu"
@@ -427,6 +434,13 @@
     "text": "Today’s Sessions\n\nTwo hands-on sessions, back to back, in the same room.\n\n\n\n\n8:30–10:30 AM Session 1 · MOSAIC\n\nA configurable testbed for human–AI teaming. Play a search-and-rescue mission in your browser, then change the task, the AI teammate and the sensing.\n\n\n11:00 AM–1:00 PM Session 2 · SHaSTA\n\nA simulator for human–swarm teaming. Put a human in the loop with a swarm, and log what they do on one clock.\n\n\n\nEvergreen C Where\n\n\n@Hyatt_Meeting Wi-Fi network\n\n\nSMC26 Wi-Fi password\n\n\n\nWelcome. This is the tutorial “Closing the Human-AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing”, in two sessions in Evergreen C. Session 1, 8:30 to 10:30, is MOSAIC; Session 2, 11:00 to 1:00, is SHaSTA. Wi-Fi: network @Hyatt_Meeting, password SMC26. Leave this slide up while people settle and connect."
   },
   {
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#section",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#section",
+    "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
+    "section": "",
+    "text": "Session 1 · 8:30–10:30 AM\nMOSAICModular System for Adaptive Human–AI Collaboration\nA configurable testbed for human–AI teaming · github.com/iHuman-Lab/mosaic"
+  },
+  {
     "objectID": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
     "href": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
@@ -665,8 +679,8 @@
     "text": "Open Discussion\n\n\n1 Human–AI Teaming What human–AI teaming question would you ask first, and what would you change in the rooms, victims or rewards to ask it?\n\n\n2 An LLM as teammate What should it see, what should it be allowed to do, and how would you tell a good teammate from a fluent one?\n\n\n3 Sense the human Which physiological signals, and which game events, would you use to close the loop?\n\n\n\nOpen on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. The third question reaches across to the SHaSTA session, so people who attend only one can still join. If it goes quiet, ask who guessed their score best and what changed how they played. Write down what people say is missing; it becomes the issue list."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#section",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#section",
+    "objectID": "mosaic-tutorial/mosaic-tutorial.html#section-1",
+    "href": "mosaic-tutorial/mosaic-tutorial.html#section-1",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "",
     "text": "Thanks!\nQuestions?\n\nMOSAIC github.com/iHuman-Lab/mosaic"
