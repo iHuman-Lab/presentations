@@ -228,7 +228,7 @@
     "href": "ieee_smc_eo/presentation/smc.html#research-model",
     "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
     "section": "What We Investigate",
-    "text": "What We Investigate\n\n  \n    \n    \n    \n  \n\n  \n  \n  LLM guidance\n  \n  Expertise\n\n  \n  \n  \n\n  \n  change\n  ?\n\n  \n  \n  \n\n  \n  Performance\n  \n  Visual behavior"
+    "text": "What We Investigate\n\n  WHAT WE VARY\n  WE TEST\n  WHAT WE MEASURE\n  \n    LLM guidance\n    LLMNo LLM\n  \n  \n    Expertise\n    NoviceExpert\n  \n  ➔\n  ➔\n  Effect ofguidance?by expertise?\n  ➔\n  ➔\n  \n    Performance\n    Victims per stepTotal rewardSaved victims\n  \n  \n    Visual behavior\n    Fixations & saccadesPupil diameterGame vs. chat attention"
   },
   {
     "objectID": "ieee_smc_eo/presentation/smc.html#task-and-eye-tracking-features",
