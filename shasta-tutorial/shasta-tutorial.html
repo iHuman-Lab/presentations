@@ -860,6 +860,53 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
           display:block!important;
       }</style></aside>
 </section>
+<section id="build-a-map-of-anywhere" class="slide level2">
+<h2>Build a Map of <span class="accent">Anywhere</span></h2>
+<div class="hook">
+<p>Any place in OpenStreetMap becomes a SHaSTA map in a few seconds.</p>
+</div>
+<div class="columns run-split">
+<div class="column" style="width:44%;">
+<div class="code-card">
+<p><span class="code-file">notebook · Step 4</span> <span class="code-where">build a map of anywhere</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>BBOX <span class="op">=</span> (<span class="fl">47.612</span>, <span class="op">-</span><span class="fl">122.206</span>,</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="fl">47.618</span>, <span class="op">-</span><span class="fl">122.198</span>)  <span class="co"># S, W, N, E</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>fetch_osm(<span class="op">*</span>BBOX, <span class="st">"bellevue.osm"</span>)</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>build_map(<span class="st">"bellevue.osm"</span>, <span class="st">"bellevue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="feature-list compact">
+<div class="feature-row">
+<p><span class="feature-name">Fetch</span> Roads and buildings from OpenStreetMap</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Build</span> A 3D mesh and the latitude/longitude table</p>
+</div>
+<div class="feature-row">
+<p><span class="feature-name">Play</span> The same interface, on your own campus or city</p>
+</div>
+</div>
+<p><span class="predict">Which place would you study?</span></p>
+</div><div class="column" style="width:56%;">
+<p><img data-src="assets/bellevue-map.png" alt="The SHaSTA interface on a map of downtown Bellevue built in the notebook: buildings coloured by type, streets with numbered intersections, a UAV group and a UGV group on their way to yellow target markers."></p>
+<div class="fig-note">
+<p>Downtown Bellevue, built in the notebook: 243 intersections.</p>
+</div>
+</div></div>
+<aside class="notes">
+<p>The map is not fixed. Any place in OpenStreetMap can become a SHaSTA map: give a bounding box (south, west, north, east) and two calls do the work. <code>fetch_osm</code> downloads the roads and buildings from the Overpass service, and <code>build_map</code> runs OSM2World to make the 3D mesh and <code>coordinates.csv</code>, the table that converts latitude and longitude to simulator metres. It takes about ten seconds for the box on the slide, which is downtown Bellevue, where we are. Keep the box to a campus or a few blocks, up to about 2 km across. It needs Java 11 or newer, which the cell fetches once if the server has none, and a connection to OpenStreetMap, so if the room’s network is slow, run it once before the session and let people reuse the folder. Let people change the box to their own campus; right-click on openstreetmap.org shows the coordinates of a point.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <!-- ============ BREAK ============ -->
@@ -930,9 +977,9 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card">
 <p><span class="code-file">notebook · Step 7</span> <span class="code-where">two lines on the commander</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>markers <span class="op">=</span> MarkerOutlet(<span class="st">"SHASTA-Events"</span>)</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>attach_markers(commander, markers)</span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>attach_order_markers(commander, markers, view)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>markers <span class="op">=</span> MarkerOutlet(<span class="st">"SHASTA-Events"</span>)</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>attach_markers(commander, markers)</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>attach_order_markers(commander, markers, view)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="task-label">Run</span> Step 7: give a few orders, then press <strong>Stop</strong>.</p>
 </div>
@@ -983,7 +1030,7 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 </div>
 <div class="code-card">
 <p><span class="code-file">notebook · Step 7</span> <span class="code-where">the last cell</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>play_shasta(gui, on_stop<span class="op">=</span>finish)     <span class="co"># play, press Stop, and the file is saved</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>play_shasta(gui, on_stop<span class="op">=</span>finish)     <span class="co"># play, press Stop, and the file is saved</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="band">
 <p>A real eye tracker streams the same way: it publishes a <code>Gaze</code> stream from the laptop it is plugged into, and the recorder picks it up. See the appendix.</p>
@@ -1062,13 +1109,13 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <div class="task-col">
 <div class="code-card">
 <p><span class="code-file">notebook · Step 5</span> <span class="code-where">abridged</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TargetCollector(GoToNodeExperiment):</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core):</span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>        ...    <span class="co"># pick the next node with the strategy, fly to it</span></span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core):</span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>        ...    <span class="co"># done when every node has been visited</span></span>
-<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core):</span>
-<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="fl">1.0</span> <span class="cf">if</span> <span class="va">self</span>.arrived_now <span class="cf">else</span> <span class="fl">0.0</span>) <span class="op">-</span> <span class="fl">0.001</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TargetCollector(GoToNodeExperiment):</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> apply_actions(<span class="va">self</span>, actions, core):</span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>        ...    <span class="co"># pick the next node with the strategy, fly to it</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_done_status(<span class="va">self</span>, observation, core):</span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>        ...    <span class="co"># done when every node has been visited</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> compute_reward(<span class="va">self</span>, observation, core):</span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="fl">1.0</span> <span class="cf">if</span> <span class="va">self</span>.arrived_now <span class="cf">else</span> <span class="fl">0.0</span>) <span class="op">-</span> <span class="fl">0.001</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="task-label">Run</span> Step 5, then add a strategy of your own.</p>
 </div>
@@ -1185,23 +1232,23 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">macOS / Linux</a></li><li><a href="#tabset-1-2">Windows PowerShell</a></li></ul>
 <div class="tab-content install-code">
 <div id="tabset-1-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a aria-label="1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
-<span id="cb10-2"><a aria-label="2"></a><span class="bu">cd</span> shasta-ub</span>
-<span id="cb10-3"><a aria-label="3"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span>
-<span id="cb10-4"><a aria-label="4"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a aria-label="1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="bu">cd</span> shasta-ub</span>
+<span id="cb11-3"><a aria-label="3"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb11-4"><a aria-label="4"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a aria-label="1"></a>git clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
-<span id="cb11-2"><a aria-label="2"></a><span class="fu">cd</span> shasta-ub</span>
-<span id="cb11-3"><a aria-label="3"></a>python <span class="op">-</span>m venv <span class="op">.</span><span class="fu">venv</span></span>
-<span id="cb11-4"><a aria-label="4"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a aria-label="1"></a>git clone <span class="op">&lt;</span>the shasta-ub repository<span class="op">&gt;</span></span>
+<span id="cb12-2"><a aria-label="2"></a><span class="fu">cd</span> shasta-ub</span>
+<span id="cb12-3"><a aria-label="3"></a>python <span class="op">-</span>m venv <span class="op">.</span><span class="fu">venv</span></span>
+<span id="cb12-4"><a aria-label="4"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a aria-label="1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-e</span> <span class="st">".[gui]"</span></span>
-<span id="cb12-2"><a aria-label="2"></a><span class="ex">python</span> <span class="at">-m</span> pip install pylsl pyxdf ipywidgets ipyevents notebook</span>
-<span id="cb12-3"><a aria-label="3"></a><span class="bu">cd</span> notebooks</span>
-<span id="cb12-4"><a aria-label="4"></a><span class="ex">python</span> <span class="at">-m</span> jupyter notebook 01_shasta_hsi.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a aria-label="1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-e</span> <span class="st">".[gui]"</span></span>
+<span id="cb13-2"><a aria-label="2"></a><span class="ex">python</span> <span class="at">-m</span> pip install pylsl pyxdf ipywidgets ipyevents notebook</span>
+<span id="cb13-3"><a aria-label="3"></a><span class="bu">cd</span> notebooks</span>
+<span id="cb13-4"><a aria-label="4"></a><span class="ex">python</span> <span class="at">-m</span> jupyter notebook 01_shasta_hsi.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:42%;">
 <div class="line-steps">
 <div class="line-step">
@@ -1246,9 +1293,9 @@ Organizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe Oveisi<br>Kristian Dal
 </div>
 <div class="code-card">
 <p><span class="code-file">on the tracker’s laptop</span> <span class="code-where">in <code>notebooks/</code></span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> tobii_to_lsl.py <span class="at">--width</span> 1920 <span class="at">--height</span> 1080     <span class="co"># the Tobii tracker -&gt; an LSL "Gaze" stream</span></span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> shasta_gui_lsl.py <span class="at">--map</span> buffalo-small          <span class="co"># the real interface + an LSL "Markers" stream</span></span>
-<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># LabRecorder: Update, select both streams, Start, run the task, Stop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> tobii_to_lsl.py <span class="at">--width</span> 1920 <span class="at">--height</span> 1080     <span class="co"># the Tobii tracker -&gt; an LSL "Gaze" stream</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> shasta_gui_lsl.py <span class="at">--map</span> buffalo-small          <span class="co"># the real interface + an LSL "Markers" stream</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># LabRecorder: Update, select both streams, Start, run the task, Stop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="feature-list">
 <div class="feature-row">
