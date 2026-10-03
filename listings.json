@@ -2,8 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/ieee-smc-eo/ieee-smc-eo.html",
+      "/ieee_smc_eo/presentation/smc-no-tabs.html",
+      "/ieee_smc_eo/presentation/smc.html",
       "/mosaic-tutorial/mosaic-tutorial.html",
+      "/ieee_smc_eo/presentation/template.html",
       "/shasta-tutorial/shasta-tutorial.html",
       "/physio-workshop/case-study.html",
       "/physio-workshop/foundations.html",
