@@ -1,4 +1,6 @@
 ---
+metadata-files:
+  - ../../../_assets/revealjs-defaults.yml   # shared lab theme, logo and layout
 title: "LLM-Mediated Human–AI Interaction in Search and Rescue:<br>[Impact of Expertise on Attentional Allocation]{.accent}"
 subtitle: "Human performance, visual attention, and expertise under LLM guidance"
 author: "Elahe Oveisi and Dr. Hemanth Manjunatha"
@@ -9,18 +11,11 @@ event_type: "Conference Talk"
 date: "2026-10-05"
 format:
   revealjs:
-    theme: [default, theme.scss]
+    theme: [default, ../../../_assets/theme.scss, theme.scss]
+    logo: ../../../assets/logo.png
     slide-number: true
-    transition: fade
-    background-transition: fade
-    logo: assets/logo.png
     footer: "iHuman Lab · Oklahoma State University"
-    width: 1280
-    height: 720
     margin: 0.08
-    navigation-mode: linear
-    controls: true
-    progress: true
     include-after-body: prompt-animation.html
 resources:
   - assets/game.mp4

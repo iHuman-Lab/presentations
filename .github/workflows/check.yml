@@ -10,6 +10,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Check folder names
+        run: |
+          bad=$(ls -d people/*/ 2>/dev/null | sed 's#people/##; s#/$##' | grep -vE '^[A-Z][A-Za-z]*_[A-Z][A-Za-z]*$' || true)
+          if [ -n "$bad" ]; then
+            echo "Folders under people/ must be First_Last (letters and one underscore):"
+            echo "$bad"
+            exit 1
+          fi
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 

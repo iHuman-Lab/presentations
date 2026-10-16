@@ -1,6 +1,6 @@
 ---
 metadata-files:
-  - ../_assets/revealjs-defaults.yml
+  - ../../_assets/revealjs-defaults.yml
 title: "Beyond the Survey<br>Real-Time [Physiological Sensing]{.accent} for Human-Machine Teaming"
 subtitle: "Part 1 — Foundations of Human-Machine Interaction"
 author:
@@ -9,11 +9,14 @@ author:
 institute: "Oklahoma State University"
 date: "2026-07-13"
 description: "Part 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing."
-image: ../assets/images/outreach/377A7060.jpg
+image: ../../assets/images/outreach/377A7060.jpg
 event_type: "Workshop"
-format: revealjs
+format:
+  revealjs:
+    theme: [default, ../../_assets/theme.scss]
+    logo: ../../assets/logo.png
 title-slide-attributes:
-  data-background-image: ../assets/images/campus/campus.jpg
+  data-background-image: ../../assets/images/campus/campus.jpg
   data-background-opacity: "0.3"
   data-background-color: "#252525"
 ---
@@ -33,7 +36,7 @@ Oklahoma State University
 
 :::
 ::: {.column width="40%"}
-![](../assets/images/outreach/377A7060.jpg)
+![](../../assets/images/outreach/377A7060.jpg)
 :::
 :::
 
@@ -289,11 +292,11 @@ Future Research — what questions still need answers, and what challenges must 
 
 ---
 
-## {background-image="../assets/images/campus/campus_2.jpg" background-opacity="0.25" background-color="#252525"}
+## {background-image="../../assets/images/campus/campus_2.jpg" background-opacity="0.25" background-color="#252525"}
 
 ::: {style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:80vh; text-align:center;"}
 
-![](../assets/images/logos/logo.png){style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"}
+![](../../assets/images/logos/logo.png){style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"}
 
 ::: {style="font-family:'Rubik',sans-serif; font-size:2.8rem; font-weight:900; color:#ffffff; margin-top:0.8rem;"}
 Thanks!

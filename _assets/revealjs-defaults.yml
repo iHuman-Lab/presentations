@@ -1,10 +1,10 @@
+# Shared reveal.js settings. Paths are NOT set here: Quarto resolves them relative to each deck,
+# so every deck sets its own `theme:` and `logo:` (see _template/deck.qmd).
 format:
   revealjs:
-    theme: [default, ../_assets/theme.scss]
     slide-number: false
     transition: fade
     background-transition: fade
-    logo: ../assets/logo.png
     footer: "iHuman Lab · Oklahoma State University"
     width: 1280
     height: 720

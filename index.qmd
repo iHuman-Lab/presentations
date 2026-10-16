@@ -1,17 +1,21 @@
 ---
 pagetitle: "iHuman Lab Presentations"
 listing:
-  contents:
-    - "*/*.qmd"
-    - "pi/*/*.qmd"
-    - "phd/*/*.qmd"
-    - "master/*/*.qmd"
-    - "undergraduate/*/*.qmd"
-    - "alumni/*/*.qmd"
-  template: assets/presentations.ejs
-  fields: [title, author, description, date, event_type, image, path]
-  sort: "date desc"
-  max-items: 100
+  - id: lab-decks
+    contents:
+      - "lab/*/*.qmd"
+    template: assets/presentations.ejs
+    fields: [title, author, description, date, event_type, image, path]
+    sort: "date desc"
+    max-items: 100
+  - id: people-decks
+    contents:
+      - "people/*/*.qmd"
+      - "people/*/*/*.qmd"
+    template: assets/presentations.ejs
+    fields: [title, author, description, date, event_type, image, path]
+    sort: "date desc"
+    max-items: 100
 toc: false
 page-layout: full
 ---
@@ -25,3 +29,19 @@ page-layout: full
   </div>
 </div>
 ```
+
+```{=html}
+<h2 class="section-heading">Lab tutorials &amp; outreach</h2>
+<p class="section-sub">Decks the lab built together: tutorials, workshops and outreach.</p>
+```
+
+::: {#lab-decks}
+:::
+
+```{=html}
+<h2 class="section-heading">Talks by lab members</h2>
+<p class="section-sub">Research talks, defenses and conference presentations from individual students and PIs.</p>
+```
+
+::: {#people-decks}
+:::

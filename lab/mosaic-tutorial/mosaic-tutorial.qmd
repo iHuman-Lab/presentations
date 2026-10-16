@@ -1,4 +1,6 @@
 ---
+metadata-files:
+  - ../../_assets/revealjs-defaults.yml   # shared lab theme, logo and layout
 # MOSAIC hands-on tutorial — IEEE SMC 2026
 # Render:  quarto render mosaic-tutorial.qmd
 #          quarto preview mosaic-tutorial.qmd
@@ -13,18 +15,11 @@ date: "2026-10-04"
 date-format: "MMMM D, YYYY"
 format:
   revealjs:
-    theme: [default, theme.scss]
+    theme: [default, ../../_assets/theme.scss, theme.scss]
+    logo: ../../assets/logo.png
     slide-number: true
-    transition: fade
-    background-transition: fade
-    logo: assets/logo.png
     footer: "MOSAIC Tutorial · OSU · UB"
-    width: 1280
-    height: 720
     margin: 0.1
-    navigation-mode: linear
-    controls: true
-    progress: true
     include-after-body:
       - text: |
           <script>

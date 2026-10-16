@@ -1,4 +1,6 @@
 ---
+metadata-files:
+  - ../../_assets/revealjs-defaults.yml   # shared lab theme, logo and layout
 # SHaSTA tutorial — iHuman Lab presentation template, extended for a hands-on session.
 # See README.md for how this deck is organized and RUNSHEET.md for timing.
 #
@@ -14,18 +16,11 @@ image: assets/world-overview.png
 event_type: "Tutorial"
 format:
   revealjs:
-    theme: [default, theme.scss]
+    theme: [default, ../../_assets/theme.scss, theme.scss]
+    logo: ../../assets/logo.png
     slide-number: true
-    transition: fade
-    background-transition: fade
-    logo: assets/logo.png
     footer: "SHaSTA Tutorial · OSU · UB"
-    width: 1280
-    height: 720
     margin: 0.1
-    navigation-mode: linear
-    controls: true
-    progress: true
     include-after-body:
       text: |
         <script>

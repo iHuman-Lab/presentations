@@ -4,12 +4,9 @@ project:
     - assets/
   render:
     - index.qmd
-    - "*/*.qmd"
-    - "pi/*/*.qmd"
-    - "phd/*/*.qmd"
-    - "master/*/*.qmd"
-    - "undergraduate/*/*.qmd"
-    - "alumni/*/*.qmd"
+    - "people/*/*.qmd"
+    - "people/*/*/*.qmd"
+    - "lab/*/*.qmd"
 
 website:
   title: 'iHuman Lab Presentations'

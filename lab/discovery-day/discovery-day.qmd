@@ -1,20 +1,22 @@
 ---
 metadata-files:
-  - ../_assets/revealjs-defaults.yml
+  - ../../_assets/revealjs-defaults.yml
 title: "CEAT Discovery Day<br>iHuman [Lab]{.accent}"
 subtitle: "Where Humans and Machines Learn to Work Together"
 institute: "Oklahoma State University"
 date: "2026-06-01"
 description: "An introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research."
-image: ../assets/images/work/377A0883.jpg
+image: ../../assets/images/work/377A0883.jpg
 venue: "Oklahoma State University, Stillwater OK"
 event_type: "Discovery Day"
 event_category: "k12"
 format:
   revealjs:
-    include-in-header: ../_assets/people-row.html
+    theme: [default, ../../_assets/theme.scss]
+    logo: ../../assets/logo.png
+    include-in-header: ../../_assets/people-row.html
 title-slide-attributes:
-  data-background-image: ../assets/images/campus/campus.jpg
+  data-background-image: ../../assets/images/campus/campus.jpg
   data-background-opacity: "0.3"
   data-background-color: "#252525"
 ---
@@ -56,7 +58,7 @@ your **attention**, your **stress**, even your **mistakes** *before they happen*
 
 :::
 ::: {.column width="45%"}
-![](../assets/images/work/377A0918.jpg)
+![](../../assets/images/work/377A0918.jpg)
 :::
 :::
 
@@ -81,7 +83,7 @@ The robot adapts to [you]{.accent}. Not the other way around.
 
 :::
 ::: {.column width="50%"}
-![](../assets/images/work/377A0907.jpg)
+![](../../assets/images/work/377A0907.jpg)
 :::
 :::
 
@@ -106,7 +108,7 @@ Now the AI [sees]{.accent} like the best human in the room.
 
 :::
 ::: {.column width="50%"}
-![](../assets/images/work/377A0891.jpg)
+![](../../assets/images/work/377A0891.jpg)
 :::
 :::
 
@@ -131,7 +133,7 @@ Because in a rescue mission, [hesitation]{.accent} *costs lives*.
 
 :::
 ::: {.column width="50%"}
-![](../assets/images/work/377A0919.jpeg)
+![](../../assets/images/work/377A0919.jpeg)
 :::
 :::
 
@@ -156,7 +158,7 @@ You on Earth. Robot on the Moon. [One team.]{.accent}
 
 :::
 ::: {.column width="50%"}
-![](../assets/images/work/377A0920.jpeg)
+![](../../assets/images/work/377A0920.jpeg)
 :::
 :::
 
@@ -210,11 +212,11 @@ You on Earth. Robot on the Moon. [One team.]{.accent}
 
 ---
 
-## {background-image="../assets/images/campus/campus_2.jpg" background-opacity="0.25" background-color="#252525"}
+## {background-image="../../assets/images/campus/campus_2.jpg" background-opacity="0.25" background-color="#252525"}
 
 ::: {style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:80vh; text-align:center;"}
 
-![](../assets/images/logos/logo.png){style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"}
+![](../../assets/images/logos/logo.png){style="max-height:110px; border-radius:0 !important; box-shadow:none !important;"}
 
 ::: {style="font-family:'Rubik',sans-serif; font-size:2.8rem; font-weight:900; color:#ffffff; margin-top:0.8rem;"}
 This Could Be [You]{style="color:#EC672C;"}

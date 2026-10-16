@@ -1,0 +1,28 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var titleSlide = document.getElementById("title-slide");
+  if (!titleSlide) return;
+  var row = document.createElement("div");
+  row.style.cssText = "display:flex; gap:2rem; align-items:center; margin-top:2.5rem;";
+  var people = [
+    { src: "../../assets/people/pi/avatar.jpg",                name: "Hemanth Manjunatha", role: "Principal Investigator" },
+    { src: "../../assets/people/ElaheOveisi/avatar.jpeg",  name: "Elahe Oveisi",       role: "PhD Student" },
+    { src: "../../assets/people/Bennett_Dogbey/avatar.jpg", name: "Bennett Dogbey",    role: "PhD Student" }
+  ];
+  people.forEach(function(p) {
+    var card = document.createElement("div");
+    card.style.cssText = "display:flex; align-items:center; gap:0.9rem;";
+    var img = document.createElement("img");
+    img.src = p.src;
+    img.alt = p.name;
+    img.style.cssText = "width:130px; height:130px; border-radius:50%; object-fit:cover; border:3px solid #EC672C; box-shadow:0 2px 8px rgba(0,0,0,0.4);";
+    var info = document.createElement("div");
+    info.innerHTML = '<div style="font-weight:700; font-size:1.3rem; color:#fff; line-height:1.3;">' + p.name + '</div>' +
+                     '<div style="font-size:1.1rem; color:rgba(255,255,255,0.5); margin-top:0.2rem;">' + p.role + '</div>';
+    card.appendChild(img);
+    card.appendChild(info);
+    row.appendChild(card);
+  });
+  titleSlide.appendChild(row);
+});
+</script>

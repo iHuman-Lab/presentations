@@ -22,7 +22,6 @@ $font-family-sans-serif: "Rubik", sans-serif !default;
 $heading-font: "Rubik", sans-serif !default;
 
 /*-- scss:rules --*/
-
 /* Override RevealJS CSS custom properties directly */
 :root {
     --r-background-color: #252525;
@@ -32,20 +31,10 @@ $heading-font: "Rubik", sans-serif !default;
     --r-heading-font: "Rubik", sans-serif;
     --r-link-color: #{$primary-color};
 }
-
-.reveal h2 {
-    font-weight: bold;
-    font-size: 1.4em;
-    color: #ffffff;
-    border: none;
-    width: fit-content;
-}
-
 .reveal h2 .accent,
 .accent {
     color: $primary-color;
 }
-
 .reveal h3 {
     color: $primary-color;
     font-style: italic;
@@ -53,13 +42,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.95em;
     border: none;
 }
-
-.reveal p, .reveal li {
-    color: rgba(255,255,255,0.88);
-    font-weight: normal;
-    line-height: 1.6;
-}
-
 .reveal strong,
 .reveal p strong,
 .reveal li strong,
@@ -67,125 +49,24 @@ $heading-font: "Rubik", sans-serif !default;
     color: $primary-color !important;
     font-weight: 700;
 }
-
 .reveal a {
     color: $primary-color;
     line-height: 1.5em;
 }
-
-.reveal ul {
-    padding-left: 16px;
-}
-
 .reveal ul li::marker {
     color: $primary-color;
 }
-
-.reveal ol {
-    padding-left: 16px;
-}
-
 .reveal ol li::marker {
     color: $primary-color;
 }
-
 /* Angled-block accent motif — a clip-path banner mark that matches the heading's text width.
    The cut is offset by exactly $height, so the diagonal is always the same ~45deg angle
    no matter how tall the box is (a fixed percentage like 82% would look steeper/shallower
    at different heights). */
-@mixin heading-accent($height: 16px) {
-    content: "";
-    display: block;
-    width: 100%;
-    height: $height;
-    margin-top: 0.5rem;
-    background: $primary-color;
-    clip-path: polygon(0 0, 100% 0, calc(100% - #{$height}) 100%, 0 100%);
-    pointer-events: none;
-}
-
-.reveal h2::after {
-    @include heading-accent(8px);
-}
-
 /* Title slide */
-#title-slide {
-    text-align: left;
-
-    .subtitle::after {
-        @include heading-accent(10px);
-        margin-top: 1rem;
-    }
-
-    .title {
-        color: #ffffff;
-        font-size: 3em;
-        font-weight: 900;
-        line-height: 1.1;
-    }
-
-    .subtitle {
-        color: rgba(255,255,255,0.75);
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.2em;
-        margin-top: 0.4em;
-        width: fit-content;
-    }
-
-    .author,
-    .quarto-title-author-name {
-        color: rgba(255,255,255,0.6);
-        margin-top: 1.5em;
-    }
-
-    .institute,
-    .date {
-        color: rgba(255,255,255,0.45);
-        font-style: italic;
-        font-size: 0.85em;
-    }
-
-    .quarto-title-authors {
-        display: flex;
-        justify-content: left;
-
-        .quarto-title-author {
-            padding-left: 0;
-            padding-right: 0;
-            width: 100%;
-        }
-    }
-}
-
 /* Logo — no circle, no shadow */
-.reveal .slide-logo {
-    max-height: 48px !important;
-    bottom: 12px;
-    right: 14px;
-}
-
-.reveal .slide-logo img,
-.reveal .slide-logo img:not([class]) {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-    background: transparent;
-}
-
 /* Content images */
-.reveal .slides section img:not(.slide-logo img) {
-    border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
 /* Footer */
-.reveal .footer {
-    color: rgba(255,255,255,0.3);
-    font-size: 0.55em;
-}
-
 /* Text hierarchy helpers */
 /* One hook size across the whole deck — the lead-in line should not change size
    from slide to slide. */
@@ -196,7 +77,6 @@ $heading-font: "Rubik", sans-serif !default;
     line-height: 1.3;
     margin-bottom: 0.5rem;
 }
-
 /* Repository line under the title-slide subtitle */
 .reveal .title-repo {
     display: inline-block;
@@ -206,7 +86,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 500;
     letter-spacing: 1.2px;
 }
-
 .punchline {
     font-size: 0.95em;
     font-weight: 700;
@@ -214,7 +93,6 @@ $heading-font: "Rubik", sans-serif !default;
     margin-top: 1rem;
     line-height: 1.4;
 }
-
 /* Tables */
 .reveal table {
     margin: auto;
@@ -222,37 +100,7 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.95em;
     color: rgba(255,255,255,0.85);
 }
-
-.reveal table th {
-    border: none;
-    border-bottom: 2px solid $primary-color;
-    padding: 0.4em 0.8em 0.6em;
-    text-align: left;
-    color: $primary-color;
-    font-weight: 700;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.reveal table td {
-    border: none;
-    padding: 0.5em 0.8em;
-    text-align: left;
-    font-weight: normal;
-}
-
-.reveal table tr {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
 /* Code blocks */
-.reveal pre {
-    box-shadow: none;
-    width: 100%;
-    margin: 0.6rem 0;
-}
-
 .reveal pre code {
     background: rgba(0,0,0,0.35);
     border-left: 3px solid $primary-color;
@@ -262,7 +110,6 @@ $heading-font: "Rubik", sans-serif !default;
     line-height: 1.5;
     max-height: none;
 }
-
 /* Team — ::: {.team} containing ::: {.member} fenced divs, each with a photo,
    [name]{.member-name} and [role]{.member-role} */
 .team {
@@ -272,7 +119,6 @@ $heading-font: "Rubik", sans-serif !default;
     margin-top: 0.6rem;
     text-align: center;
 }
-
 /* !important: the generic content-image rule above wins on specificity via its :not() */
 .reveal .slides section .member img {
     width: 250px;
@@ -283,20 +129,17 @@ $heading-font: "Rubik", sans-serif !default;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     margin: 0 auto 0.5rem;
 }
-
 .member p {
     font-size: 0.7em;
     line-height: 1.4;
     margin: 0.3rem 0 0;
 }
-
 .member-name {
     display: block;
     font-weight: 700;
     color: $primary-color;
     font-size: 1.15em;
 }
-
 .member-role {
     display: block;
     font-size: 0.8em;
@@ -305,7 +148,6 @@ $heading-font: "Rubik", sans-serif !default;
     letter-spacing: 1.5px;
     margin-top: 0.15rem;
 }
-
 /* The lab description and URL were faint enough to be unreadable past the third
    row — this is the one line of Part One people actually write down. */
 .member-link p {
@@ -320,7 +162,6 @@ $heading-font: "Rubik", sans-serif !default;
     color: $primary-color;
     font-weight: 700;
 }
-
 /* You-are-here strip — ::: {.you-are-here} on a divider: [Stop]{.stop} spans, the current one [Stop]{.stop .here} */
 .you-are-here p {
     display: flex;
@@ -328,7 +169,6 @@ $heading-font: "Rubik", sans-serif !default;
     gap: 0.4rem;
     margin: 2.6rem 0 0;
 }
-
 .stop {
     font-size: 0.58em;
     text-transform: uppercase;
@@ -337,77 +177,14 @@ $heading-font: "Rubik", sans-serif !default;
     padding: 0.35rem 0.8rem;
     border-bottom: 3px solid rgba(255,255,255,0.12);
 }
-
 .stop.here {
     color: $primary-color;
     font-weight: 700;
     border-bottom-color: $primary-color;
 }
-
 /* Stats — ::: {.stats} containing ::: {.stat} fenced divs */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem 2rem;
-    margin-top: 1.2rem;
-}
-
-.stat {
-    border-left: 3px solid $primary-color;
-    padding-left: 0.8rem;
-}
-
 /* Add .secondary to de-emphasize a stat or group it as an alternate category: ::: {.stat .secondary} */
-.stat.secondary {
-    border-left-color: $secondary-color;
-}
-
-.stat.secondary .stat-number {
-    color: $secondary-color;
-}
-
-.stat-number {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: $primary-color;
-    line-height: 1;
-}
-
-.stat-label {
-    display: block;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.55);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-top: 0.2rem;
-}
-
 /* Section divider — ::: {.divider} with [title]{.divider-title} / [subtitle]{.divider-subtitle} */
-.divider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    text-align: center;
-}
-
-.divider-title {
-    display: block;
-    font-family: 'Rubik', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 900;
-    color: #ffffff;
-}
-
-.divider-subtitle {
-    display: block;
-    font-size: 1.3rem;
-    color: rgba(255,255,255,0.6);
-    margin-top: 0.6rem;
-}
-
 /* Part dividers lead with a small "Part N" label above the topic title */
 .divider-kicker {
     display: block;
@@ -418,7 +195,6 @@ $heading-font: "Rubik", sans-serif !default;
     color: $primary-color;
     margin-bottom: 0.4rem;
 }
-
 /* Optional third line on a divider — the route this part takes */
 .divider-path {
     display: block;
@@ -426,7 +202,6 @@ $heading-font: "Rubik", sans-serif !default;
     color: rgba(255,255,255,0.65);
     margin-top: 1rem;
 }
-
 /* ── Checkpoint ─────────────────────────────────────────────────────────────
    ::: {.checkpoint}  — "you should now see this" self-verification blocks.
    Used once per install step in Part 2 so attendees can confirm progress
@@ -439,7 +214,6 @@ $heading-font: "Rubik", sans-serif !default;
     padding: 0.7em 1em 0.7em 2.6em;
     margin: 0.7rem 0;
 }
-
 .checkpoint::before {
     content: "✓";
     position: absolute;
@@ -450,27 +224,22 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 1.05em;
     line-height: 1.4;
 }
-
 .checkpoint p {
     font-size: 0.76em;
     line-height: 1.5;
     margin: 0.2em 0;
     color: rgba(255,255,255,0.88);
 }
-
 .checkpoint strong {
     color: $primary-color;
 }
-
 .checkpoint pre {
     margin: 0.5em 0 0;
     box-shadow: none;
 }
-
 .checkpoint pre code {
     font-size: 0.68em;
 }
-
 /* ── Panel tabset ───────────────────────────────────────────────────────────
    Quarto's built-in ::: {.panel-tabset}, restyled for the dark deck.
    Reveal renders these with Tabby (ul.panel-tabset-tabby + aria-selected),
@@ -483,15 +252,12 @@ $heading-font: "Rubik", sans-serif !default;
     margin: 0 0 0.7rem;
     border-bottom: 1px solid rgba(255,255,255,0.18);
 }
-
 .reveal .panel-tabset ul.panel-tabset-tabby li {
     margin: 0;
 }
-
 .reveal .panel-tabset ul.panel-tabset-tabby li::marker {
     content: "";
 }
-
 .reveal .panel-tabset ul.panel-tabset-tabby li a {
     display: inline-block;
     color: rgba(255,255,255,0.55);
@@ -504,23 +270,19 @@ $heading-font: "Rubik", sans-serif !default;
     border-bottom: 3px solid transparent !important;
     background: transparent !important;
 }
-
 .reveal .panel-tabset ul.panel-tabset-tabby li a:hover {
     color: rgba(255,255,255,0.85);
 }
-
 .reveal .panel-tabset ul.panel-tabset-tabby li a[aria-selected="true"] {
     color: $primary-color;
     background: transparent !important;
     border-bottom: 3px solid $primary-color !important;
 }
-
 /* ── Part One redesign ─────────────────────────────────────────────────────
    These components give each introductory slide a distinct visual grammar:
    research needs orbit a study core, MOSAIC is a system map, collaboration is
    an optional-advice decision loop, and research questions use an editorial
    grid instead of repeating the generic card layout. */
-
 /* What Is MOSAIC: four capabilities arranged around one coordinated study. */
 .need-map {
     display: grid;
@@ -530,13 +292,11 @@ $heading-font: "Rubik", sans-serif !default;
     min-height: 370px;
     margin-top: 0.7rem;
 }
-
 .need-column {
     display: grid;
     grid-template-rows: repeat(2, minmax(0, 1fr));
     gap: 0.8rem;
 }
-
 .need-item {
     position: relative;
     display: flex;
@@ -547,25 +307,21 @@ $heading-font: "Rubik", sans-serif !default;
     border-top: 1px solid rgba(255,255,255,0.13);
     border-bottom: 1px solid rgba(255,255,255,0.07);
 }
-
 .need-column:first-child .need-item {
     border-right: 4px solid rgba(236,103,44,0.72);
     text-align: right;
     padding-left: 0.9rem;
     padding-right: 1.1rem;
 }
-
 .need-column:last-child .need-item {
     border-left: 4px solid rgba(236,103,44,0.72);
 }
-
 .need-item p {
     margin: 0;
     font-size: 0.69em;
     line-height: 1.42;
     color: rgba(255,255,255,0.72);
 }
-
 .need-index {
     display: block;
     margin-bottom: 0.18rem;
@@ -574,7 +330,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 900;
     letter-spacing: 2px;
 }
-
 .need-title {
     display: block;
     margin-bottom: 0.26rem;
@@ -582,7 +337,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 1.05em;
     font-weight: 700;
 }
-
 .need-core {
     align-self: center;
     justify-self: center;
@@ -599,12 +353,10 @@ $heading-font: "Rubik", sans-serif !default;
     justify-content: center;
     text-align: center;
 }
-
 .need-core p {
     margin: 0;
     line-height: 1.12;
 }
-
 .need-core-title {
     display: block;
     color: #ffffff;
@@ -612,7 +364,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 900;
     letter-spacing: 1px;
 }
-
 .need-core-subtitle {
     display: block;
     max-width: 125px;
@@ -622,13 +373,11 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 700;
     line-height: 1.25;
 }
-
 /* Why Do We Need a Configurable Testbed: the same two columns with no core
    between them. The core joins them on What Is MOSAIC. */
 .need-map.no-core {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
 /* Both need-map slides: a picture in each box, on the outer side so the text stays next
    to the centre. The testbed slide uses line icons; What Is MOSAIC uses real images. */
 .need-item.has-visual {
@@ -636,35 +385,28 @@ $heading-font: "Rubik", sans-serif !default;
     align-items: center;
     gap: 1rem;
 }
-
 .need-column:last-child .need-item.has-visual {
     flex-direction: row-reverse;
 }
-
 .need-text {
     flex: 1 1 auto;
     min-width: 0;
 }
-
 .need-visual {
     flex: 0 0 auto;
 }
-
 .need-item .need-visual p {
     display: flex;
     gap: 6px;
     line-height: 0;
 }
-
 .need-visual svg {
     display: block;
 }
-
 .need-visual.icon svg {
     width: 64px;
     height: 64px;
 }
-
 .need-visual.thumb svg,
 .reveal .slides section .need-item .need-visual img {
     display: block;
@@ -677,19 +419,16 @@ $heading-font: "Rubik", sans-serif !default;
     background: rgba(0,0,0,0.3);
     box-shadow: none;
 }
-
 .reveal .slides section .need-item .need-visual.pair img {
     width: 63px;
     height: 63px;
 }
-
 /* What Is MOSAIC: lines from the MOSAIC core to each of the four boxes. The links
    share the core's grid cell and reach across the column gaps to the boxes'
    orange edges. */
 .need-map.linked > .need-column:first-child { grid-column: 1; grid-row: 1; }
 .need-map.linked > .need-links { grid-column: 2; grid-row: 1; position: relative; }
 .need-map.linked > .need-column:last-child { grid-column: 3; grid-row: 1; }
-
 /* The core's fill is translucent; an opaque base stops the links at its edge. */
 .need-map.linked > .need-core {
     grid-column: 2;
@@ -698,7 +437,6 @@ $heading-font: "Rubik", sans-serif !default;
     z-index: 1;
     background-color: $body-bg;
 }
-
 .need-links svg {
     position: absolute;
     top: 0;
@@ -707,27 +445,23 @@ $heading-font: "Rubik", sans-serif !default;
     height: 100%;
     overflow: visible;
 }
-
 .need-links line {
     stroke: rgba(236,103,44,0.72);
     stroke-width: 2;
     vector-effect: non-scaling-stroke;
 }
-
 /* How MOSAIC Works: presentation-native system map. The diagram remains stable
    when the deck is viewed offline because it does not depend on Mermaid. */
 .overview-diagram {
     width: 100%;
     margin: 0.55rem auto 0;
 }
-
 .system-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 145px minmax(0, 1.15fr) 145px minmax(0, 1fr);
     align-items: center;
     gap: 0;
 }
-
 .system-node {
     min-height: 150px;
     padding: 0.75rem 0.8rem;
@@ -739,14 +473,12 @@ $heading-font: "Rubik", sans-serif !default;
     justify-content: center;
     text-align: center;
 }
-
 .system-node.system-core {
     min-height: 178px;
     border: 2px solid $primary-color;
     background: linear-gradient(135deg, rgba(236,103,44,0.24), rgba(236,103,44,0.055));
     box-shadow: 0 14px 36px rgba(0,0,0,0.26);
 }
-
 .system-node p,
 .system-record p,
 .sync-node p {
@@ -755,7 +487,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.62em;
     line-height: 1.35;
 }
-
 /* Every block name in the diagram carries the accent, not just the core one --
    the names are what people read first from the back of the room. */
 .system-title {
@@ -765,13 +496,11 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 1.05em;
     font-weight: 800;
 }
-
 .system-core .system-title {
     color: $primary-color;
     font-size: 1.35em;
     letter-spacing: 1px;
 }
-
 .system-link {
     position: relative;
     height: 86px;
@@ -779,7 +508,6 @@ $heading-font: "Rubik", sans-serif !default;
         linear-gradient(rgba(236,103,44,0.75), rgba(236,103,44,0.75))
         center / calc(100% - 20px) 2px no-repeat;
 }
-
 .system-link.two-way::before {
     content: "";
     position: absolute;
@@ -790,7 +518,6 @@ $heading-font: "Rubik", sans-serif !default;
     border-right: 10px solid $primary-color;
     z-index: 2;
 }
-
 .system-link.two-way::after {
     content: "";
     position: absolute;
@@ -801,7 +528,6 @@ $heading-font: "Rubik", sans-serif !default;
     border-left: 10px solid $primary-color;
     z-index: 2;
 }
-
 /* Relationship labels sit on the arrows and carry the meaning of the diagram —
    they were the first thing to go unreadable from the back of the room. */
 .system-link p {
@@ -812,24 +538,20 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 700;
     line-height: 1.2;
 }
-
 .link-top,
 .link-bottom {
     position: absolute;
     left: 0;
     right: 0;
 }
-
 .link-top { top: 5px; }
 .link-bottom { bottom: 4px; }
-
 .record-drop {
     position: relative;
     width: 220px;
     height: 46px;
     margin: 0 auto;
 }
-
 .record-drop::before {
     content: "";
     position: absolute;
@@ -838,7 +560,6 @@ $heading-font: "Rubik", sans-serif !default;
     height: 31px;
     border-left: 2px solid rgba(236,103,44,0.72);
 }
-
 .record-drop::after {
     content: "";
     position: absolute;
@@ -848,12 +569,10 @@ $heading-font: "Rubik", sans-serif !default;
     border-right: 7px solid transparent;
     border-top: 10px solid $primary-color;
 }
-
 .record-drop p {
     margin: 0;
     text-align: center;
 }
-
 .record-drop-label {
     position: absolute;
     left: calc(50% + 12px);
@@ -863,7 +582,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 700;
     white-space: nowrap;
 }
-
 /* Literally a .system-node laid out wide: same border, fill and type, so the
    session record reads as the fourth block in the diagram. */
 .system-record {
@@ -879,7 +597,6 @@ $heading-font: "Rubik", sans-serif !default;
     justify-content: center;
     text-align: center;
 }
-
 /* The lower row makes the measurement path explicit: study sensors and task
    activity meet in LSL before the synchronized session record is written. */
 .sync-row {
@@ -931,7 +648,6 @@ $heading-font: "Rubik", sans-serif !default;
     border-bottom: 6px solid transparent;
     border-left: 9px solid $primary-color;
 }
-
 /* SAR scenario: one visual plus a compact mission brief. The image height is
    set here, not inline, so both scenario slides show their picture the same size. */
 .scenario-columns {
@@ -946,12 +662,10 @@ $heading-font: "Rubik", sans-serif !default;
     margin: 0 auto;
     object-fit: contain;
 }
-
 .scenario-brief {
     padding: 0.5rem 0 0.5rem 1.1rem;
     border-left: 4px solid $primary-color;
 }
-
 .scenario-brief p,
 .scenario-brief li {
     margin: 0.15rem 0 0.65rem;
@@ -959,7 +673,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.7em;
     line-height: 1.4;
 }
-
 .scenario-label {
     display: block;
     margin: 0.1rem 0 0.25rem;
@@ -969,20 +682,17 @@ $heading-font: "Rubik", sans-serif !default;
     letter-spacing: 1.6px;
     text-transform: uppercase;
 }
-
 .decision-number {
     color: rgba(236,103,44,0.7);
     font-size: 0.65em;
     font-weight: 900;
     margin-right: 0.2rem;
 }
-
 .decision-title {
     color: #ffffff;
     font-size: 0.94em;
     font-weight: 800;
 }
-
 .cycle-band {
     margin-top: 0.25rem;
     padding: 0.38rem 0.9rem;
@@ -990,7 +700,6 @@ $heading-font: "Rubik", sans-serif !default;
     border-left: 4px solid $primary-color;
     border-radius: 5px;
 }
-
 .cycle-band p {
     display: flex;
     align-items: center;
@@ -1001,14 +710,12 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.62em;
     line-height: 1.35;
 }
-
 .cycle-title {
     color: $primary-color;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.8px;
 }
-
 /* Research questions: editorial prompts rather than another generic card grid. */
 .research-grid {
     display: grid;
@@ -1018,7 +725,6 @@ $heading-font: "Rubik", sans-serif !default;
     border-top: 1px solid rgba(255,255,255,0.13);
     border-left: 1px solid rgba(255,255,255,0.13);
 }
-
 .research-question {
     min-height: 145px;
     padding: 0.75rem 1rem;
@@ -1029,14 +735,12 @@ $heading-font: "Rubik", sans-serif !default;
     flex-direction: column;
     justify-content: center;
 }
-
 .research-question p {
     margin: 0;
     color: rgba(255,255,255,0.76);
     font-size: 0.7em;
     line-height: 1.42;
 }
-
 .research-topic {
     display: block;
     margin-bottom: 0.3rem;
@@ -1046,20 +750,16 @@ $heading-font: "Rubik", sans-serif !default;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 /* ── Feature rows and keycaps ──────────────────────────────────────────────
    Name-and-description rows (prerequisites, run notes, victim rules) and the
    keyboard keys drawn on the controls and runtime slides. */
-
 .feature-list {
     border-top: 1px solid rgba(255,255,255,0.14);
 }
-
 .feature-row {
     padding: 0.55rem 0.2rem;
     border-bottom: 1px solid rgba(255,255,255,0.14);
 }
-
 /* Hanging indent rather than a two-column grid: as a grid, every element in the
    description (inline code, a link, emphasis) became its own grid item and got
    pushed onto a new row. */
@@ -1071,7 +771,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.7em;
     line-height: 1.35;
 }
-
 .feature-name {
     display: inline-block;
     width: 175px;
@@ -1084,11 +783,9 @@ $heading-font: "Rubik", sans-serif !default;
     text-transform: uppercase;
     letter-spacing: 0.8px;
 }
-
 .key-row {
     border-bottom: 1px solid rgba(255,255,255,0.14);
 }
-
 .key-row p {
     display: flex;
     align-items: center;
@@ -1098,7 +795,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.72em;
     line-height: 1.25;
 }
-
 .keycap {
     display: inline-block;
     flex: none;
@@ -1115,15 +811,12 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 700;
     text-align: center;
 }
-
 .keycap.wide {
     min-width: 4.2em;
 }
-
 .key-action {
     color: rgba(255,255,255,0.82);
 }
-
 /* Annotated screenshot — ::: {.annotated} wraps one image plus ::: {.anno} regions.
    Each .anno takes --x/--y/--w/--h as percentages of the image and outlines a region
    with a label, dimming everything outside it. Add .fragment to reveal them one
@@ -1135,7 +828,6 @@ $heading-font: "Rubik", sans-serif !default;
     width: fit-content;
     margin: 0.3rem auto 0;
 }
-
 /* The wrapper paragraph Quarto puts around the image must collapse onto the image
    exactly, or every percentage below is measured against the wrong box: reveal adds
    `margin: 15px 0` to content images and an inline image also carries a descender
@@ -1145,17 +837,14 @@ $heading-font: "Rubik", sans-serif !default;
     line-height: 0;
     font-size: 0;
 }
-
 .annotated img {
     display: block;
     margin: 0 !important;
     max-width: none;
 }
-
 .annotated p {
     margin: 0;
 }
-
 .anno {
     position: absolute;
     left: var(--x);
@@ -1167,7 +856,6 @@ $heading-font: "Rubik", sans-serif !default;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.55);
     pointer-events: none;
 }
-
 .anno p {
     position: absolute;
     left: 50%;
@@ -1182,10 +870,8 @@ $heading-font: "Rubik", sans-serif !default;
     padding: 0.18em 0.7em;
     border-radius: 4px;
 }
-
 .anno.mid   p { bottom: auto; top: 50%; transform: translate(calc(-50% + var(--lx, 0px)), calc(-50% + var(--ly, 0px))); }
 .anno.left  p { left: auto; right: calc(100% + 8px); bottom: auto; top: 50%; transform: translate(var(--lx, 0px), calc(-50% + var(--ly, 0px))); }
-
 /* World rail — ::: {.world-rail} of ::: {.world-item}, a vertical tile legend
    sitting beside the interface screenshot so the screenshot keeps the width. */
 .world-rail {
@@ -1198,14 +884,12 @@ $heading-font: "Rubik", sans-serif !default;
     padding-left: 0.9rem;
     border-left: 1px solid rgba(255,255,255,0.14);
 }
-
 .world-item {
     display: grid;
     grid-template-columns: 42px 1fr;
     align-items: center;
     column-gap: 0.6rem;
 }
-
 .reveal .slides section .world-item img {
     flex: none;
     width: 42px;
@@ -1215,23 +899,19 @@ $heading-font: "Rubik", sans-serif !default;
     border-radius: 4px;
     background: #000000;
 }
-
 .world-item p {
     margin: 0;
     line-height: 1.2;
 }
-
 .world-item > p:first-child {
     grid-column: 1;
 }
-
 .world-name {
     display: block;
     color: #ffffff;
     font-size: 0.68em;
     font-weight: 800;
 }
-
 /* The rule for each tile, under its name (Game Interface). */
 .world-note {
     display: block;
@@ -1239,7 +919,6 @@ $heading-font: "Rubik", sans-serif !default;
     color: rgba(255,255,255,0.65);
     font-size: 0.52em;
 }
-
 .interface-split {
     align-items: center;
     margin-top: 0.1rem;
@@ -1251,7 +930,6 @@ $heading-font: "Rubik", sans-serif !default;
     margin-left: auto;
     margin-right: 0;
 }
-
 /* Phase grid — controls grouped by what the player is doing */
 .phase-grid {
     display: grid;
@@ -1259,13 +937,11 @@ $heading-font: "Rubik", sans-serif !default;
     gap: 1rem 1.6rem;
     margin: 0.9rem 0 0.3rem;
 }
-
 .phase {
     padding: 0.75rem 1rem;
     border-left: 3px solid $primary-color;
     background: rgba(255,255,255,0.04);
 }
-
 .phase-name {
     display: block;
     margin-bottom: 0.18rem;
@@ -1275,16 +951,13 @@ $heading-font: "Rubik", sans-serif !default;
     text-transform: uppercase;
     letter-spacing: 0.9px;
 }
-
 .phase .key-row {
     border: none;
 }
-
 .phase .key-row p {
     padding: 0.24rem 0;
     font-size: 0.78em;
 }
-
 .phase-note {
     display: block;
     margin-top: 0.18rem;
@@ -1292,19 +965,16 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.62em;
     line-height: 1.3;
 }
-
 /* Camera annotation key */
 .camera-key {
     margin-top: 0.1rem;
     text-align: center;
 }
-
 .camera-key p {
     margin: 0;
     color: rgba(255,255,255,0.55);
     font-size: 0.58em;
 }
-
 .ckey {
     display: inline-block;
     margin-right: 0.3rem;
@@ -1312,28 +982,23 @@ $heading-font: "Rubik", sans-serif !default;
     color: #ffffff;
     font-weight: 800;
 }
-
 .ckey-ring {
     border: 2px solid #ffffff;
     border-radius: 999px;
 }
-
 .ckey-room {
     border: 2px dashed $primary-color;
     color: $primary-color;
 }
-
 .camera-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.1rem;
     margin: 0.3rem 0 0.45rem;
 }
-
 .camera-view {
     text-align: center;
 }
-
 .reveal .slides section .camera-view img {
     width: 265px;
     height: 265px;
@@ -1341,13 +1006,11 @@ $heading-font: "Rubik", sans-serif !default;
     background: #000000;
     margin: 0 auto 0.35rem;
 }
-
 .camera-view p {
     margin: 0.15rem 0;
     font-size: 0.72em;
     line-height: 1.35;
 }
-
 .camera-title {
     display: block;
     color: $primary-color;
@@ -1355,7 +1018,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-weight: 700;
     margin-bottom: 0.15rem;
 }
-
 /* ── Victims and Decoys: row labels ────────────────────────────────────────────
    assets/victims.png has real victims on the top row and decoys on the bottom;
    nothing in tools/ regenerates it, so the rows are labelled beside the image. */
@@ -1392,7 +1054,6 @@ $heading-font: "Rubik", sans-serif !default;
 .vrow-decoy {
     color: rgba(255,255,255,0.62);
 }
-
 /* Tight tables (First Checkpoint): rows of two-line cells overflow the slide at the
    default table scale. */
 .tight-table table {
@@ -1404,7 +1065,6 @@ $heading-font: "Rubik", sans-serif !default;
 .tight-table table th {
     padding: 0.3em 0.8em 0.45em;
 }
-
 /* Checklist variant: rows sized for a slide that also carries a table. */
 .feature-list.compact .feature-row {
     padding: 0.28rem 0;
@@ -1412,7 +1072,6 @@ $heading-font: "Rubik", sans-serif !default;
 .feature-list.compact .feature-row p {
     font-size: 0.78em;
 }
-
 /* ── Dependency panel (Before You Start) ────────────────────────────────────── */
 .dep-panel {
     padding: 0.85rem 1rem 1rem;
@@ -1452,7 +1111,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.56em;
     white-space: nowrap;
 }
-
 /* ── Checkpoint card (First Checkpoint) ────────────────────────────────────── */
 .check-card {
     height: 100%;
@@ -1488,14 +1146,12 @@ $heading-font: "Rubik", sans-serif !default;
 .check-card .check-item:last-child p {
     border-bottom: none;
 }
-
 /* Run slide: the GIF carries the point, so give it the room to be seen. */
 .run-split img {
     width: 100%;
     border: 1px solid rgba(255,255,255,0.16);
     border-radius: 6px;
 }
-
 /* Caption that belongs to a figure inside a column, unlike .slide-caption,
    which is pinned to the bottom of the whole slide. */
 .fig-note p {
@@ -1505,7 +1161,6 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 0.6em;
     line-height: 1.35;
 }
-
 /* ── Title slide hierarchy ─────────────────────────────────────────────────
    MOSAIC, then its full name, then the tagline at a clearly lower size. The
    team is introduced on the next slide, so the title slide carries no author block. */
@@ -1533,7 +1188,6 @@ $heading-font: "Rubik", sans-serif !default;
 #title-slide .subtitle .title-repo {
     margin-top: 0.3rem;
 }
-
 /* ── How MOSAIC Works: two drops under the system row ─────────────────────────
    Same five-column grid as .system-row, so each arrow lands under its node:
    participant → study sensors, MOSAIC task → LSL. */
@@ -1547,14 +1201,12 @@ $heading-font: "Rubik", sans-serif !default;
 }
 .drop-row .record-drop:first-child { grid-column: 1; }
 .drop-row .record-drop:nth-child(2) { grid-column: 3; }
-
 /* ── The Human–AI Teaming Loop ─────────────────────────────────────────────
    Four decision nodes on one row (part-one style), a return rail above from
    Outcome to Observe, and the optional advice branch below that leaves Decide
    and rejoins at Act. Both rows share one seven-column grid so the vertical
    arrows land on node centres. */
 $loop-gap: 84px;
-
 .teaming-diagram {
     margin-top: 0.4rem;
 }
@@ -1594,7 +1246,6 @@ $loop-gap: 84px;
 .loop-node .decision-title {
     font-size: 1em;
 }
-
 .arrow-label {
     color: rgba(255,255,255,0.72);
     font-size: 0.46em;
@@ -1602,7 +1253,6 @@ $loop-gap: 84px;
     letter-spacing: 0.4px;
     white-space: nowrap;
 }
-
 /* Horizontal connector with a head on the right and an optional label above. */
 .loop-arrow {
     position: relative;
@@ -1629,7 +1279,6 @@ $loop-gap: 84px;
     text-align: center;
     line-height: 1;
 }
-
 /* Return rail: rises from the centre of Outcome, runs left, drops into Observe.
    Each node is (100% - 3 gaps) / 4 wide, so half a node is that over 8. */
 .loop-return {
@@ -1658,7 +1307,6 @@ $loop-gap: 84px;
     background: #252525;
     line-height: 1;
 }
-
 .advice-branch {
     grid-template-rows: 48px auto;
 }
@@ -1703,7 +1351,6 @@ $loop-gap: 84px;
     transform: translateY(-50%);
     line-height: 1;
 }
-
 .branch-label {
     grid-column: 1 / span 2;
     grid-row: 2;
@@ -1719,7 +1366,6 @@ $loop-gap: 84px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
 .advice-box {
     grid-row: 2;
     padding: 0.55rem 0.8rem;
@@ -1746,13 +1392,10 @@ $loop-gap: 84px;
     grid-column: 4;
     grid-row: 2;
 }
-
 .teaming-diagram + .cycle-band {
     margin-top: 0.9rem;
 }
-
 /* ── Part Two: installation slides sized for the back of the room ──────────── */
-
 /* Before You Start: roomier prerequisite rows. */
 .prereq-split {
     align-items: stretch;
@@ -1770,7 +1413,6 @@ $loop-gap: 84px;
     width: 150px;
     margin-left: -165px;
 }
-
 /* Before You Start: dependencies grouped by what they are for. */
 .dep-panel.dep-groups {
     height: 100%;
@@ -1810,7 +1452,6 @@ $loop-gap: 84px;
     padding: 0.32rem 0.75rem;
     font-size: 0.64em;
 }
-
 /* Clone and Install: code on the left, what each line does on the right. */
 .install-split {
     align-items: flex-start;
@@ -1857,7 +1498,6 @@ $loop-gap: 84px;
     color: #ffffff;
     font-weight: 800;
 }
-
 /* The command that checks a prerequisite, on its own line under the requirement. */
 .check-cmd {
     display: block;
@@ -1865,13 +1505,10 @@ $loop-gap: 84px;
     color: rgba(255,255,255,0.55);
     font-size: 0.88em;
 }
-
 .run-split .fig-note p {
     font-size: 0.7em;
 }
-
 /* ── Parts Three and Four: controls, runtime map, and code map ───────────── */
-
 /* Runtime Architecture — a picture in every block. Reuses How MOSAIC Works'
    five-column system row, so every arrow lands on a node centre. */
 .arch-visual .system-node {
@@ -1913,7 +1550,6 @@ $loop-gap: 84px;
 .arch-visual .system-link p {
     font-size: 0.56em;
 }
-
 /* Three drops under the row: participant → sensing, GUI ⇅ teammate, SAR → foundation. */
 .drop-row .record-drop:nth-child(3) { grid-column: 5; }
 .arch-drops .record-drop {
@@ -1934,7 +1570,6 @@ $loop-gap: 84px;
 .built-on::before {
     border-left-style: dashed !important;
 }
-
 .support-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 145px minmax(0, 1.15fr) 145px minmax(0, 1fr);
@@ -1984,7 +1619,6 @@ $loop-gap: 84px;
     color: $primary-color;
     white-space: normal;
 }
-
 /* Controls and Gameplay — each control with its own clip beside the keys. */
 .phase-clips {
     gap: 0.8rem 1.1rem;
@@ -2014,7 +1648,6 @@ $loop-gap: 84px;
     margin-top: 0.3rem;
     font-size: 0.6em;
 }
-
 /* Where to Go Next — the code map: the study folder composing four package
    cards, each a real folder tree with its API and what to customize there. */
 .code-map {
@@ -2121,7 +1754,6 @@ $loop-gap: 84px;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.75rem;
 }
-
 /* One File, Four Parts — the real main.py call beside numbered rows that match
    the code highlights, one row per Part Four section. */
 .compose-split {
@@ -2179,7 +1811,6 @@ $loop-gap: 84px;
     font-size: 1.12em;
     font-weight: 800;
 }
-
 /* Part Four — one component per section. The strip at the top shows where you
    are; the slide body is a task → predict → result pair (.task-split below). */
 .custom-strip p {
@@ -2191,7 +1822,6 @@ $loop-gap: 84px;
     padding: 0.2rem 0.55rem;
     font-size: 0.56em;
 }
-
 /* Part Four: what the slide changes, in one plain sentence under the strip. */
 .task-what p {
     margin: 0 0 0.9rem;
@@ -2199,7 +1829,6 @@ $loop-gap: 84px;
     font-size: 0.86em;
     line-height: 1.4;
 }
-
 /* Task → predict → result. Left: the one edit as a diff, what to do, and a
    question for the room. Right, revealed on the next click: before/after
    images rendered from real MOSAIC (tools/capture_config_results.py), the
@@ -2286,7 +1915,6 @@ $loop-gap: 84px;
 .reveal .code-card.mini pre {
     font-size: 0.6em;
 }
-
 /* Diff lines: what you remove is muted, what you add is the accent, and the
    @@ location markers read as annotations rather than code. */
 .reveal .task-col code.diff span.st {
@@ -2345,7 +1973,6 @@ $loop-gap: 84px;
     font-size: 0.66em;
     font-weight: 600;
 }
-
 /* The Synchronized Record: stands in for the rehearsal timeline until it is recorded. */
 .placeholder {
     display: flex;
@@ -2362,7 +1989,6 @@ $loop-gap: 84px;
     font-style: italic;
     line-height: 1.5;
 }
-
 /* ── Victims and Decoys: health strip under the victim symbols ─────────────── */
 .health-strip {
     margin-top: 0.9rem;
@@ -2406,7 +2032,6 @@ $loop-gap: 84px;
     color: rgba(255,255,255,0.65);
     font-size: 0.58em;
 }
-
 /* Runtime Architecture: caption under the exact env.step line. */
 .support-visual.code-visual {
     flex-direction: column;
@@ -2416,7 +2041,6 @@ $loop-gap: 84px;
     color: rgba(255,255,255,0.45) !important;
     font-size: 0.85em;
 }
-
 /* ── Exact source excerpts: a file-and-lines caption over real line numbers ── */
 .src {
     margin-bottom: 0.45rem;
@@ -2442,7 +2066,6 @@ $loop-gap: 84px;
     line-height: 1.42;
     padding: 0.55em 0.9em;
 }
-
 /* Studying Human–AI Teaming: six research questions as compact cards, two across and three down. */
 .research-grid.question-cards {
     gap: 0.6rem;
@@ -2463,13 +2086,11 @@ $loop-gap: 84px;
     font-size: 0.74em;
     line-height: 1.4;
 }
-
 /* Part Four lab-file tasks: where to download the file from. */
 .dl-src {
     color: $primary-color;
     font-weight: 700;
 }
-
 /* Closing slide: thanks, then the three links people will want to write down. */
 .closing {
     display: flex;
@@ -2517,7 +2138,6 @@ $loop-gap: 84px;
     font-size: 1.5rem;
     color: #ffffff;
 }
-
 /* The live eye-tracking demo: three numbered things to watch for. */
 .watch-list {
     display: flex;
@@ -2582,7 +2202,6 @@ $loop-gap: 84px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
 /* Part Four: who does this example, a pill at the start of the task sentence. */
 .mode-tag {
     display: inline-block;
@@ -2600,7 +2219,6 @@ $loop-gap: 84px;
 .mode-tag + * {
     margin-left: 0;
 }
-
 /* Part Four section slides: the real main.py lines (and what they produce) on
    the left, what can be changed in that section on the right. */
 .section-grid {
@@ -2626,7 +2244,6 @@ $loop-gap: 84px;
 .reveal .slides section .section-left .section-wide img {
     width: 100%;
 }
-
 /* Part Four section slides (4.1–4.4): three numbered knobs, each the setting
    and what it changes for the participant; the tag on the right says where
    it is shown (next slide, notebook, appendix). */
@@ -2688,7 +2305,6 @@ $loop-gap: 84px;
     margin-top: 0.3rem;
     font-size: 0.52em;
 }
-
 /* Crops of the real GUI (captured at 2x by tools/capture_config_results.py):
    the panel's own background is extended as padding and the widget gets a thin
    frame, so a metric or a chat message reads as a piece of the interface. */
@@ -2714,7 +2330,6 @@ $loop-gap: 84px;
     color: rgba(255,255,255,0.65);
     font-size: 0.95em;
 }
-
 /* Part number next to a block or folder name (Runtime Architecture, Where to
    Go Next), matching the 4.1–4.4 strip. */
 .part-badge {
@@ -2735,7 +2350,6 @@ $loop-gap: 84px;
 .pkg-row .pkg-card > p:last-child {
     margin-top: auto;
 }
-
 /* QR card: a scannable code with two or three lines beside it (.qr-stack: under it).
    The code images are dark on white with their own quiet border; never invert them. */
 .qr-card {
@@ -2786,7 +2400,6 @@ $loop-gap: 84px;
     width: 210px;
     height: 210px;
 }
-
 /* MOSAIC in a Study: the paper's title and authors above its findings. */
 .paper-title {
     display: block;

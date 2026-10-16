@@ -1,6 +1,12 @@
 /*-- scss:defaults --*/
 
-$primary-color: #EC672C;
+// Color system: one accent (orange) for emphasis, one secondary tint (gray)
+// for de-emphasis/grouping, plus the OSU brand grays for light surfaces.
+// Change these five values to re-theme every component in this file.
+$primary-color: #EC672C;      // accent — emphasis, primary category, "this one"
+$secondary-color: #757575;    // secondary tint — de-emphasis, alternate category (OSU Cool Gray 10)
+$gray-light: #DDDDDD;         // light surface, e.g. card backgrounds (OSU Cool Gray 2)
+$gray-dark: #757575;          // same value as $secondary-color, used for dark-on-light text
 $body-bg: #252525;
 $body-color: #ffffff;
 $link-color: #EC672C;
@@ -32,6 +38,7 @@ $heading-font: "Rubik", sans-serif !default;
     font-size: 1.4em;
     color: #ffffff;
     border: none;
+    width: fit-content;
 }
 
 .reveal h2 .accent,
@@ -82,9 +89,33 @@ $heading-font: "Rubik", sans-serif !default;
     color: #EC672C;
 }
 
+/* Angled-block accent motif — a clip-path banner mark that matches the heading's text width.
+   The cut is offset by exactly $height, so the diagonal is always the same ~45deg angle
+   no matter how tall the box is (a fixed percentage like 82% would look steeper/shallower
+   at different heights). */
+@mixin heading-accent($height: 16px) {
+    content: "";
+    display: block;
+    width: 100%;
+    height: $height;
+    margin-top: 0.5rem;
+    background: $primary-color;
+    clip-path: polygon(0 0, 100% 0, calc(100% - #{$height}) 100%, 0 100%);
+    pointer-events: none;
+}
+
+.reveal h2::after {
+    @include heading-accent(8px);
+}
+
 /* Title slide */
 #title-slide {
     text-align: left;
+
+    .subtitle::after {
+        @include heading-accent(10px);
+        margin-top: 1rem;
+    }
 
     .title {
         color: #ffffff;
@@ -99,6 +130,7 @@ $heading-font: "Rubik", sans-serif !default;
         font-weight: 400;
         font-size: 1.2em;
         margin-top: 0.4em;
+        width: fit-content;
     }
 
     .author,
@@ -171,10 +203,10 @@ $heading-font: "Rubik", sans-serif !default;
     line-height: 1.4;
 }
 
-/* Impact cards */
+/* Impact cards — ::: {.impact-grid} containing ::: {.impact-card} fenced divs */
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
     margin-top: 0.4rem;
     width: 100%;
@@ -203,7 +235,9 @@ $heading-font: "Rubik", sans-serif !default;
     padding: 0;
 }
 
-.impact-overlay {
+/* Gradient overlay — a pseudo-element, so no empty div is needed in the markup */
+.impact-card::before {
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.75) 30%, rgba(0,0,0,0) 70%);
@@ -221,7 +255,12 @@ $heading-font: "Rubik", sans-serif !default;
     justify-content: flex-end;
 }
 
+.impact-text p {
+    margin: 0;
+}
+
 .impact-label {
+    display: block;
     font-weight: 700;
     color: #EC672C;
     font-size: 0.85em;
@@ -231,6 +270,7 @@ $heading-font: "Rubik", sans-serif !default;
 }
 
 .impact-desc {
+    display: block;
     font-size: 0.72em;
     color: rgba(255,255,255,0.8);
     line-height: 1.4;
@@ -265,10 +305,21 @@ $heading-font: "Rubik", sans-serif !default;
     color: rgba(255,255,255,0.85);
 }
 
-.reveal table th,
+.reveal table th {
+    border: none;
+    border-bottom: 2px solid $primary-color;
+    padding: 0.4em 0.8em 0.6em;
+    text-align: left;
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .reveal table td {
     border: none;
-    padding: 0.4em 0.8em;
+    padding: 0.5em 0.8em;
     text-align: left;
     font-weight: normal;
 }
@@ -289,7 +340,7 @@ $heading-font: "Rubik", sans-serif !default;
     border-left: 3px solid #EC672C;
     border-radius: 6px;
     padding: 0.8em 1em;
-    font-size: 0.85em;
+    font-size: 1.25em;
     line-height: 1.5;
     max-height: none;
 }
@@ -315,14 +366,31 @@ $heading-font: "Rubik", sans-serif !default;
     max-width: 560px;
 }
 
+.flow-step p {
+    margin: 0;
+}
+
 .flow-step strong {
-    color: #EC672C;
+    color: $primary-color;
+}
+
+/* Add .secondary for an optional/alternate step in a pipeline: ::: {.flow-step .secondary} */
+.flow-step.secondary {
+    border-color: rgba(117,117,117,0.5);
+}
+
+.flow-step.secondary strong {
+    color: $secondary-color;
 }
 
 .flow-arrow {
     color: #EC672C;
     font-size: 1.1em;
     line-height: 1;
+}
+
+.flow-arrow p {
+    margin: 0;
 }
 
 .flow-branch {
@@ -335,6 +403,187 @@ $heading-font: "Rubik", sans-serif !default;
 
 .flow-branch .flow-step {
     max-width: 260px;
+}
+
+/* Cards — ::: {.cards} containing ::: {.card} fenced divs */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+/* Add .vertical to stack cards in a single column instead of a grid: ::: {.cards .vertical} */
+.cards.vertical {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    border-left: 3px solid $primary-color;
+    background: $gray-light;
+    border-radius: 6px;
+    padding: 0.55rem 0.8rem;
+}
+
+/* Add .secondary to de-emphasize a card or group it as an alternate category: ::: {.card .secondary} */
+.card.secondary {
+    border-left-color: $secondary-color;
+}
+
+.card.secondary .card-title {
+    color: $secondary-color;
+}
+
+.card-title {
+    display: block;
+    font-weight: 700;
+    color: $primary-color;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.card p {
+    font-size: 0.72em;
+    color: #333333;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Badges — small inline tags. Default is accent orange; add .secondary for the muted variant. */
+.badge {
+    display: inline-block;
+    background: $primary-color;
+    color: #ffffff;
+    font-size: 0.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.2em 0.7em;
+    border-radius: 99px;
+}
+
+.badge.secondary {
+    background: $secondary-color;
+}
+
+/* Stats — ::: {.stats} containing ::: {.stat} fenced divs */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem 2rem;
+    margin-top: 1.2rem;
+}
+
+.stat {
+    border-left: 3px solid $primary-color;
+    padding-left: 0.8rem;
+}
+
+/* Add .secondary to de-emphasize a stat or group it as an alternate category: ::: {.stat .secondary} */
+.stat.secondary {
+    border-left-color: $secondary-color;
+}
+
+.stat.secondary .stat-number {
+    color: $secondary-color;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: $primary-color;
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 0.2rem;
+}
+
+/* Quote — ::: {.quote} with a [name]{.quote-attribution} line */
+.quote {
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.5;
+    max-width: 780px;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.quote p::before {
+    content: "\201C";
+    color: #EC672C;
+}
+
+.quote p::after {
+    content: "\201D";
+    color: #EC672C;
+}
+
+.quote-attribution {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: 700;
+    color: #EC672C;
+    letter-spacing: 0.5px;
+}
+
+/* Section divider — ::: {.divider} with [title]{.divider-title} / [subtitle]{.divider-subtitle} */
+.divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.divider-title {
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.divider-subtitle {
+    display: block;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.6rem;
+}
+
+/* Full-bleed image slide caption — a text overlay pinned to the bottom of the slide */
+.slide-caption {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+/* Legacy classes still used by discovery-day and physio-workshop */
+.impact-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 30%, rgba(0,0,0,0) 70%);
 }
 
 /* Pattern cards (design-pattern tour) */
