@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6a46f4c21dfd5f64a8a3c3a510dfa0e1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e37fe576b117571eb266492a273442e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-lab-decks .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -88,11 +88,39 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-author','listing-description','listing-date','listing-event_type','listing-image','listing-path',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-metadata-files","listing-title","listing-subtitle","listing-institute","listing-date","listing-description","listing-image","listing-venue","listing-event_type","listing-event_category","listing-title-slide-attributes","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-resources","listing-date-format","listing-conference_url"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-metadata-files","listing-title","listing-subtitle","listing-institute","listing-date","listing-description","listing-image","listing-venue","listing-event_type","listing-event_category","listing-title-slide-attributes","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-date-format","listing-conference_url","listing-resources"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-lab-decks'] = new List('listing-lab-decks', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-people-decks .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-description','listing-date','listing-event_type','listing-image','listing-path',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-metadata-files","listing-title","listing-subtitle","listing-author","listing-institute","listing-description","listing-image","listing-event_type","listing-date","listing-resources","listing-title-slide-attributes","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-people-decks'] = new List('listing-people-decks', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -199,41 +227,14 @@ window.Quarto = {
     <div class="hero-title-top">iHuman Lab <span class="hero-title-accent">Presentations</span></div>
   </div>
 </div>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
+<h2 class="section-heading anchored">Lab tutorials &amp; outreach</h2>
+<p class="section-sub">Decks the lab built together: tutorials, workshops and outreach.</p>
+<div id="listing-lab-decks" class="quarto-listing quarto-listing-container-custom">
 <div class="outreach-grid">
 <div class="outreach-card">
-<a class="outreach-stretched-link" href="./ieee_smc_eo/presentation/smc.html" target="_blank" rel="noopener"></a>
+<a class="outreach-stretched-link" href="./lab/mosaic-tutorial/mosaic-tutorial.html" target="_blank" rel="noopener"></a>
 <div class="outreach-card-img-wrap">
-<img src="./ieee_smc_eo/presentation/assets/participants-new.png" alt="LLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation" class="outreach-card-img">
-</div>
-<div class="outreach-card-top">
-<div class="outreach-card-title">
-LLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation
-</div>
-</div>
-<div class="outreach-card-body">
-<div class="outreach-card-author">
-Elahe Oveisi and Dr.&nbsp;Hemanth Manjunatha
-</div>
-<div class="outreach-card-desc">
-How expertise and LLM guidance shape human performance and visual attention in a search-and-rescue task, measured with eye tracking.
-</div>
-<div class="outreach-card-meta">
-<span class="outreach-meta-item"><span class="outreach-meta-icon">📅</span>October 2026</span>
-</div>
-</div>
-<div class="outreach-card-footer">
-<p><span class="outreach-badge">Conference Talk</span></p>
-</div>
-</div>
-<div class="outreach-card">
-<a class="outreach-stretched-link" href="./mosaic-tutorial/mosaic-tutorial.html" target="_blank" rel="noopener"></a>
-<div class="outreach-card-img-wrap">
-<img src="./mosaic-tutorial/assets/gui-screenshot-live.png" alt="Closing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing" class="outreach-card-img">
+<img src="./lab/mosaic-tutorial/assets/gui-screenshot-live.png" alt="Closing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing" class="outreach-card-img">
 </div>
 <div class="outreach-card-top">
 <div class="outreach-card-title">
@@ -256,9 +257,9 @@ Closing the Human–AI Loop: Modular Architectures for Autonomous Teaming and Ph
 </div>
 </div>
 <div class="outreach-card">
-<a class="outreach-stretched-link" href="./shasta-tutorial/shasta-tutorial.html" target="_blank" rel="noopener"></a>
+<a class="outreach-stretched-link" href="./lab/shasta-tutorial/shasta-tutorial.html" target="_blank" rel="noopener"></a>
 <div class="outreach-card-img-wrap">
-<img src="./shasta-tutorial/assets/world-overview.png" alt="Closing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing" class="outreach-card-img">
+<img src="./lab/shasta-tutorial/assets/world-overview.png" alt="Closing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing" class="outreach-card-img">
 </div>
 <div class="outreach-card-top">
 <div class="outreach-card-title">
@@ -281,9 +282,9 @@ Closing the Human–AI Loop: Modular Architectures for Autonomous Teaming and Ph
 </div>
 </div>
 <div class="outreach-card">
-<a class="outreach-stretched-link" href="./physio-workshop/case-study.html" target="_blank" rel="noopener"></a>
+<a class="outreach-stretched-link" href="./lab/physio-workshop/case-study.html" target="_blank" rel="noopener"></a>
 <div class="outreach-card-img-wrap">
-<img src="./physio-workshop/screenshots/fullview.png" alt="Rescue-Grid An Open Platform for Human-Machine Teaming" class="outreach-card-img">
+<img src="./lab/physio-workshop/screenshots/fullview.png" alt="Rescue-Grid An Open Platform for Human-Machine Teaming" class="outreach-card-img">
 </div>
 <div class="outreach-card-top">
 <div class="outreach-card-title">
@@ -303,7 +304,7 @@ A tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation b
 </div>
 </div>
 <div class="outreach-card">
-<a class="outreach-stretched-link" href="./physio-workshop/foundations.html" target="_blank" rel="noopener"></a>
+<a class="outreach-stretched-link" href="./lab/physio-workshop/foundations.html" target="_blank" rel="noopener"></a>
 <div class="outreach-card-img-wrap">
 <img src="./assets/images/outreach/377A7060.jpg" alt="Beyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming" class="outreach-card-img">
 </div>
@@ -328,7 +329,7 @@ Part 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workl
 </div>
 </div>
 <div class="outreach-card">
-<a class="outreach-stretched-link" href="./discovery-day/discovery-day.html" target="_blank" rel="noopener"></a>
+<a class="outreach-stretched-link" href="./lab/discovery-day/discovery-day.html" target="_blank" rel="noopener"></a>
 <div class="outreach-card-img-wrap">
 <img src="./assets/images/work/377A0883.jpg" alt="CEAT Discovery Day iHuman Lab" class="outreach-card-img">
 </div>
@@ -351,7 +352,44 @@ An introduction to the iHuman Lab for K–12 students covering brain-computer in
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+<h2 class="section-heading anchored">Talks by lab members</h2>
+<p class="section-sub">Research talks, defenses and conference presentations from individual students and PIs.</p>
+<div id="listing-people-decks" class="quarto-listing quarto-listing-container-custom">
+<div class="outreach-grid">
+<div class="outreach-card">
+<a class="outreach-stretched-link" href="./people/Elahe_Oveisi/ieee-smc/smc.html" target="_blank" rel="noopener"></a>
+<div class="outreach-card-img-wrap">
+<img src="./people/Elahe_Oveisi/ieee-smc/assets/participants-new.png" alt="LLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation" class="outreach-card-img">
+</div>
+<div class="outreach-card-top">
+<div class="outreach-card-title">
+LLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation
+</div>
+</div>
+<div class="outreach-card-body">
+<div class="outreach-card-author">
+Elahe Oveisi and Dr.&nbsp;Hemanth Manjunatha
+</div>
+<div class="outreach-card-desc">
+How expertise and LLM guidance shape human performance and visual attention in a search-and-rescue task, measured with eye tracking.
+</div>
+<div class="outreach-card-meta">
+<span class="outreach-meta-item"><span class="outreach-meta-icon">📅</span>October 2026</span>
+</div>
+</div>
+<div class="outreach-card-footer">
+<p><span class="outreach-badge">Conference Talk</span></p>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -2,12 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
-      "/ieee_smc_eo/presentation/smc.html",
-      "/mosaic-tutorial/mosaic-tutorial.html",
-      "/shasta-tutorial/shasta-tutorial.html",
-      "/physio-workshop/case-study.html",
-      "/physio-workshop/foundations.html",
-      "/discovery-day/discovery-day.html"
+      "/lab/mosaic-tutorial/mosaic-tutorial.html",
+      "/lab/shasta-tutorial/shasta-tutorial.html",
+      "/lab/physio-workshop/case-study.html",
+      "/lab/physio-workshop/foundations.html",
+      "/lab/discovery-day/discovery-day.html",
+      "/people/Elahe_Oveisi/ieee-smc/smc.html"
     ]
   }
 ]

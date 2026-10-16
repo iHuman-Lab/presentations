@@ -1,812 +1,812 @@
 [
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#todays-sessions",
-    "href": "shasta-tutorial/shasta-tutorial.html#todays-sessions",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#todays-sessions",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#todays-sessions",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Today’s Sessions",
     "text": "Today’s Sessions\n\nTwo hands-on sessions, back to back, in the same room.\n\n\n\n\n8:30–10:30 AM Session 1 · MOSAIC\n\nA configurable testbed for human–AI teaming. Play a search-and-rescue mission in your browser, then change the task, the AI teammate and the sensing.\n\n\n11:00 AM–1:00 PM Session 2 · SHaSTA\n\nA simulator for human–swarm teaming. Put a human in the loop with a swarm, and log what they do on one clock.\n\n\n\nEvergreen C Where\n\n\n@Hyatt_Meeting Wi-Fi network\n\n\nSMC26 Wi-Fi password\n\n\n\nWelcome. This is the tutorial “Closing the Human-AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing”, in two sessions in Evergreen C. Session 1, 8:30 to 10:30, is MOSAIC; Session 2, 11:00 to 1:00, is SHaSTA. Wi-Fi: network @Hyatt_Meeting, password SMC26. Leave this slide up while people settle and connect."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#section",
-    "href": "shasta-tutorial/shasta-tutorial.html#section",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#section",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#section",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "",
     "text": "Session 2 · 11:00 AM–1:00 PM\nSHaSTAAn Open-Source Simulator for Human and Swarm Team Applications\nA hands-on tutorial: putting a human in the loop with a swarm"
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#meet-the-team",
-    "href": "shasta-tutorial/shasta-tutorial.html#meet-the-team",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#meet-the-team",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#meet-the-team",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Meet the Team",
     "text": "Meet the Team\n\nOklahoma State University × University at Buffalo\n\n\n\n\nHemanth Manjunatha Assistant Professor, MAE Oklahoma State University iHuman Lab\n\n\n\nEhsan T. Esfahani Associate Professor, MAE University at Buffalo Human In the Loop Systems (HILS) Lab\n\n\n\nSouma Chowdhury Associate Professor, MAE University at Buffalo ADAMS Lab\n\n\n\nKarthik Dantu Associate Professor, CSE University at Buffalo DRONES Lab\n\n\n\nSHaSTA was built with UB alumni Prajit KrisshnaKumar, Joseph Distefano, Payam Ghassemi, Amir Behjat and Apurv Jani."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
-    "href": "shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#what-this-tutorial-covers",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What This Tutorial Covers",
     "text": "What This Tutorial Covers\n\nYou will put a person in front of a swarm, record them on one clock, and swap in your own pieces.\n\n\n\nPart 1 — Why human–swarm interaction what to study, and what to measure\n\n\n↓\n\n\nPart 2 — Open the notebook nothing to install: a map and a config file in your browser\n\n\n↓\n\n\nPart 3 — Put a human in the loop play the operator, then change the mission\n\n\n↓\n\n\nPart 4 — Measure the human, then extend LSL, a recorded session, and your own experiment"
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#the-question",
-    "href": "shasta-tutorial/shasta-tutorial.html#the-question",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#the-question",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#the-question",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Question",
     "text": "The Question\n\nHow should a person supervise a team of autonomous vehicles they can’t fully see or predict?\n\nHuman–swarm teams are used in disaster response, logistics and defence. What makes them hard to study is the person: too many vehicles overload them, they step in too much or too little, and they trust the swarm too much or too little. A useful testbed has to change four things, and measure the human.\n\n\nInterface How the person sees the swarm and gives orders: maps, communication, even VR.\n\n\nAI Learning agents that can command the swarm or advise the person: reinforcement and imitation learning.\n\n\nHuman factors What the person’s body and behaviour reveal: physiological sensing such as EEG and eye tracking.\n\n\nSwarm The vehicles and their behaviours: formations, path planning, composable primitives.\n\n\n\nSHaSTA is a testbed built around those four, with the human at the centre."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
-    "href": "shasta-tutorial/shasta-tutorial.html#what-is-shasta",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#what-is-shasta",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#what-is-shasta",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What Is SHaSTA",
     "text": "What Is SHaSTA\nAn open-source Simulator for Human and Swarm Team Applications (Manjunatha et al., 2024), a pybullet-based simulator for studying how people command and work with swarms. Four components:\n\n\nSHaSTA core The swarm simulation: pybullet physics on real OpenStreetMap city maps, UAV and UGV groups, formation and path planning.\n\n\nHuman interface Shows the swarm state and sends the operator’s commands to the core.\n\n\nData recording and sync Lab Streaming Layer time-stamps the operator’s inputs and mission events.\n\n\nPhysiological recording EEG, eye tracking and other sensors, streamed onto the same clock.\n\n\nEvery mission runs the same loop, and each step can be logged:\n\n\n1Observe\nThe operator sees positions, battery, ammo and mission progress.\n\n\n2Decide\nThey choose which group goes where.\n\n\n3Command\nSwarmCommander turns the order into a route on the street graph.\n\n\n4Execute\nFormation moves the group along the route, and the state changes.\n\n\n\nThe paper describes all four components. ihuman-shasta ships the core and the interface; the notebook adds LSL (lsl_tools.py)."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#open-the-notebook",
-    "href": "shasta-tutorial/shasta-tutorial.html#open-the-notebook",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#open-the-notebook",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#open-the-notebook",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Open the Notebook",
     "text": "Open the Notebook\n\nFour steps, and nothing to install.\n\n\n\n\n\n1 Go to the server\nScan the code on the last slide, or open jupyter.ihuman-lab.work\n\n\n2 Sign in\nWith the password you were given\n\n\n3 Open the notebook\n01_shasta_hsi.ipynb, in the file list on the left\n\n\n4 Pick the kernel\nPython (smc), at the top right of the notebook\n\n\n\n\n\nNotebook 01_shasta_hsi.ipynb: the whole tutorial, in eight steps\n\n\nInterface live_play.py and world_view.py show the interface and the 3D world in your browser\n\n\nSettings config.yaml: the simulation as a text file\n\n\nRecording lsl_tools.py: orders and gaze into one file\n\n\n\n\nThe top right says Python (smc). Run each cell with Shift+Enter, from the top.\n\n\nPrefer your own laptop? The appendix has the install, in one slide.\n\n\nEverything attendees need is already in the folder on the server: the notebook, config.yaml, live_play.py, world_view.py and lsl_tools.py. If someone sees “No module named ‘shasta’”, the kernel is wrong: pick Python (smc). The first code cell of the notebook must run first (it silences warnings and sets pygame up to draw off-screen); everything after it can run in order."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#your-first-map",
-    "href": "shasta-tutorial/shasta-tutorial.html#your-first-map",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#your-first-map",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#your-first-map",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Your First Map",
     "text": "Your First Map\n\nThe city is a graph, and the simulation is a text file.\n\n\n\n\nStep 1 the map, as a street graph\nworld_map = Map()\nworld_map.setup({\"map_to_use\": \"buffalo-small\"})\ngraph = world_map.get_node_graph()\n# 93 intersections (nodes), 236 street segments (edges)\n\n\nconfig.yaml the simulation, as numbers\nswarm:\n  uavs: 4          # drones in group 0\n  ugvs: 3          # vehicles in group 1\n  uav_speed: 2.5   # metres per second\nmission:\n  targets: 3\n  time_limit: 2500\n\n\n\n\n\n\n\n\n\nSHaSTA builds its world from OpenStreetMap: buildings, a street network, and a table that converts latitude and longitude to metres. Roads are a graph; the numbered circles are its nodes, the intersections. Every order in the tutorial is “go to this node”. The config file is read by SHaSTA (window or not, the physics step, which map) and by the notebook (how many vehicles, how fast, the mission)."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#first-checkpoint",
-    "href": "shasta-tutorial/shasta-tutorial.html#first-checkpoint",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#first-checkpoint",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#first-checkpoint",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "First Checkpoint",
     "text": "First Checkpoint\n\n\n\nConfirm\n\nThe kernel says Python (smc)\n\n\nStep 1 printed the intersections and street segments\n\n\nThe map shows numbered intersections\n\n\nNo red error text under any cell\n\n\n\n\n\n\n\n\n\n\n\nSymptom\nRecovery\n\n\n\n\nNo module named 'shasta'\nWrong kernel: pick Python (smc) at the top right\n\n\nNo module named 'live_play'\nlive_play.py is not in the notebook’s folder\n\n\nThe picture does not respond\nClick the picture once, then use the mouse and keys\n\n\nA blank picture\nRun the cell again and wait a second\n\n\nCannot load an actor multiple times\nRerun the whole cell, not only its last line\n\n\nThe server does not open\nAsk a helper; share a neighbor’s screen meanwhile\n\n\n\n\n\n\nEveryone with a map on screen is ready for Part Three.\n\n\nThis is the checkpoint before the hands-on part. The most common problem is the kernel; the second is the picture not receiving the mouse until it is clicked."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#play-it-yourself",
-    "href": "shasta-tutorial/shasta-tutorial.html#play-it-yourself",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#play-it-yourself",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#play-it-yourself",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Play It Yourself",
     "text": "Play It Yourself\n\n\n\n\nOpen Step 3 of the notebook, Human in the loop\n\n\nRun Shift+Enter, then click the picture so it receives your mouse\n\n\nCommand Click a group’s marker, click a street node, press Enter\n\n\nWatch The groups follow the streets; the targets are the yellow markers\n\n\nStop Press Stop to end and see how many targets you reached\n\n\n\n\n\nYou should see this: the map and the swarm on the left, the status and event log on the right.\n\n\n\nGive everyone several minutes of free play. The picture is the real SHaSTA interface, drawn off-screen on the server and sent to the browser; your clicks go back to it. It is the same window shasta gui opens on a laptop. Anyone whose picture does not respond clicks it once."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#the-controls",
-    "href": "shasta-tutorial/shasta-tutorial.html#the-controls",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#the-controls",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#the-controls",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Controls",
     "text": "The Controls\n\nClick the picture first. The mouse and keys then go to the interface.\n\n\n\nclick or 1–9 Pick a group — click its marker, or press its number\n\n\nclick Pick a target — click near a street node; a white cross marks it\n\n\nEnter Send the group — or the Send order button, or double-click the node\n\n\nShift Select several groups — shift-click their markers, or shift-drag a box\n\n\nwheel Zoom the map drag Pan with the right button\n\n\nSpace Pause / resume\n\n\n- + Slow down / speed up\n\n\nV 3D camera view, follows the selected group\n\n\nOptions for your study are numbers in the notebook’s Step 4: vehicles, targets, time, and the seed that repeats the targets."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#one-seam-swarmcommander",
-    "href": "shasta-tutorial/shasta-tutorial.html#one-seam-swarmcommander",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#one-seam-swarmcommander",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#one-seam-swarmcommander",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "One Seam: SwarmCommander",
     "text": "One Seam: SwarmCommander\nThe interface is a thin window on SwarmCommander, which has no display dependency. Anything that can call it can be the human:\n\n\nBuilt-in interface the window you just saw\n\n\nScripted operator a policy that plays the human\n\n\nAI advisor suggests or issues orders\n\n\nYour interface a web page, joystick, VR\n\n\nfrom shasta.interaction import Mission, SwarmCommander\n\ncommander = SwarmCommander(env, Mission.random(env.core.get_map(), 2, seed=0))\ncommander.send(0, commander.mission.targets[0])   # the human's orders\ncommander.send(1, commander.mission.targets[1])\nwhile not commander.mission.is_over(commander.step_count):\n    commander.update()                            # advance one tick\nprint(commander.events)                           # what happened, and when\n\nRun it in the notebook — Step 3’s No human needed cell plays a whole mission this way, with a scripted operator and no window. Set headless=False in load_config to watch it in the pybullet 3D window."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#no-human-required",
-    "href": "shasta-tutorial/shasta-tutorial.html#no-human-required",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#no-human-required",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#no-human-required",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "No Human Required",
     "text": "No Human Required\n\nYou just commanded the swarm by hand. The same environment runs with nobody at the keyboard.\n\n\n\n\nnotebook · Step 2 an order, with no human\nobs, info = env.reset()\nobs, reward, terminated, truncated, info = env.step({0: target})\nwhile not terminated:\n    obs, reward, terminated, truncated, info = env.step(None)\n\nRun Step 2, the cell called Order a group, with no human.\nWould a learning agent change this loop?\n\n\nWhat you get\n\n\n1 The Gym API reset() and step(action), the interface RL libraries expect\n\n\n2 An order is the action {group: node}; None means keep going\n\n\n3 No window PyBullet runs headless and the mission runs as fast as it can compute\n\n\n\n\n\nA person, a script, or an RL agent can command the swarm: one environment, one interface.\n\n\nSHaSTA is a Gymnasium environment: env.reset() starts it and env.step(action) returns (observation, reward, terminated, truncated, info). Here the action is an order, a dictionary from a group to a map node, and None keeps the groups going. So a script, or an agent trained with reinforcement learning, can command the swarm with no person involved, and the person is one kind of operator, not part of the environment. The notebook’s Step 3 shows the same idea one level up: a scripted operator drives SwarmCommander. This tutorial does not train an agent."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#the-pybullet-world",
-    "href": "shasta-tutorial/shasta-tutorial.html#the-pybullet-world",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#the-pybullet-world",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#the-pybullet-world",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The PyBullet World",
     "text": "The PyBullet World\n\nSHaSTA’s physics is PyBullet: no window needed, yet you can reach in.\n\n\n\n\n\nHeadless PyBullet runs in DIRECT mode: a trip across the map takes a fraction of a second\n\n\nRender getCameraImage draws the 3D scene to an image, so a browser can show it\n\n\nInteract A click becomes a ray into the world; where it meets the ground, the nearest street node is the order\n\n\nTry it Step 3, Interact with the PyBullet world: drag to look around, click the ground to send the selected group\n\n\n\n\n\nThe white cross is the node that was clicked.\n\n\n\nPyBullet is the physics engine under SHaSTA, and it runs with no window at all: DIRECT mode. The 2D map is one view of it; this is another. PyBullet renders the scene to an image with getCameraImage, so the notebook can show the 3D world in the browser and let you move the camera with the mouse. A click is turned into a ray through the camera, the ray is intersected with the ground, and the nearest node of the street graph becomes commander.send(selected_group, node). The code is world_view.py, next to the notebook: about a hundred lines. Because the physics needs no window, the same world can also run with nobody watching, which is how a script or a learning agent uses it."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#what-you-can-customize",
-    "href": "shasta-tutorial/shasta-tutorial.html#what-you-can-customize",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#what-you-can-customize",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#what-you-can-customize",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What You Can Customize",
     "text": "What You Can Customize\n\nEvery setting is a number. Change them and play your own.\n\n\n\n\nnotebook · Step 4 the build-your-own cell\nUAVS, UGVS = 4, 3          # vehicles in each group\nSPEED = 2.5                # metres per second\nTARGETS, RADIUS = 3, 12.0  # targets, and how close counts\nTIME_LIMIT = 2500          # simulation steps\nSEED = 0                   # the same targets every run\n\nRun Change the numbers, run the cell, and play.\nHow does the operator’s job change?\n\n\nWhat each one changes\n\n\n1 Vehicles More to supervise: more load on the operator\n\n\n2 Targets and radius More, or harder to reach\n\n\n3 Time limit Less time, more pressure\n\n\n4 Seed The same targets, so trials are comparable\n\n\n\n\n\nThese are the swarm and mission sections of config.yaml; Step 4 copies the config, changes them, and starts the interface. The operator’s workload is the research variable here: how many groups they supervise, how many targets, how much time. Counts live in the config, so a study sets them once and every participant gets the same task."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#build-a-map-of-anywhere",
-    "href": "shasta-tutorial/shasta-tutorial.html#build-a-map-of-anywhere",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#build-a-map-of-anywhere",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#build-a-map-of-anywhere",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Build a Map of Anywhere",
     "text": "Build a Map of Anywhere\n\nAny place in OpenStreetMap becomes a SHaSTA map in a few seconds.\n\n\n\n\nnotebook · Step 4 build a map of anywhere\nBBOX = (47.612, -122.206,\n        47.618, -122.198)  # S, W, N, E\n\nfetch_osm(*BBOX, \"bellevue.osm\")\nbuild_map(\"bellevue.osm\", \"bellevue\")\n\n\n\nFetch Roads and buildings from OpenStreetMap\n\n\nBuild A 3D mesh and the latitude/longitude table\n\n\nPlay The same interface, on your own campus or city\n\n\nWhich place would you study?\n\n\n\nDowntown Bellevue, built in the notebook: 243 intersections.\n\n\n\nThe map is not fixed. Any place in OpenStreetMap can become a SHaSTA map: give a bounding box (south, west, north, east) and two calls do the work. fetch_osm downloads the roads and buildings from the Overpass service, and build_map runs OSM2World to make the 3D mesh and coordinates.csv, the table that converts latitude and longitude to simulator metres. It takes about ten seconds for the box on the slide, which is downtown Bellevue, where we are. Keep the box to a campus or a few blocks, up to about 2 km across. It needs Java 11 or newer, which the cell fetches once if the server has none, and a connection to OpenStreetMap, so if the room’s network is slow, run it once before the session and let people reuse the folder. Let people change the box to their own campus; right-click on openstreetmap.org shows the coordinates of a point."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#why-lsl",
-    "href": "shasta-tutorial/shasta-tutorial.html#why-lsl",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#why-lsl",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#why-lsl",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Why LSL",
     "text": "Why LSL\nLab Streaming Layer is the open-source standard for synchronising data from many devices and programs. SHaSTA’s paper builds its data recording on it.\n\n\nOne stream per source Each device or program publishes a stream: EEG, an eye tracker, event markers.\n\n\nOne clock Every sample is time-stamped on a shared clock, so streams line up without extra cleaning.\n\n\nOne recording A recorder such as LabRecorder saves every stream together for analysis.\n\n\nIn the paper’s study, 20 participants commanded 3 UAV and 3 UGV platoons while EEG, eye tracking and game events were recorded through LSL. A session looks like this:\n\n\n1Start streams\nStart each device’s LSL stream.\n\n\n2Run\nRun the scenario: the interface, or your own operator.\n\n\n3Record\nRecord every stream in one file, then analyse."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#log-the-operator-see-it-on-the-clock",
-    "href": "shasta-tutorial/shasta-tutorial.html#log-the-operator-see-it-on-the-clock",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#log-the-operator-see-it-on-the-clock",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#log-the-operator-see-it-on-the-clock",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Log the Operator, See It on the Clock",
     "text": "Log the Operator, See It on the Clock\n\nEvery order becomes a time-stamped marker, with its target on the screen.\n\n\n\n\nnotebook · Step 7 two lines on the commander\nmarkers = MarkerOutlet(\"SHASTA-Events\")\nattach_markers(commander, markers)\nattach_order_markers(commander, markers, view)\n\nRun Step 7: give a few orders, then press Stop.\n\n\nWhat a recorder receives (x, y): target, px\n\n LSL time  marker\n   0.00 s  session_start\n   2.27 s  order  group 0 -&gt; 10   (293, 505)\n   3.60 s  order  group 1 -&gt; 25   (467, 520)\n   4.95 s  order  group 0 -&gt; 40   (445, 391)\n   7.05 s  session_end\n\n\n\n\nattach_markers and attach_order_markers are in lsl_tools.py, next to the notebook: they wrap the commander so that every log line and every order is pushed to an LSL marker stream. An order marker also carries the target’s position on the screen, which is where the operator should look next; gaze can then be compared with it. This is the paper’s pattern around SwarmCommander; the LSL layer is not part of the ihuman-shasta package yet."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#record-your-own-session",
-    "href": "shasta-tutorial/shasta-tutorial.html#record-your-own-session",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#record-your-own-session",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#record-your-own-session",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Record Your Own Session",
     "text": "Record Your Own Session\n\nPlay the operator. Your orders and the gaze go into one file.\n\n\n\n1Markers\nEvery order you give, with its target on the screen.\n\n\n2Gaze\nWhere the operator looks. Synthetic here: it looks at your last target, then follows the group.\n\n\n3Recorder\nPicks up exactly these two streams and writes one XDF file.\n\n\n\nnotebook · Step 7 the last cell\nplay_shasta(gui, on_stop=finish)     # play, press Stop, and the file is saved\n\n\nA real eye tracker streams the same way: it publishes a Gaze stream from the laptop it is plugged into, and the recorder picks it up. See the appendix.\n\n\nStep 7 has two cells: the first starts the streams and the recorder, the second plays the interface while the synthetic gaze looks at the target you just ordered and then follows the selected group. Press Stop and the session ends, the streams close, and session.xdf is saved next to the notebook. Rerun both cells to record again. The synthetic gaze is made up, so no hardware is needed; the stream is marked synthetic in the file."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#analyse-the-recording",
-    "href": "shasta-tutorial/shasta-tutorial.html#analyse-the-recording",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#analyse-the-recording",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#analyse-the-recording",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Analyse the Recording",
     "text": "Analyse the Recording\n\nBoth streams share one clock, so a look lines up with an order.\n\n\n\n\nGaze over time Each red line is an order. The gaze jumps to the target right after it.\n\n\nWhere they looked Fixations and a heatmap on the interface.\n\n\nReaction to an order How long until the operator looks at the target, and for how long.\n\n\n\nStep 8 loads session.xdf with pyxdf and draws figures like this one from the session in Step 7. The gaze here is synthetic, built to look at the target right after each order, so it shows the method; with a real tracker the same cells measure real latency and dwell time. The heatmap and fixations are drawn on a frame of the interface. To analyse a real study, set XDF_PATH to the LabRecorder file."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
-    "href": "shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#four-things-that-will-trip-you-up",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Four Things That Will Trip You Up",
     "text": "Four Things That Will Trip You Up\n\nAll four below are things this tutorial hit directly while testing every command and snippet in it — not hypothetical.\n\n\n\nThe map lives one level deeper than you’d guess config['experiment']['map_to_use'] = \"buffalo-medium\" — not config['core']['map_name'], which doesn’t exist.\n\n\nActors can’t be reused across environments Build a fresh groups dict for every new ShastaEnv(...) — reusing the same UAV/UGV objects raises ValueError: Cannot load an actor multiple times.\n\n\nA group with no path can crash mid-mission If one group finishes well before another, continuing to call env.step(None) can raise IndexError in GoToNodeExperiment.apply_actions (intermittent — seen once in three runs in this tutorial). Give every group a similar-length route until this is fixed upstream.\n\n\nMission.random’s count should match your group count Mission.random(map, 3, seed=0) against a two-group env leaves a target unassigned to any real group — mission.is_complete() then never returns True, even after every group you actually sent has arrived."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
-    "href": "shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#build-your-own-experiment",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Build Your Own Experiment",
     "text": "Build Your Own Experiment\n\nSubclass GoToNodeExperiment, add your own rules, and compare strategies.\n\n\n\n\nnotebook · Step 5 abridged\nclass TargetCollector(GoToNodeExperiment):\n    def apply_actions(self, actions, core):\n        ...    # pick the next node with the strategy, fly to it\n    def get_done_status(self, observation, core):\n        ...    # done when every node has been visited\n    def compute_reward(self, observation, core):\n        return (1.0 if self.arrived_now else 0.0) - 0.001\n\nRun Step 5, then add a strategy of your own.\n\n\nTwo strategies, the same five nodes\n\n\n\n\nStrategy\nSteps\nDistance\nReward\n\n\n\n\nnearest\n6023\n2828 m\n-1.02\n\n\nrandom\n6832\n3196 m\n-1.83\n\n\n\n\n\n\n1 Your rules What the vehicles do, what is observed, when it ends\n\n\n2 A reward +1 for each node, a small cost for each step\n\n\n\n\n\nAn experiment is a class that fills in apply_actions, get_observation, get_done_status and compute_reward of BaseExperiment. GoToNodeExperiment already routes and flies in formation, so TargetCollector extends it: one UAV group visits a list of nodes, picking the next with a strategy you pass in. The table is the output of the notebook’s cell. A map of your own study site: shasta fetch-osm and shasta build-map (need Java; not exercised in this tutorial)."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#open-discussion",
-    "href": "shasta-tutorial/shasta-tutorial.html#open-discussion",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#open-discussion",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#open-discussion",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Open Discussion",
     "text": "Open Discussion\n\n\n1 Human–Swarm Teaming What human–swarm teaming question would you ask first, and what would you change in the map, the mission or the number of vehicles to ask it?\n\n\n2 Human and autonomy Which decisions should the person keep and which should the swarm make on its own, and how would you tell good teaming from an operator who just follows?\n\n\n3 Sense the human Which physiological signals, and which swarm events, would you use to close the loop?\n\n\n\nOpen on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. Questions 2 and 3 reach across to the MOSAIC session, so people who attend only one can still join. Write down what people say is missing; it becomes the issue list."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#section-1",
-    "href": "shasta-tutorial/shasta-tutorial.html#section-1",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#section-1",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#section-1",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "",
     "text": "Thanks!\n\n\n\nQuestions? See the SHaSTA repository README.\nehsanesf@buffalo.edu & hemanth.manjunatha@okstate.edu"
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#run-shasta-on-your-own-laptop",
-    "href": "shasta-tutorial/shasta-tutorial.html#run-shasta-on-your-own-laptop",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#run-shasta-on-your-own-laptop",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#run-shasta-on-your-own-laptop",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Run SHaSTA on Your Own Laptop",
     "text": "Run SHaSTA on Your Own Laptop\n\nEverything here runs on a laptop too, with Python 3.9 or newer and Git.\n\n\n\n\nmacOS / LinuxWindows PowerShell\n\n\ngit clone &lt;the shasta-ub repository&gt;\ncd shasta-ub\npython3 -m venv .venv\nsource .venv/bin/activate\n\n\ngit clone &lt;the shasta-ub repository&gt;\ncd shasta-ub\npython -m venv .venv\n.venv\\Scripts\\Activate.ps1\n\n\n\npython -m pip install -e \".[gui]\"\npython -m pip install pylsl pyxdf ipywidgets ipyevents notebook\ncd notebooks\npython -m jupyter notebook 01_shasta_hsi.ipynb\n\n\n\n1 Clone and isolate\nThe code, and a private Python environment\n\n\n2 Install SHaSTA\n[gui] adds the human interface; -e means edits apply without reinstalling\n\n\n3 Notebook packages\nFor LSL, the recording, and the browser interface\n\n\n4 Open the notebook\nStart Jupyter from the notebooks folder\n\n\n\n\nNot on PyPI yet pip install \"ihuman-shasta[gui]\" fails with “No matching distribution found.” Install from a clone as above. The notebook asks for the kernel: choose Python 3 (ipykernel). shasta gui opens the interface in its own window.\n\n\nThe notebook draws the interface off-screen and shows it in the browser, so a laptop needs no display setup beyond a browser. shasta maps lists the maps and shasta demo runs a headless mission, which is a good check that the install works. shasta gui is the same interface in its own window."
   },
   {
-    "objectID": "shasta-tutorial/shasta-tutorial.html#record-a-real-study-on-a-laptop",
-    "href": "shasta-tutorial/shasta-tutorial.html#record-a-real-study-on-a-laptop",
+    "objectID": "lab/shasta-tutorial/shasta-tutorial.html#record-a-real-study-on-a-laptop",
+    "href": "lab/shasta-tutorial/shasta-tutorial.html#record-a-real-study-on-a-laptop",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Record a Real Study on a Laptop",
     "text": "Record a Real Study on a Laptop\n\nA USB eye tracker cannot plug into the server, so a real recording runs on the tracker’s laptop.\n\n\non the tracker’s laptop in notebooks/\npython tobii_to_lsl.py --width 1920 --height 1080     # the Tobii tracker -&gt; an LSL \"Gaze\" stream\npython shasta_gui_lsl.py --map buffalo-small          # the real interface + an LSL \"Markers\" stream\n# LabRecorder: Update, select both streams, Start, run the task, Stop\n\n\n\nThen LabRecorder writes one .xdf file. Upload it next to the notebook, set XDF_PATH in Step 8, and run the analysis unchanged.\n\n\nCaveat tobii_to_lsl.py and shasta_gui_lsl.py have not been run against real hardware in this repository: check them on your own setup first.\n\n\n\ntobii_to_lsl.py publishes the tracker as an LSL stream with the same name and channels as the notebook’s synthetic gaze, so the analysis cells do not change. shasta_gui_lsl.py is the normal interface plus an LSL marker stream of the operator’s orders. Start the tracker stream and LabRecorder first. Calibrate the tracker in the vendor’s software; the script does not calibrate."
   },
   {
-    "objectID": "physio-workshop/case-study.html#why-we-built-another-sim",
-    "href": "physio-workshop/case-study.html#why-we-built-another-sim",
+    "objectID": "lab/physio-workshop/case-study.html#why-we-built-another-sim",
+    "href": "lab/physio-workshop/case-study.html#why-we-built-another-sim",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Why We Built Another Sim",
     "text": "Why We Built Another Sim\n\n\n\nStudying trust and workload needs a task you can control — and repeat.\n\nReal disasters aren’t reproducible. Field studies can’t isolate one variable at a time, and they definitely can’t be replayed frame-by-frame in analysis.\nWe needed a SAR task that was hard enough to matter, controllable enough to manipulate, and instrumented enough to measure.\n\nSo we built Rescue-Grid."
   },
   {
-    "objectID": "physio-workshop/case-study.html#from-concept-to-testbed",
-    "href": "physio-workshop/case-study.html#from-concept-to-testbed",
+    "objectID": "lab/physio-workshop/case-study.html#from-concept-to-testbed",
+    "href": "lab/physio-workshop/case-study.html#from-concept-to-testbed",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "From Concept to Testbed",
     "text": "From Concept to Testbed\n\nEverything from Part 1 is a config parameter or a log field here.\n\n\nSituational Awareness — swappable camera views (full grid → FOV cone) control what’s perceivable; victim health depletes while visible, forcing perceive · comprehend · project\nTrust — the optional LLM assistant offers a suggestion each step; accept/reject is logged automatically, a behavioral trust signal, not just a post-task survey\nMental Workload — real vs. decoy victims, lava density, room count are the same demand-vs-capacity dials NASA-TLX asks about, except here they’re build_sar_env() arguments\nPhysiological Measurement — every game state syncs to Tobii (or any sensor you register) over one LSL clock, so fixations and pupil size line up frame-by-frame with gameplay\n\n\nPart 1 asked what to measure. Rescue-Grid is where you measure it."
   },
   {
-    "objectID": "physio-workshop/case-study.html#the-game",
-    "href": "physio-workshop/case-study.html#the-game",
+    "objectID": "lab/physio-workshop/case-study.html#the-game",
+    "href": "lab/physio-workshop/case-study.html#the-game",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "The Game",
     "text": "The Game\n\n\n\nA building on fire. Real victims. Fake ones too.\n\n\nMulti-room building, locked doors + keys\nReal victims vs. decoy victims — pick up the wrong one, take a penalty\nLava hazards, and victim health that depletes while visible\nOptional LLM assistant you can call on for a suggestion\n\n\nBuilt on MiniGrid + Gymnasium — so it’s RL-ready from day one."
   },
   {
-    "objectID": "physio-workshop/case-study.html#ten-lines-to-a-running-environment",
-    "href": "physio-workshop/case-study.html#ten-lines-to-a-running-environment",
+    "objectID": "lab/physio-workshop/case-study.html#ten-lines-to-a-running-environment",
+    "href": "lab/physio-workshop/case-study.html#ten-lines-to-a-running-environment",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Ten Lines to a Running Environment",
     "text": "Ten Lines to a Running Environment\n\n\n\nIt’s a standard Gymnasium environment underneath.\n\nreset() / step() / render() — nothing exotic. Drop in your own policy, or drive it by hand.\n\nIf you know Gymnasium, you already know Rescue-Grid.\n\n\nfrom game.sar.env import build_sar_env\n\nenv = build_sar_env(\n    screen_size=800,\n    num_rows=2, num_cols=2,\n    num_real_victims=3,\n    num_fake_victims=3,\n    lava_per_room=2,\n)\n\nobs, info = env.reset(seed=42)\nfor _ in range(200):\n    action = env.action_space.sample()\n    obs, reward, terminated, truncated, info = env.step(action)\n    if terminated or truncated:\n        obs, info = env.reset()"
   },
   {
-    "objectID": "physio-workshop/case-study.html#engine-architecture-one-step-start-to-finish",
-    "href": "physio-workshop/case-study.html#engine-architecture-one-step-start-to-finish",
+    "objectID": "lab/physio-workshop/case-study.html#engine-architecture-one-step-start-to-finish",
+    "href": "lab/physio-workshop/case-study.html#engine-architecture-one-step-start-to-finish",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Engine Architecture: One Step, Start to Finish",
     "text": "Engine Architecture: One Step, Start to Finish\n\nEvery frame follows the same path — input to pixels.\n\n\n\nKeyboard Input\n\n\n▼\n\n\nPickupVictimEnv.step(action)move / rescue · deplete health · check mission state\n\n\n▼\n\n\nGameObservation.process()encodes grid, position, mission status\n\n\n▼\n\n\nSAREnvGUI.render()camera crop + info panel + chat panel"
   },
   {
-    "objectID": "physio-workshop/case-study.html#extensible-by-design",
-    "href": "physio-workshop/case-study.html#extensible-by-design",
+    "objectID": "lab/physio-workshop/case-study.html#extensible-by-design",
+    "href": "lab/physio-workshop/case-study.html#extensible-by-design",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Extensible By Design",
     "text": "Extensible By Design\n\n\n\nStrategy — 5 swappable camera views: full grid, agent-centered, first-person, FOV cone\nFactory — build_sar_env() assembles a fully configured mission from a few parameters\nTemplate Method — SARLevelGen defines level-gen hooks; subclass it for a new level type\nPluggable Placers — VictimPlacer / LavaPlacer swap placement logic without touching the engine\n\n\nChange the scenario, not the source code.\n\n\n# Strategy: swap the camera at runtime\nenv.switch_camera(AgentFOVCamera())\n\n# Factory: reconfigure the mission\nenv = build_sar_env(\n    num_real_victims=6,\n    num_fake_victims=12,\n    lava_per_room=8,\n    locked_room_prob=0.5,\n)"
   },
   {
-    "objectID": "physio-workshop/case-study.html#how-lsl-and-ixp-talk-to-each-other",
-    "href": "physio-workshop/case-study.html#how-lsl-and-ixp-talk-to-each-other",
+    "objectID": "lab/physio-workshop/case-study.html#how-lsl-and-ixp-talk-to-each-other",
+    "href": "lab/physio-workshop/case-study.html#how-lsl-and-ixp-talk-to-each-other",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "How LSL and ixp Talk to Each Other",
     "text": "How LSL and ixp Talk to Each Other\n\nTwo independent streams. One shared clock.\n\n\n\n\nSARGameTrialread_data() every frame\n\n\nTobii Eye Trackergaze samples\n\n\n\n▼\n\n\nLSL — Lab Streaming Layersynchronized clock across both streams\n\n\n▼\n\n\nRecorded Session → replayed frame-by-frame with replay.py"
   },
   {
-    "objectID": "physio-workshop/case-study.html#what-is-ixp",
-    "href": "physio-workshop/case-study.html#what-is-ixp",
+    "objectID": "lab/physio-workshop/case-study.html#what-is-ixp",
+    "href": "lab/physio-workshop/case-study.html#what-is-ixp",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "What Is ixp?",
     "text": "What Is ixp?\n\n\n\nBehavioral experiments have a shape: setup, tasks, sensors, teardown.\n\nixp is iHuman Lab’s experiment engine — an Experiment runs a sequence of Tasks, each broken into Blocks of Trials, predefined or randomized order.\nSensors record in parallel with tasks via Ray, and everything streams to a synchronized LSL clock — no manual timestamp alignment.\n\nRescue-Grid didn’t reinvent this — it just registered as a Task.\n\n\n\n\nexperiment.run()\n\n\n▼\n\n\nStart Sensors (parallel, non-blocking)\n\n\n▼\n\n\nTasks → Blocks → Trialsrun sequentially, push LSL markers\n\n\n▼\n\n\nStop Sensors → experiment.close()"
   },
   {
-    "objectID": "physio-workshop/case-study.html#rescue-grid-is-a-task-inside-ixp",
-    "href": "physio-workshop/case-study.html#rescue-grid-is-a-task-inside-ixp",
+    "objectID": "lab/physio-workshop/case-study.html#rescue-grid-is-a-task-inside-ixp",
+    "href": "lab/physio-workshop/case-study.html#rescue-grid-is-a-task-inside-ixp",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Rescue-Grid Is a Task Inside ixp",
     "text": "Rescue-Grid Is a Task Inside ixp\n\n\n\nixp orchestrates the session — Rescue-Grid just plugs in.\n\nixp.Experiment runs an ordered sequence of Tasks, calibrates sensors, and drives everything to completion. Rescue-Grid supplies one Task (SARGame) whose trials stream to their own LSL outlet.\n\nYour sensor could be the next one registered.\n\n\nclass SARGame(Task):\n    def get_data_signature(self):\n        return {\n            \"name\": \"SARGame\",\n            \"type\": \"GameState\",\n            \"channel_format\": \"string\",\n            \"source_id\": \"rescue-grid-sar-game\",\n        }\n\nclass SARGameTrial(LSLTrial):\n    def read_data(self):\n        state = {**self.gui.user.obs,\n                  \"action\": self.gui.user.last_action,\n                  \"reward\": self.gui.user.last_reward}\n        return [ujson.dumps(state)]"
   },
   {
-    "objectID": "physio-workshop/case-study.html#use-it-in-your-study",
-    "href": "physio-workshop/case-study.html#use-it-in-your-study",
+    "objectID": "lab/physio-workshop/case-study.html#use-it-in-your-study",
+    "href": "lab/physio-workshop/case-study.html#use-it-in-your-study",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Use It In Your Study",
     "text": "Use It In Your Study\n\n\n\nTwo entry points, depending on how deep you want to go.\n\nJust the environment — for a scripted study or RL training, no ixp required.\nFull experiment — wire in your own sensor (EEG, GSR, whatever you’re measuring) exactly the way Tobii is wired in today.\n\n# (a) minimal — no ixp, just Gymnasium\nfrom game.sar.env import build_sar_env\n\nenv = build_sar_env(num_rows=3, num_cols=3)\nobs, info = env.reset()\n# plug in your own policy or logging here\n\n# (b) full ixp experiment\nfrom ixp.experiment import Experiment\nfrom experiment.game import SARGame\n\nexperiment = Experiment(config)\nexperiment.register_sensor(\n    \"MyEEG\", sensor_cls=MyEEGSensor, sensor_config={}\n)\nexperiment.add_task(\n    name=\"main_game\", task_cls=SARGame,\n    task_config={\"config\": config[\"game\"]}, order=1,\n)\nexperiment.run()"
   },
   {
-    "objectID": "physio-workshop/case-study.html#it-already-produced-a-paper",
-    "href": "physio-workshop/case-study.html#it-already-produced-a-paper",
+    "objectID": "lab/physio-workshop/case-study.html#it-already-produced-a-paper",
+    "href": "lab/physio-workshop/case-study.html#it-already-produced-a-paper",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "It Already Produced a Paper",
     "text": "It Already Produced a Paper\n\n\n\nLLM guidance changed where people looked — not just how well they did.\n\n\nNo performance gain — victims rescued per step didn’t budge\nAttention shifted to the chat panel — an attention-guidance trade-off\nGaze narrowed too: shorter saccades, more localized, text-driven looking\n\n\nIEEE SMC 2026 — Oveisi & Manjunatha"
   },
   {
-    "objectID": "physio-workshop/case-study.html#come-find-us-at-neuroergonomics",
-    "href": "physio-workshop/case-study.html#come-find-us-at-neuroergonomics",
+    "objectID": "lab/physio-workshop/case-study.html#come-find-us-at-neuroergonomics",
+    "href": "lab/physio-workshop/case-study.html#come-find-us-at-neuroergonomics",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "Come Find Us at NeuroErgonomics",
     "text": "Come Find Us at NeuroErgonomics\n\nSame platform, a different question — see you at the session.\n\n\nWednesday, July 15 — Sessions 4–6\nSession 6: Human–Robot & Human–AI Teaming (Chair: Alexander von Lühmann)\nLLM-Mediated Communication in Human–AI Teaming: A Physiological Monitoring Study for Search and Rescue"
   },
   {
-    "objectID": "physio-workshop/case-study.html#section",
-    "href": "physio-workshop/case-study.html#section",
+    "objectID": "lab/physio-workshop/case-study.html#section",
+    "href": "lab/physio-workshop/case-study.html#section",
     "title": "Rescue-GridAn Open Platform for Human-Machine Teaming",
     "section": "",
     "text": "Fork It. Build Your Study.\n\n\ngithub.com/iHuman-Lab/rescue-grid\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#human-ai-setting",
-    "href": "ieee_smc_eo/presentation/smc.html#human-ai-setting",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Human–AI Setting in Critical Situation",
-    "text": "Human–AI Setting in Critical Situation\n\n\n\n\nOperators must locate and recover people while conditions change quickly.\n\n\nMissions occur in challenging environments\nDecisions must be made under time pressure\nNeed to quickly process high volumes of information from multiple sources and translate it into commands that are clear and understandable for humans 1\nLLMs provide natural-language guidance"
+    "objectID": "lab/discovery-day/discovery-day.html#who-are-we",
+    "href": "lab/discovery-day/discovery-day.html#who-are-we",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Who Are We?",
+    "text": "Who Are We?\n\n\n\nWe build technology that understands you.\n\nNot just your commands — your attention, your stress, even your mistakes before they happen.\n\nBrain · AI · Robotics — working together.\n\n\n\n\n10+\n\n\nResearchers\n\n\n\n\n30+\n\n\nPublications\n\n\n\n\n4\n\n\nResearch Areas\n\n\n\n\n6+\n\n\nActive Projects"
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#research-questions-and-contribution",
-    "href": "ieee_smc_eo/presentation/smc.html#research-questions-and-contribution",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Research Questions and Contribution",
-    "text": "Research Questions and Contribution\n\n\n\nPerformance: Does LLM guidance improve task outcomes?\nAttention: How does guidance change visual attention and eye-tracking metrics?\nExpertise: Does expertise moderate these effects?\nTestbed: A controlled simulation supports repeatable human–AI teaming research.\n\n\n\n\n\nWe study how humans process and respond to information from LLMs, using eye tracking to inform future adaptive LLM-based assistance."
+    "objectID": "lab/discovery-day/discovery-day.html#what-if-a-robot-could-read-your-mind",
+    "href": "lab/discovery-day/discovery-day.html#what-if-a-robot-could-read-your-mind",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "What If a Robot Could Read Your Mind?",
+    "text": "What If a Robot Could Read Your Mind?\n\n\n\nA headset — but instead of music, it reads your brainwaves.\n\n\nStressed? → Robot slows down.\nOverwhelmed? → Robot takes over.\nZoning out? → Robot asks for attention.\n\n\nThe robot adapts to you. Not the other way around."
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#study-design-in-brief",
-    "href": "ieee_smc_eo/presentation/smc.html#study-design-in-brief",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Study Design In Brief",
-    "text": "Study Design In Brief\n\n\n\n\n\n\n13 Participants\n\n\n3 Trials each (randomized)\n\n\n2 + 1 LLM + baseline\n\n\n15 min or 1,000 moves\n\n\nTask: rescue victims efficiently in a partially observable grid while victim health deteriorates.\nALT requests advice and reveals victim health for 5 seconds."
+    "objectID": "lab/discovery-day/discovery-day.html#what-do-your-eyes-reveal",
+    "href": "lab/discovery-day/discovery-day.html#what-do-your-eyes-reveal",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "What Do Your Eyes Reveal?",
+    "text": "What Do Your Eyes Reveal?\n\n\n\nIn 200 milliseconds, your eyes reveal exactly what you’re thinking.\n\nExperts see differently — a surgeon’s gaze, a pilot’s scan, a drone operator’s focus.\nWe recorded those eye movements and trained AI to copy them exactly.\n\nNow the AI sees like the best human in the room."
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#Game Play",
-    "href": "ieee_smc_eo/presentation/smc.html#Game Play",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Game Play",
-    "text": "Game Play"
+    "objectID": "lab/discovery-day/discovery-day.html#could-you-control-50-drones-at-once",
+    "href": "lab/discovery-day/discovery-day.html#could-you-control-50-drones-at-once",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Could You Control 50 Drones at Once?",
+    "text": "Could You Control 50 Drones at Once?\n\n\n\nDisaster strikes. One person. 50 drones. No room for error.\n\nWhat happens to your brain under that pressure?\nWe track brain signals in real time to find out — and build AI that steps in before you hit your limit.\n\nBecause in a rescue mission, hesitation costs lives."
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#Expertise Level",
-    "href": "ieee_smc_eo/presentation/smc.html#Expertise Level",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Expertise Level",
-    "text": "Expertise Level\n\n\n\n  \n\n\n\n\n\n\n\nExpertise labeling: K-means clustering (K = 2) grouped participants into expert vs. novice 2"
+    "objectID": "lab/discovery-day/discovery-day.html#could-you-control-a-robot-on-the-moon",
+    "href": "lab/discovery-day/discovery-day.html#could-you-control-a-robot-on-the-moon",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Could You Control a Robot on the Moon?",
+    "text": "Could You Control a Robot on the Moon?\n\n\n\nYour signal takes 1.3 seconds to reach the Moon.\n\nThat’s 1.3 seconds your robot is completely on its own.\nWe build robots smart enough to survive that gap — and study how humans stay in control when the stakes are this high.\n\nYou on Earth. Robot on the Moon. One team."
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#how-the-llm-was-prompted",
-    "href": "ieee_smc_eo/presentation/smc.html#how-the-llm-was-prompted",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "How The LLM Was Prompted",
-    "text": "How The LLM Was Prompted\n\n\nGuidance Style\n\nYou are a search-and-rescue coordinator giving calm, human-like radio guidance to the operator.\nInstructions must be directional and action-focused, always using North, South, East, West, with no coordinates, step counts, or visible reasoning.\nOutput either a sparse one-sentence instruction or a detailed 3–4 sentence radio briefing, always concise, natural, and wrapped strictly as &lt;START&gt; … &lt;END&gt;.\n\n\n\nPriority\n\nPrioritize visible reachable survivors who are still saveable, nearest first.\nFrom the current state {obs}, choose one immediate objective by prioritizing the nearest reachable visible saveable survivor, then the next saveable survivor if relevant.\nOtherwise choose the best remaining alive victim, then the nearest reachable survivor or key, or finally explore visible areas that may open a new path.\n\n\n\nMission Rules\n\nFollow mission and environment rules: rescue all survivors.\nUse matching keys for locked doors, unlocked doors can be opened, carry only one key, avoid lava.\nNever mention unreachable objects. Final instruction must be rule-compliant.\n\n\n\n\nGrid-based world: each cell represents an object such as empty space, wall, victim, lava, door, or key. 3\nReachability check: BFS determines which targets are reachable and their distance from the player. 4\nModels: OpenAI and Gemini.\n\n\n  ←\n  Play\n  →\n  Show all\n  Select Play to explore each part of the prompt."
+    "objectID": "lab/discovery-day/discovery-day.html#real-impact",
+    "href": "lab/discovery-day/discovery-day.html#real-impact",
+    "title": "CEAT Discovery DayiHuman Lab",
+    "section": "Real Impact",
+    "text": "Real Impact\n\n\n\n\n\n\n\n\nSearch & Rescue\n\n\nFind survivors faster when every second counts\n\n\n\n\n\n\n\n\n\n\nManufacturing\n\n\nRobots that work with you, not instead of you\n\n\n\n\n\n\n\n\n\n\nAviation Safety\n\n\nAI that learns from decades of accident reports\n\n\n\n\n\n\n\n\n\n\nHealthcare\n\n\nTech that adapts to patients, not the other way around\n\n\n\n\n\nSmarter Machines·Safer Humans·Better World"
   },
   {
-    "objectID": "ieee_smc_eo/presentation/smc.html#research-model",
-    "href": "ieee_smc_eo/presentation/smc.html#research-model",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "What We Investigate",
-    "text": "What We Investigate\n\n  WHAT WE VARY\n  WE TEST\n  WHAT WE MEASURE\n  \n    LLM guidance\n    LLMNo LLM\n  \n  \n    Expertise\n    NoviceExpert\n  \n  ➔\n  ➔\n  Effect ofguidance?by expertise?\n  ➔\n  ➔\n  \n    Performance\n    Victims per stepTotal rewardSaved victims\n  \n  \n    Visual behavior\n    Fixations & saccadesPupil diameterGame vs. chat attention"
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#task-and-eye-tracking-features",
-    "href": "ieee_smc_eo/presentation/smc.html#task-and-eye-tracking-features",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Task and Eye-Tracking Features",
-    "text": "Task and Eye-Tracking Features\n\n\n\nFeature\nWhat it shows\n\n\n\n\nVictims per step\nRescue efficiency over time\n\n\nTotal reward\nOverall task performance\n\n\nSaved victims\nMission success\n\n\nFixation count\nHow often the participant focused on an area\n\n\nFixation duration\nHow long the participant looked at one area\n\n\nSaccade duration\nDuration of fast eye movements\n\n\nPupil diameter SD\nVariation in pupil size, related to workload\n\n\nGame-area fixation time\nAttention to the SAR environment\n\n\nChat-panel fixation time\nAttention to the LLM guidance"
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#data-collection-and-analysis",
-    "href": "ieee_smc_eo/presentation/smc.html#data-collection-and-analysis",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Data Collection and Analysis",
-    "text": "Data Collection and Analysis\n\nSynchronized data streams via LSL (Lab Streaming Layer)\nGaze and pupil data recorded with a Tobii eye tracker\n\nMixed-effects model: outcome = LLM condition + LLM × expertise + expertise + participant random intercept."
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#reported-effects",
-    "href": "ieee_smc_eo/presentation/smc.html#reported-effects",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Results",
-    "text": "Results\n\n\nPerformancePupil and area fixationFixation and saccade"
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#expertise-changes-how-guidance-is-used",
-    "href": "ieee_smc_eo/presentation/smc.html#expertise-changes-how-guidance-is-used",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Expertise Changes How Guidance Is Used",
-    "text": "Expertise Changes How Guidance Is Used\n\n\nExperts\nMaintained more engagement with the game under LLM support and showed stronger changes in visual scanning.\n\n\nNovices\nShifted more attention away from the game, consistent with greater reliance on the guidance panel.\n\n\n\n\nLLM guidance received\n\n\n↓\n\n\n\nExpert\nCross-checks guidance against the environment (scans, verifies)\n\n\nNovice\nFollows guidance directly"
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#limitations-and-future-work",
-    "href": "ieee_smc_eo/presentation/smc.html#limitations-and-future-work",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "Limitations and Future Work",
-    "text": "Limitations and Future Work\n\n\nLimitations\n\nSample size\nSimulated grid-world task\nIncorrect/conflicting LLM guidance was not tested\nAdditional physiological measures were not included\n\n\nFuture work\n\n\nTrust & reliability Test how LLM errors affect operator responses and trust.\n\n\nAdaptive guidance Tailor help using performance and physiological signals to reduce mental workload.\n\n\nSituation awareness Use this data to infer workload, situational awareness, and human–AI interaction patterns.\n\n\nOther domains Apply this approach to other human–AI teaming domains beyond search and rescue.\n\n\n\n\nThe next step is moving from static guidance toward reliable, adaptive human–AI teaming."
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#references",
-    "href": "ieee_smc_eo/presentation/smc.html#references",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
-    "section": "References",
-    "text": "References\n\n[1] Handler, Abram, Kai R. Larsen, and Richard Hackathorn. “Large language models present new questions for decision support.” International Journal of Information Management 79 (2024): 102811.\n[2] J. P. Distefano, H. Manjunatha, S. Chowdhury, K. Dantu, D. Doermann and E. T. Esfahani, “Using Physiological Information to Classify Task Difficulty in Human-Swarm Interaction,” 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia, 2021, pp. 1198-1203, doi: 10.1109/SMC52423.2021.9658653.\n[3] Chevalier-Boisvert, M., Dai, B., Towers, M., Perez-Vicente, R., Willems, L., Lahlou, S., Pal, S., Castro, P. S., & Terry, J. (2023). Minigrid & Miniworld: Modular & Customizable Reinforcement Learning Environments for Goal-Oriented Tasks. Advances in Neural Information Processing Systems (NeurIPS), 36.\n[4] Siklóssy, Laurent, A. Rich, and Vesko Marinov. “Breadth-first search: some surprising results.” Artificial Intelligence 4.1 (1973): 1-27."
-  },
-  {
-    "objectID": "ieee_smc_eo/presentation/smc.html#section",
-    "href": "ieee_smc_eo/presentation/smc.html#section",
-    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "objectID": "lab/discovery-day/discovery-day.html#section",
+    "href": "lab/discovery-day/discovery-day.html#section",
+    "title": "CEAT Discovery DayiHuman Lab",
     "section": "",
-    "text": "Thank you\n\n\nQuestions?"
+    "text": "This Could Be You\n\n\nEvery researcher in this lab was once sitting where you are. If any of this sparked something — come talk to us.\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "iHuman Lab Presentations",
     "section": "",
-    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation\n\n\n\n\nElahe Oveisi and Dr. Hemanth Manjunatha\n\n\nHow expertise and LLM guidance shape human performance and visual attention in a search-and-rescue task, measured with eye tracking.\n\n\n📅October 2026\n\n\n\nConference Talk\n\n\n\n\n\n\n\n\n\nClosing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing\n\n\n\n\nOrganizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe OveisiKristian Dalland · Bennett Kwaku Dogbey\n\n\nClosing the Human–AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing. Session 1 is a hands-on introduction to MOSAIC: play a search-and-rescue mission in your browser, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nClosing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing\n\n\n\n\nOrganizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe OveisiKristian Dalland · Bennett Kwaku Dogbey\n\n\nClosing the Human–AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing. Session 2 is a hands-on introduction to SHaSTA for human–swarm interaction research: command a swarm from your browser, log what you do with LSL, and write your own experiment.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items"
+    "text": "iHuman Lab · Oklahoma State University\n    iHuman Lab Presentations\n  \n\nLab tutorials & outreach\nDecks the lab built together: tutorials, workshops and outreach.\n\n\n\n\n\n\n\n\n\nClosing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing\n\n\n\n\nOrganizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe OveisiKristian Dalland · Bennett Kwaku Dogbey\n\n\nClosing the Human–AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing. Session 1 is a hands-on introduction to MOSAIC: play a search-and-rescue mission in your browser, and change the task, the interface, the AI teammate, and the sensing.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nClosing the Human–AI Loop Modular Architectures for Autonomous Teaming and Physiological Sensing\n\n\n\n\nOrganizers: Hemanth Manjunatha · Ehsan Esfahani · Elahe OveisiKristian Dalland · Bennett Kwaku Dogbey\n\n\nClosing the Human–AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing. Session 2 is a hands-on introduction to SHaSTA for human–swarm interaction research: command a swarm from your browser, log what you do with LSL, and write your own experiment.\n\n\n📅October 2026\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nRescue-Grid An Open Platform for Human-Machine Teaming\n\n\n\n\nA tour of Rescue-Grid, a MiniGrid/Gymnasium-based search-and-rescue simulation built for studying human-AI teaming — covering its architecture, LSL/ixp research instrumentation, and how to extend it for your own study.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nBeyond the Survey Real-Time Physiological Sensing for Human-Machine Teaming\n\n\n\n\nElahe Oveisi, Dr. Hemanth Manjunatha\n\n\nPart 1 of the NeuroErgonomics 2026 workshop: situational awareness, mental workload and trust in human-AI teaming, and how to measure them with physiological sensing.\n\n\n📅July 2026\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\nCEAT Discovery Day iHuman Lab\n\n\n\n\nAn introduction to the iHuman Lab for K–12 students covering brain-computer interfaces, human-robot interaction, eye-gaze AI, and how to pursue a career in research.\n\n\n📅June 2026\n\n\n\nDiscovery Day\n\n\n\nNo matching items\n\nTalks by lab members\nResearch talks, defenses and conference presentations from individual students and PIs.\n\n\n\n\n\n\n\n\n\nLLM-Mediated Human–AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation\n\n\n\n\nElahe Oveisi and Dr. Hemanth Manjunatha\n\n\nHow expertise and LLM guidance shape human performance and visual attention in a search-and-rescue task, measured with eye tracking.\n\n\n📅October 2026\n\n\n\nConference Talk\n\n\n\nNo matching items"
   },
   {
-    "objectID": "discovery-day/discovery-day.html#who-are-we",
-    "href": "discovery-day/discovery-day.html#who-are-we",
-    "title": "CEAT Discovery DayiHuman Lab",
-    "section": "Who Are We?",
-    "text": "Who Are We?\n\n\n\nWe build technology that understands you.\n\nNot just your commands — your attention, your stress, even your mistakes before they happen.\n\nBrain · AI · Robotics — working together.\n\n\n\n\n10+\n\n\nResearchers\n\n\n\n\n30+\n\n\nPublications\n\n\n\n\n4\n\n\nResearch Areas\n\n\n\n\n6+\n\n\nActive Projects"
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#human-ai-setting",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#human-ai-setting",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Human–AI Setting in Critical Situation",
+    "text": "Human–AI Setting in Critical Situation\n\n\n\n\nOperators must locate and recover people while conditions change quickly.\n\n\nMissions occur in challenging environments\nDecisions must be made under time pressure\nNeed to quickly process high volumes of information from multiple sources and translate it into commands that are clear and understandable for humans 1\nLLMs provide natural-language guidance"
   },
   {
-    "objectID": "discovery-day/discovery-day.html#what-if-a-robot-could-read-your-mind",
-    "href": "discovery-day/discovery-day.html#what-if-a-robot-could-read-your-mind",
-    "title": "CEAT Discovery DayiHuman Lab",
-    "section": "What If a Robot Could Read Your Mind?",
-    "text": "What If a Robot Could Read Your Mind?\n\n\n\nA headset — but instead of music, it reads your brainwaves.\n\n\nStressed? → Robot slows down.\nOverwhelmed? → Robot takes over.\nZoning out? → Robot asks for attention.\n\n\nThe robot adapts to you. Not the other way around."
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#research-questions-and-contribution",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#research-questions-and-contribution",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Research Questions and Contribution",
+    "text": "Research Questions and Contribution\n\n\n\nPerformance: Does LLM guidance improve task outcomes?\nAttention: How does guidance change visual attention and eye-tracking metrics?\nExpertise: Does expertise moderate these effects?\nTestbed: A controlled simulation supports repeatable human–AI teaming research.\n\n\n\n\n\nWe study how humans process and respond to information from LLMs, using eye tracking to inform future adaptive LLM-based assistance."
   },
   {
-    "objectID": "discovery-day/discovery-day.html#what-do-your-eyes-reveal",
-    "href": "discovery-day/discovery-day.html#what-do-your-eyes-reveal",
-    "title": "CEAT Discovery DayiHuman Lab",
-    "section": "What Do Your Eyes Reveal?",
-    "text": "What Do Your Eyes Reveal?\n\n\n\nIn 200 milliseconds, your eyes reveal exactly what you’re thinking.\n\nExperts see differently — a surgeon’s gaze, a pilot’s scan, a drone operator’s focus.\nWe recorded those eye movements and trained AI to copy them exactly.\n\nNow the AI sees like the best human in the room."
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#study-design-in-brief",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#study-design-in-brief",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Study Design In Brief",
+    "text": "Study Design In Brief\n\n\n\n\n\n\n13 Participants\n\n\n3 Trials each (randomized)\n\n\n2 + 1 LLM + baseline\n\n\n15 min or 1,000 moves\n\n\nTask: rescue victims efficiently in a partially observable grid while victim health deteriorates.\nALT requests advice and reveals victim health for 5 seconds."
   },
   {
-    "objectID": "discovery-day/discovery-day.html#could-you-control-50-drones-at-once",
-    "href": "discovery-day/discovery-day.html#could-you-control-50-drones-at-once",
-    "title": "CEAT Discovery DayiHuman Lab",
-    "section": "Could You Control 50 Drones at Once?",
-    "text": "Could You Control 50 Drones at Once?\n\n\n\nDisaster strikes. One person. 50 drones. No room for error.\n\nWhat happens to your brain under that pressure?\nWe track brain signals in real time to find out — and build AI that steps in before you hit your limit.\n\nBecause in a rescue mission, hesitation costs lives."
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#Game Play",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#Game Play",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Game Play",
+    "text": "Game Play"
   },
   {
-    "objectID": "discovery-day/discovery-day.html#could-you-control-a-robot-on-the-moon",
-    "href": "discovery-day/discovery-day.html#could-you-control-a-robot-on-the-moon",
-    "title": "CEAT Discovery DayiHuman Lab",
-    "section": "Could You Control a Robot on the Moon?",
-    "text": "Could You Control a Robot on the Moon?\n\n\n\nYour signal takes 1.3 seconds to reach the Moon.\n\nThat’s 1.3 seconds your robot is completely on its own.\nWe build robots smart enough to survive that gap — and study how humans stay in control when the stakes are this high.\n\nYou on Earth. Robot on the Moon. One team."
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#Expertise Level",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#Expertise Level",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Expertise Level",
+    "text": "Expertise Level\n\n\n\n  \n\n\n\n\n\n\n\nExpertise labeling: K-means clustering (K = 2) grouped participants into expert vs. novice 2"
   },
   {
-    "objectID": "discovery-day/discovery-day.html#real-impact",
-    "href": "discovery-day/discovery-day.html#real-impact",
-    "title": "CEAT Discovery DayiHuman Lab",
-    "section": "Real Impact",
-    "text": "Real Impact\n\n\n\n\n\n\n\n\nSearch & Rescue\n\n\nFind survivors faster when every second counts\n\n\n\n\n\n\n\n\n\n\nManufacturing\n\n\nRobots that work with you, not instead of you\n\n\n\n\n\n\n\n\n\n\nAviation Safety\n\n\nAI that learns from decades of accident reports\n\n\n\n\n\n\n\n\n\n\nHealthcare\n\n\nTech that adapts to patients, not the other way around\n\n\n\n\n\nSmarter Machines·Safer Humans·Better World"
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#how-the-llm-was-prompted",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#how-the-llm-was-prompted",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "How The LLM Was Prompted",
+    "text": "How The LLM Was Prompted\n\n\nGuidance Style\n\nYou are a search-and-rescue coordinator giving calm, human-like radio guidance to the operator.\nInstructions must be directional and action-focused, always using North, South, East, West, with no coordinates, step counts, or visible reasoning.\nOutput either a sparse one-sentence instruction or a detailed 3–4 sentence radio briefing, always concise, natural, and wrapped strictly as &lt;START&gt; … &lt;END&gt;.\n\n\n\nPriority\n\nPrioritize visible reachable survivors who are still saveable, nearest first.\nFrom the current state {obs}, choose one immediate objective by prioritizing the nearest reachable visible saveable survivor, then the next saveable survivor if relevant.\nOtherwise choose the best remaining alive victim, then the nearest reachable survivor or key, or finally explore visible areas that may open a new path.\n\n\n\nMission Rules\n\nFollow mission and environment rules: rescue all survivors.\nUse matching keys for locked doors, unlocked doors can be opened, carry only one key, avoid lava.\nNever mention unreachable objects. Final instruction must be rule-compliant.\n\n\n\n\nGrid-based world: each cell represents an object such as empty space, wall, victim, lava, door, or key. 3\nReachability check: BFS determines which targets are reachable and their distance from the player. 4\nModels: OpenAI and Gemini.\n\n\n  ←\n  Play\n  →\n  Show all\n  Select Play to explore each part of the prompt."
   },
   {
-    "objectID": "discovery-day/discovery-day.html#section",
-    "href": "discovery-day/discovery-day.html#section",
-    "title": "CEAT Discovery DayiHuman Lab",
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#research-model",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#research-model",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "What We Investigate",
+    "text": "What We Investigate\n\n  WHAT WE VARY\n  WE TEST\n  WHAT WE MEASURE\n  \n    LLM guidance\n    LLMNo LLM\n  \n  \n    Expertise\n    NoviceExpert\n  \n  ➔\n  ➔\n  Effect ofguidance?by expertise?\n  ➔\n  ➔\n  \n    Performance\n    Victims per stepTotal rewardSaved victims\n  \n  \n    Visual behavior\n    Fixations & saccadesPupil diameterGame vs. chat attention"
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#task-and-eye-tracking-features",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#task-and-eye-tracking-features",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Task and Eye-Tracking Features",
+    "text": "Task and Eye-Tracking Features\n\n\n\nFeature\nWhat it shows\n\n\n\n\nVictims per step\nRescue efficiency over time\n\n\nTotal reward\nOverall task performance\n\n\nSaved victims\nMission success\n\n\nFixation count\nHow often the participant focused on an area\n\n\nFixation duration\nHow long the participant looked at one area\n\n\nSaccade duration\nDuration of fast eye movements\n\n\nPupil diameter SD\nVariation in pupil size, related to workload\n\n\nGame-area fixation time\nAttention to the SAR environment\n\n\nChat-panel fixation time\nAttention to the LLM guidance"
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#data-collection-and-analysis",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#data-collection-and-analysis",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Data Collection and Analysis",
+    "text": "Data Collection and Analysis\n\nSynchronized data streams via LSL (Lab Streaming Layer)\nGaze and pupil data recorded with a Tobii eye tracker\n\nMixed-effects model: outcome = LLM condition + LLM × expertise + expertise + participant random intercept."
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#reported-effects",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#reported-effects",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Results",
+    "text": "Results\n\n\nPerformancePupil and area fixationFixation and saccade"
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#expertise-changes-how-guidance-is-used",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#expertise-changes-how-guidance-is-used",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Expertise Changes How Guidance Is Used",
+    "text": "Expertise Changes How Guidance Is Used\n\n\nExperts\nMaintained more engagement with the game under LLM support and showed stronger changes in visual scanning.\n\n\nNovices\nShifted more attention away from the game, consistent with greater reliance on the guidance panel.\n\n\n\n\nLLM guidance received\n\n\n↓\n\n\n\nExpert\nCross-checks guidance against the environment (scans, verifies)\n\n\nNovice\nFollows guidance directly"
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#limitations-and-future-work",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#limitations-and-future-work",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "Limitations and Future Work",
+    "text": "Limitations and Future Work\n\n\nLimitations\n\nSample size\nSimulated grid-world task\nIncorrect/conflicting LLM guidance was not tested\nAdditional physiological measures were not included\n\n\nFuture work\n\n\nTrust & reliability Test how LLM errors affect operator responses and trust.\n\n\nAdaptive guidance Tailor help using performance and physiological signals to reduce mental workload.\n\n\nSituation awareness Use this data to infer workload, situational awareness, and human–AI interaction patterns.\n\n\nOther domains Apply this approach to other human–AI teaming domains beyond search and rescue.\n\n\n\n\nThe next step is moving from static guidance toward reliable, adaptive human–AI teaming."
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#references",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#references",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
+    "section": "References",
+    "text": "References\n\n[1] Handler, Abram, Kai R. Larsen, and Richard Hackathorn. “Large language models present new questions for decision support.” International Journal of Information Management 79 (2024): 102811.\n[2] J. P. Distefano, H. Manjunatha, S. Chowdhury, K. Dantu, D. Doermann and E. T. Esfahani, “Using Physiological Information to Classify Task Difficulty in Human-Swarm Interaction,” 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia, 2021, pp. 1198-1203, doi: 10.1109/SMC52423.2021.9658653.\n[3] Chevalier-Boisvert, M., Dai, B., Towers, M., Perez-Vicente, R., Willems, L., Lahlou, S., Pal, S., Castro, P. S., & Terry, J. (2023). Minigrid & Miniworld: Modular & Customizable Reinforcement Learning Environments for Goal-Oriented Tasks. Advances in Neural Information Processing Systems (NeurIPS), 36.\n[4] Siklóssy, Laurent, A. Rich, and Vesko Marinov. “Breadth-first search: some surprising results.” Artificial Intelligence 4.1 (1973): 1-27."
+  },
+  {
+    "objectID": "people/Elahe_Oveisi/ieee-smc/smc.html#section",
+    "href": "people/Elahe_Oveisi/ieee-smc/smc.html#section",
+    "title": "LLM-Mediated Human–AI Interaction in Search and Rescue:Impact of Expertise on Attentional Allocation",
     "section": "",
-    "text": "This Could Be You\n\n\nEvery researcher in this lab was once sitting where you are. If any of this sparked something — come talk to us.\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
+    "text": "Thank you\n\n\nQuestions?"
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#todays-sessions",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#todays-sessions",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#todays-sessions",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#todays-sessions",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Today’s Sessions",
     "text": "Today’s Sessions\n\nTwo hands-on sessions, back to back, in the same room.\n\n\n\n\n8:30–10:30 AM Session 1 · MOSAIC\n\nA configurable testbed for human–AI teaming. Play a search-and-rescue mission in your browser, then change the task, the AI teammate and the sensing.\n\n\n11:00 AM–1:00 PM Session 2 · SHaSTA\n\nA simulator for human–swarm teaming. Put a human in the loop with a swarm, and log what they do on one clock.\n\n\n\nEvergreen C Where\n\n\n@Hyatt_Meeting Wi-Fi network\n\n\nSMC26 Wi-Fi password\n\n\n\nWelcome. This is the tutorial “Closing the Human-AI Loop: Modular Architectures for Autonomous Teaming and Physiological Sensing”, in two sessions in Evergreen C. Session 1, 8:30 to 10:30, is MOSAIC; Session 2, 11:00 to 1:00, is SHaSTA. Wi-Fi: network @Hyatt_Meeting, password SMC26. Leave this slide up while people settle and connect."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#section",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#section",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#section",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#section",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "",
     "text": "Session 1 · 8:30–10:30 AM\nMOSAICModular System for Adaptive Human–AI Collaboration\nA configurable testbed for human–AI teaming · github.com/iHuman-Lab/mosaic"
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#meet-the-ihuman-lab",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Meet the iHuman Lab",
     "text": "Meet the iHuman Lab\n\nWe study how people and intelligent systems work together.\n\n\n\n\nHemanth Manjunatha Principal Investigator\n\n\n\nElahe Oveisi PhD Candidate\n\n\n\nBennett Kwaku Dogbey PhD Student\n\n\n\nOur work spans brain–computer interfaces, human–robot interaction, human-AI interaction, and cognitive augmentation.\niHuman Lab · Oklahoma State University"
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#studying-humanai-teaming",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#studying-humanai-teaming",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#studying-humanai-teaming",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#studying-humanai-teaming",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Studying Human–AI Teaming",
     "text": "Studying Human–AI Teaming\n\nWhen an AI teammate advises people in dynamic, high-stakes tasks, researchers ask questions like these:\n\n\n\nTrust and reliance\nWhen do people follow AI advice, and when is that reliance appropriate?\n\n\nDecisions under pressure\nHow do uncertainty and time constraints affect reliance?\n\n\nSituation awareness\nWhat happens when the person and AI have access to different information?\n\n\nCognitive state\nHow does AI advice affect attention and workload?\n\n\nAI teammate design\nWhich teammate behaviors and communication strategies improve team performance?\n\n\nAdaptive assistance\nWhen should assistance change with task demands or human performance?\n\n\n\nAnswering these questions requires observing the interaction as it unfolds over time.\n\n\nThese are the field’s core questions. Each one plays out during the interaction, as decisions, advice, and consequences build on each other."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#why-do-we-need-a-configurable-testbed",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#why-do-we-need-a-configurable-testbed",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#why-do-we-need-a-configurable-testbed",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#why-do-we-need-a-configurable-testbed",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Why Do We Need a Configurable Testbed?",
     "text": "Why Do We Need a Configurable Testbed?\n\nThat takes four capabilities in one experiment. Existing tools rarely offer all four together.\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n\n\n\n01\nInteractive decision making\nPeople make a sequence of decisions, and each outcome changes what happens next.\n\n\n\n\n\n  \n    \n  \n  \n    \n  \n\n\n\n03\nConfigurable task conditions\nResearchers need to vary information access, uncertainty, time pressure, and the consequences of mistakes.\n\n\n\n\n\n\n\n  \n  \n  \n  \n\n\n\n02\nA customizable AI teammate\nResearchers need to vary what the AI knows, how reliable it is, and when and how it communicates.\n\n\n\n\n\n  \n    \n    \n    \n  \n  \n\n\n\n04\nSynchronized data\nTask events, human actions, AI advice, physiological signals, and sensor measurements must share a common timeline.\n\n\n\n\n\nTo study the interaction over time, researchers need an interactive task, a customizable teammate, conditions they can vary, and synchronized data. The next slide shows how MOSAIC brings them together."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#what-is-mosaic",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#what-is-mosaic",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#what-is-mosaic",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#what-is-mosaic",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What Is MOSAIC?",
     "text": "What Is MOSAIC?\n\nMOSAIC is a modular testbed for human–AI teaming research. Configure its components for each study.\n\n\n\n\n\n\n\n\n01\nInteractive task\nSearch and rescue, one decision at a time\n\n\n\n\n \n\n\n03\nConfigurable conditions\nMap, view, timing, and scoring per study\n\n\n\n\n  \n  \n\n\nMOSAIC\nmodular · configurable\n\n\n\n\n\n\n\n02\nCustomizable AI teammate\nScripted or LLM, with behavior you set\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  LSL\n\n\n\n04\nSynchronized data\nActions, advice, and signals on one clock\n\n\n\n\n\nMOSAIC lets researchers vary the task and AI teammate, then record the interaction.\n\n\nMOSAIC stands for Modular System for Adaptive Human–AI Collaboration: an open-source Python platform for studying human–AI teaming through configurable tasks, built on MiniGrid and extending its BabyAI level generator. Like a mosaic built from tiles, it assembles separate parts (task, teammate, interface, sensing) into one study. Each box answers the need in the same position on the last slide: the task, a teammate you can customize, conditions you set per study, and one synchronized record. Modular: the environment, AI teammate, interface, sensing, and analytics are separate components, so you replace one without touching the others. Configurable: map, hazards, view, scoring, and the teammate are set per study, not hard-coded. Search and rescue is the first testbed; the same pieces can support other collaborative tasks (ihuman-lab.github.io/mosaic)."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#how-mosaic-works",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#how-mosaic-works",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#how-mosaic-works",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#how-mosaic-works",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "How MOSAIC Works",
     "text": "How MOSAIC Works\n\nEach part is a separate module: the participant acts on the task, the AI teammate advises from task context, and LSL aligns every stream into one session record.\n\n\n\n\nHuman participant\nObserves, decides, and acts.\n\n\nactions\nobservations\n\n\nMOSAIC task\nRuns the task and the human-facing interface.\n\n\ntask context\nadvice\n\n\nAI teammate\nInterprets task context and provides advice.\n\n\n\n\nphysiological signals\n\n\ntask and interaction stream\n\n\n\n\nStudy sensors\nPhysiological data: EEG, eye tracking, pupil diameter\n\n\nTime-stamped stream\n\n\nLab Streaming Layer (LSL)\nAligns streams on a shared clock\n\n\nSynchronized record\n\n\nSession data\nReady for analysis and replay\n\n\n\n\nHere is MOSAIC. You’re the participant on the left. You act, the task updates, and when you ask, the teammate reads the task context and answers. Everything the researcher varies sits in configuration, and everything that happens, including gaze and physiology, lands on one clock. Underneath, the reusable parts live in the mosaic package; the notebook you will use today is built on it, and the code map at the end shows where each part lives."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-task-search-and-rescue",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#the-task-search-and-rescue",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#the-task-search-and-rescue",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#the-task-search-and-rescue",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Task: Search and Rescue",
     "text": "The Task: Search and Rescue\n\n\n\n\n\nMission\nSearch a multiroom building and rescue the real victims.\nReal victims and decoys look alike, so an AI teammate’s advice can help or mislead.\nPart Three plays the mission.\n\n\n\nSearch and rescue provides a controlled but consequential setting for studying human–AI decisions."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-humanai-teaming-loop",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#the-humanai-teaming-loop",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#the-humanai-teaming-loop",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#the-humanai-teaming-loop",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Human–AI Teaming Loop",
     "text": "The Human–AI Teaming Loop\n\nAt every decision, the participant can act alone or ask for advice.\n\n\n\nnext decision\n\n\n\n1 Observe\nRead the room and the mission state.\n\n\n\n\n\n2 Decide\nAct alone, or ask the AI teammate.\n\n\nact alone\n\n\n3 Act\nThe participant always chooses the final action.\n\n\n\n\n\n4 Outcome\nThe environment updates and the score changes.\n\n\n\n\nOptional advice path\n\n\nask\n\n\nuse or ignore\n\n\nRequest advice\nMOSAIC sends task context to the AI teammate.\n\n\nadvice\n\n\nEvaluate advice\nCompare it with what the participant can see.\n\n\n\n\nRecorded throughout Task state · advice request · AI response · participant action · outcome\n\n\nThe central question is when and how AI advice changes human decisions.\n\n\nNext, we open the notebook, play a mission, and change the task ourselves."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#open-the-notebook",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#open-the-notebook",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#open-the-notebook",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#open-the-notebook",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Open the Notebook",
     "text": "Open the Notebook\n\nFour steps, and nothing to install.\n\n\n\n\n\n1 Go to the server\nScan the code on the last slide, or open jupyter.ihuman-lab.work\n\n\n2 Sign in\nWith the password you were given\n\n\n3 Open the notebook\n02_mosaic_human_ai.ipynb, in the file list on the left\n\n\n4 Pick the kernel\nPython (smc), at the top right of the notebook\n\n\n\n\n\nNotebook 02_mosaic_human_ai.ipynb: the whole tutorial, in eight steps\n\n\nGame live_play.py shows the game in your browser and takes your keys\n\n\nSettings config.yaml: the task as a text file\n\n\nRecording lsl_tools.py: game state and gaze into one file\n\n\n\n\nThe top right says Python (smc). Run each cell with Shift+Enter, from the top.\n\n\nPrefer your own laptop? The appendix has the install, in one slide.\n\n\nEverything attendees need is already in the folder on the server: the notebook, config.yaml, live_play.py and lsl_tools.py. If someone sees “No module named ‘mosaic’”, the kernel is wrong: pick Python (smc). The first code cell of the notebook must run first (it silences warnings and sets pygame up to draw off-screen); everything after it can run in order."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#your-first-level",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#your-first-level",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#your-first-level",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#your-first-level",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Your First Level",
     "text": "Your First Level\n\nThe task is a text file. Run Step 1 and MOSAIC builds it.\n\n\n\n\nconfig.yaml the game: section\ngame:\n  num_rows: 2             # rooms down\n  num_cols: 2             # rooms across\n  room_size: 8            # tiles per room side\n  num_real_victims: 2     # per room\n  lava_per_room: 1\n  locked_room_prob: 0.35  # chance a room is locked\n  max_time: 5             # minutes on the clock\n\n\n\n\nStep 1 one call builds the whole task\nenv = build_sar_env(\n    screen_size=640, num_rows=2,\n    num_cols=2, room_size=8,\n    victim_placer=VictimPlacer(2),\n    lava_placer=LavaPlacer(1),\n    locked_room_placer=LockedRoomPlacer(0.35),\n)\nobs, info = env.reset(seed=0)\n\n\n\n\nChange a number in the file, run again, and you have a different task.\n\n\nStep 1 reads config.yaml and builds the level with build_sar_env. Three placers decide what goes where: victims, lava and locked doors. The seed makes a level reproducible: everyone who uses seed 0 plays the same building (the notebook seeds Python’s random too, because the placers draw from it). Counts are per room, so a bigger building has more of everything and a longer clock."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#first-checkpoint",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#first-checkpoint",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#first-checkpoint",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#first-checkpoint",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "First Checkpoint",
     "text": "First Checkpoint\n\n\n\nConfirm\n\nThe kernel says Python (smc)\n\n\nStep 1 printed game config: and mission: pick up all 8 victims\n\n\nNo red error text under any cell\n\n\nYou can scroll on to Step 2\n\n\n\n\n\n\n\n\n\n\n\nSymptom\nRecovery\n\n\n\n\nNo module named 'mosaic'\nWrong kernel: pick Python (smc) at the top right\n\n\nNo module named 'live_play'\nlive_play.py is not in the notebook’s folder\n\n\nThe picture does not move\nClick the picture once, then press the keys\n\n\nA blank picture\nRun the cell again and wait a second\n\n\nThe page asks you to sign in again\nSign in; your work is kept\n\n\nThe server does not open\nAsk a helper; share a neighbor’s screen meanwhile\n\n\n\n\n\n\nEveryone with a level built is ready for Part Three.\n\n\nThis is the only checkpoint before the break. Helpers circulate during Part Three too. The most common problem is the kernel; the second is the picture not receiving keys until it is clicked."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-search-and-rescue-mission",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#the-search-and-rescue-mission",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#the-search-and-rescue-mission",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#the-search-and-rescue-mission",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Search-and-Rescue Mission",
     "text": "The Search-and-Rescue Mission\n\nExplore, tell real victims from decoys, and rescue them before time runs out.\n\n\n\n\n\n\nExplore\nMove room to room. A locked door needs the key of the same color.\nIdentify\nBoth are red T shapes. A real victim’s stem is centered; a decoy’s is off-center.\nDecide\nA real victim earns a point, a decoy costs one, and the clock keeps running.\n\n\n\nEvery choice has a consequence you can see and score.\n\n\nAlmost no code in this part: the goal is to know the mission the way a participant does. The clip is the real interface: a real victim (green flash, +1), a decoy (red flash, -1), then another real victim. In the notebook the clock only counts down: at 0:00 the timer stops and the mission keeps going (appendix slide “Time Limit”)."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#game-interface",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#game-interface",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#game-interface",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#game-interface",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Game Interface",
     "text": "Game Interface\n\nWhat each tile means, and where to read the mission.\n\n\n\n\n\n\nGame viewport — the green flash is rescue feedback\n\n\nInformation panel — rescued, remaining, steps, inventory\n\n\nMission status and score — reward and the clock\n\n\nControls, always on screen\n\n\nChat panel — where AI teammate advice arrives\n\n\n\n\n\n\nYou the red triangle\n\n\n\nVictim rescue with Tab or E\n\n\n\nDecoy costs a point\n\n\n\nLava ends the mission\n\n\n\nDoor Space opens it\n\n\n\nLocked door needs the key of its color\n\n\n\nKey Tab or E picks it up"
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#victims-and-decoys",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#victims-and-decoys",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#victims-and-decoys",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#victims-and-decoys",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Victims and Decoys",
     "text": "Victims and Decoys\n\nReal victims and decoys are both red T shapes. Only real victims earn points.\n\n\n\n\n\n\nREAL VICTIM DECOY\n\n\n\n\n\nSymbols A real victim’s stem sits in the middle of the bar. A decoy’s is off-center.\n\n\nRescue Stand next to a victim, face it, and press Tab or E. The score updates at once.\n\n\nCustomize Part Four changes how many decoys there are, and what rescuing one costs.\n\n\n\n\n+1.0 Real victim rescued\n\n\n−1.0 Decoy rescued\n\n\n\n\nReal victims earn points and decoys cost them. Telling them apart is where advice matters.\n\n\nThe reusable VictimPlacer places real victims only; decoys come from a small placer written in the notebook’s Step 5. The scores are the defaults in RescueRewards (src/mosaic/sar/actions.py): +1 for a real victim, -1 for a decoy. Point at one of each on screen."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#controls-and-gameplay",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#controls-and-gameplay",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#controls-and-gameplay",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#controls-and-gameplay",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Controls and Gameplay",
     "text": "Controls and Gameplay\n\nFour actions. In the browser, E also rescues and Q also asks for advice.\n\n\n\n\n\nNavigate\n\n↑ Move forward one tile\n\n\n←→ Turn to face a new direction\n\n\n\n\n\n\nOpen\n\nSpace Open the door you are facing\n\nLocked doors open only while you carry the matching key.\n\n\n\n\n\nPick up or rescue\n\nTab E Take the key, or rescue the victim, you are facing\n\n\n\n\n\n\nRequest advice\n\nAlt Q Ask the AI teammate\n\nThe reply appears in the chat panel. Today’s placeholder teammate answers “Currently, no commands are available.” Step 6 gives it one.\n\n\n\n\nThe advice clip was recorded with a teammate that reads the map. In the notebook’s Step 2 game the placeholder teammate answers “Currently, no commands are available.” Step 6 gives the game a stand-in teammate."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#play-it-yourself",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#play-it-yourself",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#play-it-yourself",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#play-it-yourself",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Play It Yourself",
     "text": "Play It Yourself\n\n\n\n\nOpen Step 2 of the notebook, the cell called Play it yourself\n\n\nRun Shift+Enter, then click the picture so it receives your keys\n\n\nMove Arrow keys turn and walk, Space opens a door, Tab or E rescues\n\n\nStop Press Stop to end the game and see your score\n\n\n\n\n\nYou should see something like this: the game on the left, the panels on the right.\n\n\n\nGive everyone a few minutes of free play. The picture is the real MOSAIC window, drawn off-screen on the server and sent to the browser; the keys you press go back to it. Browsers keep Tab and Alt for themselves in some setups, so E and Q do the same jobs. Anyone whose picture does not respond clicks it once."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#no-human-required",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#no-human-required",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#no-human-required",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#no-human-required",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "No Human Required",
     "text": "No Human Required\n\nYou just played it by hand. The same game runs with nobody at the keyboard.\n\n\n\n\nnotebook · Step 2 a random agent plays one episode\nfor steps in range(1, env.max_steps + 1):\n    action = env.action_space.sample()\n    obs, reward, terminated, truncated, info = env.step(action)\n    if terminated or truncated:\n        break\n\nRun Step 2, the cell called No human needed.\nWould a learning agent change this loop?\n\n\nWhat you get\n\n\n1 The Gym API reset() and step(action), the interface RL libraries expect\n\n\n2 The same task Same rooms, rules and rewards a human plays\n\n\n3 No window Headless and fast: an episode takes a fraction of a second\n\n\n\n\n\nA human, an AI teammate, or an RL agent can play: one task, one interface.\n\n\nMOSAIC is built on the Gymnasium (OpenAI Gym) API: env.reset() starts an episode and env.step(action) returns (observation, reward, terminated, truncated, info), with a 7-action Discrete space. So an agent with no human in the loop can run the game, and the notebook’s cell does exactly that with a random agent: no window, a whole episode in a fraction of a second. A learning agent uses the same loop, with its own policy instead of action_space.sample(). Be clear that this tutorial does not train an agent. One practical note: the observation is a richer dictionary than the declared observation_space, so an RL library that validates spaces needs a small wrapper that picks the fields the policy uses. The point for the room: the human is one kind of player, not part of the environment."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#runtime-architecture",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#runtime-architecture",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#runtime-architecture",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#runtime-architecture",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Runtime Architecture",
     "text": "Runtime Architecture\n\nFour parts you can change, built on Gymnasium, MiniGrid and BabyAI.\n\n\n\n\n\n↑ ← → Space Tab Alt\n\nHuman participant\nWatches the screen and presses keys.\n\n\nkeys\nframes\n\n\n\n\n\n4.2 GUI mosaic.gui\nGame view, panels, chat, and feedback.\n\n\naction\nobservation\n\n\n\n\n\n4.1 SAR mosaic.sar\nRooms, victims, rules, and rewards.\n\n\n\n\nphysiological signals\n\n\ncontext · advice\n\n\nbuilt on\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  LSL\n\n\n4.4 Sensing lsl_tools.py\nGaze and EEG on the game’s clock, through LSL.\n\n\n\n\n\n4.3 LLM mosaic.llm\nReads the task, replies in the chat.\n\n\n\nobs, reward, terminated, truncated, info = env.step(action)\n\nGymnasium + MiniGrid\nThe step API and BabyAI’s room grids.\n\n\n\n\nPoint at the attendee’s own window: the keys they press, the GUI that draws it, the environment that decides what happens. Each numbered block is one section of Part Four. The chat image is a real reply from the stand-in teammate on “An AI Teammate Without a Key”. Sensing sits beside the game: in the notebook the gaze is synthetic, and a real tracker streams in the same way. Sensors never talk to the game directly: each one streams into Lab Streaming Layer, which puts game and sensor samples on one clock. The env.step line is src/mosaic/gui/user.py:53. MOSAIC’s levels extend BabyAI’s LevelGen, which ships inside MiniGrid (BabyAI: Chevalier-Boisvert et al., ICLR 2019): room grids, doors, keys, and missions written as instructions. The search-and-rescue task adds victims, lava, cameras and rewards on top."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#one-notebook-four-parts",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#one-notebook-four-parts",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#one-notebook-four-parts",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#one-notebook-four-parts",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "One Notebook, Four Parts",
     "text": "One Notebook, Four Parts\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\n\n\nthe notebook’s cells, assembled · Steps 1 to 7\n\nenv = build_sar_env(\n    screen_size=640, num_rows=2, num_cols=2, room_size=8,\n    victim_placer=VictimsAndDecoys(num_real_victims=2, num_decoys=3),\n    lava_placer=LavaPlacer(lava_per_room=1),\n    locked_room_placer=LockedRoomPlacer(locked_room_prob=0.35),\n    camera_strategy=AgentFOVCamera(),\n    action=RescueAction(rewards=RescueRewards(fake_victim=-5.0)),\n)\nteammate = StandInTeammate()\ngui = SAREnvGUI(env, config=GAME, llm_client=teammate)\ngui.user.on_step = record_step\nplay_mosaic(gui, on_stop=finish)\n\n\n\n\n\n4.1 SAR\nThe building, what fills it, the camera, the rewards\n\n\n4.2 GUI\nThe participant’s window\n\n\n4.3 LLM\nWho answers Q\n\n\n4.4 Sensing\nWhat every step records\n\n\n\n\nThis is the whole task as a few lines, assembled from the notebook’s cells; the slide is a map, not a cell to copy. Step through the highlights, in the order of Part Four: SAR (the building, what fills it, the camera, the rewards), GUI (the window and how it is shown), LLM (who answers Q), and Sensing (what every step records). VictimsAndDecoys is a placer written in Step 5, StandInTeammate a teammate written in Step 6, and record_step and finish are Step 7."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#sar",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#sar",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#sar",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#sar",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "4.1 · SAR",
     "text": "4.1 · SAR\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nbuild_sar_env builds the task. Notebook Steps 1 and 5.\n\n\n\n\nnotebook · Step 5 inside make_level\nbuild_sar_env(\n    screen_size=640, num_rows=rows, num_cols=cols,\n    room_size=room_size,\n    victim_placer=VictimsAndDecoys(real, decoys),\n    lava_placer=LavaPlacer(lava_per_room=lava),\n    locked_room_placer=LockedRoomPlacer(locked),\n    camera_strategy=camera,\n    action=RescueAction(rewards=RescueRewards(\n        fake_victim=decoy_cost)),\n)\n\n\n\nThree things to change\n\n1 The building Notebook\nnum_rows · room_size · decoys · lava · locks\nHow big, crowded, and locked\n\n\n2 Camera Next\ncamera_strategy=\nWhat the participant sees\n\n\n3 Rewards Try it\naction=RescueAction(...)\nWhat a mistake costs\n\n\n\n\nEverything on the left is one call. Counts are per room, so a bigger building has more victims, more lava and a longer clock. The next two slides are the notebook’s Step 5: what a level can contain, and how little code a new placer takes. Then the camera and the rewards. The code lives in src/mosaic/sar/ and src/mosaic/core/."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#what-you-can-customize",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#what-you-can-customize",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#what-you-can-customize",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#what-you-can-customize",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What You Can Customize",
     "text": "What You Can Customize\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nStep 5. Five levels, each changing one setting of the default, drawn with the whole-building camera.\n\n\n\n\n\nRooms, decoys, lava and locked doors are numbers you choose.\n\n\nReal victims, decoys and lava are counted per room, so the totals grow with the building, and so does max_steps, the number of steps the game allows. Decoys are look-alike victims: rescuing one costs points. Locked rooms hide their key in another room. The next slide shows where the decoys come from."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#write-your-own-placer",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#write-your-own-placer",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#write-your-own-placer",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#write-your-own-placer",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Write Your Own Placer",
     "text": "Write Your Own Placer\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nTry it MOSAIC’s victim placer has no decoys. Add them with a small class of your own.\n\n\n\n\nnotebook · Step 5 abridged\nclass VictimsAndDecoys(VictimPlacer):\n    def __init__(self, num_real_victims=2, num_decoys=0):\n        super().__init__(num_real_victims)\n        self.num_decoys = num_decoys\n    def place_all(self, level_gen, rows, cols):\n        super().place_all(level_gen, rows, cols)\n        for i in range(rows):\n            for j in range(cols):\n                room = level_gen.get_room(i, j)\n                for _ in range(self.num_decoys):\n                    x, y = random.choice(free_cells(room))\n                    decoy = FakeVictim(\"left\", \"up\")\n                    level_gen.put_obj(decoy, x, y)\n\nRun Change DECOYS in the build-your-own cell and play.\nCan you tell the decoys from the victims?\n\n\nWhat it does\n\n\n1 Real victims first The normal placer does its job\n\n\n2 Then decoys Look-alikes in free cells of every room, never next to a door\n\n\n3 One method A placer only has to implement place_all\n\n\n\n\n\nThe slide shortens the cell: free_cells(room) stands for the base class’s helpers that list free cells away from doors, and the notebook picks the decoy’s shape at random. The point is how little a placer is. Placer in src/mosaic/core/placers.py has one method, place_all, so a new kind of level content is a short class. The lava placer and the locked-room placer are the same shape."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#what-the-participant-sees",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#what-the-participant-sees",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#what-the-participant-sees",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#what-the-participant-sees",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "What the Participant Sees",
     "text": "What the Participant Sees\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\ncamera_strategy= sets the camera. One walk through a door, three cameras:\n\n\n\n\nEdge-following\nEdgeFollowCamera · scrolls with the agent\n\n\n\nWhole room\nAgentFOVCamera · the whole room\n\n\n\nForward cone\nAgentConeCamera · only what is ahead\n\n\n\nAgent same tile in all three   ·   Room the agent’s room\n\n\nSame task. The camera sets what the participant can see.\n\n\nStep 3 of the notebook draws the same level through five cameras, with env.switch_camera(). To use one in your own level, import the class from mosaic.core.camera and pass it as camera_strategy=. Cameras are a strategy interface: CameraStrategy in src/mosaic/core/camera.py returns an image from get_crop(). Use FullviewCamera and AgentCenteredCamera only with switch_camera: as the camera a level is built with they raise AttributeError on env reset, because they have no reset() method."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#rescue-rewards",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#rescue-rewards",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#rescue-rewards",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#rescue-rewards",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Rescue Rewards",
     "text": "Rescue Rewards\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nTry it Step 5: make rescuing a decoy cost 5 points instead of 1.\n\n\n\n\nnotebook · Step 5 the build-your-own cell, then make_level\n# a real victim is +1, a decoy -1 by default\nDECOY_COST = -5.0\n\n# inside make_level(...)\naction=RescueAction(rewards=RescueRewards(fake_victim=decoy_cost))\n\nRun Play, rescue a decoy, then press Stop.\nWhat will the reward read?\n\n\n\n\n\nBefore · the default\n\n\n\nAfter · fake_victim=-5.0\n\n\n\n\n\naction= goes inside the build_sar_env(...) call. The defaults in RescueRewards (src/mosaic/sar/actions.py) are +1 for a real victim and -1 for a decoy. Every rescue also reports an event in info[\"events\"]. The score under the game when you press Stop includes what the decoys cost."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-challenge-beat-the-room",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#the-challenge-beat-the-room",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#the-challenge-beat-the-room",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#the-challenge-beat-the-room",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Challenge: Beat the Room",
     "text": "The Challenge: Beat the Room\n\nSame level, two minutes, one leaderboard.\n\n\n\n\nnotebook · Step 9 before you play, and when you stop\nPREDICTION = 3       # your guess: set it BEFORE you play\n\n# when the game ends, your score is saved:\nsubmit_score(\"mosaic\", NICKNAME, score, steps=steps,\n             prediction=PREDICTION)\n\nRun Step 9: set PREDICTION, run the cell, and play.\nWhat score will you get?\n\n\nWhat you will see\n\n\n1 Your result Your score, and how close your guess was\n\n\n2 The agent A random agent plays the same level 50 times: where do you rank?\n\n\n3 The board Everyone’s scores, and who predicted their own best\n\n\n\n\n\nA real victim is +1 and a decoy is −5: telling them apart is the whole game.\n\n\nEveryone plays the same level (a fixed seed, so the buildings, victims, decoys and lava are identical), for two minutes. The score is the reward: +1 for each real victim, −5 for each decoy. The game ends at Stop, when the two minutes are up, or when the episode ends by itself. Before they play, everyone sets PREDICTION to the score they expect: commit first, then see. Afterwards the notebook shows how far off they were and how a random agent does on the same level. Put 03_leaderboard.ipynb on the projector: it refreshes the board every few seconds, ranks by score with fewer steps breaking a tie, and lists the best forecasters. Only each person’s best score is kept, so they can play again."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#gui",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#gui",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#gui",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#gui",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "4.2 · GUI",
     "text": "4.2 · GUI\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nSAREnvGUI is the participant’s window. Notebook Step 4.\n\n\n\n\nnotebook · Step 4 the window, then the game\ngui = SAREnvGUI(env, config=GAME)\nplay_mosaic(gui)\n\n\n\n\n\n\nThree things to change\n\n1 Time limit Appendix\nmax_time: in config.yaml\nHow much time pressure\n\n\n2 Nudges Step 6\nllm_nudge_interval\nWhen the teammate speaks unasked\n\n\n3 Browser view Notebook\nplay_mosaic(gui, width=…)\nHow large the picture is\n\n\n\n\nThe GUI lives in src/mosaic/gui/. SAREnvGUI takes the env and a config dict, and optionally a teammate, a prompt builder, and replacements for the panels and the feedback flash. In the notebook the window is drawn off-screen and shown as a picture; play_mosaic (in live_play.py) runs the real game loop and passes your keys to it, and its width, fps and quality settings control the picture."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#llm",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#llm",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#llm",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#llm",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "4.3 · LLM",
     "text": "4.3 · LLM\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nA teammate is any object with one method, query. Notebook Step 6. Today it is a placeholder.\n\n\n\n\nnotebook · Step 6 the contract\nclass StandInTeammate(LLMClient):\n    def query(self, prompt):\n        return \"&lt;START&gt; Head East. &lt;END&gt;\"\n\n\n\nToday, after Q: the placeholder\n\n\n\nThree things to change\n\n1 The teammate Try it · next\nllm_client=StandInTeammate()\nWho answers Q\n\n\n2 Prompt style Try it\nprompt_type: \"sparse\" | \"detailed\"\nHow long the answers are\n\n\n3 Nudges Notebook\nllm_nudge_interval\nWhen it speaks unasked\n\n\n\n\nThe contract lives in src/mosaic/llm/. Any teammate implements one method of LLMClient, query(prompt) -&gt; str: a hosted model, a script, or a person. MOSAIC turns the observation into a prompt, calls query, cleans the reply, and shows it in the chat panel. llm_nudge_interval: N makes the teammate speak every N steps without being asked. The notebook uses a stand-in, so no API key is needed."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#an-ai-teammate-without-a-key",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#an-ai-teammate-without-a-key",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#an-ai-teammate-without-a-key",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#an-ai-teammate-without-a-key",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "An AI Teammate Without a Key",
     "text": "An AI Teammate Without a Key\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nTry it Swap in a stand-in teammate that answers in the style its prompt asks for.\n\n\n\n\nnotebook · Step 6 the last cell\n-play_mosaic(SAREnvGUI(env, config=GAME))\n+play_mosaic(SAREnvGUI(env, config=GAME,\n+                      llm_client=StandInTeammate()))\n\nRun Press Q in the game.\nDoes it know where you are?\n\n\n\n\n\nBefore · the placeholder\n\n\n\nAfter · StandInTeammate\n\n\n\n\n\nBe clear with the room: the stand-in does not read the level. It looks at its prompt and answers in that style, the way a real model would be asked to, with a fixed sentence. What it shows is the whole path: MOSAIC builds the prompt, the teammate answers, the reply is cleaned (the START and END markers the prompt asks for are removed) and appears in the chat. A real model replaces the stand-in by implementing the same method, query."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#two-prompt-styles",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#two-prompt-styles",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#two-prompt-styles",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#two-prompt-styles",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Two Prompt Styles",
     "text": "Two Prompt Styles\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nTry it Switch the prompt type, press Q again, and compare the answers.\n\n\n\n\nnotebook · Step 6 the last cell\nPROMPT_TYPE = \"sparse\"            # or \"detailed\"\n\nconfig={**GAME, \"prompt_type\": PROMPT_TYPE}\n\n\n\nsparse One short radio sentence, at most 20 words\n\n\ndetailed A short briefing, 3 to 4 sentences, at most 40 words\n\n\nHow would each change what a participant does?\n\n\n\n\n\nsparse\n\n\n\ndetailed\n\n\n\n\n\nThe two prompts describe the level in the same way and differ only in how the teammate should answer: one sentence, or a short briefing. Step 6 of the notebook prints those answer rules for each. The prompts live in src/mosaic/llm/prompts.yaml. Ask the room which style they would rather get under time pressure, and what the longer answer costs them."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#sensing",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#sensing",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#sensing",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#sensing",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "4.4 · Sensing",
     "text": "4.4 · Sensing\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nEach step produces an observation. Step 3 shows it as you play; Step 7 records it with gaze on one clock.\n\n\n\n\nnotebook · Step 3 play with a live readout\nplayer = User(make_env())\nplay_view(player)\n\n\nobs → agent_x, agent_y, agent_dir, grid,\n      saved_victims, remaining_victims,\n      victim_health, step_count, …\n    + action, reward\n    → Step 7: one marker per action on LSL\n\n\n\nThree things to change\n\n1 Observation Step 3\nplayer.obs\nWhat each step holds\n\n\n2 Recording Step 7\nuser.on_step = record_step\nWhat each action writes\n\n\n3 Sensors Demo · next\neye_tracker: source: live\nGaze on the game’s clock\n\n\n\n\nObservations are built in src/mosaic/sar/observations.py. In Step 3 the box beside the game shows them updating after every action you take. In Step 7 the game calls a function after each action (user.on_step), and that function writes the state and any rescue to an LSL marker stream; a second stream carries the gaze, and one recorder writes both to a single XDF file. In the notebook the gaze is synthetic, so no hardware is needed; the next slide uses a real tracker. Change what each step records by subclassing ObservationProcessor and passing it as observation=."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#live-demo-eye-tracking",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#live-demo-eye-tracking",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#live-demo-eye-tracking",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#live-demo-eye-tracking",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Live Demo: Eye Tracking",
     "text": "Live Demo: Eye Tracking\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\nPresenter demo A Tobii eye tracker streams gaze into the same recording, while a volunteer plays Step 7.\n\n\n\n\ntobii_to_lsl.py on the laptop the tracker is plugged into\npython tobii_to_lsl.py --width 1920 --height 1080\n\n\nconfig.yaml the eye_tracker: section\n eye_tracker:\n-  source: synthetic\n+  source: live\n\nWhat lands next to the game data?\n\n\nWatch for\n\n\n1 Stream The gaze appears as TobiiEyeTracker, 60 Hz\n\n\n2 Play A short mission in Step 7\n\n\n3 Two streams, one clock TobiiEyeTracker (gaze) and MOSAIC-State (one marker per action), side by side in the recording\n\n\n\n\n\nPresenter only. The tracker is plugged into one laptop, and LSL streams are found on the local network, so this demo runs the notebook on that laptop (a local Jupyter), not on the server. Setup is in EYETRACKER_SETUP.md. On the day: start tobii_to_lsl.py, set eye_tracker: source: live in config.yaml, run Step 7, let the volunteer play, press Stop, then run Step 8 on the file it saved. The script does not calibrate; calibrate in Tobii Eye Tracker Manager first. Seat the volunteer 60 to 65 cm from the screen. If the device fails, go to the next slide, which shows a rehearsal recording."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#the-synchronized-record",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#the-synchronized-record",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#the-synchronized-record",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#the-synchronized-record",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "The Synchronized Record",
     "text": "The Synchronized Record\n\nMap 4.1 SAR 4.2 GUI 4.3 LLM 4.4 Sensing\n\n\n\nOne recorded mission gaze and game on the same clock\n\n\n\n\n\nWhat to look for\n\n\nWhere Which part of the screen holds the gaze?\n\n\nWhen What do the eyes do in the second after a rescue?\n\n\nAdvice Where does gaze go when the teammate replies?\n\n\n\n\n\nGaze and game share one clock, so every look lines up with what happened.\n\n\nStep 8 of the notebook draws figures like this from the file Step 7 saves, with the same helpers (lsl_tools.py). The figure on the slide is from a rehearsal recording of a real tracker. Top: each circle is a fixation, bigger for longer, on the screen’s three areas. Bottom: one clock, the victims saved and under it the area the gaze was in; dark gaps are moments the tracker lost the eyes. In this recording the gaze stayed on the game view (99%) and did not go to the info panel after any of the three rescues. The three rows are the questions a researcher asks of a record like this. The third needs a teammate that gives advice during the mission, which this recording does not have. If the tracker fails, this slide is the fallback. After the venue rehearsal, redraw it with python tools/make_gaze_figure.py &lt;recording.xdf&gt; and render again."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#where-to-go-next",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#where-to-go-next",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#where-to-go-next",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#where-to-go-next",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Where to Go Next",
     "text": "Where to Go Next\n\nThe parts you changed today, and where they live.\n\n\n\nnotebooks/ The tutorial notebook and its helpers. Copy it to start yours.\n\n02_mosaic_human_ai.ipynb\nconfig.yaml\nlive_play.py\nlsl_tools.py\ntobii_to_lsl.py\n\nAPI play_mosaic · play_live · MarkerOutlet\n\n\ncomposes\n\n\n\nsrc/mosaic/core/ 4.1\nLevel generation and cameras\n\nlevel.py\nplacers.py\ncamera.py\n\nAPI Placer · CameraStrategy\n\n\nsrc/mosaic/sar/ 4.1 4.4\nThe search-and-rescue task\n\nenv.py\nplacers.py\nactions.py\nobjects.py\nobservations.py\n\nAPI build_sar_env · RescueAction\n\n\nsrc/mosaic/gui/ 4.2\nWhat the participant sees\n\nmain.py\nuser.py\nchat.py\ninfo.py\nfeedback.py\n\nAPI SAREnvGUI · EdgeVignette\n\n\nsrc/mosaic/llm/ 4.3\nThe teammate contract\n\nclient.py\nprocess_prompts.py\nprompts.yaml\npathfinding.py\nparser.py\n\nAPI LLMClient · ask\n\n\n\n\nHave the repository open in an editor beside this slide. mosaic/ is the reusable package. The notebook folder is the part attendees copy and change for their own work: its helpers play the game in a browser and record it. The badges match the four parts of Part Four. Every file named here exists in the MOSAIC repository. To run all of this on a laptop instead of the server, see the first appendix slide."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#mosaic-in-a-study",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#mosaic-in-a-study",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#mosaic-in-a-study",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#mosaic-in-a-study",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "MOSAIC in a Study",
     "text": "MOSAIC in a Study\n\nWhat you configured today, put to work in a study of people and an LLM teammate.\n\n\n\nLLM-Mediated Human-AI Interaction in Search and Rescue: Impact of Expertise on Attentional Allocation Elahe Oveisi · Hemanth Manjunatha\n\n\nTask The search-and-rescue mission, with victims whose health runs down.\n\n\nTeammate Two LLM teammates and a no-LLM baseline, three trials per participant.\n\n\nSensing A Tobii eye tracker and the game on one clock, through LSL.\n\n\nQuestion Does guidance change where people look, and does expertise matter?\n\n\n\n\n\n\nMonday, October 5 · 14:00–14:15 Grand C · Session MoA10 Scan for the talk’s slides\n\n\n\n\nCome and hear what they found: Monday at 14:00, Grand C.\n\n\nAn invitation, and an application of what attendees just configured: say what the study did, and leave the results for the talk. Paper MoA10.3 in the regular session Decision Support System I, Monday October 5, 14:00 to 14:15, room Grand C. Thirteen participants each played three trials in random order: two with an LLM teammate and one no-LLM baseline, up to 15 minutes or 1,000 moves. Victim health deteriorates, and Alt asks for advice and reveals victim health for five seconds. Gaze and pupil data came from a Tobii eye tracker, on one clock with the game through LSL: the same pieces as Part Four. Participants were grouped into experts and novices. The code opens the talk’s slides (ihuman-lab.github.io/presentations/ieee-smc-eo/); the program entry is conf.papercept.net, SMC26 program, Monday, MoA10.3. Check the time and room against the final program on the day."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#open-discussion",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#open-discussion",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#open-discussion",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#open-discussion",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Open Discussion",
     "text": "Open Discussion\n\n\n1 Human–AI Teaming What human–AI teaming question would you ask first, and what would you change in the rooms, victims or rewards to ask it?\n\n\n2 An LLM as teammate What should it see, what should it be allowed to do, and how would you tell a good teammate from a fluent one?\n\n\n3 Sense the human Which physiological signals, and which game events, would you use to close the loop?\n\n\n\nOpen on purpose: the three questions are prompts, not an agenda, so let the room choose. Give two minutes in pairs first, then take whatever comes. The third question reaches across to the SHaSTA session, so people who attend only one can still join. If it goes quiet, ask who guessed their score best and what changed how they played. Write down what people say is missing; it becomes the issue list."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#section-1",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#section-1",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#section-1",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#section-1",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "",
     "text": "Thanks!\nQuestions?\n\nMOSAIC github.com/iHuman-Lab/mosaic"
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#run-mosaic-on-your-own-laptop",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#run-mosaic-on-your-own-laptop",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#run-mosaic-on-your-own-laptop",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#run-mosaic-on-your-own-laptop",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Run MOSAIC on Your Own Laptop",
     "text": "Run MOSAIC on Your Own Laptop\n\nEverything here runs on a laptop too, with Python 3.10 or 3.11 and Git.\n\n\n\n\nmacOS / LinuxWindows PowerShellConda · Any Platform\n\n\ngit clone https://github.com/iHuman-Lab/mosaic.git\ncd mosaic\npython3 -m venv mosaic_env\nsource mosaic_env/bin/activate\n\n\ngit clone https://github.com/iHuman-Lab/mosaic.git\ncd mosaic\npython -m venv mosaic_env\n.\\mosaic_env\\Scripts\\Activate.ps1\n\n\ngit clone https://github.com/iHuman-Lab/mosaic.git\ncd mosaic\nconda create -n mosaic_env python=3.11 -y\nconda activate mosaic_env\n\n\n\npython -m pip install --upgrade pip\npython -m pip install -e .\npython -m pip uninstall -y pygame\npython -m pip install --force-reinstall \"pygame-ce&gt;=2.5.2\"\npython -m pip install matplotlib scipy pandas pylsl pyxdf\npython -m pip install ipywidgets ipyevents notebook\ncd notebooks\npython -m jupyter notebook 02_mosaic_human_ai.ipynb\n\n\n\n1 Clone and isolate\nThe code, and a private Python environment\n\n\n2 Install MOSAIC\n-e means your edits apply without reinstalling\n\n\n3 Switch to pygame-ce\nThe interface needs it; plain pygame hides it\n\n\n4 Notebook packages\nFor plots, the browser game, and the recording\n\n\n5 Open the notebook\nStart Jupyter from the notebooks folder\n\n\n\n\nThe notebook asks for the kernel: choose Python 3 (ipykernel). The full guide is SETUP.md in the tutorial repository.\n\n\nThe two pygame lines work around a packaging gap: MOSAIC’s pyproject.toml declares pygame, but pygame_gui needs pygame-ce, and both install into the same folder. Without them the import fails with cannot import name 'DIRECTION_LTR' from 'pygame'. --force-reinstall is required. The notebook draws the game off-screen and shows it in the browser, so a laptop needs no display setup beyond a browser. A tracker demo on a laptop also needs tobii-research; see EYETRACKER_SETUP.md."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#locked-rooms",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#locked-rooms",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#locked-rooms",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#locked-rooms",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Locked Rooms",
     "text": "Locked Rooms\n\nSet the chance that a room is locked: 0.5 locks about half, 0.9 most.\n\n\n\n\nnotebook · Step 5 make_level or config.yaml\n-make_level(rows=3, cols=3, locked=0.5)\n+make_level(rows=3, cols=3, locked=0.9)\n\nRun Play the level and walk to the nearest door.\nHow much of the building can you still reach?\n\n\n\n\n\nBefore · 0.5: 4 locked doors\n\n\n\nAfter · 0.9: 8 locked doors\n\n\n\n\n\nKeep locked_room_prob below 1.0: at 1.0 generation never finishes. The count is max(1, int(rooms × prob)), so a 3×3 building always locks 4 rooms at 0.5 and 8 at 0.9; which rooms changes run to run. LockedRoomPlacer lives in src/mosaic/sar/placers.py; its place_all() picks which rooms lock and hides each key in an unlocked room. The notebook’s gallery in Step 5 shows 90% locked on a 2×2 building."
   },
   {
-    "objectID": "mosaic-tutorial/mosaic-tutorial.html#time-limit",
-    "href": "mosaic-tutorial/mosaic-tutorial.html#time-limit",
+    "objectID": "lab/mosaic-tutorial/mosaic-tutorial.html#time-limit",
+    "href": "lab/mosaic-tutorial/mosaic-tutorial.html#time-limit",
     "title": "Closing the Human–AI LoopModular Architectures for Autonomous Teamingand Physiological Sensing",
     "section": "Time Limit",
     "text": "Time Limit\n\nGive the mission 2 minutes instead of 5.\n\n\n\n\nconfig.yaml the game: section\n game:\n-  max_time: 5\n+  max_time: 2\n\nRun Run Step 1 again, then play and watch the timer.\nHow will you play with only 2 minutes?\n\n\n\n\n\nBefore · the default\n\n\n\nAfter · max_time: 2\n\n\nAt 0:00 the timer stops; the mission keeps going.\n\n\n\nSAREnvGUI reads max_time (minutes) from the config it is given, which is the game: section of config.yaml in the notebook (GAME); the play cells pass their own value, such as {**GAME, \"max_time\": 3}. On its own the timer only counts down: at 0:00 the mission keeps going."
   },
   {
-    "objectID": "physio-workshop/foundations.html#about-me",
-    "href": "physio-workshop/foundations.html#about-me",
+    "objectID": "lab/physio-workshop/foundations.html#about-me",
+    "href": "lab/physio-workshop/foundations.html#about-me",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "About Me",
     "text": "About Me\n\n\nElahe Oveisi PhD Student, Aerospace and Mechanical Engineering Oklahoma State University\n\nBackground in human factors and ergonomics\nResearch focus: human–AI interaction, aviation safety, and safety-critical decision support\nCurrent work examines how AI can support, but not replace, human judgment in complex systems"
   },
   {
-    "objectID": "physio-workshop/foundations.html#agenda",
-    "href": "physio-workshop/foundations.html#agenda",
+    "objectID": "lab/physio-workshop/foundations.html#agenda",
+    "href": "lab/physio-workshop/foundations.html#agenda",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Agenda",
     "text": "Agenda\n\n\nFoundation of Human-Machine Interaction\n\n\nDiscussion\n\n\nCase Study\n\n\nDiscussion"
   },
   {
-    "objectID": "physio-workshop/foundations.html#human-machine-teaming",
-    "href": "physio-workshop/foundations.html#human-machine-teaming",
+    "objectID": "lab/physio-workshop/foundations.html#human-machine-teaming",
+    "href": "lab/physio-workshop/foundations.html#human-machine-teaming",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Human-Machine Teaming",
     "text": "Human-Machine Teaming\n\nNot every machine collaborator is an AI — and not every AI is a teammate.\n\n\nHuman–machine teaming is a broad term: teamwork between humans and any type of machine, including mechanical systems, automated systems, or intelligent systems\nHuman–AI teaming is a more specific form of human–machine teaming: it focuses on collaboration with AI systems that can perceive information, reason, adapt, and communicate"
   },
   {
-    "objectID": "physio-workshop/foundations.html#what-is-humanai-teaming",
-    "href": "physio-workshop/foundations.html#what-is-humanai-teaming",
+    "objectID": "lab/physio-workshop/foundations.html#what-is-humanai-teaming",
+    "href": "lab/physio-workshop/foundations.html#what-is-humanai-teaming",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "What is Human–AI Teaming?",
     "text": "What is Human–AI Teaming?\nOne or more humans and one or more AI agents working toward a shared goal, each with their own roles, coordinating like teammates.\n\n\n\nAI as a Teammate\n\n\nActs with initiative; shares the thinking. Communicates, explains, adapts to context. Coordinates with humans toward a shared goal.\n\n\n\n\nAI as a Tool\n\n\nFixed function (calculator, autopilot mode). Human monitors and supervises it."
   },
   {
-    "objectID": "physio-workshop/foundations.html#why-human-ai-teaming-is-important",
-    "href": "physio-workshop/foundations.html#why-human-ai-teaming-is-important",
+    "objectID": "lab/physio-workshop/foundations.html#why-human-ai-teaming-is-important",
+    "href": "lab/physio-workshop/foundations.html#why-human-ai-teaming-is-important",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Why Human-AI Teaming is Important?",
     "text": "Why Human-AI Teaming is Important?\n\n\n\nAviation\n\n\nMonitor flight systems + AI decision aids\n\n\n\n\nHealthcare\n\n\nDiagnostic AI; alarm management\n\n\n\n\nDriving\n\n\nAutomated driving\n\n\n\n\nSearch & Rescue\n\n\nOperators + autonomous drones and robots\n\n\n\n\nDefense — AI quickly checks sensor data and highlights problems."
   },
   {
-    "objectID": "physio-workshop/foundations.html#efficient-human-ai-teaming",
-    "href": "physio-workshop/foundations.html#efficient-human-ai-teaming",
+    "objectID": "lab/physio-workshop/foundations.html#efficient-human-ai-teaming",
+    "href": "lab/physio-workshop/foundations.html#efficient-human-ai-teaming",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Efficient Human-AI Teaming",
     "text": "Efficient Human-AI Teaming\n\n\n\nSituational Awareness\n\n\nDoes the human still understand what is happening, and what happens next?\n\n\n\n\nMental Workload\n\n\nIs the human’s cognitive demand in the productive zone — not overloaded, not disengaged?\n\n\n\n\nTrust — does the human rely on the AI the right amount? No blind faith, no needless rejection."
   },
   {
-    "objectID": "physio-workshop/foundations.html#situational-awareness",
-    "href": "physio-workshop/foundations.html#situational-awareness",
+    "objectID": "lab/physio-workshop/foundations.html#situational-awareness",
+    "href": "lab/physio-workshop/foundations.html#situational-awareness",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Situational Awareness",
     "text": "Situational Awareness\n\n\nPerceiveNotice the relevant elements: where are the drones?\n\n\n▼\n\n\nComprehendUnderstand what those elements mean for the mission right now\n\n\n▼\n\n\nProjectAnticipate what happens next: where will the target be in two minutes?\n\n\n\nWhen AI performs more of the work, humans can become “out of the loop” — reducing situational awareness and making it harder to detect errors or take over when needed."
   },
   {
-    "objectID": "physio-workshop/foundations.html#trust",
-    "href": "physio-workshop/foundations.html#trust",
+    "objectID": "lab/physio-workshop/foundations.html#trust",
+    "href": "lab/physio-workshop/foundations.html#trust",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Trust",
     "text": "Trust\n\n\n\nUnder Trust\n\n\nIgnoring good recommendations — rejecting accurate advice, doing everything manually\n\n\n\n\nOver Trust\n\n\nBlind reliance on AI — accepting AI output without checking\n\n\n\n\nOptimized trust matches the AI’s true reliability — rely on it where it’s strong, verify where it is weak."
   },
   {
-    "objectID": "physio-workshop/foundations.html#mental-workload",
-    "href": "physio-workshop/foundations.html#mental-workload",
+    "objectID": "lab/physio-workshop/foundations.html#mental-workload",
+    "href": "lab/physio-workshop/foundations.html#mental-workload",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Mental Workload",
     "text": "Mental Workload\n\n\nDemand vs. capacity\n\nToo high → errors, tunnel vision, missed alarms\nToo low → boredom, disengagement\nAI teammates should keep humans in the productive middle, reducing the work without pushing them out of the loop\n\n\nNASA-TLX: the classic measure\n\nMental demand\nPhysical demand\nTemporal demand\nPerformance\nEffort\nFrustration"
   },
   {
-    "objectID": "physio-workshop/foundations.html#measuring-human-ai-teaming-components",
-    "href": "physio-workshop/foundations.html#measuring-human-ai-teaming-components",
+    "objectID": "lab/physio-workshop/foundations.html#measuring-human-ai-teaming-components",
+    "href": "lab/physio-workshop/foundations.html#measuring-human-ai-teaming-components",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Measuring Human-AI Teaming Components",
     "text": "Measuring Human-AI Teaming Components\n\n\n\n\n\n\n\n\nScale\nMeasures\nDescription\n\n\n\n\nNASA-TLX\nWorkload\nSix-dimension rating after the task (mental, physical, temporal demand; performance, effort, frustration)\n\n\nSART / SAGAT\nSituational Awareness\nSART: self-rated awareness. SAGAT: freeze the simulation and quiz the operator\n\n\nTrust in Automation Scale\nTrust\n12-item Trust in Automation Scale (TIAS)\n\n\nPerformance\nBehavior\nMission success, errors, response time; acceptance of AI suggestions, verification rate"
   },
   {
-    "objectID": "physio-workshop/foundations.html#physiological-measurements",
-    "href": "physio-workshop/foundations.html#physiological-measurements",
+    "objectID": "lab/physio-workshop/foundations.html#physiological-measurements",
+    "href": "lab/physio-workshop/foundations.html#physiological-measurements",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Physiological Measurements",
     "text": "Physiological Measurements\n\n\nEye Tracking\n\nFixations & dwell time: what is being attended, for how long\nScan patterns: is monitoring systematic or chaotic?\nPupil size also tracks cognitive load\n\n\nEEG\n\nElectrodes on the scalp record electrical brain activity in real time\nMental workload and engagement\nMillisecond resolution, but noisy; needs careful cleaning"
   },
   {
-    "objectID": "physio-workshop/foundations.html#questions",
-    "href": "physio-workshop/foundations.html#questions",
+    "objectID": "lab/physio-workshop/foundations.html#questions",
+    "href": "lab/physio-workshop/foundations.html#questions",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Questions",
     "text": "Questions\n\n\n\nCurrent Challenges\n\n\nBiggest challenges in human–AI teaming? Which are overlooked? Which is hardest to solve? Which should researchers study first?\n\n\n\n\nAI Design\n\n\nWhat makes AI a good teammate? What capabilities are missing? How should AI communicate? How much autonomy should AI have?\n\n\n\n\nFuture Research\n\n\nBiggest research gaps? Most promising technologies? What studies are still needed? What should researchers focus on next?\n\n\n\n\nEvaluation\n\n\nHow should human–AI teaming be evaluated? Objective vs. subjective measures? What outcomes are often missed?\n\n\n\n\nHuman Factors — which of workload, trust, and situational awareness matter most, are hardest to measure, or are most often ignored?"
   },
   {
-    "objectID": "physio-workshop/foundations.html#human-ai-case-study",
-    "href": "physio-workshop/foundations.html#human-ai-case-study",
+    "objectID": "lab/physio-workshop/foundations.html#human-ai-case-study",
+    "href": "lab/physio-workshop/foundations.html#human-ai-case-study",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Human-AI Case Study",
     "text": "Human-AI Case Study\n\n\nRescue-Grid: An Open Platform for Human-Machine Teaming"
   },
   {
-    "objectID": "physio-workshop/foundations.html#questions-second-round",
-    "href": "physio-workshop/foundations.html#questions-second-round",
+    "objectID": "lab/physio-workshop/foundations.html#questions-second-round",
+    "href": "lab/physio-workshop/foundations.html#questions-second-round",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "Questions (Second Round)",
     "text": "Questions (Second Round)\n\n\n\nFuture AI Teammates\n\n\nWhat should future AI teammates do? What tasks are best for AI vs. humans? What makes an ideal human–AI team?\n\n\n\n\nAdaptive AI\n\n\nWhat should AI adapt to? When should it provide more or less help? Should AI adapt differently for different users?\n\n\n\n\nTrust\n\n\nWhich factors influence trust the most? How is appropriate trust developed, maintained, and measured?\n\n\n\n\nEvaluation\n\n\nHow do we know AI improves teamwork? Are current evaluation methods enough? What is missing from today’s studies?\n\n\n\n\nFuture Research — what questions still need answers, and what challenges must be overcome before AI teammates can be widely used?"
   },
   {
-    "objectID": "physio-workshop/foundations.html#section",
-    "href": "physio-workshop/foundations.html#section",
+    "objectID": "lab/physio-workshop/foundations.html#section",
+    "href": "lab/physio-workshop/foundations.html#section",
     "title": "Beyond the SurveyReal-Time Physiological Sensing for Human-Machine Teaming",
     "section": "",
     "text": "Thanks!\n\n\nQuestions?\n\n\nhemanth.manjunatha@okstate.edu"
